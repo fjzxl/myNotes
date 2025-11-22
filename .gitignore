@@ -92,3 +92,4 @@ package-lock.json
 ## special
 Source//private/*
 Source//pics/private/*
+.history/*
