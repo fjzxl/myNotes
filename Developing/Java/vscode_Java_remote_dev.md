@@ -8,6 +8,7 @@
     - [配置ssh remote](#配置ssh-remote)
     - [在远程服务器安装插件](#在远程服务器安装插件)
     - [远程服务器配置](#远程服务器配置)
+  - [download tomcat and unzip](#download-tomcat-and-unzip)
 
 ## download Java and set up environment in remote server
 
@@ -40,3 +41,5 @@
 
 ### 远程服务器配置
 ![远程服务器配置](/Source/pics/developing/remote_settings.png)
+
+## download tomcat and unzip
