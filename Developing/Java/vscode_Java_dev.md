@@ -24,7 +24,7 @@ tar -zxvf
 export JAVA_HOME_8=/home/clarence/software/java/jdk1.8.0_451
 export JAVA_HOME_21=/home/clarence/software/java/jdk-21.0.7
 export JAVA_HOME=${JAVA_HOME_21}
-export JRE_HOME=${JAVA_HOME}/jre
+# export JRE_HOME=${JAVA_HOME}/jre # 21 没有jre，不配置
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:${PATH}
 ```
