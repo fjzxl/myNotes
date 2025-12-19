@@ -15,16 +15,20 @@ sudo update-alternatives --set editor /usr/bin/code
 ```
 
 ## 插件
+
 material icon theme、one dark pro、prettier、vscode-pigments、auto rename tag
 
 ## 设置
+
 visual studio code的所有内容几乎都可以被设置。
 
 **两种不同范围的设置。**
+
 - 用户设置(User Settings)：这是一个全局范围的设置，会应用到所有的visual studio code实例中。
 - 工作区设置(Workspace Settings)：设置保存在相应的工作区，只会对相应的工作区生效。工作区设置会覆盖用户设置。
 
 **用户设置的settings.json位置**
+
 - windows："%APPDATA%\Code\User\settings.json"
 - linux: "$HOME/.config/Code/User/settings.json"
 
@@ -80,8 +84,8 @@ ctrl+T 查看工作区中的所有符号
 ctrl+\`打开终端
 ctrl+alt+click 可以把定义所在的文件在另一侧打开
 
-
 ### 多光标
+
 alt+click：按住alt键，然后单击鼠标右键，就能增加一个新的光标
 ctrl+alt+down：在当前光标下方新增一个光标
 ctrl+alt+up：在当前光标上方新增一个光标
@@ -105,6 +109,7 @@ F8或shift+F8 在当前文件的错误和警告之间循环跳转
 自定义snippets
 
 ## Task
+
 Task可以被用来运行脚本或启动一个进程。Task被配置在.vscode文件夹的tasks.json文件中。
 Task只能被配置在有文件夹打开的项目中。
 
@@ -112,6 +117,7 @@ Task只能被配置在有文件夹打开的项目中。
 task定义
 label：在用户界面展示的Task标签
 type：Task的类型，分为shell和process
+
 - shell：作为shell命令运行
 - process：作为进程运行
 command：真正执行的命令
@@ -138,10 +144,9 @@ runOptions：定义Task何时运行及如何运行。
 | ${lineNumber}              | 当前光标所在的行号                                |
 | ${selectedText}            | 当前打开的文件中选中的文本                        |
 | ${execPath}                | Visual Studio Code可执行文件的完整路径            |
-| ${defaultBuildTask}        | 默认的Build Task的名字                            | 
+| ${defaultBuildTask}        | 默认的Build Task的名字                            |
 
 环境变量 ${env: Name}
-
 
 launch.json
 launch.json定义了调试器需要的配置。
@@ -155,7 +160,7 @@ launch.json定义了调试器需要的配置。
 | preLaunchTask          | 定义在调试之前要运行的任务                                                   | 可选 |
 | postDebugTask          | 定义在调试结束时运行的任务                                                   | 可选 |
 | internalConsoleOptions | 定义调试控制台的显示                                                         | 可选 |
-| serverReadyAction      | 设置在调试时自动在浏览器中打开URL                                            | 可选 | 
+| serverReadyAction      | 设置在调试时自动在浏览器中打开URL                                            | 可选 |
 
 大多数调试器支持的属性
 program：要运行的可执行文件或源代码的路径。
@@ -165,6 +170,7 @@ cwd：调试器的工作目录。默认值是${workspaceFolder}
 port：要附加到的进程的端口。
 stopOnEntry：是否在程序人口进行断点。
 console：指定程序输出的位置
+
 - internalConsole：Visual Studio Code的调试控制台。
 - integratedTerminal：Visual Studio Code的集成终端
 - externalTerminal：系统的终端。
@@ -174,4 +180,3 @@ console：指定程序输出的位置
 
 调试jupyter notebook
 调试jupyter notebook，首先把jupyter notebook文件导出为python。然后调试python文件。
-
