@@ -14,6 +14,8 @@ CREATE DATABASE mydatabase
   COLLATE utf8mb4_general_ci;
 CREATE USER username IDENTIFIED BY 'password';
 GRANT all privileges ON databasename.* TO 'username'@'%';
+USE mysql;
+update user set user.Host='%'where user.User='username';
 FLUSH PRIVILEGES;
 ```
 
