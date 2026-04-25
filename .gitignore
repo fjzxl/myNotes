@@ -93,3 +93,7 @@ package-lock.json
 Source//private/*
 Source//pics/private/*
 .history/*
+
+.mcp.json
+.claude/*
+.*.md

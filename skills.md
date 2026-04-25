@@ -1,0 +1,3 @@
+scientific-brainstorming
+scientific-writing
+scientific-critical-thinking
