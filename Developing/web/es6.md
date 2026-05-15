@@ -49,6 +49,31 @@ ES6 在设计时充分考虑了静态分析的需求。ES 模块的静态导入/
 
 ---
 
+## 目录
+
+| 章节 | 内容 |
+|------|------|
+| [1. 引言](#1-引言) | ES6 背景、设计原则、新特性全景图 |
+| [2. 变量与作用域](#2-变量与作用域) | `let`/`const`、TDZ、块级作用域 |
+| [3. 函数增强](#3-函数增强) | 箭头函数、默认参数、剩余参数、展开运算符 |
+| [4. 字符串处理](#4-字符串处理) | 模板字面量、标签模板、字符串新方法 |
+| [5. 解构赋值](#5-解构赋值) | 数组解构、对象解构、嵌套解构、函数参数解构 |
+| [6. 对象增强](#6-对象增强) | 简写属性、计算属性名、`Object.assign`、对象展开 |
+| [7. 数组增强](#7-数组增强) | `Array.from`、`find`/`findIndex`、不可变方法 |
+| [8. 面向对象：Class](#8-面向对象class) | 语法、继承、静态方法、私有字段 |
+| [9. 模块化](#9-模块化) | `import`/`export`、动态导入、`import.meta` |
+| [10. 新类型：Symbol](#10-新类型symbol) | 唯一标识、Well-Known Symbols、全局注册表 |
+| [11. 数据结构](#11-数据结构) | `Map`、`Set`、`WeakMap`、`WeakSet` |
+| [12. 迭代协议与生成器](#12-迭代协议与生成器) | `for...of`、迭代器、`function*`、异步迭代器 |
+| [13. 异步编程](#13-异步编程) | `Promise`、`async/await`、事件循环 |
+| [14. 元编程](#14-元编程) | `Proxy`、`Reflect`、响应式系统 |
+| [15. 数值扩展](#15-数值扩展) | 新字面量、`Number`/`Math` 新方法、`BigInt` |
+| [16. Unicode 支持](#16-unicode-支持) | 码点处理、Unicode 正则 |
+| [17. 总结](#17-总结) | ES6+ 演进路线、学习优先级建议 |
+| [附录：速查表](#附录速查表) | 常用语法与方法速查 |
+
+---
+
 ## 2. 变量与作用域
 
 ### 2.1 `let` 与 `const`
@@ -86,8 +111,6 @@ obj = {};           // TypeError
 - 避免使用 `var`
 
 ### 2.2 暂时性死区（TDZ）
-
-从块级作用域的顶部到变量声明语句之间，称为"暂时性死区"（Temporal Dead Zone）。在 TDZ 中访问变量会抛出 `ReferenceError`。
 
 ```javascript
 {
@@ -1769,3 +1792,116 @@ ES2024           Object.groupBy / Map.groupBy、Promise.withResolvers、正则 v
 - BigInt
 - Unicode 处理
 - 元编程细节
+## 附录：速查表
+
+### B.1 var vs let vs const
+
+| 特性 | `var` | `let` | `const` |
+|------|-------|-------|---------|
+| 作用域 | 函数作用域 | 块级作用域 | 块级作用域 |
+| 提升 | ✅ 提升，初始化为 `undefined` | ❌ TDZ（暂时性死区） | ❌ TDZ |
+| 重复声明 | ✅ 允许 | ❌ 不允许 | ❌ 不允许 |
+| 重新赋值 | ✅ 允许 | ✅ 允许 | ❌ 不允许（绑定不可变） |
+| 声明时初始化 | 不需要 | 不需要 | **必须** |
+| 推荐使用 | ❌ 不再使用 | 需要重新赋值时 | **默认选择** |
+
+### B.2 遍历方法对比
+
+| 方法 | 遍历目标 | 遍历 Symbol | 遍历原型 | 适用场景 |
+|------|---------|------------|---------|---------|
+| `for...in` | 所有可枚举属性键 | ❌ | ✅ | 遍历对象键（不推荐用于数组） |
+| `Object.keys()` | 自身可枚举字符串键 | ❌ | ❌ | 获取对象键数组 |
+| `Object.getOwnPropertyNames()` | 自身所有字符串键 | ❌ | ❌ | 包括不可枚举键 |
+| `Object.getOwnPropertySymbols()` | 自身 Symbol 键 | ✅ | ❌ | 获取 Symbol 属性 |
+| `Reflect.ownKeys()` | 自身所有键 | ✅ | ❌ | 获取全部键 |
+| `for...of` | 可迭代对象的值 | - | - | 遍历数组、字符串、Map、Set 等 |
+
+### B.3 字符串方法
+
+| 方法 | 说明 | 示例 |
+|------|------|------|
+| `` `Hello ${name}` `` | 模板字符串 | `` `Hi, ${user.name}` `` |
+| `str.includes(sub)` | 是否包含子串 | `'abc'.includes('b')` → `true` |
+| `str.startsWith(sub)` | 是否以子串开头 | `'abc'.startsWith('ab')` → `true` |
+| `str.endsWith(sub)` | 是否以子串结尾 | `'abc'.endsWith('bc')` → `true` |
+| `str.repeat(n)` | 重复 n 次 | `'ha'.repeat(3)` → `'hahaha'` |
+
+### B.4 数组方法
+
+| 方法 | 说明 | ES 版本 |
+|------|------|---------|
+| `Array.from(iterable)` | 类数组/可迭代对象转数组 | ES6 |
+| `Array.of(1, 2, 3)` | 根据参数创建数组 | ES6 |
+| `arr.find(fn)` | 查找满足条件的第一个元素 | ES6 |
+| `arr.findIndex(fn)` | 查找满足条件的第一个元素的索引 | ES6 |
+| `arr.fill(value)` | 填充数组 | ES6 |
+| `arr.keys()` | 返回索引迭代器 | ES6 |
+| `arr.values()` | 返回值迭代器 | ES6 |
+| `arr.entries()` | 返回 `[index, value]` 迭代器 | ES6 |
+| `arr.includes(value)` | 是否包含某值 | ES2016 |
+| `arr.flat(depth)` | 数组扁平化 | ES2019 |
+| `arr.at(index)` | 支持负索引 | ES2022 |
+
+### B.5 Promise 方法
+
+| 方法 | 说明 |
+|------|------|
+| `new Promise((resolve, reject) => {})` | 创建 Promise |
+| `promise.then(onFulfilled, onRejected)` | 成功/失败回调 |
+| `promise.catch(onRejected)` | 失败回调 |
+| `promise.finally(onFinally)` | 无论成败都执行 |
+| `Promise.resolve(value)` | 返回 resolved 的 Promise |
+| `Promise.reject(reason)` | 返回 rejected 的 Promise |
+| `Promise.all([p1, p2])` | 全部成功才成功，一失败就失败 |
+| `Promise.race([p1, p2])` | 谁先完成用谁 |
+| `Promise.allSettled([p1, p2])` | 等全部完成，不中断 |
+
+### B.6 常用语法速查
+
+```js
+// 解构
+const { a, b: c, d = 1 } = obj;
+const [x, , ...rest] = arr;
+
+// 箭头函数
+const fn = x => x * 2;
+const fn2 = (x, y) => { return x + y; };
+
+// 默认参数
+function greet(name = 'Guest') { /* ... */ }
+
+// 剩余参数 + 展开
+function sum(...nums) { /* nums 是数组 */ }
+const arr = [1, 2, ...other];
+
+// 对象简写
+const obj = { name, age, sayHi() { /* ... */ } };
+
+// Class
+class Child extends Parent {
+  constructor(x) {
+    super(x);
+    this.x = x;
+  }
+  static method() { /* ... */ }
+}
+
+// 模块
+export const foo = 1;
+export default function() {}
+import { foo } from './mod.js';
+import myFn from './mod.js';
+
+// async/await
+async function fetchData() {
+  try {
+    const res = await fetch('/api');
+    return await res.json();
+  } catch (e) {
+    console.error(e);
+  }
+}
+```
+
+---
+
