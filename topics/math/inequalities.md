@@ -1,0 +1,881 @@
+---
+title: 不等式
+tags:
+  - math
+  - inequality
+  - kaoyan
+aliases:
+  - Inequalities
+  - 不等式专题
+---
+
+# 不等式
+
+> 本部分按"由浅入深"的学习顺序组织，每个不等式都标出**前驱知识**。
+> 建议完成第1部分（基础概念）和高数第2章（导数与微分）后开始学习。
+
+## 一、基础不等式
+
+> 🎯 **起点**：这一组不等式不依赖其他工具，公式直观、证明初等，是后续所有不等式的基石。
+
+### 三角不等式（绝对值不等式）
+
+> **定理** 对任意实数 $a, b$：
+> $$
+> |a+b| \le |a| + |b|, \quad \bigl||a| - |b|\bigr| \le |a-b|
+> $$
+> 等号成立条件：$|a+b| = |a|+|b|$ 当且仅当 $ab \ge 0$；$\bigl||a|-|b|\bigr| = |a-b|$ 当且仅当 $ab \ge 0$（含 $a=b=0$ 的平凡情形）。
+
+**证明**：
+
+对第一个不等式：
+$$
+|a+b|^2 = (a+b)^2 = a^2 + 2ab + b^2 \le a^2 + 2|ab| + b^2 = (|a|+|b|)^2
+$$
+两边开方即得 $|a+b| \le |a|+|b|$。等号成立 $\Leftrightarrow ab = |ab| \Leftrightarrow ab \ge 0$。
+
+对第二个不等式，在第一个中令 $a = x-y$, $b = y$，则 $|x| \le |x-y| + |y|$，即 $|x| - |y| \le |x-y|$。交换 $x,y$ 得 $|y| - |x| \le |y-x| = |x-y|$。合并即 $\bigl||x|-|y|\bigr| \le |x-y|$。$\blacksquare$
+
+> **推广**（三角不等式）：对任意实数 $a_1, a_2, \ldots, a_n$，
+> $$
+> \left|\sum_{i=1}^n a_i\right| \le \sum_{i=1}^n |a_i|
+> $$
+> 等号成立当且仅当所有 $a_i$ 同号（全非负或全非正）。
+
+---
+
+### 均值不等式
+
+> **定理（AM-GM）** 对任意非负实数 $a_1, a_2, \ldots, a_n \ge 0$，
+> $$
+> \sqrt[n]{a_1 a_2 \cdots a_n} \le \frac{a_1 + a_2 + \cdots + a_n}{n}
+> $$
+> 等号成立当且仅当 $a_1 = a_2 = \cdots = a_n$。
+
+**含义**：几何平均 $\le$ 算术平均。
+例如 $a_1=1, a_2=4$：$\sqrt{1\cdot 4}=2 \le \dfrac{1+4}{2}=2.5$。
+
+**证明（Cauchy 前向-后向归纳法）**：
+
+*基例*：$n=1$ 平凡；$n=2$ 由 $(a_1-a_2)^2 \ge 0 \Rightarrow (a_1+a_2)^2 \ge 4a_1a_2$，两边开方即得。
+
+*前向步*（$n = 2^{k-1} \Rightarrow n = 2^k$）：
+记 $S_1 = a_1+\cdots+a_{2^{k-1}}$, $S_2 = a_{2^{k-1}+1}+\cdots+a_{2^k}$。由归纳假设
+$$
+A_1 = \sqrt[2^{k-1}]{a_1 \cdots a_{2^{k-1}}} \le \frac{S_1}{2^{k-1}}, \quad A_2 \le \frac{S_2}{2^{k-1}}
+$$
+再用 $n=2$ 情形：
+$$
+\sqrt[2^k]{a_1 \cdots a_{2^k}} = \sqrt{A_1 A_2} \le \frac{A_1+A_2}{2} \le \frac{S_1+S_2}{2^k} = \frac{a_1+\cdots+a_{2^k}}{2^k}
+$$
+
+*后向步*（$2^k < n < 2^{k+1}$）：
+设 $\bar a = \dfrac{a_1+\cdots+a_n}{n}$，补充 $m = 2^{k+1}-n$ 个 $\bar a$，得到 $2^{k+1}$ 个数。由前向步
+$$
+\sqrt[2^{k+1}]{a_1 \cdots a_n \cdot \bar a^{m}} \le \frac{a_1+\cdots+a_n + m\bar a}{2^{k+1}} = \frac{n\bar a + m\bar a}{2^{k+1}} = \bar a
+$$
+两边同时取 $2^{k+1}$ 次幂：
+$$
+a_1 \cdots a_n \cdot \bar a^{m} \le \bar a^{2^{k+1}}
+$$
+若 $\bar a = 0$，则所有 $a_i = 0$，不等式显然成立；若 $\bar a > 0$，两边同除以 $\bar a^{m}$：
+$$
+a_1 \cdots a_n \le \bar a^{n}
+$$
+再取 $n$ 次算术根，即得
+$$
+\sqrt[n]{a_1 \cdots a_n} \le \bar a = \frac{a_1+\cdots+a_n}{n}
+$$
+
+*等号条件*：在前向步中，等号成立要求两组各自等号成立且 $A_1 = A_2$；在后向步中，等号成立要求所有 $2^{k+1}$ 个数相等，即补充的 $\bar a$ 与原来的 $a_i$ 都相等，故 $a_1 = a_2 = \cdots = a_n = \bar a$。$\blacksquare$
+
+---
+
+### 伯努利不等式
+
+> **定理（Bernoulli）** 对实数 $x > -1$ 和整数 $r \ge 1$，
+> $$
+> (1+x)^r \ge 1 + rx
+> $$
+> 等号成立当且仅当 $r=1$ 或 $x=0$。
+>
+> 更一般地，若 $r \ge 1$ 或 $r \le 0$ 且 $x > -1$，则 $(1+x)^r \ge 1+rx$；若 $0 < r < 1$ 且 $x > -1$，则 $(1+x)^r \le 1+rx$。
+
+**证明一（数学归纳法，整数情形）**：
+
+*基例* $r=1$：$(1+x)^1 = 1+x$，等号成立。
+
+*归纳假设*：假设对任意实数 $x > -1$，有 $(1+x)^k \ge 1+kx$ 成立。
+
+*归纳步* $r=k+1$：
+$$
+\begin{aligned}
+(1+x)^{k+1} &= (1+x)^k (1+x) \\
+&\ge (1+kx)(1+x) \quad \text{（由归纳假设且 } 1+x > 0\text{）} \\
+&= 1 + (k+1)x + kx^2 \\
+&\ge 1 + (k+1)x
+\end{aligned}
+$$
+最后一步因为 $kx^2 \ge 0$。$\blacksquare$
+
+**证明二（微分法，实数情形）**：
+
+设 $f(x) = (1+x)^r - (1+rx)$，$x > -1$。求导：
+$$
+f'(x) = r(1+x)^{r-1} - r = r\left[(1+x)^{r-1} - 1\right]
+$$
+
+- 当 $r > 1$ 且 $x > 0$ 时，$(1+x)^{r-1} > 1$，故 $f'(x) > 0$；当 $-1 < x < 0$ 时，$f'(x) < 0$。所以 $x=0$ 是极小值点，$f(x) \ge f(0) = 0$。
+- 当 $0 < r < 1$ 时，$x=0$ 是极大值点，$f(x) \le f(0) = 0$。
+- 当 $r < 0$ 时，分析类似 $r > 1$ 的情形，$f(x) \ge 0$。
+
+$\blacksquare$
+
+---
+
+### 排序不等式
+
+> **定理** 设 $a_1 \le a_2 \le \cdots \le a_n$ 和 $b_1 \le b_2 \le \cdots \le b_n$ 是两组实数。
+> 对于 $\{1,2,\ldots,n\}$ 的任意排列 $\sigma$，有
+> $$
+> \sum_{i=1}^n a_i b_{n+1-i} \le \sum_{i=1}^n a_i b_{\sigma(i)} \le \sum_{i=1}^n a_i b_i
+> $$
+> 即：**逆序和 $\le$ 乱序和 $\le$ 同序和**。等号成立当且仅当所有 $a_i$ 相等或所有 $b_i$ 相等。
+
+**含义**：两组有序数列，对应位置相乘再求和，当顺序一致时和最大，顺序相反时和最小。
+
+**证明（交换法）**：
+
+只证右侧不等式（同序和最大），左侧类似。
+
+设 $S = \sum_{i=1}^n a_i b_{\sigma(i)}$ 是某个乱序和。如果 $\sigma$ 不是恒等排列，则存在 $i < j$ 使得 $\sigma(i) > \sigma(j)$。考虑交换这两个位置：
+
+令 $\sigma'$ 为将 $\sigma(i)$ 与 $\sigma(j)$ 交换后的排列，比较两者的贡献差：
+$$
+\begin{aligned}
+&\left[a_i b_{\sigma(i)} + a_j b_{\sigma(j)}\right] - \left[a_i b_{\sigma(j)} + a_j b_{\sigma(i)}\right] \\
+=&\; a_i(b_{\sigma(i)} - b_{\sigma(j)}) + a_j(b_{\sigma(j)} - b_{\sigma(i)}) \\
+=&\; (a_i - a_j)(b_{\sigma(i)} - b_{\sigma(j)}) \le 0
+\end{aligned}
+$$
+
+因为 $i < j$ 有 $a_i \le a_j$，且 $\sigma(i) > \sigma(j)$ 有 $b_{\sigma(i)} \ge b_{\sigma(j)}$，所以乘积非正。即交换后和不减：
+$$
+\sum_{i=1}^n a_i b_{\sigma(i)} \le \sum_{i=1}^n a_i b_{\sigma'(i)}
+$$
+
+重复此交换操作，每次减少逆序对数，最终得到恒等排列（同序），即证。
+
+等号条件：若所有 $a_i$ 相等或所有 $b_i$ 相等，则上述差值恒为 $0$，任何排列和相同。反之，若等号对某个非恒等排列成立，则上述某步差值必须为 $0$，推出 $a_i = a_j$ 或 $b_{\sigma(i)} = b_{\sigma(j)}$，逐步推广即得所有 $a_i$ 相等或所有 $b_i$ 相等。$\blacksquare$
+
+---
+
+### 切比雪夫不等式
+
+> **前驱**：排序不等式
+>
+> **定理（Chebyshev）** 设 $a_1 \le a_2 \le \cdots \le a_n$ 和 $b_1 \le b_2 \le \cdots \le b_n$ 是同序的两组实数，则
+> $$
+> \frac{a_1 + a_2 + \cdots + a_n}{n} \cdot \frac{b_1 + b_2 + \cdots + b_n}{n} \le \frac{a_1 b_1 + a_2 b_2 + \cdots + a_n b_n}{n}
+> $$
+> 即：**同序时，算术平均的乘积 $\le$ 乘积的算术平均**。
+>
+> 若两组数反序（一组增一组减），则不等号反向。
+
+**证明（由排序不等式）**：
+
+由排序不等式，同序和最大。对 $k=1,2,\ldots,n$，记 $b_{i}^{(k)} = b_{i+k}$（循环移位，$b_{n+j} = b_j$）。循环移位是 $\{1,\ldots,n\}$ 上的一个排列 $\sigma_k$，对任意排列排序不等式均成立，故对每个 $k$：
+$$
+\sum_{i=1}^n a_i b_{i+k} = \sum_{i=1}^n a_i b_{\sigma_k(i)} \le \sum_{i=1}^n a_i b_i
+$$
+
+将 $n$ 个这样的不等式相加（$k=0,1,\ldots,n-1$）：
+$$
+\sum_{k=0}^{n-1} \sum_{i=1}^n a_i b_{i+k} \le n \sum_{i=1}^n a_i b_i
+$$
+
+左边每个 $b_j$ 恰好出现 $n$ 次，所以：
+$$
+\sum_{i=1}^n a_i \cdot \sum_{j=1}^n b_j = \sum_{k=0}^{n-1} \sum_{i=1}^n a_i b_{i+k} \le n \sum_{i=1}^n a_i b_i
+$$
+
+两边除以 $n^2$ 即得：
+$$
+\frac{\sum a_i}{n} \cdot \frac{\sum b_i}{n} \le \frac{\sum a_i b_i}{n}
+$$
+
+$\blacksquare$
+
+> **思路二：配对作差法（直接证法，不依赖排序不等式）**
+>
+> 核心观察：$a,b$ 同序 $\Longleftrightarrow$ 对任意 $i,j$ 都有 $(a_i - a_j)(b_i - b_j) \ge 0$。
+>
+> 把所有这样的"协方差"对求和：
+> $$
+> S = \sum_{i=1}^{n}\sum_{j=1}^{n}(a_i - a_j)(b_i - b_j) \ge 0
+> $$
+>
+> 展开 $S$（注意 $i,j$ 各自独立地从 $1$ 跑到 $n$）：
+> $$
+> S = \sum_{i,j}(a_i b_i - a_i b_j - a_j b_i + a_j b_j) = 2n\sum_{i=1}^{n} a_i b_i - 2\Big(\sum_{i=1}^{n} a_i\Big)\Big(\sum_{j=1}^{n} b_j\Big) \ge 0
+> $$
+>
+> 移项即得：
+> $$
+> \Big(\sum a_i\Big)\Big(\sum b_j\Big) \le n \sum a_i b_i
+> $$
+>
+> 两边除以 $n^2$，与原式完全一致。$\blacksquare$
+>
+> **两种证法对比**：
+>
+> | 证法 | 思路 | 依赖 | 适合场景 |
+> |:---:|:---|:---|:---|
+> | 思路一 | 循环移位 + 排序不等式求和 | 排序不等式 | 已经证过排序不等式时，最快 |
+> | 思路二 | 配对作差 $(a_i-a_j)(b_i-b_j)\ge 0$ | 无（仅用同序定义） | 自包含讲法、强调几何直观 |
+
+### 几何直观
+
+切比雪夫不等式其实就是 **"同方向变化的两个量,它们的乘积被加权放大"**。下面从三个角度把它说透。
+
+#### 1. 散点图视角（最直观）
+
+把 $n$ 对数据 $(a_i, b_i)$ 画到二维平面上:
+
+**同序（正相关）**：
+```
+    b ↑
+      |                    •
+      |               •
+      |          •
+      |     •
+      | •
+      └─────────────────────→ a
+```
+所有点都"从左下爬到右上",大 $a$ 配大 $b$。
+
+**反序（负相关）**：
+```
+    b ↑
+      | •
+      |     •
+      |          •
+      |               •
+      |                    •
+      └─────────────────────→ a
+```
+点云"从左上落到右下",大 $a$ 配小 $b$。
+
+**散乱（不相关）**：
+```
+    b ↑
+      | •     •
+      |    •     •
+      | •     •
+      |    •     •
+      └─────────────────────→ a
+```
+
+切比雪夫说的就是:**点云正相关时,乘积的均值 ≥ 均值的乘积**——这正是样本协方差 $\text{Cov}(a,b)\ge 0$。
+
+#### 2. 重心/加权视角
+
+- $\bar a$ 是 $a$ 的"重心"（质量均匀时的平衡点）
+- $\bar b$ 同理
+- $\bar a\cdot \bar b$ = 两个重心分别相乘（"先求平均再乘"）
+- $\overline{ab}$ = "先乘再求平均"
+
+**同序时,大 $a$ 总是配大 $b$,乘积 $a_i b_i$ 整体被"加权抬升"**;反序时则被"加权压低"。这就是 $\overline{ab}$ 与 $\bar a \bar b$ 偏差的几何含义。
+
+#### 3. 协方差非负性（代数本质）
+
+把切比雪夫改写一下:
+$$
+\underbrace{\overline{ab} - \bar a \bar b}_{\text{协方差}} = \frac{1}{2n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}(a_i - a_j)(b_i - b_j) \ge 0
+$$
+
+最后一行的恒等式正好就是"配对作差"那个证法的核心——**同序 $\Longleftrightarrow$ 所有差分对 $(a_i-a_j)(b_i-b_j)\ge 0$**。所以两个证法其实是同一个直觉的不同写法。
+
+> **一句话记忆**：切比雪夫 = **同序 ⟹ 协方差非负** = **正相关时,期望的乘积 $\le$ 乘积的期望**。
+
+---
+
+## 二、核心工具不等式
+
+> 🎯 **进阶**：这一组是考研和竞赛中最常考、最常用的不等式工具，必须熟练掌握。
+
+### 柯西-施瓦茨不等式
+
+> **定理（Cauchy-Schwarz）** 对任意实数 $a_1, \ldots, a_n$ 和 $b_1, \ldots, b_n$，
+> $$
+> \left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right)\left(\sum_{i=1}^n b_i^2\right)
+> $$
+> 等号成立当且仅当 $a_i = \lambda b_i$（对某个常数 $\lambda$，所有 $i$）或 $b_i$ 全为 $0$。
+
+**含义**：两个向量的点积的平方不超过它们模长平方的乘积，即 $|\vec{a} \cdot \vec{b}|^2 \le |\vec{a}|^2 |\vec{b}|^2$。
+
+**证明一（判别式法）**：
+
+若所有 $b_i = 0$，不等式两边均为 $0$，显然成立。
+
+设 $b_1, \ldots, b_n$ 不全为 $0$，考虑关于 $t$ 的二次函数：
+$$
+f(t) = \sum_{i=1}^n (a_i - t b_i)^2 = \sum_{i=1}^n a_i^2 - 2t \sum_{i=1}^n a_i b_i + t^2 \sum_{i=1}^n b_i^2
+$$
+
+由于 $f(t) \ge 0$ 对所有实数 $t$ 成立，且 $\sum b_i^2 > 0$，故该二次函数的判别式 $\Delta \le 0$：
+$$
+\Delta = 4\left(\sum_{i=1}^n a_i b_i\right)^2 - 4\left(\sum_{i=1}^n a_i^2\right)\left(\sum_{i=1}^n b_i^2\right) \le 0
+$$
+
+即
+$$
+\left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right)\left(\sum_{i=1}^n b_i^2\right)
+$$
+
+等号成立 $\Leftrightarrow \Delta = 0 \Leftrightarrow$ 存在 $t$ 使得 $f(t) = 0$，即 $a_i = t b_i$ 对所有 $i$ 成立。$\blacksquare$
+
+**证明二（Lagrange 恒等式）**：
+
+$$
+\left(\sum_{i=1}^n a_i^2\right)\left(\sum_{j=1}^n b_j^2\right) - \left(\sum_{i=1}^n a_i b_i\right)^2 = \sum_{1 \le i < j \le n} (a_i b_j - a_j b_i)^2 \ge 0
+$$
+
+等号成立当且仅当所有 $a_i b_j = a_j b_i$，即 $a_i = \lambda b_i$。$\blacksquare$
+
+---
+
+#### 附：Lagrange 恒等式详解
+
+Lagrange 恒等式不仅证明了 Cauchy-Schwarz 不等式，还**精确量化了等号两边的差距**。
+
+> **恒等式**：
+> $$
+> \left(\sum_{i=1}^n a_i^2\right)\left(\sum_{j=1}^n b_j^2\right) - \left(\sum_{i=1}^n a_i b_i\right)^2 = \sum_{1 \le i < j \le n} (a_i b_j - a_j b_i)^2
+> $$
+
+**为什么右边是 $\binom{n}{2}$ 个平方项？**
+
+左边展开时，交叉项 $a_i^2 b_j^2 + a_j^2 b_i^2 - 2 a_i b_i a_j b_j$ 恰好凑成完全平方：
+
+$$
+(a_i b_j)^2 + (a_j b_i)^2 - 2(a_i b_i)(a_j b_j) = (a_i b_j - a_j b_i)^2
+$$
+
+所有非平方项（即 $i=j$ 的项 $a_i^2 b_i^2$）在左右两边恰好抵消，剩下的就只有这些 $2 \times 2$ 子行列式的平方。
+
+**低维验证**：
+
+- $n=2$：$(a_1^2+a_2^2)(b_1^2+b_2^2) - (a_1b_1+a_2b_2)^2 = (a_1b_2-a_2b_1)^2$
+  这正是向量 $(a_1,a_2)$ 与 $(b_1,b_2)$ 张成的平行四边形**面积的平方**。
+
+- $n=3$：差距为三个投影面积平方之和：
+  $$
+  (a_1b_2-a_2b_1)^2 + (a_2b_3-a_3b_2)^2 + (a_3b_1-a_1b_3)^2
+  $$
+
+**几何意义**：对向量 $\vec{a}, \vec{b} \in \mathbb{R}^n$，
+
+$$
+|\vec{a}|^2 |\vec{b}|^2 - (\vec{a}\cdot\vec{b})^2 = \sum_{i<j}(a_i b_j - a_j b_i)^2 = \det G(\vec{a},\vec{b})
+$$
+
+其中 $G(\vec{a},\vec{b})$ 是 $\vec{a}, \vec{b}$ 组成的 Gram 矩阵。**当 $n=3$ 时**，这个和式恰好等于 $|\vec{a}\times\vec{b}|^2$（二维子式正是叉积分量的平方）；对一般的 $n$，没有标准的"叉积"概念，但这个和式仍然是 $|\vec{a}|^2|\vec{b}|^2(1-\cos^2\theta) = |\vec{a}|^2|\vec{b}|^2\sin^2\theta$ 的代数精确表达。Cauchy-Schwarz 只是它 $\ge 0$ 的平凡推论。$\blacksquare$
+
+#### Lagrange 恒等式的完整推导
+
+上面"详解"里讲了**是什么**和**意味着什么**,这里给出**怎么证**——把左边的双重求和一步步展开,凑出右边的 $\binom{n}{2}$ 个平方项。
+
+**目标**:
+$$
+\underbrace{\left(\sum_{i=1}^{n} a_i^{2}\right)\left(\sum_{j=1}^{n} b_j^{2}\right)}_{L} - \underbrace{\left(\sum_{i=1}^{n} a_i b_i\right)^{2}}_{R} \stackrel{?}{=} \sum_{1 \le i < j \le n}(a_i b_j - a_j b_i)^{2}
+$$
+
+**步骤 1:把 $L$ 和 $R$ 都写成双重求和**
+
+$L$ 拆对角线项 + 非对角线项:
+$$
+L = \sum_{i,j} a_i^{2} b_j^{2} = \underbrace{\sum_{i} a_i^{2} b_i^{2}}_{\text{对角}(i=j)} + \underbrace{\sum_{i \neq j} a_i^{2} b_j^{2}}_{\text{非对角}}
+$$
+
+$R$ 同样拆:
+$$
+R = \sum_{i,j} a_i b_i \cdot a_j b_j = \sum_{i} a_i^{2} b_i^{2} + \sum_{i \neq j} a_i b_i a_j b_j
+$$
+
+**步骤 2:$L - R$,对角线项自动抵消**
+$$
+L - R = \sum_{i \neq j} a_i^{2} b_j^{2} - \sum_{i \neq j} a_i b_i a_j b_j = \sum_{i \neq j}\big(a_i^{2} b_j^{2} - a_i b_i a_j b_j\big)
+$$
+
+**步骤 3:对每对 $(i,j)$ 和 $(j,i)$ 配对** (关键一步!)
+
+非对角求和里,$(i,j)$ 和 $(j,i)$ (其中 $i<j$) 贡献合起来:
+$$
+\big(a_i^{2} b_j^{2} - a_i b_i a_j b_j\big) + \big(a_j^{2} b_i^{2} - a_j b_j a_i b_i\big) = a_i^{2} b_j^{2} + a_j^{2} b_i^{2} - 2 a_i b_i a_j b_j
+$$
+
+**正好是完全平方** $(a_i b_j - a_j b_i)^{2}$!
+
+**步骤 4:配对求和即得**
+$$
+L - R = \sum_{i < j}\big[(a_i b_j - a_j b_i)^{2}\big] \quad \blacksquare
+$$
+
+> **小诀窍**:这个证明唯一的技术是"把 $i \neq j$ 拆成 $i<j$ 和 $i>j$ 两半,再配对合并"——记下"配对 $(i,j)/(j,i)$"这个动作,以后推导 Gram 行列式、Plücker 关系时还会反复用到。
+
+#### 矩阵视角(一眼看清结构)
+
+记 $A=(a_1,\ldots,a_n)$,$B=(b_1,\ldots,b_n)$ 为行向量。Lagrange 恒等式可重写为:
+$$
+\det \begin{pmatrix} A A^{\top} & A B^{\top} \\ B A^{\top} & B B^{\top} \end{pmatrix} = \sum_{i<j}(a_i b_j - a_j b_i)^{2}
+$$
+
+左边是 Gram 矩阵的行列式;右边是"外积 $A \wedge B$ 的模方"。这正是 Grassmann 外代数的种子——所以这个恒等式**不只是 Cauchy-Schwarz 的工具,它是现代多重线性代数的开端**。
+
+#### 历史小注(为什么叫 Lagrange 恒等式)
+
+- **1773, Lagrange**:在研究二次型判别式时,首次明确写出这个恒等式。
+- **1821, Cauchy**:用它推出 Cauchy-Schwarz 不等式 (即 $\Delta \le 0$ 的推论)。
+- **1844, Grassmann**:把它放进外代数的框架,认识到 $a_i b_j - a_j b_i$ 正是 $\vec{a}\wedge\vec{b}$ 的坐标 —— **多重线性代数的起点**。
+
+> **考研定位**:Lagrange 恒等式本身不直接命题,但它是 **Cauchy-Schwarz 的代数根** + **行列式与向量夹角的桥梁**。掌握它,看到"证 Cauchy-Schwarz"或"求两向量夹角"的题目,你就多一条"用恒等式改写"的解题路径。
+
+---
+
+### 琴生不等式
+
+> **前驱**：凸函数定义
+>
+> **定理（Jensen）** 设 $f$ 是区间 $I$ 上的凸函数，$x_1, \ldots, x_n \in I$，$\lambda_1, \ldots, \lambda_n > 0$ 且 $\sum \lambda_i = 1$，则
+> $$
+> f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i)
+> $$
+> 等号成立条件：若 $f$ 严格凸，则当且仅当 $x_1 = x_2 = \cdots = x_n$；若 $f$ 仅凸（非严格），存在其他取等情形（例如 $f(x)=|x|$，$\lambda_1=\lambda_2=1/2$，$x_1=-x_2$）。
+>
+> 若 $f$ 是凹函数，则不等号反向：$f\left(\sum \lambda_i x_i\right) \ge \sum \lambda_i f(x_i)$。
+
+**含义**：凸函数在加权平均点处的值不超过函数值的加权平均。
+
+---
+
+#### 附：凸函数与凹函数的判定
+
+**几何直观**：函数 $f$ 是**凸函数** $\Leftrightarrow$ 函数图像上任意两点间的弦总在该两点间函数图像的**上方**（或重合）。直观地说，图像"向上鼓"。
+
+> **定义**（凸函数）：设 $f$ 在区间 $I$ 上有定义，若对任意 $x_1, x_2 \in I$ 和任意 $\lambda \in [0,1]$，有
+> $$
+> f(\lambda x_1 + (1-\lambda) x_2) \le \lambda f(x_1) + (1-\lambda) f(x_2)
+> $$
+> 则称 $f$ 为 $I$ 上的**凸函数**。若不等号严格成立（$x_1 \neq x_2$ 且 $0 < \lambda < 1$），则称 $f$ 为**严格凸函数**。
+
+**凹函数**则是相反的概念：弦总在图像**下方**，图像"向下鼓"。定义中不等号反向即可。
+
+**等价判定方法（考研常用）**：
+
+| 方法 | 条件 | 结论 |
+|------|------|------|
+| **一阶导数法** | $f'(x)$ 在 $I$ 上单调递增 | $f$ 是凸函数 |
+| **二阶导数法** | $f''(x) \ge 0$ 对所有 $x \in I$ | $f$ 是凸函数 |
+| **严格凸** | $f''(x) > 0$ | $f$ 是严格凸函数 |
+
+对凹函数，上述条件反向：$f'(x)$ 单调递减 $\Leftrightarrow$ $f''(x) \le 0$。
+
+**常见凸函数例子**：
+- $f(x) = x^2$（$f''(x) = 2 > 0$）
+- $f(x) = e^x$（$f''(x) = e^x > 0$）
+- $f(x) = -\ln x$（$x > 0$，$f''(x) = \frac{1}{x^2} > 0$）
+- $f(x) = |x|^p$（$p \ge 1$）
+
+**常见凹函数例子**：
+- $f(x) = \ln x$（$x > 0$，$f''(x) = -\frac{1}{x^2} < 0$）
+- $f(x) = \sqrt{x}$（$x > 0$，$f''(x) = -\frac{1}{4}x^{-3/2} < 0$）
+- $f(x) = \sin x$（在 $[0, \pi]$ 上）
+
+**重要关系**：若 $f$ 是凸函数，则 $-f$ 是凹函数；反之亦然。因此只需记住凸函数的结论，凹函数的不等号反向即可。
+
+---
+
+**证明（数学归纳法）**：
+
+*基例* $n=2$：由凸函数定义，对任意 $x_1, x_2 \in I$ 和 $\lambda \in (0,1)$，
+$$
+f(\lambda x_1 + (1-\lambda) x_2) \le \lambda f(x_1) + (1-\lambda) f(x_2)
+$$
+这正是 $n=2$ 的琴生不等式。
+
+*归纳假设*：假设对 $n=k$ 成立，即对任意 $y_1, \ldots, y_k \in I$ 和满足 $\sum_{i=1}^k \alpha_i = 1$ 的正权重 $\alpha_i$，有
+$$
+f\left(\sum_{i=1}^k \alpha_i y_i\right) \le \sum_{i=1}^k \alpha_i f(y_i)
+$$
+
+*归纳步* $n=k+1$：设 $x_1, \ldots, x_{k+1} \in I$，$\lambda_1, \ldots, \lambda_{k+1} > 0$ 且 $\sum_{i=1}^{k+1} \lambda_i = 1$。
+
+令 $S = \sum_{i=1}^k \lambda_i = 1 - \lambda_{k+1}$，并定义 $\mu_i = \lambda_i / S$（$i=1, \ldots, k$），则 $\sum_{i=1}^k \mu_i = 1$。
+
+记 $y = \sum_{i=1}^k \mu_i x_i$。由凸函数定义（$n=2$ 情形）：
+$$
+f\left(\sum_{i=1}^{k+1} \lambda_i x_i\right) = f\left(S \cdot y + \lambda_{k+1} \cdot x_{k+1}\right) \le S \cdot f(y) + \lambda_{k+1} f(x_{k+1})
+$$
+
+再由归纳假设（取 $y_i = x_i,\; \alpha_i = \mu_i$）：
+$$
+f(y) = f\left(\sum_{i=1}^k \mu_i x_i\right) \le \sum_{i=1}^k \mu_i f(x_i)
+$$
+
+代入上式得：
+$$
+\begin{aligned}
+f\left(\sum_{i=1}^{k+1} \lambda_i x_i\right) &\le S \cdot \sum_{i=1}^k \mu_i f(x_i) + \lambda_{k+1} f(x_{k+1}) \\
+&= \sum_{i=1}^k \lambda_i f(x_i) + \lambda_{k+1} f(x_{k+1}) \\
+&= \sum_{i=1}^{k+1} \lambda_i f(x_i)
+\end{aligned}
+$$
+
+等号条件：对严格凸函数，要求归纳假设中的取等号，即 $x_1 = \cdots = x_k = y$；同时要求凸函数定义中的取等号，即 $y = x_{k+1}$。故所有 $x_i$ 相等。$\blacksquare$
+
+**推论（算术平均 $\le$ 均方根）**：
+取 $f(x) = x^2$（凸函数），$\lambda_i = 1/n$，得
+$$
+\left(\frac{a_1 + \cdots + a_n}{n}\right)^2 \le \frac{a_1^2 + \cdots + a_n^2}{n}
+$$
+即
+$$
+\frac{a_1 + \cdots + a_n}{n} \le \sqrt{\frac{a_1^2 + \cdots + a_n^2}{n}}
+$$
+
+---
+
+### Nesbitt 不等式
+
+> **前驱**：柯西-施瓦茨、AM-GM
+>
+> **定理（Nesbitt）** 对任意正实数 $a,b,c$，
+> $$
+> \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} \ge \frac{3}{2}
+> $$
+> 等号成立当且仅当 $a=b=c$。
+
+**证明一（对称换元）**：
+
+令 $x = b+c$，$y = c+a$，$z = a+b$，则 $a = \frac{y+z-x}{2}$，$b = \frac{z+x-y}{2}$，$c = \frac{x+y-z}{2}$。由三角形不等式知 $x,y,z > 0$ 且可构成三角形三边。
+
+原式变为：
+$$
+\sum_{cyc} \frac{y+z-x}{2x} = \frac{1}{2}\sum_{cyc}\left(\frac{y}{x} + \frac{z}{x} - 1\right) = \frac{1}{2}\left(\frac{y}{x}+\frac{z}{x}+\frac{z}{y}+\frac{x}{y}+\frac{x}{z}+\frac{y}{z} - 3\right)
+$$
+
+由 AM-GM，$\frac{y}{x}+\frac{x}{y} \ge 2$ 等，故上式
+$$
+\ge \frac{1}{2}(2+2+2-3) = \frac{3}{2}
+$$
+
+$\blacksquare$
+
+**证明二（Cauchy-Schwarz / Titu 引理）**：
+
+$$
+\sum_{cyc} \frac{a}{b+c} = \sum_{cyc} \frac{a^2}{a(b+c)} \ge \frac{(a+b+c)^2}{a(b+c)+b(c+a)+c(a+b)} = \frac{(a+b+c)^2}{2(ab+bc+ca)}
+$$
+
+只需证 $\dfrac{(a+b+c)^2}{2(ab+bc+ca)} \ge \dfrac{3}{2}$，即 $(a+b+c)^2 \ge 3(ab+bc+ca)$，展开即 $a^2+b^2+c^2 \ge ab+bc+ca$，这是显然的（$\Leftrightarrow \frac{1}{2}[(a-b)^2+(b-c)^2+(c-a)^2] \ge 0$）。$\blacksquare$
+
+---
+
+## 三、高阶不等式
+
+> 🎯 **拔高**：这一组是 Young → Hölder → 权方和/Minkowski 的递推链，相互依赖。
+> 考研大纲对 Young/Hölder 较陌生，但竞赛中常考，建议理解为主。
+
+### Young 不等式
+
+> **前驱**：琴生不等式（用 $e^x$ 的凸性）
+>
+> **定理（Young）** 设 $a,b \ge 0$，$p > 1$，$q > 1$ 且 $\dfrac{1}{p} + \dfrac{1}{q} = 1$，则
+> $$
+> ab \le \frac{a^p}{p} + \frac{b^q}{q}
+> $$
+> 等号成立当且仅当 $a^p = b^q$。
+
+**含义**：Young 是 AM-GM 的推广（$p=q=2$ 时即为 $\displaystyle ab \le \frac{a^2+b^2}{2}$）。
+
+**证明（凸函数法）**：
+
+当 $a=0$ 或 $b=0$ 时，左侧为 $0$、右侧 $\ge 0$，不等式显然成立。故不妨设 $a, b > 0$。
+
+考虑函数 $f(x) = e^x$（严格凸函数）。由 Jensen 不等式或直接用凸函数定义：
+$$
+ab = e^{\ln a + \ln b} = e^{\frac{1}{p}\cdot p\ln a + \frac{1}{q}\cdot q\ln b} \le \frac{1}{p}e^{p\ln a} + \frac{1}{q}e^{q\ln b} = \frac{a^p}{p} + \frac{b^q}{q}
+$$
+
+等号成立当且仅当 $p\ln a = q\ln b$，即 $a^p = b^q$。$\blacksquare$
+
+**证明二（积分法）**：
+
+设 $f(t) = t^{p-1}$，其反函数为 $f^{-1}(s) = s^{1/(p-1)} = s^{q-1}$（因为 $\frac{1}{p}+\frac{1}{q}=1$ 推出 $(p-1)(q-1)=1$）。由 Young 积分不等式（凸函数图像下的面积关系）：
+$$
+ab \le \int_0^a t^{p-1}\,dt + \int_0^b s^{q-1}\,ds = \frac{a^p}{p} + \frac{b^q}{q}
+$$
+
+$\blacksquare$
+
+---
+
+### Hölder 不等式
+
+> **前驱**：Young 不等式
+>
+> **定理（Hölder）** 设 $p > 1$，$q > 1$ 且 $\dfrac{1}{p} + \dfrac{1}{q} = 1$（称 $p,q$ 为共轭指数），对任意非负实数 $a_i, b_i$（$i=1,\ldots,n$），有
+> $$
+> \sum_{i=1}^n a_i b_i \le \left(\sum_{i=1}^n a_i^p\right)^{1/p} \left(\sum_{i=1}^n b_i^q\right)^{1/q}
+> $$
+> 等号成立当且仅当 $a_i^p$ 与 $b_i^q$ 成比例，即存在常数 $\lambda$ 使得 $a_i^p = \lambda b_i^q$（$i=1,\ldots,n$）。
+
+**含义**：Hölder 是 Cauchy-Schwarz 的推广（$p=q=2$ 时即为 Cauchy-Schwarz）。
+
+**证明（Young 不等式 + 标准化）**：
+
+先证明一个引理：若 $u_1, \ldots, u_n \ge 0$ 且 $v_1, \ldots, v_n \ge 0$ 满足 $\sum_{i=1}^n u_i^p = \sum_{i=1}^n v_i^q = 1$，则 $\sum_{i=1}^n u_i v_i \le 1$。
+
+由 Young 不等式（见上节），对每一项：
+$$
+u_i v_i \le \frac{u_i^p}{p} + \frac{v_i^q}{q}
+$$
+
+求和得：
+$$
+\sum_{i=1}^n u_i v_i \le \frac{1}{p}\sum_{i=1}^n u_i^p + \frac{1}{q}\sum_{i=1}^n v_i^q = \frac{1}{p} + \frac{1}{q} = 1
+$$
+
+**一般情形**：令 $A = \left(\sum_{i=1}^n a_i^p\right)^{1/p}$，$B = \left(\sum_{i=1}^n b_i^q\right)^{1/q}$。若 $A=0$ 或 $B=0$，不等式显然成立。否则令 $u_i = a_i/A$，$v_i = b_i/B$（$i=1,\ldots,n$），则 $\sum_{i=1}^n u_i^p = \sum_{i=1}^n v_i^q = 1$，满足引理条件，故：
+$$
+\sum_{i=1}^n u_i v_i \le 1 \quad \Rightarrow \quad \sum_{i=1}^n \frac{a_i}{A} \cdot \frac{b_i}{B} \le 1 \quad \Rightarrow \quad \sum_{i=1}^n a_i b_i \le AB
+$$
+
+$\blacksquare$
+
+**积分形式**：若 $f,g$ 在 $[a,b]$ 上可积，$p,q > 1$ 且 $\frac{1}{p}+\frac{1}{q}=1$，则
+$$
+\int_a^b |f(x)g(x)|\,dx \le \left(\int_a^b |f(x)|^p\,dx\right)^{1/p} \left(\int_a^b |g(x)|^q\,dx\right)^{1/q}
+$$
+
+---
+
+### 权方和不等式
+
+> **前驱**：Hölder 不等式
+>
+> **定理** 设 $a_i > 0$, $b_i > 0$（$i=1,\ldots,n$），实数 $p > 0$，则
+> $$
+> \sum_{i=1}^n \frac{a_i^{p+1}}{b_i^p} \ge \frac{\left(\sum_{i=1}^n a_i\right)^{p+1}}{\left(\sum_{i=1}^n b_i\right)^p}
+> $$
+> 等号成立当且仅当 $\dfrac{a_1}{b_1} = \dfrac{a_2}{b_2} = \cdots = \dfrac{a_n}{b_n}$。
+
+**特例（$p=1$）**：
+$$
+\sum_{i=1}^n \frac{a_i^2}{b_i} \ge \frac{(a_1 + \cdots + a_n)^2}{b_1 + \cdots + b_n}
+$$
+这是竞赛中极为常用的形式，可由 Cauchy-Schwarz 直接推出：
+$$
+\left(\sum \frac{a_i^2}{b_i}\right)\left(\sum b_i\right) \ge \left(\sum a_i\right)^2
+$$
+
+**证明（Hölder 不等式特例）**：
+
+权方和不等式是 Hölder 不等式的直接推论。设 $q = p+1$，$r = (p+1)/p$，则 $\dfrac{1}{q} + \dfrac{1}{r} = 1$。由 Hölder 不等式：
+
+$$
+\sum_{i=1}^n a_i = \sum_{i=1}^n \frac{a_i}{b_i^{p/(p+1)}} \cdot b_i^{p/(p+1)} \le \left(\sum_{i=1}^n \frac{a_i^{p+1}}{b_i^p}\right)^{1/(p+1)} \cdot \left(\sum_{i=1}^n b_i\right)^{p/(p+1)}
+$$
+
+两边取 $(p+1)$ 次幂：
+
+$$
+\left(\sum_{i=1}^n a_i\right)^{p+1} \le \left(\sum_{i=1}^n \frac{a_i^{p+1}}{b_i^p}\right) \cdot \left(\sum_{i=1}^n b_i\right)^p
+$$
+
+整理即得权方和不等式。等号条件来自 Hölder 的等号条件。$\blacksquare$
+
+---
+
+### Minkowski 不等式
+
+> **前驱**：Hölder 不等式
+>
+> **定理（Minkowski）** 设 $p \ge 1$，对任意实数 $a_i, b_i$（$i=1,\ldots,n$），有
+> $$
+> \left(\sum_{i=1}^n |a_i + b_i|^p\right)^{1/p} \le \left(\sum_{i=1}^n |a_i|^p\right)^{1/p} + \left(\sum_{i=1}^n |b_i|^p\right)^{1/p}
+> $$
+> 等号成立当且仅当 $a_i$ 与 $b_i$ 同号且成比例（或其中一组全为 $0$）。
+
+**含义**：这是三角不等式在 $L^p$ 范数下的推广（$p=2$ 时即欧几里得范数的三角不等式，$p=1$ 时即普通的绝对值三角不等式）。
+
+**证明（Hölder 不等式）**：
+
+当 $p=1$ 时，由 $|a_i+b_i| \le |a_i|+|b_i|$ 求和即得。
+
+设 $p > 1$，记 $q = \frac{p}{p-1}$（即 $\frac{1}{p}+\frac{1}{q}=1$）。令 $S = \sum |a_i+b_i|^p$。
+
+$$
+\begin{aligned}
+S &= \sum_{i=1}^n |a_i+b_i| \cdot |a_i+b_i|^{p-1} \\
+&\le \sum_{i=1}^n |a_i| \cdot |a_i+b_i|^{p-1} + \sum_{i=1}^n |b_i| \cdot |a_i+b_i|^{p-1}
+\end{aligned}
+$$
+
+对两个求和项分别用 Hölder 不等式（注意 $(p-1)q = p$）：
+
+$$
+\sum_{i=1}^n |a_i| \cdot |a_i+b_i|^{p-1} \le \left(\sum |a_i|^p\right)^{1/p} \left(\sum |a_i+b_i|^{(p-1)q}\right)^{1/q} = \left(\sum |a_i|^p\right)^{1/p} \cdot S^{1/q}
+$$
+
+同理第二项。于是：
+$$
+S \le S^{1/q}\left[\left(\sum |a_i|^p\right)^{1/p} + \left(\sum |b_i|^p\right)^{1/p}\right]
+$$
+
+若 $S=0$ 不等式显然成立；若 $S>0$，两边除以 $S^{1/q} = S^{1-1/p}$，得 $S^{1/p}$ 不超过右边括号内的和，即证。$\blacksquare$
+
+**积分形式**：
+$$
+\left(\int_a^b |f(x)+g(x)|^p\,dx\right)^{1/p} \le \left(\int_a^b |f(x)|^p\,dx\right)^{1/p} + \left(\int_a^b |g(x)|^p\,dx\right)^{1/p}
+$$
+
+---
+
+## 四、专门应用不等式
+
+> 🎯 **应用**：这一组结合具体函数类型，在求极限、证明等式/不等式中经常出现。
+
+### 指数与对数不等式
+
+#### 基本指数不等式
+
+> **定理** 对任意实数 $x$，
+> $$
+> e^x \ge 1 + x
+> $$
+> 等号成立当且仅当 $x=0$。
+
+**证明（微分法）**：设 $f(x) = e^x - (1+x)$，则 $f'(x) = e^x - 1$。
+- 当 $x > 0$ 时 $f'(x) > 0$，$f(x)$ 单调增；
+- 当 $x < 0$ 时 $f'(x) < 0$，$f(x)$ 单调减。
+
+故 $x=0$ 是全局最小值点，$f(x) \ge f(0) = 0$。$\blacksquare$
+
+**证明二（凸函数法）**：$e^x$ 是凸函数，由 $e^x \ge e^0 + e^0(x-0) = 1+x$（切线在下方）。$\blacksquare$
+
+> **推广**：对 $x > -1$，$\ln(1+x) \le x$（取对数即得）。等号当且仅当 $x=0$。
+
+#### 对数不等式
+
+> **定理** 对 $x > 0$：
+> $$
+> \frac{x-1}{x} \le \ln x \le x - 1
+> $$
+> 等号成立当且仅当 $x=1$。左侧不等式等价于 $1 - \frac{1}{x} \le \ln x$。
+
+**证明**：令 $f(x) = \ln x - (x-1)$，$f'(x) = \frac{1}{x}-1$。$f(1)=0$ 是最大值，故 $\ln x \le x-1$。
+
+令 $g(x) = \ln x - \frac{x-1}{x} = \ln x - 1 + \frac{1}{x}$，$g'(x) = \frac{1}{x} - \frac{1}{x^2} = \frac{x-1}{x^2}$。$g(1)=0$ 是最小值，故 $\ln x \ge \frac{x-1}{x}$。$\blacksquare$
+
+**推论（常用估计）**：对 $x > 0$，
+$$
+\frac{1}{1+x} < \frac{\ln(1+x)}{x} < 1
+$$
+且
+$$
+1 - \frac{1}{x} < \ln x < x - 1
+$$
+
+---
+
+### 三角函数不等式
+
+#### 基本不等式
+
+> **定理** 对 $0 < x < \dfrac{\pi}{2}$，
+> $$
+> \sin x < x < \tan x
+> $$
+
+**证明**：考虑单位圆中扇形面积与三角形面积关系。
+- 扇形 $OAP$ 面积为 $\frac{1}{2}x$；
+- 三角形 $OAP$ 面积为 $\frac{1}{2}\sin x$；
+- 三角形 $OAT$ 面积为 $\frac{1}{2}\tan x$。
+
+由 $\triangle OAP < $ 扇形 $< \triangle OAT$，即得 $\sin x < x < \tan x$。$\blacksquare$
+
+**推论**：
+- $\displaystyle \cos x < \frac{\sin x}{x} < 1$（$0 < |x| < \frac{\pi}{2}$），这是求 $\lim_{x\to 0}\frac{\sin x}{x}=1$ 的关键夹逼。
+- $|\sin x| \le |x|$ 对所有实数 $x$ 成立。
+
+#### Jordan 不等式
+
+> **定理** 对 $0 \le x \le \dfrac{\pi}{2}$，
+> $$
+> \frac{2}{\pi} x \le \sin x \le x
+> $$
+> 等号成立当且仅当 $x=0$（右侧）或 $x=\frac{\pi}{2}$（左侧）。
+
+**证明**：右侧已证。对左侧，考虑 $f(x) = \frac{\sin x}{x}$ 在 $(0, \frac{\pi}{2}]$ 上单调递减（可通过导数验证），故
+$$
+\frac{\sin x}{x} \ge \frac{\sin(\pi/2)}{\pi/2} = \frac{2}{\pi}
+$$
+$\blacksquare$
+
+---
+
+## 五、积分形式
+
+> 🎯 **前置要求**：一元积分学（定积分、变上限积分）。
+> 这一组是不等式在积分上的推广，概念上与离散形式完全平行，记住"和式 → 积分"的对应即可。
+
+### 柯西-施瓦茨积分形式
+
+> **定理** 设 $f(x), g(x)$ 在 $[a,b]$ 上可积，则
+> $$
+> \left(\int_a^b f(x)g(x)\,dx\right)^2 \le \left(\int_a^b f(x)^2\,dx\right)\left(\int_a^b g(x)^2\,dx\right)
+> $$
+> 等号成立当且仅当 $f(x) = \lambda g(x)$ 几乎处处成立（$\lambda$ 为常数）。
+
+**证明（判别式法，与离散情形完全平行）**：
+
+若 $\int g^2 = 0$（即 $g=0$ a.e.），不等式显然成立。
+
+否则，考虑关于 $t$ 的二次函数：
+$$
+\varphi(t) = \int_a^b [f(x) - t g(x)]^2\,dx = \int f^2 - 2t\int fg + t^2 \int g^2 \ge 0
+$$
+
+由于 $\varphi(t) \ge 0$ 对所有 $t$ 成立，且 $\int g^2 > 0$，判别式 $\Delta \le 0$：
+$$
+\Delta = 4\left(\int fg\right)^2 - 4\left(\int f^2\right)\left(\int g^2\right) \le 0
+$$
+
+即得所求不等式。等号成立 $\Leftrightarrow \Delta = 0 \Leftrightarrow$ 存在 $t$ 使得 $\int (f-tg)^2 = 0 \Leftrightarrow f = tg$ a.e.。$\blacksquare$
+
+---
+
+### 积分形式的 Jensen 不等式
+
+> **定理** 设 $f$ 是区间 $I$ 上的凸函数，$g(x)$ 在 $[a,b]$ 上可积且值域 $\subset I$，则
+> $$
+> f\left(\frac{1}{b-a}\int_a^b g(x)\,dx\right) \le \frac{1}{b-a}\int_a^b f(g(x))\,dx
+> $$
+> 若 $f$ 是凹函数，则不等号反向。
+
+**证明（由离散 Jensen + 积分定义）**：
+
+将 $[a,b]$ $n$ 等分，取采样点 $x_i = a + i\cdot\frac{b-a}{n}$。由离散 Jensen（权重均为 $1/n$）：
+$$
+f\left(\frac{1}{n}\sum_{i=1}^n g(x_i)\right) \le \frac{1}{n}\sum_{i=1}^n f(g(x_i))
+$$
+
+令 $n \to \infty$。凸函数在区间内部连续，故 $f$ 在 $g$ 的值域上连续；又 $g$ 可积，由积分的定义，Riemann 和收敛到积分，两边取极限即得结论。$\blacksquare$
+
+**应用**：取 $f(x) = e^x$（凸函数），$g(x) = \ln h(x)$，得
+$$
+\frac{1}{b-a}\int_a^b h(x)\,dx \ge \exp\left(\frac{1}{b-a}\int_a^b \ln h(x)\,dx\right)
+$$
+即**积分 AM-GM**：函数在区间上的算术平均不小于其几何平均。

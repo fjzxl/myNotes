@@ -10,6 +10,11 @@
     "yzhang.markdown-all-in-one",
     "shd101wyy.markdown-preview-enhanced",
 
+    // === 演示文稿 / 导出版本（康奈尔笔记导 PDF / 幻灯片）===
+    // Marp: Markdown 写 PPT / 导 PDF / 导 HTML
+    // 用法见 templates/cornell-note.md 和 README.md
+    "marp-team.marp-vscode",
+
     // === 通用开发增强 ===
     "eamodio.gitlens",
     "streetsidesoftware.code-spell-checker",
