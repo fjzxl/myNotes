@@ -67,7 +67,7 @@ section.cornell-summary {
 复制下面内容到一个新 `.md` 文件：
 
 ````markdown
----
+
 marp: true
 theme: default
 paginate: true
@@ -94,7 +94,6 @@ style: |
     border-radius: 8px;
     padding: 1rem;
   }
----
 
 <!-- _class: cornell-row -->
 
@@ -125,7 +124,6 @@ style: |
 
 </div>
 
----
 
 <!-- _class: cornell-row -->
 
@@ -146,8 +144,6 @@ style: |
 
 </div>
 
----
-
 <!-- _class: cornell-summary -->
 
 ### 📋 总结（24h 内必填）
@@ -165,7 +161,7 @@ style: |
 下面是一个**完整可运行**的 Cornell × Marp 示例（直接复制保存为 `.md` 即可）。
 
 ````markdown
----
+
 marp: true
 theme: default
 size: 16:9
@@ -194,7 +190,7 @@ style: |
     padding: 1rem;
     font-size: 22px;
   }
----
+
 
 <!-- _class: cornell-row -->
 
@@ -221,7 +217,6 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 
 </div>
 
----
 
 <!-- _class: cornell-row -->
 
@@ -247,7 +242,6 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 
 </div>
 
----
 
 <!-- _class: cornell-summary -->
 
@@ -298,16 +292,14 @@ marp am-gm-cornell.md --pptx
 # 章节封面
 ```
 
+---
+
 ### 3. 分章节用大写罗马数字
 
 ```markdown
 # Ⅰ. 引入
 
----
-
 # Ⅱ. 主体
-
----
 
 # Ⅲ. 总结
 ```
@@ -315,7 +307,6 @@ marp am-gm-cornell.md --pptx
 ### 4. 加分页符（章节间）
 
 ```markdown
----
 
 # 下一章
 ```
