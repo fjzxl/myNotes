@@ -1,0 +1,21 @@
+{
+  // 本工作区推荐的扩展列表
+  // VS Code 打开工作区时会提示安装这些扩展
+  "recommendations": [
+    // 启动时右下角弹"今日技巧/快捷键"提示（中文支持，开箱即用）
+    "WrecklessEngineer.tip-of-the-day",
+
+    // === 知识库 / Markdown 工具链 ===
+    "foam.foam-vscode",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+
+    // === 通用开发增强 ===
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "ms-python.python"
+  ],
+
+  // 不推荐的扩展（避免误装）
+  "unwantedRecommendations": []
+}

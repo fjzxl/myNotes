@@ -141,6 +141,7 @@ git commit -m "init: foam knowledge base"
 ```
 
 **关键点**：
+
 - 链接的笔记**不必事先存在**——Foam 会自动识别并标记为"未创建"
 - 未创建的链接在 Foam 称为 **placeholder / orphan candidate**
 - 点击 `[[未创建的笔记]]`，Foam 会提示创建
@@ -240,7 +241,7 @@ Foam 支持引用具体段落（需开启实验性功能）：
 ![[深度学习#^block-id]]
 ```
 
-启用方式：VS Code 设置 → 搜索 `foam.links` → 开启 `Include block references`。  
+启用方式：VS Code 设置 → 搜索 `foam.links` → 开启 `Include block references`。
 **注意**：此特性与 Obsidian 略有差异，复杂场景建议先验证。
 
 ### 5.5 搜索
@@ -261,11 +262,11 @@ Foam 支持引用具体段落（需开启实验性功能）：
   // Foam 核心
   "foam.edit.linkReferenceDefinitions": "withoutBrackets",
   "foam.files.attachmentExtensions": ["png", "jpg", "jpeg", "gif", "svg", "pdf"],
-  
+
   // Markdown 增强
   "markdown.preview.fontSize": 14,
   "editor.minimap.enabled": false,
-  
+
   // 推荐搭配
   "files.autoSave": "afterDelay",
   "editor.wordWrap": "on",
