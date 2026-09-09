@@ -5,6 +5,8 @@
     - [Markdown All in One](#markdown-all-in-one)
     - [vscode 快捷键](#vscode-快捷键)
   - [链接](#链接)
+  - [知识管理工具](#知识管理工具)
+    - [Foam（推荐）](#foam推荐)
 
 ## shell
 
@@ -38,3 +40,12 @@
 ## 链接
 
 * [VSCode配置大全](https://www.lianxh.cn/details/1004.html)
+
+## 知识管理工具
+
+### Foam（推荐）
+
+- [[Developing/foam-knowledge-base-guide|foam-knowledge-base-guide]] — 完整使用指南
+- 入口页：[[Developing/tools/foam]]
+- 一句话：VS Code 插件，Roam 式双向链接知识库
+- 适用：本仓库所有 Markdown 笔记可作为 Foam 知识库使用

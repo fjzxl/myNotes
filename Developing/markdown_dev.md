@@ -123,3 +123,16 @@ print("Hello, World!")
 ## 链接
 
 * [VS Code 中用 Markdown 做「数字化」学习笔记](https://zhuanlan.zhihu.com/p/366596107)
+
+## 知识管理（Foam 集成）
+
+本目录的所有 Markdown 笔记可以直接作为 **Foam 知识库** 使用：
+
+- 完整文档：[[Developing/foam-knowledge-base-guide|foam-knowledge-base-guide]]
+- 索引入口：[[Developing/tools/foam]]
+
+**为什么 Markdown 工具链与 Foam 强相关**：
+
+- Foam 的图谱、反向链接、wikilink 全部建立在纯 Markdown 之上
+- Markdown All in One 的 `Ctrl+Shift+V` 预览才能看到反向链接面板
+- Paste Image 配置好的图片存储路径，会被 Foam 自动识别为附件节点
