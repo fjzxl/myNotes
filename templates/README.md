@@ -31,6 +31,7 @@ Copy-Item templates\daily-note.md journal\daily\2026-09-09.md
 - [[templates/cornell-note|cornell-note]] —— **康奈尔笔记**（上课/讲座/读书的 3 区笔记法）
 - [[templates/permanent-note|permanent-note]] —— **Zettelkasten 永久笔记**（核心：原子化、概念化）
 - [[templates/literature-note|literature-note]] —— 文献笔记（读书/读文章）
+- [[templates/book-note|book-note]] —— **读书笔记**（整本书的完整沉淀）
 - [[templates/moc|moc]] —— Map of Content 索引页
 
 ### 项目 / 任务类
@@ -50,6 +51,7 @@ Copy-Item templates\daily-note.md journal\daily\2026-09-09.md
 | **cornell-marp** | **康奈尔 × Marp 混合（笔记转幻灯片）** | **marp, cornell-note** |
 | permanent-note | 概念原子笔记 | permanent-note, topic |
 | literature-note | 读书笔记 | literature-note, topic |
+| **book-note** | **读书笔记（整本书：总结/逐章/金句/行动）** | **book-note, topic** |
 | moc | 主题索引 | moc, topic |
 | project | 项目跟踪 | project |
 | code-snippet | 重用代码 | code-snippet, language |
