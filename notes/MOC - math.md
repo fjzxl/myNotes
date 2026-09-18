@@ -97,7 +97,7 @@ updated: 2026-09-09
 
 ### 不等式（专题）
 
-- [[topics/math/inequalities]] —— 完整不等式体系：基础 / 核心 / 高阶 / 应用 / 积分形式
+- [[topics/math/inequalities]] —— 完整不等式体系：总览 / 证明（基础·核心·高阶）/ 多视角理解 / 应用
 
 ## 学习方法
 
