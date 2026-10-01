@@ -1,6 +1,7 @@
 # ES6 教程
 
 > 面向对象：已有 JavaScript 基础，希望系统掌握 ES6+ 核心特性的开发者。
+> 后续学习：[[topics/programming/Web/typescript/intro]]（静态类型与工程实践）→ [[topics/programming/Web/typescript/interface]]（理解接口契约）→ [[topics/programming/Web/typescript/type-system]]（类型系统进阶）；编程导航见 [[notes/MOC - programming]]。
 
 ## 1. 引言
 
@@ -1904,4 +1905,3 @@ async function fetchData() {
 ```
 
 ---
-

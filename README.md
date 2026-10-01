@@ -6,7 +6,7 @@
 
 - **4 大主题**：`programming` / `ai` / `math` / `history`
 - **`tools` 提升为一级主题**（与编程/AI 并列）
-- **5 个 MOC（Map of Content）** 索引页放在 `notes/`
+- **4 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
 - **附件独立**：所有图片/PDF/代码片段放在 `attachments/`，与笔记体系解耦
 - **空目录有 stub README**：每个空目录都放了一个 `README.md` 引导说明
 - **本地优先 + Git 版本控制**：单仓库跨设备同步
@@ -36,7 +36,9 @@ myNotes/
 │       ├── Foam.md
 │       ├── foam-knowledge-base-guide.md
 │       ├── Markdown.md
-│       └── Shortcuts.md
+│       ├── Shortcuts.md
+│       ├── marp-guide.md           # Marp 完整使用指南
+│       └── marp-screencast-script.md  # Marp 5 分钟录屏脚本
 │
 ├── notes/                          # Zettelkasten 永久笔记 + MOC
 │   ├── MOC - programming.md
@@ -48,9 +50,20 @@ myNotes/
 ├── resources/                      # 引用资料、skills 速查
 │   └── skills.md
 │
-├── templates/                      # 笔记模板
+├── templates/                      # 笔记模板（12 个）
 │   ├── README.md
-│   └── daily-note.md               # 每日笔记模板
+│   ├── daily-note.md               # 每日笔记
+│   ├── cornell-note.md             # 康奈尔笔记（HTML 两栏版式）
+│   ├── cornell-marp.md             # 康奈尔 × Marp（笔记转幻灯片）
+│   ├── book-note.md                # 读书笔记（整本书沉淀）
+│   ├── book-chapter.md             # 章节阅读与主动回忆
+│   ├── skill-learning.md           # 技能学习计划与验收
+│   ├── practice-log.md             # 练习、纠错与复测
+│   ├── permanent-note.md           # Zettelkasten 永久笔记
+│   ├── literature-note.md          # 文献笔记
+│   ├── moc.md                      # MOC 索引页
+│   ├── project.md                  # 项目跟踪
+│   └── code-snippet.md             # 代码片段
 │
 ├── archive/                        # 归档
 │   └── old-structure/              # 2026-09 重构前的旧目录
@@ -60,7 +73,7 @@ myNotes/
 │   │   ├── programming/            # Java/ + Linux/ + vscode-remote-dev/
 │   │   ├── ai/                     # 待填充（有 stub README）
 │   │   ├── history/                # 待填充（有 stub README）
-│   │   └── math/                   # 待填充（有 stub README）
+│   │   └── math/                   # inequalities/（不等式专题插图 × 20）
 │   ├── pdfs/                       # 待填充（有 stub README）
 │   └── code-snippets/              # 待填充（有 stub README）
 │
@@ -199,6 +212,11 @@ myNotes/
 |------|---------|---------|
 | `daily-note` | 纯 Markdown | 无 |
 | **`cornell-note`** | **HTML + 内联 CSS**（两栏版式） | **`shd101wyy.markdown-preview-enhanced`** |
+| **`cornell-marp`** | **HTML + Marp**（笔记转幻灯片） | **`marp-team.marp-vscode`（或 Marp CLI）** |
+| `book-note` | 纯 Markdown | 无 |
+| `book-chapter` | 纯 Markdown | 无 |
+| `skill-learning` | 纯 Markdown | 无 |
+| `practice-log` | 纯 Markdown | 无 |
 | `permanent-note` | 纯 Markdown | 无 |
 | `literature-note` | 纯 Markdown | 无 |
 | `moc` | 纯 Markdown | 无 |
@@ -252,6 +270,10 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 | `cornell` + Tab | **康奈尔笔记骨架（3 区：线索/笔记/总结）** | `templates/cornell-note.md` |
 | `perm` + Tab | Zettelkasten 永久笔记骨架 | `templates/permanent-note.md` |
 | `lit` + Tab | 文献笔记骨架 | `templates/literature-note.md` |
+| `book` + Tab | **读书笔记骨架（整本书沉淀）** | `templates/book-note.md` |
+| `chapter` + Tab | 章节阅读与主动回忆 | `templates/book-chapter.md` |
+| `skill` + Tab | 技能学习计划与验收 | `templates/skill-learning.md` |
+| `practice` + Tab | 单次练习、纠错与复测 | `templates/practice-log.md` |
 | `moc` + Tab | MOC 索引页骨架 | `templates/moc.md` |
 | `proj` + Tab | 项目笔记骨架 | `templates/project.md` |
 | `code` + Tab | 代码片段骨架 | `templates/code-snippet.md` |
@@ -262,18 +284,25 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 
 ### `templates/` 完整模板清单
 
-| 模板 | 用途 | 大小 |
-|------|------|------|
-| `daily-note.md` | 每日笔记（PARA 1） | 621B |
-| **`cornell-note.md`** | **康奈尔笔记（3 区：线索 / 笔记 / 总结）** | **2.2KB** |
-| `permanent-note.md` | **Zettelkasten 永久笔记（核心）** | 882B |
-| `literature-note.md` | 读书/读文章 | 1.0KB |
-| `moc.md` | 主题索引页 | 994B |
-| `project.md` | 项目跟踪 | 986B |
-| `code-snippet.md` | 重用代码 | 560B |
-| `README.md` | 模板目录说明 | 1.7KB |
+| 模板 | 用途 |
+|------|------|
+| `daily-note.md` | 每日笔记（PARA 1） |
+| **`cornell-note.md`** | **康奈尔笔记（3 区：线索 / 笔记 / 总结）** |
+| **`cornell-marp.md`** | **康奈尔 × Marp 混合（笔记转幻灯片）** |
+| `book-note.md` | **读书笔记（整本书：总结/逐章/金句/行动）** |
+| `book-chapter.md` | 章节阅读、论证分析与主动回忆 |
+| `skill-learning.md` | 技能学习计划、能力拆解与验收 |
+| `practice-log.md` | 单次练习、反馈、纠错与复测 |
+| `permanent-note.md` | **Zettelkasten 永久笔记（核心）** |
+| `literature-note.md` | 读书/读文章 |
+| `moc.md` | 主题索引页 |
+| `project.md` | 项目跟踪 |
+| `code-snippet.md` | 重用代码 |
+| `README.md` | 模板目录说明 |
 
 详见 [[templates/README]]。
+
+读书可用 [[templates/book-chapter|章节笔记]] 记录每次阅读，再汇总到 [[templates/book-note|整本书笔记]]；技能学习可用 [[templates/skill-learning|学习计划]] 定目标，配合 [[templates/practice-log|练习记录]] 持续练习、纠错和复测。
 
 ### 完整工作流
 
@@ -339,4 +368,22 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - ① **Marp 幻灯片实战**：`topics/programming/Java/slides/Servlet-lifecycle.md`（6.5KB，11 张幻灯片，含代码/表格/ASCII 时序图）
   - ② **Cornell × Marp 混合模板**：`templates/cornell-marp.md`（5.5KB，含完整 CSS + AM-GM 实战示例）
   - ③ **5 分钟录屏脚本**：`topics/tools/marp-screencast-script.md`（8KB，5 节时间轴 + 录制清单 + 发布建议）
-  - 更新 MOC、Mar p guide、templates README 引用
+  - 更新 MOC、marp-guide、templates README 引用
+
+- **2026-09-17 ~ 09-19 不等式专题大扩充 + book-note 模板**：
+  - `topics/math/inequalities.md` 扩充至 1657 行：高阶不等式（Young / Hölder / 权方和 / Minkowski）、多视角理解（向量·矩阵·几何·物理）、应用（指数/对数/三角/积分）
+  - 新增 20 张几何插图，统一放 `attachments/images/math/inequalities/`
+  - 新增 `templates/book-note.md` 读书笔记模板 + `book` + Tab 快捷片段
+
+- **2026-09-30 链接与目录同步**：
+  - 全库 wikilink 统一为工作区根相对路径：修复 `templates/cornell-marp`、`Java/slides/Servlet-lifecycle`、`marp-screencast-script`、`marp-guide`、`Foam` 中的 `../` 相对链接与裸文件名链接
+  - README 目录结构 / 模板清单 / snippet 表与实际文件同步
+  - `attachments/images/math/README.md` 更新为实际结构（inequalities/ × 20）
+  - MOC - math / MOC - programming 更新索引与更新记录
+
+- **2026-09-30 TypeScript 笔记体系**：
+  - 补全 `topics/programming/Web/typescript/intro.md`（26 行骨架 → 1100+ 行完整入门教程）
+  - 新增 `topics/programming/Web/typescript/type-system.md`（进阶篇：结构化类型、型变、条件类型、infer、递归、类型体操）
+  - 新增 `topics/programming/Web/typescript/interface.md`（对照 JavaScript 解释接口契约的用途与边界）
+  - 笔记间互链成网：javascript / es6 / intro / interface / type-system 按学习顺序互相导航，MOC 收录全部
+  - 三篇笔记的全部类型示例经 tsc 5.9 `--strict` 实测校验；据此修正 satisfies 字符串字面量拓宽的描述、示例类型 `Range` 与 DOM 全局类型重名、结构化示例中多余属性检查的表述等 3 处问题

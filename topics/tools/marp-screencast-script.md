@@ -254,13 +254,13 @@ marp demo.md --pdf
 **画面**：回到 VS Code 完整结构
 
 **台词**：
-> "回顾一下：Marp = Markdown 写 PPT。一份源文件、纯文本可 Git 控制、PDF/HTML/PPTX 多端输出。下次要做演示文稿，不用打开 PowerPoint，直接 Markdown 走起。完整的 Marp 指南在我知识库的 [[marp-guide]]，4 个实战示例直接抄作业。"
+> "回顾一下：Marp = Markdown 写 PPT。一份源文件、纯文本可 Git 控制、PDF/HTML/PPTX 多端输出。下次要做演示文稿，不用打开 PowerPoint，直接 Markdown 走起。完整的 Marp 指南在我知识库的 [[topics/tools/marp-guide]]，4 个实战示例直接抄作业。"
 
 **字幕**：
 ```
-📚 完整指南：[[marp-guide]]
-🎯 Servlet 实战：[[../programming/Java/slides/Servlet-lifecycle]]
-📐 Cornell × Marp：[[/templates/cornell-marp]]
+📚 完整指南：[[topics/tools/marp-guide]]
+🎯 Servlet 实战：[[topics/programming/Java/slides/Servlet-lifecycle]]
+📐 Cornell × Marp：[[templates/cornell-marp]]
 ```
 
 **结束动画**：
@@ -348,8 +348,8 @@ marp demo.md --pdf
 
 ## 📚 相关资源
 
-- [[marp-guide]] —— Marp 完整使用指南
+- [[topics/tools/marp-guide]] —— Marp 完整使用指南
 - [[templates/cornell-marp]] —— 康奈尔 × Marp 混合模板
-- [[../programming/Java/slides/Servlet-lifecycle]] —— Marp 实战示例
+- [[topics/programming/Java/slides/Servlet-lifecycle]] —— Marp 实战示例
 - [Marp 官方文档](https://marpit.marp.app/) —— 主题、指令、API
 - [OBS Studio 教程](https://obsproject.com/) —— 录屏/直播

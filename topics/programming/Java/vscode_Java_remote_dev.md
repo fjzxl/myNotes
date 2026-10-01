@@ -30,7 +30,7 @@
 
 ### 配置ssh remote
 
-![配置 ssh remote](/Source//pics/topics/programming/add_remote.png)
+![配置 ssh remote](/attachments/images/programming/vscode-remote-dev/add_remote.png)
 
 打开remote
 ![打开 remote](/attachments/images/programming/vscode-remote-dev/open_remote.png)

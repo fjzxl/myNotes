@@ -428,7 +428,7 @@ $$|3x + 1 - 7| = 3|x - 2| < 3 \cdot \frac{\epsilon}{3} = \epsilon$$
 
 ### 示例 3：康奈尔笔记版
 
-如果用 [[cornell-note]] 模板，可以用 `<!-- _class: ... -->` 模拟两栏：
+如果用 [[templates/cornell-note]] 模板，可以用 `<!-- _class: ... -->` 模拟两栏：
 
 ```markdown
 ---
@@ -682,7 +682,7 @@ marp my-talk.md --pptx
 
 ⚠️ 复杂布局/字体可能丢失。**导 PDF 更稳**。
 
-### Q7：怎么和 [[Foam]] 配合？
+### Q7：怎么和 [[topics/tools/Foam]] 配合？
 
 Marp 文档**可以**放 Foam 知识库：
 - 放在 `topics/.../slides/` 子目录
@@ -691,7 +691,7 @@ Marp 文档**可以**放 Foam 知识库：
 
 ### Q8：康奈尔笔记能转 Marp 幻灯片吗？
 
-可以！[[cornell-note]] 模板本身是 HTML/Markdown，Marp 用 `style: |` 配 CSS Grid 模拟两栏即可。详见 [[#示例 3：康奈尔笔记版]]。
+可以！[[templates/cornell-note]] 模板本身是 HTML/Markdown，Marp 用 `style: |` 配 CSS Grid 模拟两栏即可。详见 [[#示例 3：康奈尔笔记版]]。
 
 ---
 

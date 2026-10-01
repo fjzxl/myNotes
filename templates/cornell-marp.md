@@ -14,7 +14,7 @@ title: 康奈尔笔记 · Marp 版
 
 把笔记做成可演示的幻灯片，保留两栏版式
 
-📚 配套：[[cornell-note]]、[[../../topics/tools/marp-guide]]
+📚 配套：[[templates/cornell-note]]、[[topics/tools/marp-guide]]
 
 ---
 
@@ -238,7 +238,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 2. **前向步**：$n \to 2n$（分组）
 3. **后向步**：$2^k \to 2^k - 1$（补元素）
 
-详见：[[../../math/inequalities#均值不等式]]
+详见：[[topics/math/inequalities#均值不等式]]
 
 </div>
 
@@ -250,7 +250,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 - **核心**：算术平均 ≥ 几何平均
 - **关键点**：等号当且仅当所有数相等
 - **应用**：最值证明、不等式链的起点
-- **配套笔记**：[[../../math/inequalities]]
+- **配套笔记**：[[topics/math/inequalities]]
 
 ````
 
@@ -330,6 +330,6 @@ marp am-gm-cornell.md --pptx
 
 ## 📚 相关资源
 
-- [[cornell-note]] —— 标准康奈尔笔记模板（HTML + CSS 版）
-- [[../../topics/tools/marp-guide]] —— Marp 完整使用指南
-- [[../../topics/programming/Java/slides/Servlet-lifecycle]] —— Marp 幻灯片实战示例
+- [[templates/cornell-note]] —— 标准康奈尔笔记模板（HTML + CSS 版）
+- [[topics/tools/marp-guide]] —— Marp 完整使用指南
+- [[topics/programming/Java/slides/Servlet-lifecycle]] —— Marp 幻灯片实战示例

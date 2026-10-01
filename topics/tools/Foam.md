@@ -4,7 +4,7 @@
 
 ## 完整文档
 
-主文档见 [[foam-knowledge-base-guide]] —— 包含安装、配置、目录结构、工作流、与 Obsidian 对比、FAQ。
+主文档见 [[topics/tools/foam-knowledge-base-guide]] —— 包含安装、配置、目录结构、工作流、与 Obsidian 对比、FAQ。
 
 ## 一句话总结
 
@@ -41,4 +41,4 @@
 - Paste Image
 - Code Spell Checker
 
-详见 [[foam-knowledge-base-guide#9-搭配扩展推荐]]。
+详见 [[topics/tools/foam-knowledge-base-guide#9-搭配扩展推荐]]。

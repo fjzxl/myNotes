@@ -8,23 +8,23 @@ tags:
 
 # 🖼️ Math Images · 数学主题相关图片
 
-> 存放在数学学习/研究中引用的图片：手写证明、几何图、公式截图、参考书扫描等。
+> 存放在数学学习/研究中引用的图片：几何直观图、图解证明、函数图像等。
 
-## 子结构建议
+## 当前结构
 
 ```
 math/
-├── proofs/                # 手写证明
-├── diagrams/              # 几何/函数图
-├── formula-screenshots/   # 公式截图
-├── textbook-snippets/     # 参考书片段
-└── exercises/             # 习题图
+└── inequalities/          # 不等式专题插图 × 20
+                          #（AM-GM / 柯西-施瓦茨 / 琴生 / Young / Hölder /
+                          #  切比雪夫 / 排序 / Minkowski / 对数 / 三角 / 积分 / 信息论）
 ```
+
+后续新增主题时按同样方式建子目录（如 `calculus/`、`linear-algebra/`）。
 
 ## 引用
 
-在 `topics/math/*.md` 中：
+在 `topics/math/*.md` 中用标准 Markdown 图片语法（绝对路径以 `/attachments/` 开头）：
 
 ```markdown
-见 [[attachments/images/math/diagrams/unit-circle.png]]
+![AM-GM 的半圆几何](/attachments/images/math/inequalities/amgm-semicircle.png)
 ```

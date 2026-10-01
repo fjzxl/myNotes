@@ -37,7 +37,7 @@ style: |
 
 MiniMax151938 · 2026-09-10
 
-📚 配套笔记：[[../Servlet]]
+📚 配套笔记：[[topics/programming/Java/Servlet]]
 
 ---
 
@@ -263,9 +263,9 @@ A：`HttpServlet.service()` 内部根据 `req.getMethod()` 分发到对应 `doXx
 
 ## 配套资源
 
-- 📖 详细笔记：[[../Servlet]]
-- 📊 源码：[[../vscode_Java_dev]]
-- 🧰 工具：[[../../../tools/marp-guide]]
+- 📖 详细笔记：[[topics/programming/Java/Servlet]]
+- 📊 源码：[[topics/programming/Java/vscode_Java_dev]]
+- 🧰 工具：[[topics/tools/marp-guide]]
 
 ---
 

@@ -1,5 +1,7 @@
 # JavaScript 核心知识体系
 
+> TypeScript 在 JavaScript 语法上增加静态类型；建议先掌握本文和 [[topics/programming/Web/es6]]，再学习 [[topics/programming/Web/typescript/intro]]、[[topics/programming/Web/typescript/interface]] 与 [[topics/programming/Web/typescript/type-system]]。完整编程导航见 [[notes/MOC - programming]]。
+
 ---
 
 ## 📚 学习路线图
@@ -9648,4 +9650,3 @@ storeWithLogger.dispatch({ type: 'INCREMENT' });
 | Variable Object | 变量对象 | 第3章 | 执行上下文中存储变量的内部对象 |
 | WeakMap / WeakSet | 弱引用映射/集合 | 第2章 | 键为弱引用、不影响垃圾回收的数据结构 |
 | Yield | 产出/让步 | 第4章/第6章 | 生成器中交出执行权的关键字 |
-

@@ -4,7 +4,7 @@ tags:
   - moc
   - programming
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-30
 ---
 
 # MOC · Programming（编程地图）
@@ -26,6 +26,7 @@ updated: 2026-09-09
 - [[topics/tools/Markdown]] —— 写作工具链
 - [[topics/tools/Foam]] —— 知识库管理
 - [[topics/tools/marp-guide]] —— Marp 幻灯片（Markdown → PDF/PPT）
+- [[topics/tools/marp-screencast-script]] —— Marp 5 分钟录屏脚本
 
 ## 按语言分类
 
@@ -47,9 +48,13 @@ updated: 2026-09-09
 ### Web（前端三件套 + TypeScript）
 
 - [[topics/programming/Web/css]]
-- [[topics/programming/Web/es6]]
-- [[topics/programming/Web/javascript]]
-- [[topics/programming/Web/typescript/intro]]
+- [[topics/programming/Web/javascript]] —— JavaScript 语言与运行时基础
+- [[topics/programming/Web/es6]] —— ES6+ 语法与平台特性
+- [[topics/programming/Web/typescript/intro]] —— TS 入门与工程实践（建议先掌握 JS / ES6+）
+- [[topics/programming/Web/typescript/interface]] —— 从 JavaScript 对象约定理解 TypeScript 接口
+- [[topics/programming/Web/typescript/type-system]] —— TS 类型系统进阶（结构化类型、型变、条件类型与类型体操）
+
+> **TypeScript 学习路线**：[[topics/programming/Web/javascript]] → [[topics/programming/Web/es6]] → [[topics/programming/Web/typescript/intro]] → [[topics/programming/Web/typescript/interface]] → [[topics/programming/Web/typescript/type-system]]。前两篇讲运行时语言与语法，后三篇依次介绍类型基础、接口契约和类型编程。
 
 ## 按平台分类
 
@@ -101,3 +106,4 @@ tag:programming AND -ORPHANS:false    # 已连接（不是孤立节点）的编�
 ## 更新记录
 
 - **2026-09-09** —— 初始创建（重构后）
+- **2026-09-30** —— 索引维护：核心笔记纳入 [[topics/tools/marp-screencast-script]]；Web 分类新增 TypeScript 类型系统与接口专题，并补充 TS 学习路线

@@ -4,7 +4,7 @@ tags:
   - moc
   - math
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-30
 ---
 
 # MOC · Math（数学地图）
@@ -123,3 +123,5 @@ tag:math AND tag:kaoyan               # 考研相关
 ## 更新记录
 
 - **2026-09-09** —— 初始创建（重构后），纳入考研数一完整大纲
+- **2026-09-17 ~ 09-19** —— [[topics/math/inequalities]] 大扩充（现 1657 行 / 20 张插图）：高阶不等式（Young / Hölder / 权方和 / Minkowski）、多视角理解（向量·矩阵·几何·物理）、应用（指数/对数/三角/积分），插图统一放 `attachments/images/math/inequalities/`
+- **2026-09-30** —— 索引维护：同步不等式专题最新结构与更新记录
