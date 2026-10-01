@@ -65,8 +65,10 @@ myNotes/
 │   ├── project.md                  # 项目跟踪
 │   └── code-snippet.md             # 代码片段
 │
-├── archive/                        # 归档
-│   └── old-structure/              # 2026-09 重构前的旧目录
+├── archive/                        # 归档（当前为空）
+│
+├── scripts/                        # 仓库工具
+│   └── check_notes.py              # 轻量校验：链接/图片/frontmatter/围栏/表格/编码
 │
 ├── attachments/                    # 附件独立王国
 │   ├── images/
@@ -114,7 +116,7 @@ myNotes/
 | `.vscode/settings.json` | 工作区设置（编码/行尾/终端/Foam/Tip） |
 | `.vscode/extensions.json` | 推荐扩展（打开工作区时提示安装） |
 | `.vscode/foam.code-snippets` | 笔记模板快捷片段（键入 prefix + Tab） |
-| `templates/*.md` | Foam 完整模板（Ctrl+Shift+P → "Foam: Create Note from Template"） |
+| `templates/*.md` | Foam 完整模板（Ctrl+Shift+P → "Foam: Create New Note From Template"） |
 | `.gitignore` | Git 忽略规则 |
 
 ### `.vscode/settings.json` 关键配置
@@ -170,15 +172,15 @@ myNotes/
 
 ```json
 {
-  "foam.templates.folderPath": "./templates",  // 模板源目录
-  "foam.templates.snippetPrefix": "tpl",       // 列表触发前缀
-  "foam.templates.dateFormat": "YYYY-MM-DD"    // 模板 {{date}} 格式
+  // 模板目录（默认 .foam/templates；指到 templates/ 即可复用本仓库模板）
+  "foam.templates.folder": "templates"
 }
 ```
 
 使用：
-- `Ctrl+Shift+P` → `Foam: Create Note from Template`（列表）
-- 或键入 `tpl` + Tab（弹列表）
+- `Ctrl+Shift+P` → `Foam: Create New Note From Template`，从列表选择模板
+- 模板中的 `$FOAM_TITLE`、`$FOAM_DATE_*` 等 Foam 变量会自动展开；`{{...}}` 字段需手动填写
+- 快速骨架走本地 snippets：`daily` / `cornell` / `perm` 等 + Tab
 
 #### 📝 Markdown 智能补全
 
@@ -240,8 +242,8 @@ npm install -g @marp-team/marp-cli
 #    theme: default
 #    ---
 
-# 3. 命令行导 PDF
-marp templates/cornell-note.md --pdf
+# 3. 命令行导 PDF（cornell-marp 才是 Marp 文档）
+marp templates/cornell-marp.md --pdf
 ```
 
 VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上方工具栏）可直接预览幻灯片 / 导 PDF。
@@ -365,7 +367,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - 在 Shortcuts.md、MOC - programming.md、README.md 添加链接
 
 - **2026-09-10 三个 Marp 实战成果**：
-  - ① **Marp 幻灯片实战**：`topics/programming/Java/slides/Servlet-lifecycle.md`（6.5KB，11 张幻灯片，含代码/表格/ASCII 时序图）
+  - ① **Marp 幻灯片实战**：`topics/programming/Java/slides/Servlet-lifecycle.md`（6.5KB，15 张幻灯片，含代码/表格/ASCII 时序图）
   - ② **Cornell × Marp 混合模板**：`templates/cornell-marp.md`（5.5KB，含完整 CSS + AM-GM 实战示例）
   - ③ **5 分钟录屏脚本**：`topics/tools/marp-screencast-script.md`（8KB，5 节时间轴 + 录制清单 + 发布建议）
   - 更新 MOC、marp-guide、templates README 引用
@@ -387,3 +389,9 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - 新增 `topics/programming/Web/typescript/interface.md`（对照 JavaScript 解释接口契约的用途与边界）
   - 笔记间互链成网：javascript / es6 / intro / interface / type-system 按学习顺序互相导航，MOC 收录全部
   - 三篇笔记的全部类型示例经 tsc 5.9 `--strict` 实测校验；据此修正 satisfies 字符串字面量拓宽的描述、示例类型 `Range` 与 DOM 全局类型重名、结构化示例中多余属性检查的表述等 3 处问题
+
+- **2026-10-01 结构优化 + 全库校验修复**：
+  - 拆分超长教程：`javascript.md`（9600+ 行 → 总览导航页 + 8 章笔记）、`css.md`（5100+ 行 → 总览导航页 + 10 阶段笔记），总览保留学习路线/图谱/附录并新增章节导航，章节笔记互相链接前后章
+  - 全库主题笔记补齐 frontmatter（title / tags / created / updated，共 26 篇）
+  - 新增 `scripts/check_notes.py`：校验 wikilink / Markdown 链接锚点 / 图片目标 / frontmatter / 代码围栏配对 / 表格列数 / 编码与行尾
+  - 依据外部审阅报告集中修复：Foam 工作流说明按官方文档校正（`foam.templates.folder`、`Foam: Create New Note From Template`、`Foam: Show Graph`、Backlinks 面板、每日笔记配置）、Marp 示例可运行化（cornell-marp 两示例补 `---` 与分页、marp-guide 嵌套围栏与颜色值加引号）、Servlet/JavaScript/ES6 示例缺陷、MoE 与不等式等概念表述，共 30+ 处

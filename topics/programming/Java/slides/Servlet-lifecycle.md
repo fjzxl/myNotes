@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: gaia
 paginate: true
 size: 16:9
@@ -27,6 +27,11 @@ style: |
   section pre code {
     font-size: 18px;
   }
+tags:
+  - programming
+  - java
+created: 2026-09-10
+updated: 2026-10-01
 ---
 
 <!-- _class: lead -->
@@ -64,7 +69,8 @@ MiniMax151938 · 2026-09-10
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req,
-                         HttpServletResponse resp) {
+                         HttpServletResponse resp)
+            throws ServletException, IOException {
         resp.setContentType("text/html");
         resp.getWriter().println("<h1>Hello, World!</h1>");
     }
@@ -79,7 +85,7 @@ Servlet **不直接运行**，由 **Servlet 容器**（如 Tomcat）管理：
 
 - 🏗️ **生命周期管理** —— 创建、初始化、销毁
 - 🔌 **请求路由** —— 根据 URL 找到对应 Servlet
-- 🧵 **多线程** —— 每个请求一个线程
+- 🧵 **多线程** —— 每个请求由容器线程池中的线程处理
 - 🛡️ **安全** —— 沙箱、权限控制
 
 **常见容器**：Tomcat / Jetty / Undertow / WildFly
@@ -110,7 +116,7 @@ graph LR
 
 - **类加载**：ClassLoader 加载 `.class` 文件
 - **实例化**：`new ServletClass()` 调用无参构造
-- **单例**：每个 Servlet 类在容器中**只有一个实例**
+- **单例**：同一 Web 应用中，每个 Servlet 注册默认**只有一个实例**（分布式部署等场景除外）
 
 ```java
 // 容器内部伪代码
@@ -155,7 +161,7 @@ protected void service(HttpServletRequest req,
 }
 ```
 
-**调用时机**：每个 HTTP 请求 → 一个新线程 → 调一次 `service()`
+**调用时机**：每个 HTTP 请求 → 由容器线程池分配线程 → 调一次 `service()`
 
 ---
 
@@ -245,7 +251,7 @@ public void destroy() {
 
 **Q1：Servlet 是单例还是多例？**
 
-A：**单例**。一个 Servlet 类在容器中只有一个实例，多个请求共享。
+A：默认**单例**。同一个 Servlet 注册在同一 Web 应用（同一 JVM）中只有一个实例，多个请求共享；分布式部署或同一类声明为多个 Servlet 时会有多个实例。
 
 **Q2：Servlet 线程安全吗？**
 

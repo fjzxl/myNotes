@@ -1,3 +1,10 @@
+---
+title: Markdown配置
+tags:
+  - tools
+created: 2026-09-10
+updated: 2026-09-10
+---
 # Markdown配置
 
 ## vscode插件
@@ -29,7 +36,7 @@ Markmap
 }
 ```
 
-> **路径变更说明**：自 2026-09 重构后，所有图片统一存放在 `attachments/images/`（旧路径 `attachments/images/` 已废弃）。
+> **路径变更说明**：自 2026-09 重构后，所有图片统一存放在 `attachments/images/`，旧目录中的图片已迁移到该目录。
 
 ## 语法
 

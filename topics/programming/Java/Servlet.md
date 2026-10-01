@@ -1,3 +1,11 @@
+---
+title: Servlet
+tags:
+  - programming
+  - java
+created: 2026-09-10
+updated: 2026-09-10
+---
 # Servlet
 
 ## 父子modules构建
@@ -151,15 +159,15 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>${sevlet.version}</version>
+            <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-    
+
         <!-- JSP -->
         <dependency>
         <groupId>javax.servlet.jsp</groupId>
         <artifactId>jsp-api</artifactId>
-        <version>${jsp.version}</version>
+        <version>2.2</version>
         <scope>provided</scope>
         </dependency>
     
@@ -167,7 +175,7 @@
         <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>jstl</artifactId>
-        <version>${jstl.version}</version>
+        <version>1.2</version>
         <scope>runtime</scope>
         </dependency>
     </dependencies>
@@ -363,8 +371,8 @@ resp.setContentType("text/html;charset=UTF-8");
 ### 请求转发与重定向的区别
 
 **不同1：语法不同**
-请求转发：request.getRequestDispatcher("dis02").forword(request,response);
-重定向：response.sentRedirect("red02");
+请求转发：request.getRequestDispatcher("dis02").forward(request,response);
+重定向：response.sendRedirect("red02");
 
 **不同2：请求不同**
 请求转发：是一个请求

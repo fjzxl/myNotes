@@ -1,3 +1,10 @@
+---
+title: Foam
+tags:
+  - tools
+created: 2026-09-10
+updated: 2026-10-01
+---
 # Foam
 
 > VS Code 上的 Roam 式个人知识管理扩展。**所有内容都是纯 Markdown 文件**，靠 `[[wikilink]]` 建立双向连接。
@@ -12,9 +19,9 @@
 
 ## 核心特性速查
 
-- **[[wikilink]]** —— 双向链接，引用不存在的笔记会自动标记
-- **Backlinks** —— 切换 Markdown 预览（`Ctrl+K V`）即可看到反向链接
-- **Graph** —— `Ctrl+Shift+P` → `Foam: Open Graph`，本地浏览器看图谱
+- **`[[wikilink]]`** —— 双向链接，引用不存在的笔记会自动标记
+- **Backlinks** —— 在 Foam 侧边栏的 Backlinks 面板查看反向链接
+- **Graph** —— `Ctrl+Shift+P` → `Foam: Show Graph`，在 VS Code 内查看图谱
 - **Daily Notes** —— 每日自动生成/打开
 - **F2 自动重命名** —— 重命名笔记时自动更新所有引用
 
@@ -32,7 +39,7 @@
 
 1. 在 VS Code 打开本目录：`code .`
 2. 安装 [Foam 扩展](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)
-3. `Ctrl+Shift+P` → `Foam: Open Graph` 即可看到所有笔记的关系图
+3. `Ctrl+Shift+P` → `Foam: Show Graph` 即可看到所有笔记的关系图
 
 ## 推荐搭配扩展
 

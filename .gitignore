@@ -45,6 +45,10 @@ out/
 dist-ssr
 coverage
 *.local
+
+# Python
+__pycache__/
+*.py[cod]
 .env
 .env.local
 .env.*.local

@@ -32,7 +32,7 @@ date: {{date}}
 <style>
   .cornell-page {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 3fr 7fr;
     gap: 1.2rem;
     border: 1px solid #ccc;
     border-radius: 6px;

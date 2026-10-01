@@ -1,3 +1,11 @@
+---
+title: Android
+tags:
+  - programming
+  - android
+created: 2026-09-10
+updated: 2026-09-10
+---
 # Android
 
 ## 安装Android Studio

@@ -69,13 +69,13 @@ updated: 2026-09-09
 
 - [ ] 待添加
 
-## Foam 图谱查询
+## 按标签查找
 
-```
-tag:history                           # 所有历史笔记
-tag:history AND tag:人物              # 人物专题
-tag:history AND tag:事件              # 事件专题
-```
+Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板，或 `Ctrl+Shift+P` → `Foam: Search Tag`；连接与孤立情况在 `Foam: Show Graph` 面板查看。
+
+- `history` —— 所有历史笔记
+- `人物` —— 人物专题
+- `事件` —— 事件专题
 
 ## 相关 MOC
 

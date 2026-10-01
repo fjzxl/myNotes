@@ -34,15 +34,13 @@ tags:
 
 - [[笔记 3]]
 
-## 按标签筛选（Foam 查询）
+## 按标签查找
 
-> 在 Foam 图谱面板里用这些查询：
+> Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板，或 `Ctrl+Shift+P` → `Foam: Search Tag`；连接与孤立情况在 `Foam: Show Graph` 面板查看。
 
-```
-tag:{{topic}}                      # 所有此主题的笔记
-tag:{{topic}} AND tag:foudation    # 基础笔记
-tag:{{topic}} AND -tag:archived    # 未归档的
-```
+- `{{topic}}` —— 本主题全部笔记
+- `{{topic}}/基础` —— 基础篇（层级标签）
+- `{{topic}}/进阶` —— 进阶篇
 
 ## 待补充
 

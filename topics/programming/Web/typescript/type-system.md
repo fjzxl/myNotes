@@ -1,3 +1,11 @@
+---
+title: TypeScript 类型系统
+tags:
+  - programming
+  - typescript
+created: 2026-09-30
+updated: 2026-10-01
+---
 # TypeScript 类型系统
 
 > TypeScript 进阶篇：把类型注解变成**类型编程**。

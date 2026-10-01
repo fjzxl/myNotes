@@ -1,3 +1,11 @@
+---
+title: 本地Java devlepment
+tags:
+  - programming
+  - java
+created: 2026-09-10
+updated: 2026-09-10
+---
 # 本地Java devlepment
 
 - [本地Java devlepment](#本地java-devlepment)
@@ -50,14 +58,14 @@ export PATH=${MAVEN_HOME}:${MAVEN_BIN}:${PATH}
 
 ```xml
 <localRepository>/home/clarence/repos/m2</localRepository>
-<mirros>
+<mirrors>
     <mirror>
       <id>aliyun</id>
       <mirrorOf>*</mirrorOf>
       <name>aliyun Maven</name>
       <url>https://maven.aliyun.com/repository/public/</url>
     </mirror>
-</mirros>
+</mirrors>
 ```
 
 ## vscode setup

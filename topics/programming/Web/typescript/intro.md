@@ -1,3 +1,11 @@
+---
+title: TypeScript 入门教程
+tags:
+  - programming
+  - typescript
+created: 2026-09-10
+updated: 2026-10-01
+---
 # TypeScript 入门教程
 
 > 面向对象：已有 JavaScript（ES6+）基础，希望系统掌握 TypeScript 核心类型系统的开发者。
@@ -691,8 +699,8 @@ function first<T>(arr: T[]): T | undefined {
   return arr[0];
 }
 
-const n = first([1, 2, 3]);            // n: number（自动推断）
-const s = first(['a', 'b']);           // s: string
+const n = first([1, 2, 3]);            // n: number | undefined（自动推断，数组可能为空）
+const s = first(['a', 'b']);           // s: string | undefined
 const m = first<number>([]);           // 显式指定，复杂场景用
 ```
 
@@ -828,7 +836,7 @@ function setStatus(s: 'idle' | 'done') {
   if (s === 'idle') { /* s: 'idle' */ }
 }
 
-// 数组过滤时收窄会被"遗忘"（filter 回调返回 boolean），用类型谓词：
+// 数组过滤：TS 5.5 起可自动推断类型谓词；显式标注 `(x): x is number` 在旧版本也可用：
 const nums = [1, null, 2, null].filter((x): x is number => x !== null);
 // nums: number[]
 ```

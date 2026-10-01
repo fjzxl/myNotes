@@ -73,14 +73,13 @@ updated: 2026-09-09
 - [ ] AI 编程工具对比（Copilot、Cursor、Claude Code）
 - [ ] 国产 LLM 调研
 
-## Foam 图谱查询
+## 按标签查找
 
-```
-tag:ai                            # 所有 AI 笔记
-tag:ai AND tag:llm                # LLM 基础
-tag:ai AND tag:agent              # Agent 相关
-tag:ai AND -ORPHANS:true          # 孤立的 AI 笔记（待补充链接）
-```
+Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板，或 `Ctrl+Shift+P` → `Foam: Search Tag`；孤立笔记（待补充链接）在 `Foam: Show Graph` 面板查看。
+
+- `ai` —— 所有 AI 笔记
+- `llm` —— LLM 基础
+- `agent` —— Agent 相关
 
 ## 相关 MOC
 

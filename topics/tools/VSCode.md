@@ -1,3 +1,10 @@
+---
+title: vscode
+tags:
+  - tools
+created: 2026-09-10
+updated: 2026-09-10
+---
 # vscode
 
 Language Server提供了诸如自动补全、定义跳转、代码格式化等与编程语言相关的功能。

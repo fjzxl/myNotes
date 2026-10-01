@@ -107,13 +107,13 @@ updated: 2026-09-30
 - 错题集：单独文件夹 + 永久笔记
 - 真题：2010-2026 共 17 年，留到强化期做
 
-## Foam 图谱查询
+## 按标签查找
 
-```
-tag:math                              # 所有数学笔记
-tag:math AND tag:inequality           # 不等式专题
-tag:math AND tag:kaoyan               # 考研相关
-```
+Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板，或 `Ctrl+Shift+P` → `Foam: Search Tag`；连接与孤立情况在 `Foam: Show Graph` 面板查看。
+
+- `math` —— 所有数学笔记
+- `inequality` —— 不等式专题
+- `kaoyan` —— 考研相关
 
 ## 相关 MOC
 

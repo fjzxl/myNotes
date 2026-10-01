@@ -9,6 +9,8 @@ tags:
 aliases:
   - Marp Guide
   - Marp 幻灯片
+created: 2026-09-10
+updated: 2026-10-01
 ---
 
 # Marp 使用指南：Markdown 写 PPT
@@ -194,8 +196,8 @@ marp: true                # 必填，启用 Marp
 theme: default            # 主题
 paginate: true            # 显示页码
 size: 16:9                # 比例：4:3 / 16:9 / 16:10
-backgroundColor: #fff     # 默认背景
-color: #333               # 默认文字色
+backgroundColor: "#fff"   # 默认背景（YAML 里 # 开头会被当作注释，颜色值务必加引号）
+color: "#333"             # 默认文字色
 header: '顶部文字'         # 顶部
 footer: '底部文字'         # 底部
 ---
@@ -337,7 +339,7 @@ h1 {
 
 ### 示例 1：算法讲解（3 页）
 
-```markdown
+````markdown
 ---
 marp: true
 theme: gaia
@@ -379,10 +381,10 @@ def binary_search(arr, target):
     return -1
 ```
 
-<!-- 
+<!--
 提示：实际写时 ``` 不要有前导空格
 -->
-```
+````
 
 ### 示例 2：考研数学复习
 
@@ -404,7 +406,7 @@ math: katex
 
 > $\displaystyle \lim_{x \to a} f(x) = L$ 成立
 > 当且仅当：**$\forall \epsilon > 0$，$\exists \delta > 0$**
-> 使得 $|x - a| < \delta$ 时 $|f(x) - L| < \epsilon$
+> 使得 $0 < |x - a| < \delta$ 时 $|f(x) - L| < \epsilon$
 
 ---
 
@@ -428,7 +430,7 @@ $$|3x + 1 - 7| = 3|x - 2| < 3 \cdot \frac{\epsilon}{3} = \epsilon$$
 
 ### 示例 3：康奈尔笔记版
 
-如果用 [[templates/cornell-note]] 模板，可以用 `<!-- _class: ... -->` 模拟两栏：
+如果用 [[templates/cornell-note]] 模板的思路做康奈尔版式：`<!-- _class: ... -->` 是"给当前页设置类"，同一页连续设置多个只会保留最后一个，**不能**用来切分区块；正确做法是定义一个 grid 类，再用两个 `div` 分出线索/笔记两栏：
 
 ```markdown
 ---
@@ -436,35 +438,43 @@ marp: true
 theme: default
 size: 16:9
 style: |
-  section {
+  section.cornell {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 3fr 7fr;
     gap: 1rem;
     text-align: left;
   }
-  section.cornell-summary {
-    display: block;
+  section.cornell .cues {
+    border-right: 2px solid #888;
+    padding-right: 0.5rem;
+  }
+  section.cornell .notes {
+    padding-left: 0.5rem;
   }
 ---
 
-<!-- _class: cornell-cues -->
+<!-- _class: cornell -->
+
+<div class="cues">
 
 ## 🔑 线索
 - 概念 1
 - 问题
 - 定义
 
-<!-- _class: cornell-notes -->
+</div>
+
+<div class="notes">
 
 ## 📝 笔记
 
 详细内容...
 
-<!-- _class: cornell-summary -->
-
 ## 📋 总结
 
 核心内容
+
+</div>
 ```
 
 ### 示例 4：带图片 / 背景

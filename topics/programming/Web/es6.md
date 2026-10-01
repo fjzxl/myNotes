@@ -1,3 +1,11 @@
+---
+title: ES6 教程
+tags:
+  - programming
+  - web
+created: 2026-09-10
+updated: 2026-10-01
+---
 # ES6 教程
 
 > 面向对象：已有 JavaScript 基础，希望系统掌握 ES6+ 核心特性的开发者。
@@ -352,7 +360,7 @@ highlight`Name: ${name}, Age: ${age}`;
 // SQL 查询参数化（防止 SQL 注入）
 function sql(strings, ...values) {
   return {
-    text: strings.reduce((acc, str, i) => acc + str + `$${i + 1}`, ''),
+    text: strings.reduce((acc, str, i) => acc + str + (i < values.length ? `$${i + 1}` : ''), ''),
     values
   };
 }
@@ -401,7 +409,7 @@ str.includes('world');   // boolean
 ### 5.1 数组解构
 
 ```javascript
-const [a, b] = [1, 2];
+let [a, b] = [1, 2];
 console.log(a, b); // 1 2
 
 // 跳过元素
@@ -444,8 +452,8 @@ const person = {
 const { info: { address: { city } } } = person;
 
 // 剩余属性（ES2018）
-const { name, ...rest } = user;
-// rest: { age: 25, country: 'CN' }
+const { country, ...rest } = user;
+// rest: { name: 'Alice', age: 25 }
 ```
 
 ### 5.3 实战模式
@@ -627,7 +635,7 @@ arr.find(x => x > 10);      // 12
 arr.findIndex(x => x > 10); // 1
 
 // findLast / findLastIndex（ES2023）
-arr.findLast(x => x > 10);      // 130
+arr.findLast(x => x > 10);      // 44
 arr.findLastIndex(x => x > 10); // 4
 
 // includes（ES2016）：判断是否包含（比 indexOf 更直观）
@@ -908,7 +916,8 @@ user[id]; // 12345
 ### 10.2 Symbol 的特性
 
 ```javascript
-// Symbol 属性不可枚举
+// Symbol 键不会出现在 Object.keys() 里（它只返回可枚举的"字符串"键）
+// Symbol 自有属性仍是可枚举的，只是键不是字符串，需用 getOwnPropertySymbols 获取
 Object.keys(user);        // ["name"]
 Object.getOwnPropertyNames(user); // ["name"]
 Object.getOwnPropertySymbols(user); // [Symbol(id)]
@@ -1661,7 +1670,7 @@ Number.isInteger(3.14);   // false
 Number.isSafeInteger(Number.MAX_SAFE_INTEGER);     // true
 Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1); // false
 
-// 解析整数和浮点数（全局方法的更严格版本）
+// 解析整数和浮点数（与全局 parseInt/parseFloat 是同一批函数，挂在 Number 上便于组织）
 Number.parseInt('42px');     // 42
 Number.parseFloat('3.14px'); // 3.14
 ```

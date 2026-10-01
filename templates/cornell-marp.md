@@ -35,7 +35,7 @@ title: 康奈尔笔记 · Marp 版
 ```css
 section.cornell-row {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 3fr 7fr;
   gap: 1rem;
   text-align: left;
   font-size: 22px;
@@ -67,7 +67,7 @@ section.cornell-summary {
 复制下面内容到一个新 `.md` 文件：
 
 ````markdown
-
+---
 marp: true
 theme: default
 paginate: true
@@ -75,7 +75,7 @@ size: 16:9
 style: |
   section.cornell-row {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 3fr 7fr;
     gap: 1rem;
     text-align: left;
   }
@@ -94,6 +94,7 @@ style: |
     border-radius: 8px;
     padding: 1rem;
   }
+---
 
 <!-- _class: cornell-row -->
 
@@ -124,12 +125,13 @@ style: |
 
 </div>
 
+---
 
 <!-- _class: cornell-row -->
 
 <div class="cues">
 
-### 🔑 线索（第二行）
+### 🔑 线索（第二页）
 
 - 概念 3
 - 疑问
@@ -138,11 +140,13 @@ style: |
 
 <div class="notes">
 
-### 📝 笔记（第二行）
+### 📝 笔记（第二页）
 
 - ...
 
 </div>
+
+---
 
 <!-- _class: cornell-summary -->
 
@@ -161,7 +165,7 @@ style: |
 下面是一个**完整可运行**的 Cornell × Marp 示例（直接复制保存为 `.md` 即可）。
 
 ````markdown
-
+---
 marp: true
 theme: default
 size: 16:9
@@ -169,7 +173,7 @@ paginate: true
 style: |
   section.cornell-row {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 3fr 7fr;
     gap: 1rem;
     text-align: left;
     font-size: 20px;
@@ -190,7 +194,7 @@ style: |
     padding: 1rem;
     font-size: 22px;
   }
-
+---
 
 <!-- _class: cornell-row -->
 
@@ -217,6 +221,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 
 </div>
 
+---
 
 <!-- _class: cornell-row -->
 
@@ -242,6 +247,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 
 </div>
 
+---
 
 <!-- _class: cornell-summary -->
 

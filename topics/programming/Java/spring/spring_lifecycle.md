@@ -1,3 +1,11 @@
+---
+title: spring bean 生命周期
+tags:
+  - programming
+  - java
+created: 2026-09-10
+updated: 2026-09-10
+---
 # spring bean 生命周期
 
 ## 生命周期

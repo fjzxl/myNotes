@@ -8,6 +8,8 @@ tags:
 aliases:
   - Linux Kernel 4.9 Build
   - 内核编译
+created: 2026-09-10
+updated: 2026-09-10
 ---
 
 # Linux 4.9 内核编译
@@ -121,7 +123,7 @@ make -j4
 
 成功
 ![](/attachments/images/programming/Linux/linux_make_success.png)
-编译成功后内核位于arch/x86_64/boot/bzImage
+编译成功后内核位于arch/x86/boot/bzImage
 
 ## busybox 制作文件系统
 
@@ -182,9 +184,9 @@ vim etc/init.d/rcS
 rcS写入内容
 
 ```shell
-echo -e &quot;Welcome&quot;
+echo -e "Welcome"
 /bin/mount -a
-echo -e &quot;Rmounting the root filesystem&quot;
+echo -e "Remounting the root filesystem"
 mount -o remount,rw /
 mkdir -p /dev/pts
 mount -t devpts devpts /dev/pts
@@ -250,13 +252,13 @@ apt-get install qemu-system
 启动内核和文件系统
 
 ```bash
-qemu-system-x86_64 -kernel ./linux-4.9.299/arch/x86_64/boot/bzImage -initrd ./busybox-1.36.1/rootfs.img.gz -append "root=/dev/ram init=/linuxrc" -serial file:output.txt 
+qemu-system-x86_64 -kernel ./linux-4.9.299/arch/x86/boot/bzImage -initrd ./busybox-1.36.1/rootfs.img.gz -append "root=/dev/ram init=/linuxrc" -serial file:output.txt 
 ```
 
 ## gdb调试
 
 ```bash
-qemu-system-x86_64 -kernel ./linux-4.9.299/arch/x86_64/boot/bzImage -initrd ./busybox-1.36.1/rootfs.img.gz -append "root=/dev/ram init=/linuxrc" -serial file:output.txt -S -s
+qemu-system-x86_64 -kernel ./linux-4.9.299/arch/x86/boot/bzImage -initrd ./busybox-1.36.1/rootfs.img.gz -append "root=/dev/ram init=/linuxrc" -serial file:output.txt -S -s
 ```
 
 -S 启动时暂停CPU

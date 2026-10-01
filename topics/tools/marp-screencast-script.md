@@ -5,6 +5,8 @@ tags:
   - screencast
   - tutorial
   - tools
+created: 2026-09-10
+updated: 2026-10-01
 ---
 
 # 🎬 录屏脚本：5 分钟学会 Marp
@@ -311,7 +313,7 @@ marp demo.md --pdf
 |------|---------|------|
 | **B 站** | "5 分钟学会 Marp：用 Markdown 写 PPT" | #工具推荐 #程序员 #效率工具 |
 | **YouTube** | "Marp in 5 Minutes: Markdown to PDF Slides" | #marp #markdown #productivity |
-| **小红书** | "Markdown 写 PPT？5 分钟教程 | 程序员必备" | #工具分享 #效率 |
+| **小红书** | "Markdown 写 PPT？5 分钟教程 \| 程序员必备" | #工具分享 #效率 |
 | **知乎** | "如何用 Markdown 写专业级演示文稿" | 工具 / 编程 |
 
 ---

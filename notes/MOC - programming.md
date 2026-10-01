@@ -47,8 +47,12 @@ updated: 2026-09-30
 
 ### Web（前端三件套 + TypeScript）
 
-- [[topics/programming/Web/css]]
-- [[topics/programming/Web/javascript]] —— JavaScript 语言与运行时基础
+- [[topics/programming/Web/css]] —— CSS 入门指南（按学习阶段拆分为 10 篇）
+  - [[topics/programming/Web/css/stage-01-getting-started|一·初识 CSS]] · [[topics/programming/Web/css/stage-02-text-styling|二·文字化妆]] · [[topics/programming/Web/css/stage-03-box-model|三·盒模型]] · [[topics/programming/Web/css/stage-04-selectors|四·选择器]] · [[topics/programming/Web/css/stage-05-backgrounds|五·背景装饰]]
+  - [[topics/programming/Web/css/stage-06-layout|六·布局系统]] · [[topics/programming/Web/css/stage-07-responsive-design|七·响应式设计]] · [[topics/programming/Web/css/stage-08-animation|八·动画交互]] · [[topics/programming/Web/css/stage-09-modern-css|九·现代特性]] · [[topics/programming/Web/css/stage-10-architecture|十·架构与工程化]]
+- [[topics/programming/Web/javascript]] —— JavaScript 语言与运行时基础（按章节拆分为 8 篇）
+  - [[topics/programming/Web/javascript/01-language-basics|一·语言基础]] · [[topics/programming/Web/javascript/02-reference-types|二·引用类型]] · [[topics/programming/Web/javascript/03-core-mechanisms|三·核心机制]] · [[topics/programming/Web/javascript/04-asynchronous-programming|四·异步编程]]
+  - [[topics/programming/Web/javascript/05-dom-and-browser-api|五·DOM 与浏览器 API]] · [[topics/programming/Web/javascript/06-es6-modern-features|六·ES6+ 特性]] · [[topics/programming/Web/javascript/07-error-handling-and-debugging|七·错误处理]] · [[topics/programming/Web/javascript/08-engineering-and-best-practices|八·工程化与最佳实践]]
 - [[topics/programming/Web/es6]] —— ES6+ 语法与平台特性
 - [[topics/programming/Web/typescript/intro]] —— TS 入门与工程实践（建议先掌握 JS / ES6+）
 - [[topics/programming/Web/typescript/interface]] —— 从 JavaScript 对象约定理解 TypeScript 接口
@@ -86,16 +90,13 @@ updated: 2026-09-30
 - [ ] 计算机网络（TCP/IP、HTTPS）
 - [ ] Git 进阶（rebase、cherry-pick、submodule）
 
-## Foam 图谱查询
+## 按标签查找
 
-> 在 Foam 图谱面板（`Ctrl+Shift+P` → `Foam: Open Graph`）里用：
+Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板，或 `Ctrl+Shift+P` → `Foam: Search Tag`；连接与孤立情况在 `Foam: Show Graph` 面板查看。
 
-```
-tag:programming                       # 所有编程笔记
-tag:programming AND tag:java          # Java 专题
-tag:programming AND tag:linux         # Linux 专题
-tag:programming AND -ORPHANS:false    # 已连接（不是孤立节点）的编程笔记
-```
+- `programming` —— 所有编程笔记
+- `java` —— Java 专题
+- `linux` —— Linux 专题
 
 ## 相关 MOC
 
@@ -107,3 +108,4 @@ tag:programming AND -ORPHANS:false    # 已连接（不是孤立节点）的编�
 
 - **2026-09-09** —— 初始创建（重构后）
 - **2026-09-30** —— 索引维护：核心笔记纳入 [[topics/tools/marp-screencast-script]]；Web 分类新增 TypeScript 类型系统与接口专题，并补充 TS 学习路线
+- **2026-10-01** —— 拆分超长教程：javascript（8 章）、css（10 阶段）各拆为总览导航页 + 章节笔记，原文件保留学习路线与术语表；全库主题笔记补齐 frontmatter；新增 `scripts/check_notes.py` 校验脚本

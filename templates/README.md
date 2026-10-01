@@ -25,7 +25,7 @@ Copy-Item templates\daily-note.md journal\daily\2026-09-09.md
 
 ### 方法 3：Foam 完整模板
 
-`Ctrl+Shift+P` → `Foam: Create Note from Template`，从 `templates/` 选择模板；也可直接复制文件并替换 `{{...}}` 字段。
+工作区设置 `"foam.templates.folder": "templates"` 后，`Ctrl+Shift+P` → `Foam: Create New Note From Template` 即可从 `templates/` 选择模板；模板内 `$FOAM_TITLE`、`$FOAM_DATE_*` 等 Foam 变量自动展开，`{{...}}` 字段需手动替换。也可直接复制文件手动填写。
 
 ## 读书与技能学习怎么选
 

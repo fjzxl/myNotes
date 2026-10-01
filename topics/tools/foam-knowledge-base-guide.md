@@ -8,6 +8,8 @@ tags:
 aliases:
   - Foam 知识库搭建
   - Foam Guide
+created: 2026-09-10
+updated: 2026-09-10
 ---
 
 # Foam 使用指南：搭建类 Obsidian 知识库
@@ -108,7 +110,7 @@ code .
 在 VS Code 中：
 
 1. `Ctrl+Shift+P` 打开命令面板
-2. 输入 `Foam: Open Graph` 或 `Foam: Show Welcome`
+2. 输入 `Foam: Show Graph` 或 `Foam: Show Welcome`
 3. 出现欢迎页即代表初始化完成
 
 ### 3.5 推荐配置 Git
@@ -148,18 +150,9 @@ git commit -m "init: foam knowledge base"
 
 ### 4.2 Backlinks（反向链接）
 
-任何笔记 A 引用了笔记 B，Foam 都会在 B 底部自动生成反向链接面板：
+任何笔记 A 引用了笔记 B，Foam 都会在侧边栏 **Backlinks** 面板中列出反向链接；Foam **不会**把反向链接自动写入笔记正文。
 
-```markdown
-# 深度学习
-
-正文内容...
-
-## Backlinks
-<!-- 该区域由 Foam 自动维护 -->
-```
-
-切换到 Markdown 预览（`Ctrl+K V`）即可看到完整的反向链接列表。
+查看方式：打开目标笔记 → 点击活动栏的 Foam 图标 → 在 **Backlinks** 面板查看引用了它的全部笔记，点击即可跳转。
 
 ### 4.3 Tags（标签）
 
@@ -183,16 +176,13 @@ tags:
 
 ### 4.4 Graph（图谱）
 
-`Ctrl+Shift+P` → `Foam: Open Graph`，会在浏览器中打开一个本地服务（默认 `http://localhost:3000`），可视化所有笔记及其连接：
+`Ctrl+Shift+P` → `Foam: Show Graph`，会在 VS Code 内部的面板中可视化所有笔记及其连接（无需浏览器，也不依赖本地服务）：
 
 - 节点 = 笔记
 - 边 = 链接关系
-- 颜色 = 标签或孤立节点
+- 悬停高亮连接，点击节点可跳转（`Ctrl/Cmd + 点击`）
 
-**图谱筛选**：
-- `tag:xxx` 只看某标签的笔记
-- `ORPHANS:true` 只看孤立笔记（没有入链/出链）
-- 组合：`tag:project AND ORPHANS:false`
+**筛选**：图谱面板没有查询语法；官方的过滤方式是在设置中定义分组规则/命名视图（按 `tag`、`path` 或正则匹配）。想快速找某主题的笔记，用 `Ctrl+Shift+F` 全局搜索标签（如 `tag:math`）更直接。
 
 ### 4.5 Daily Notes（每日笔记）
 
@@ -278,27 +268,13 @@ Foam 支持引用具体段落（需开启实验性功能）：
 
 ```jsonc
 {
-  "foam.openDailyNote.dateFormat": "YYYY-MM-DD",
-  "foam.openDailyNote.filename": "journal/daily/{date}.md",
-  "foam.openDailyNote.title": "{date}",
-  "foam.openDailyNote.template": {
-    "title": "每日笔记",
-    "content": [
-      "## 📅 {date} ({dayOfWeek})",
-      "",
-      "### 🎯 今日目标",
-      "- [ ] ",
-      "",
-      "### 📝 今日记录",
-      "",
-      "### 💡 灵感 & 想法",
-      "",
-      "### 📚 今日链接",
-      ""
-    ]
-  }
+  "foam.openDailyNote.filenameFormat": "YYYY-MM-DD",  // 文件名格式
+  "foam.openDailyNote.directory": "journal/daily",    // 存放目录
+  "foam.openDailyNote.titleFormat": "YYYY-MM-DD"      // 标题格式
 }
 ```
+
+日记**内容**用模板控制：在模板目录（`foam.templates.folder`，默认 `.foam/templates`）里放一个 `daily-note.md`，内部使用 `$FOAM_TITLE`、`${FOAM_DATE_FORMAT:YYYY-MM-DD}` 等变量，Foam 创建每日笔记时自动套用。上面三个设置官方已标记为过时，新项目建议直接依赖模板。
 
 ### 6.3 笔记模板（Templates）
 
@@ -441,7 +417,7 @@ myKnowledge/
 ### 8.3 周末整理（30-60 分钟）
 
 1. `Foam: Show Orphaned Notes` — 找出尚未建立的引用，决定是否创建
-2. `Foam: Open Graph` — 看图谱，识别孤立笔记
+2. `Foam: Show Graph` — 看图谱，识别孤立笔记
 3. 把 inbox 里的临时笔记转成永久笔记
 4. 更新 MOC
 
@@ -512,15 +488,11 @@ Foam 本身不提供加密，但因为你掌控文件，可以用：
 
 ### Q4：图谱打不开？
 
-`Foam: Open Graph` 依赖 Node.js 本地服务。检查：
+`Foam: Show Graph` 由 foam-vscode 扩展内置渲染，不依赖 Node.js、本地服务或端口。打不开时按顺序尝试：
 
-```powershell
-node --version  # 应该 >= 18
-```
-
-如果还是不行，尝试：
-1. `Ctrl+Shift+P` → `Foam: Kill Graph Server`，然后重新打开
-2. 检查端口 3000/3001 是否被占用
+1. 重载窗口：`Ctrl+Shift+P` → `Developer: Reload Window`
+2. 更新 Foam（foam-vscode）扩展后重试
+3. 在输出面板（`Ctrl+Shift+U`，选 Foam）查看报错信息
 
 ### Q5：如何把 Obsidian 笔记迁移到 Foam？
 
@@ -570,7 +542,7 @@ node --version  # 应该 >= 18
 |------|---------------|
 | 打开每日笔记 | `Ctrl+Shift+P` → `Foam: Open Daily Note` |
 | 新建笔记 | `Ctrl+Shift+P` → `Foam: New Note` |
-| 打开图谱 | `Ctrl+Shift+P` → `Foam: Open Graph` |
+| 打开图谱 | `Ctrl+Shift+P` → `Foam: Show Graph` |
 | 跳转到链接 | `F12` 或 `Ctrl+Click` |
 | 重命名笔记（自动更新所有引用） | `F2` |
 | 显示孤立笔记 | `Ctrl+Shift+P` → `Foam: Show Orphaned Notes` |

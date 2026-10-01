@@ -1,3 +1,10 @@
+---
+title: 工具
+tags:
+  - tools
+created: 2026-09-10
+updated: 2026-09-10
+---
 # 工具
 - [工具](#工具)
   - [shell](#shell)

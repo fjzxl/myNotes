@@ -1,3 +1,11 @@
+---
+title: 远程Java devlepment
+tags:
+  - programming
+  - java
+created: 2026-09-10
+updated: 2026-10-01
+---
 # 远程Java devlepment
 
 - [远程Java devlepment](#远程java-devlepment)

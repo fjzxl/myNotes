@@ -20,7 +20,7 @@ projects/
 │   ├── README.md           # 项目目标、技术栈、进度
 │   ├── tasks.md            # 任务清单
 │   ├── notes/              # 会议记录、技术笔记
-│   └── artifacts/          # 截图、产出物
+│   └── artifacts/          # 产出物（截图等二进制资源按仓库约定放 attachments/）
 ```
 
 ## 何时归档
