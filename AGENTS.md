@@ -5,8 +5,8 @@
 
 ## Notes and navigation
 
-- Subject references belong in `topics/`; atomic Zettelkasten notes and Map of Content (MOC) indexes belong in `notes/`. Tools are a separate subject under `topics/tools/`.
-- There are four MOC files in `notes/` (programming, AI, math, history), matching the README. Update the relevant existing index when adding or moving a topic note.
+- Subject references belong in `topics/`; atomic Zettelkasten notes and Map of Content (MOC) indexes belong in `notes/`. Tools are a separate subject under `topics/tools/`; exam prep (软考 etc.) is a separate subject under `topics/exams/`.
+- There are five MOC files in `notes/` (programming, AI, math, history, exams), matching the README. Update the relevant existing index when adding or moving a topic note.
 - Long tutorials are split into a hub note plus chapter notes: `topics/programming/Web/javascript.md` navigates 8 chapters in `topics/programming/Web/javascript/`, and `topics/programming/Web/css.md` navigates 10 stage notes in `topics/programming/Web/css/`. Put new content in the matching chapter (or a new chapter linked from the hub), not back into the hub.
 - Use workspace-root-relative Foam links without `.md`: `[[topics/tools/Foam]]` or `[[topics/tools/Foam|label]]`. Avoid bare filenames and `../` in wikilinks; check inbound links when renaming notes.
 - Store assets under `attachments/`, separate from notes. Existing topic images use Markdown paths such as `/attachments/images/math/inequalities/amgm-semicircle.png`; these are distinct from Foam wikilinks.

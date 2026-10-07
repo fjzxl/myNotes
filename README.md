@@ -6,7 +6,8 @@
 
 - **4 大主题**：`programming` / `ai` / `math` / `history`
 - **`tools` 提升为一级主题**（与编程/AI 并列）
-- **4 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
+- **`exams` 考试备考一级主题**：软考等备考大纲、真题与论文练习
+- **5 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史 / 考试备考）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
 - **附件独立**：所有图片/PDF/代码片段放在 `attachments/`，与笔记体系解耦
 - **空目录有 stub README**：每个空目录都放了一个 `README.md` 引导说明
 - **本地优先 + Git 版本控制**：单仓库跨设备同步
@@ -21,7 +22,7 @@ myNotes/
 │   ├── README.md
 │   └── daily/                      # 每日笔记（有 stub README）
 │
-├── topics/                         # 主题知识（5 个一级主题）
+├── topics/                         # 主题知识（6 个一级主题）
 │   ├── programming/                # 编程
 │   │   ├── Java/  cplusplus/  Web/  Android/  Linux/  MySQL/
 │   ├── ai/                         # AI
@@ -31,6 +32,10 @@ myNotes/
 │   ├── math/                       # 数学（考研数一）
 │   │   └── inequalities.md         # 不等式专题
 │   ├── history/                    # 历史（待填充，有 stub README）
+│   ├── exams/                      # 考试备考（软考等）
+│   │   ├── README.md
+│   │   └── ruankao/                # 软考
+│   │       └── system-architect.md # 系统架构设计师备考大纲
 │   └── tools/                      # 工具笔记（与编程/AI 并列）
 │       ├── VSCode.md
 │       ├── Foam.md
@@ -44,7 +49,8 @@ myNotes/
 │   ├── MOC - programming.md
 │   ├── MOC - ai.md
 │   ├── MOC - math.md
-│   └── MOC - history.md
+│   ├── MOC - history.md
+│   └── MOC - exams.md
 │
 ├── projects/                       # 当前项目（有 stub README）
 ├── resources/                      # 引用资料、skills 速查
@@ -96,6 +102,7 @@ myNotes/
 | AI | [[notes/MOC - ai]] | `topics/ai/` | ✅ 有内容 |
 | 数学 | [[notes/MOC - math]] | `topics/math/` | 🔨 起步中（考研数一） |
 | 历史 | [[notes/MOC - history]] | [[topics/history/README]] | ⏳ 待填充 |
+| 考试备考 | [[notes/MOC - exams]] | [[topics/exams/README]] | 🔨 起步中（软考架构师） |
 | 工具 | [[topics/tools/Shortcuts]] | `topics/tools/` | ✅ 工具速查 |
 
 ## 推荐工具
@@ -395,3 +402,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - 全库主题笔记补齐 frontmatter（title / tags / created / updated，共 26 篇）
   - 新增 `scripts/check_notes.py`：校验 wikilink / Markdown 链接锚点 / 图片目标 / frontmatter / 代码围栏配对 / 表格列数 / 编码与行尾
   - 依据外部审阅报告集中修复：Foam 工作流说明按官方文档校正（`foam.templates.folder`、`Foam: Create New Note From Template`、`Foam: Show Graph`、Backlinks 面板、每日笔记配置）、Marp 示例可运行化（cornell-marp 两示例补 `---` 与分页、marp-guide 嵌套围栏与颜色值加引号）、Servlet/JavaScript/ES6 示例缺陷、MoE 与不等式等概念表述，共 30+ 处
+
+- **2026-10-02 新增考试备考主题**：
+  - 新建 `topics/exams/`（含 stub README）与 `ruankao/system-architect.md`：软考系统架构设计师备考大纲，重点覆盖论文写作模块（素材卡 / 六段模板 / 真题矩阵 / 3 周冲刺节奏）
+  - 新增 `notes/MOC - exams.md` 索引，README 目录结构与主题表同步
