@@ -4,7 +4,7 @@ tags:
   - moc
   - programming
 created: 2026-09-09
-updated: 2026-09-30
+updated: 2026-10-09
 ---
 
 # MOC · Programming（编程地图）
@@ -17,6 +17,8 @@ updated: 2026-09-30
 - 语言层：Java / C++ / Python / Go / Rust ...
 - 平台层：Web / Android / Linux / 嵌入式 ...
 - 工具层：VSCode / Git / Docker / CI/CD ...
+
+> 前端求职线（JS/TS → Vue/React → 作品集）与高数、软考并行的总排程，见 [[projects/note-writing-plan|笔记编撰计划]]。
 
 ## 核心笔记
 
@@ -109,3 +111,4 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 - **2026-09-09** —— 初始创建（重构后）
 - **2026-09-30** —— 索引维护：核心笔记纳入 [[topics/tools/marp-screencast-script]]；Web 分类新增 TypeScript 类型系统与接口专题，并补充 TS 学习路线
 - **2026-10-01** —— 拆分超长教程：javascript（8 章）、css（10 阶段）各拆为总览导航页 + 章节笔记，原文件保留学习路线与术语表；全库主题笔记补齐 frontmatter；新增 `scripts/check_notes.py` 校验脚本
+- **2026-10-09** —— 「全景」接入 [[projects/note-writing-plan|笔记编撰计划]]（前端求职线总排程，补全双向导航）

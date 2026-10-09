@@ -7,7 +7,8 @@
 - **4 大主题**：`programming` / `ai` / `math` / `history`
 - **`tools` 提升为一级主题**（与编程/AI 并列）
 - **`exams` 考试备考一级主题**：软考等备考大纲、真题与论文练习
-- **5 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史 / 考试备考）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
+- **`languages` 语言学习一级主题**：日语等外语学习大纲与语料（兴趣驱动，考试仅作阶段自测）
+- **6 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史 / 考试备考 / 语言学习）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
 - **附件独立**：所有图片/PDF/代码片段放在 `attachments/`，与笔记体系解耦
 - **空目录有 stub README**：每个空目录都放了一个 `README.md` 引导说明
 - **本地优先 + Git 版本控制**：单仓库跨设备同步
@@ -22,7 +23,7 @@ myNotes/
 │   ├── README.md
 │   └── daily/                      # 每日笔记（有 stub README）
 │
-├── topics/                         # 主题知识（6 个一级主题）
+├── topics/                         # 主题知识（7 个一级主题）
 │   ├── programming/                # 编程
 │   │   ├── Java/  cplusplus/  Web/  Android/  Linux/  MySQL/
 │   ├── ai/                         # AI
@@ -30,12 +31,21 @@ myNotes/
 │   │   ├── MoE.md
 │   │   └── note.md
 │   ├── math/                       # 数学（考研数一）
-│   │   └── inequalities.md         # 不等式专题
+│   │   ├── inequalities.md         # 不等式专题
+│   │   └── functions-and-bounds.md # 界与函数（高数起点）
 │   ├── history/                    # 历史（待填充，有 stub README）
 │   ├── exams/                      # 考试备考（软考等）
 │   │   ├── README.md
 │   │   └── ruankao/                # 软考
 │   │       └── system-architect.md # 系统架构设计师备考大纲
+│   ├── languages/                  # 语言学习（兴趣向，考试仅作自测）
+│   │   ├── README.md
+│   │   └── japanese/               # 日语
+│   │       ├── syllabus.md         # 日语学习大纲（标日 + JLPT 分级）
+│   │       ├── kana.md             # 五十音笔记（总表 / 发音 / 辨析）
+│   │       ├── kana-cards.md       # 五十音闪卡（235 张，Q::A 牌组）
+│   │       ├── kana-plan.md        # 五十音三周每日计划
+│   │       └── kana-a-row.md       # あ行逐行笔记
 │   └── tools/                      # 工具笔记（与编程/AI 并列）
 │       ├── VSCode.md
 │       ├── Foam.md
@@ -50,7 +60,8 @@ myNotes/
 │   ├── MOC - ai.md
 │   ├── MOC - math.md
 │   ├── MOC - history.md
-│   └── MOC - exams.md
+│   ├── MOC - exams.md
+│   └── MOC - languages.md
 │
 ├── projects/                       # 当前项目（有 stub README）
 ├── resources/                      # 引用资料、skills 速查
@@ -81,7 +92,7 @@ myNotes/
 │   │   ├── programming/            # Java/ + Linux/ + vscode-remote-dev/
 │   │   ├── ai/                     # 待填充（有 stub README）
 │   │   ├── history/                # 待填充（有 stub README）
-│   │   └── math/                   # inequalities/（不等式专题插图 × 20）
+│   │   └── math/                   # inequalities/（不等式专题插图 × 20）+ curves/（参数方程·极坐标常见曲线 × 8）
 │   ├── pdfs/                       # 待填充（有 stub README）
 │   └── code-snippets/              # 待填充（有 stub README）
 │
@@ -103,6 +114,7 @@ myNotes/
 | 数学 | [[notes/MOC - math]] | `topics/math/` | 🔨 起步中（考研数一） |
 | 历史 | [[notes/MOC - history]] | [[topics/history/README]] | ⏳ 待填充 |
 | 考试备考 | [[notes/MOC - exams]] | [[topics/exams/README]] | 🔨 起步中（软考架构师） |
+| 语言学习 | [[notes/MOC - languages]] | [[topics/languages/README]] | 🔰 起步中（日语·兴趣向） |
 | 工具 | [[topics/tools/Shortcuts]] | `topics/tools/` | ✅ 工具速查 |
 
 ## 推荐工具
@@ -111,6 +123,7 @@ myNotes/
 - **Foam** —— 双向链接知识管理（见 [[topics/tools/foam-knowledge-base-guide]]）
 - **Tip of the Day** —— 启动时右下角弹快捷键提示
 - **Git** —— 版本控制 + 多设备同步
+- **Skills 速查** —— [[resources/skills]]（科研技能清单）
 
 ## ⚙️ 配置
 
@@ -406,3 +419,12 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 - **2026-10-02 新增考试备考主题**：
   - 新建 `topics/exams/`（含 stub README）与 `ruankao/system-architect.md`：软考系统架构设计师备考大纲，重点覆盖论文写作模块（素材卡 / 六段模板 / 真题矩阵 / 3 周冲刺节奏）
   - 新增 `notes/MOC - exams.md` 索引，README 目录结构与主题表同步
+
+- **2026-10-08 新增语言学习主题**：
+  - 新建 `topics/languages/`（含 README）与 `japanese/syllabus.md`：日语学习大纲（兴趣向——看懂动漫/游戏；零基础、每天约 20 分钟；标日教材 × JLPT N5→N3 分级里程碑，事实联网核实）
+  - 新增 `notes/MOC - languages.md` 索引，README 目录结构与主题表同步
+
+- **2026-10-09 数学起点笔记 + 五十音闪卡 + 链接巡检**：
+  - 新增 `topics/math/functions-and-bounds.md`（界与函数：确界理论 · 函数四性质 · 初等函数 · 参数方程 · 极坐标 · 图形变换），挂入 MOC - math 与不等式专题导航
+  - 新增 `topics/languages/japanese/kana-cards.md`（五十音闪卡 235 张，`Q :: A` 行内牌组，建卡进度对齐三周计划），kana / kana-plan / kana-a-row / MOC - languages 全链路互链
+  - 链接巡检：`resources/skills.md` 接入「推荐工具」；MOC - math / MOC - programming 回链 [[projects/note-writing-plan|笔记编撰计划]]（原为单向）；目录树 math / languages 分支与实际文件同步
