@@ -8,7 +8,7 @@ tags:
   - exams
 status: active
 created: 2026-10-01
-updated: 2026-10-02
+updated: 2026-10-10
 deadline: 2027-07-04
 ---
 
@@ -253,10 +253,10 @@ deadline: 2027-07-04
 
 来自 2026-10-01 全库检查，均为低优先级：
 
-- [ ] `topics/programming/Web/es6.md` 与 `topics/programming/Web/javascript/06-es6-modern-features.md` 互相加交叉引用，明确分工（es6 = 语法专题深挖，js/06 = 章节导读）
-- [ ] 空壳笔记处理：`topics/ai/Claude Code.md`（8 行）、`topics/ai/note.md`（9 行）、`topics/programming/cplusplus/vscodec.md`、`cplusplus/into.md`、`Android_into.md` —— 填充或明确标记占位
-- [ ] `topics/ai/note.md` 属闪念性质，考虑移到 `inbox/`
-- [ ] 若目标岗位反复要求，再补精简 HTML 语义化 / HTTP 备忘；基础内容先在 Vue 项目中实际使用，不为“凑齐三件套”另写长篇
+- [x] `topics/programming/Web/es6.md` 与 `topics/programming/Web/javascript/06-es6-modern-features.md` 互相加交叉引用，明确分工（es6 = 语法专题深挖，js/06 = 章节导读）——2026-10-10 完成
+- [x] 空壳笔记处理：`topics/ai/Claude Code.md`、`topics/programming/cplusplus/vscodec.md`、`cplusplus/into.md`、`Android_into.md` —— 2026-10-10 全部扩充为完整笔记
+- [x] `topics/ai/note.md` 属闪念性质，移到 `inbox/` —— 2026-10-10 完成（`inbox/innovation-flash.md`）
+- [~] 若目标岗位反复要求，再补精简 HTTP 备忘；HTML 已于 2026-10-10 新增基础笔记 `topics/programming/Web/html.md`（应用户要求，覆盖语义化/表单/无障碍；深度扩展仍按需）
 
 ## 风险 & 调整规则
 
@@ -272,3 +272,4 @@ deadline: 2027-07-04
 - 2026-10-01 —— 根据时间预算（前 4 周 6h/周、之后约 16h/周）收敛前端范围为 Vue 主线 + React 对照；增加作品集里程碑、笔记合并和 4 月后线代/概率/总复习路线。
 - 2026-10-01 —— 前端线补充 TypeScript：新增 `typescript/vue-integration`（W16），已有 TS 三篇定为 Vue 动笔前查漏（W2）；Webpack 深挖并入 `02-bundlers`（W19），React 生态对照笔记同步标注 TS 类型写法。前端总篇数保持 21 不变。
 - 2026-10-02 —— **加入软考（系统架构设计师，2027-05 考期），计划延长为 39 周（至 2027-07-04）**：每周总量维持约 16h、按阶段三线分配（冲刺期软考 7h / 数学 4.5h / 前端 1.5h）；W23 起数学新单元转短稿；线代推迟到 6 月中启动、概率压缩至 8 月；求职项目与面试动作后置到 6 月；新增路线三与 39 周总表软考列（论文 ①–⑭）。
+- 2026-10-10 —— **附带优化任务 4 项全部落地**（es6 交叉引用、4 篇空壳笔记扩充、闪念移入 inbox、HTML 基础笔记 `topics/programming/Web/html.md`）；数学线提前交付 W1 的 [[topics/math/calculus|总览页]] 与 W3 单元 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]（长文初稿，待做题复核）；相应 MOC 均已更新。

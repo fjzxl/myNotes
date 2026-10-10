@@ -4,7 +4,7 @@ tags:
   - moc
   - math
 created: 2026-09-09
-updated: 2026-10-09
+updated: 2026-10-10
 ---
 
 # MOC · Math（数学地图）
@@ -25,6 +25,7 @@ updated: 2026-10-09
 
 - [[topics/math/inequalities]] —— 不等式专题（考研核心工具）
 - [[topics/math/functions-and-bounds]] —— 界与函数（高数起点：确界 · 函数性质 · 初等函数 · 参数方程 · 极坐标 · 图形变换）
+- [[topics/math/calculus]] —— 高等数学总览（章节导航与学习路线）
 
 ## 按考研章节
 
@@ -33,7 +34,7 @@ updated: 2026-10-09
 #### 一、函数、极限、连续
 
 - [x] [[topics/math/functions-and-bounds]] —— 界与函数（基础概念）
-- [ ] 极限的定义与性质
+- [x] [[topics/math/calculus/02-03-sequence-function-limits]] —— 数列与函数极限（定义 · 性质 · 夹逼 · 单调有界 · 两个重要极限）
 - [ ] 连续函数
 - [ ] 无穷小与无穷大
 
@@ -130,3 +131,5 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 - **2026-09-30** —— 索引维护：同步不等式专题最新结构与更新记录
 - **2026-10-09** —— 新增 [[topics/math/functions-and-bounds]]：占位稿「基础概念」补全为完整笔记（确界理论、函数概念与四性质、初等函数、参数方程、极坐标、图形变换），并挂入 Ch1 清单与不等式专题导航
 - **2026-10-09** —— 「学习方法」接入 [[projects/note-writing-plan|笔记编撰计划]]（原为单向链接，补全双向导航）
+- **2026-10-10** —— 新增 [[topics/math/calculus|高等数学总览]]（W1 计划内交付：章节导航、学习路线、考纲权重）与 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]（Ch1 长文：ε-语言、左右极限、性质与四则、夹逼、单调有界、Heine 归结原则、两个重要极限）；Ch1 勾选第二项
+- **2026-10-10** —— [[topics/math/inequalities]] 新增「口诀速记」（总纲三句 · 十五条口诀表 · 均值链专记 · 选工具顺口溜）与「分层习题」13 题（A 基础 4 / B 进阶 5 / C 考研向 4，均附提示与详解），并与 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]] 互链（$e$ 的双侧估计）

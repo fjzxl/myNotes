@@ -4,7 +4,7 @@ tags:
   - moc
   - programming
 created: 2026-09-09
-updated: 2026-10-09
+updated: 2026-10-10
 ---
 
 # MOC · Programming（编程地图）
@@ -44,29 +44,31 @@ updated: 2026-10-09
 
 ### C++
 
-- [[topics/programming/cplusplus/into]]
-- [[topics/programming/cplusplus/vscodec]]
+- [[topics/programming/cplusplus/into]] —— C 入门：从源码到可执行文件（编译四阶段、gcc、make）
+- [[topics/programming/cplusplus/vscodec]] —— VS Code C/C++ 环境配置（扩展、构建与调试）
 
 ### Web（前端三件套 + TypeScript）
 
+- [[topics/programming/Web/html]] —— HTML 基础（文档结构、语义化、表单、无障碍）
 - [[topics/programming/Web/css]] —— CSS 入门指南（按学习阶段拆分为 10 篇）
   - [[topics/programming/Web/css/stage-01-getting-started|一·初识 CSS]] · [[topics/programming/Web/css/stage-02-text-styling|二·文字化妆]] · [[topics/programming/Web/css/stage-03-box-model|三·盒模型]] · [[topics/programming/Web/css/stage-04-selectors|四·选择器]] · [[topics/programming/Web/css/stage-05-backgrounds|五·背景装饰]]
   - [[topics/programming/Web/css/stage-06-layout|六·布局系统]] · [[topics/programming/Web/css/stage-07-responsive-design|七·响应式设计]] · [[topics/programming/Web/css/stage-08-animation|八·动画交互]] · [[topics/programming/Web/css/stage-09-modern-css|九·现代特性]] · [[topics/programming/Web/css/stage-10-architecture|十·架构与工程化]]
 - [[topics/programming/Web/javascript]] —— JavaScript 语言与运行时基础（按章节拆分为 8 篇）
   - [[topics/programming/Web/javascript/01-language-basics|一·语言基础]] · [[topics/programming/Web/javascript/02-reference-types|二·引用类型]] · [[topics/programming/Web/javascript/03-core-mechanisms|三·核心机制]] · [[topics/programming/Web/javascript/04-asynchronous-programming|四·异步编程]]
   - [[topics/programming/Web/javascript/05-dom-and-browser-api|五·DOM 与浏览器 API]] · [[topics/programming/Web/javascript/06-es6-modern-features|六·ES6+ 特性]] · [[topics/programming/Web/javascript/07-error-handling-and-debugging|七·错误处理]] · [[topics/programming/Web/javascript/08-engineering-and-best-practices|八·工程化与最佳实践]]
-- [[topics/programming/Web/es6]] —— ES6+ 语法与平台特性
+- [[topics/programming/Web/es6]] —— ES6+ 语法与平台特性（专题手册；JS 教程第 6 章为导读，二者已互相交叉引用）
 - [[topics/programming/Web/typescript/intro]] —— TS 入门与工程实践（建议先掌握 JS / ES6+）
 - [[topics/programming/Web/typescript/interface]] —— 从 JavaScript 对象约定理解 TypeScript 接口
 - [[topics/programming/Web/typescript/type-system]] —— TS 类型系统进阶（结构化类型、型变、条件类型与类型体操）
 
+> **前端三件套路线**：[[topics/programming/Web/html]]（结构）→ [[topics/programming/Web/css]]（表现）→ [[topics/programming/Web/javascript]]（行为）。
 > **TypeScript 学习路线**：[[topics/programming/Web/javascript]] → [[topics/programming/Web/es6]] → [[topics/programming/Web/typescript/intro]] → [[topics/programming/Web/typescript/interface]] → [[topics/programming/Web/typescript/type-system]]。前两篇讲运行时语言与语法，后三篇依次介绍类型基础、接口契约和类型编程。
 
 ## 按平台分类
 
 ### 移动端
 
-- [[topics/programming/Android/Android_into]]
+- [[topics/programming/Android/Android_into]] —— Android 入门（平台架构、四大组件、开发环境与第一个项目）
 
 ### 基础设施
 
@@ -112,3 +114,4 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 - **2026-09-30** —— 索引维护：核心笔记纳入 [[topics/tools/marp-screencast-script]]；Web 分类新增 TypeScript 类型系统与接口专题，并补充 TS 学习路线
 - **2026-10-01** —— 拆分超长教程：javascript（8 章）、css（10 阶段）各拆为总览导航页 + 章节笔记，原文件保留学习路线与术语表；全库主题笔记补齐 frontmatter；新增 `scripts/check_notes.py` 校验脚本
 - **2026-10-09** —— 「全景」接入 [[projects/note-writing-plan|笔记编撰计划]]（前端求职线总排程，补全双向导航）
+- **2026-10-10** —— Web 分类新增 [[topics/programming/Web/html|HTML 基础]]（补齐三件套，新增前端三件套路线）；es6 与 JS 教程第 6 章互加交叉引用明确分工；C++（[[topics/programming/cplusplus/into|C 入门]]、[[topics/programming/cplusplus/vscodec|VS Code C/C++]]）与 [[topics/programming/Android/Android_into|Android 入门]] 由空壳扩充为完整笔记

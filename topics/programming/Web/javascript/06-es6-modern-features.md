@@ -4,7 +4,7 @@ tags:
   - programming
   - javascript
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-10
 ---
 
 # 六、ES6+ 现代特性
@@ -12,7 +12,7 @@ updated: 2026-10-01
 > 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 6 / 8 章。 上一章：[[topics/programming/Web/javascript/05-dom-and-browser-api|五、DOM 操作与浏览器 API]] · 下一章：[[topics/programming/Web/javascript/07-error-handling-and-debugging|七、错误处理与调试]]
 
 
-> **本章定位：** 现代 JavaScript（ES2015 及以后版本）带来的语法革新。这些特性让代码更简洁、更易读、更易维护，也是目前主流开发的标准写法。
+> **本章定位：** 现代 JavaScript（ES2015 及以后版本）带来的语法革新。这些特性让代码更简洁、更易读、更易维护，也是目前主流开发的标准写法。本章是**导读 + 实战**：快速建立 ES6+ 全貌并完成现代化重构练习；某个特性需要深挖时（原理、边界、版本演进），转到专题手册 [[topics/programming/Web/es6|ES6 教程]] 对应章节。
 >
 > **学习路线：** 语法增强（解构、模板字符串、展开运算符）→ 迭代协议（for...of、生成器）→ 模块化（ES Modules）→ 后续新特性（私有字段、动态导入、不变性方法）→ 现代化重构实战
 >

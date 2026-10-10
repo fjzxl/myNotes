@@ -28,11 +28,12 @@ myNotes/
 │   │   ├── Java/  cplusplus/  Web/  Android/  Linux/  MySQL/
 │   ├── ai/                         # AI
 │   │   ├── Claude Code.md
-│   │   ├── MoE.md
-│   │   └── note.md
+│   │   └── MoE.md
 │   ├── math/                       # 数学（考研数一）
 │   │   ├── inequalities.md         # 不等式专题
-│   │   └── functions-and-bounds.md # 界与函数（高数起点）
+│   │   ├── functions-and-bounds.md # 界与函数（高数起点）
+│   │   ├── calculus.md             # 高等数学总览（章节导航）
+│   │   └── calculus/               # 高数章节笔记（02-03-sequence-function-limits.md 等）
 │   ├── history/                    # 历史（待填充，有 stub README）
 │   ├── exams/                      # 考试备考（软考等）
 │   │   ├── README.md
@@ -428,3 +429,9 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - 新增 `topics/math/functions-and-bounds.md`（界与函数：确界理论 · 函数四性质 · 初等函数 · 参数方程 · 极坐标 · 图形变换），挂入 MOC - math 与不等式专题导航
   - 新增 `topics/languages/japanese/kana-cards.md`（五十音闪卡 235 张，`Q :: A` 行内牌组，建卡进度对齐三周计划），kana / kana-plan / kana-a-row / MOC - languages 全链路互链
   - 链接巡检：`resources/skills.md` 接入「推荐工具」；MOC - math / MOC - programming 回链 [[projects/note-writing-plan|笔记编撰计划]]（原为单向）；目录树 math / languages 分支与实际文件同步
+
+- **2026-10-10 内容补全批次（附带优化任务落地 + 数学推进）**：
+  - 新增 `topics/programming/Web/html.md`（HTML 基础：结构、语义化、表单、无障碍），补齐前端三件套入口；es6.md 与 JS 教程第 6 章互加交叉引用明确分工
+  - 空壳笔记扩充：`ai/Claude Code.md`（Agent 编程心得）、`cplusplus/into.md`（编译四阶段 + make）、`cplusplus/vscodec.md`（VS Code C/C++ 三层配置）、`Android/Android_into.md`（平台架构 + 四大组件）；`ai/note.md` 闪念移入 `inbox/innovation-flash.md`
+  - 数学：新增 `topics/math/calculus.md`（高数总览）与 `topics/math/calculus/02-03-sequence-function-limits.md`（数列与函数极限长文）；`inequalities.md` 新增「口诀速记」（总纲三句 · 十五条口诀表 · 均值链专记 · 选工具顺口溜）与「分层习题」13 题（附提示与详解）
+  - 各 MOC 与 `projects/note-writing-plan.md`（附带优化任务勾选、进度更新）同步；目录树 ai / math 分支同步

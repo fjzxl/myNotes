@@ -4,7 +4,7 @@ tags:
   - moc
   - ai
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-10-10
 ---
 
 # MOC · AI（AI 知识地图）
@@ -34,12 +34,12 @@ updated: 2026-09-09
 
 ### Agent / Coding Agent
 
-- [[topics/ai/Claude Code]] —— Claude Code 使用笔记
+- [[topics/ai/Claude Code]] —— Claude Code 使用笔记（Agent 编程：拆解问题、分配任务、多智能体协作）
 - 待补充：Agent 设计模式、Multi-agent 协作
 
 ### 行业与思考
 
-- [[topics/ai/note]] —— 闪念与短想法
+- [[inbox/innovation-flash|创新的本质（闪念）]] —— 2026-09 闪念，已按 PARA 移入 inbox 待整理；定期清点时再决定去向
 
 ## 待补充
 
@@ -89,3 +89,4 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 ## 更新记录
 
 - **2026-09-09** —— 初始创建（重构后）
+- **2026-10-10** —— [[topics/ai/Claude Code]] 由一句话闪念扩充为完整笔记（范式转变、任务拆解、多智能体拓扑、实践清单）；闪念 [[inbox/innovation-flash|创新的本质]] 按 PARA 移入 inbox
