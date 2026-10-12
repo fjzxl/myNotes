@@ -22,6 +22,6 @@
 
 ## Local configuration gotchas
 
-- `.gitignore` excludes `.vscode/*` except `.vscode/extensions.json` and `.vscode/foam.code-snippets`; the local `settings.json` is not tracked. `.vscode/foam.code-snippets` is un-ignored but not yet committed — check `git ls-files` before assuming its edits will ship.
+- `.gitignore` excludes `.vscode/*` except `.vscode/extensions.json` and `.vscode/foam.code-snippets`; the local `settings.json` is not tracked — do not assume edits to it will be included in a commit.
 - Workspace `.json` configuration and snippets contain comments (JSONC); strict JSON parsing will reject them.
 - The Python interpreter path in local VS Code/Claude settings is machine-specific, not a portable setup prerequisite. `.claude/` and `.zcode/` are ignored local state.

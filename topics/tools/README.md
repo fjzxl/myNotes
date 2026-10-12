@@ -26,7 +26,7 @@ updated: 2026-10-11
 | 文件 | 作用 | 是否入 Git |
 |------|------|-----------|
 | `.vscode/settings.json` | 工作区设置（编码 / 行尾 / 终端 / Foam 模板目录） | ❌ 含机器相关的解释器路径 |
-| `.vscode/foam.code-snippets` | 笔记模板快捷片段（`daily` / `perm` / `wl` 等 + Tab） | ⚠️ 已被 .gitignore 放行但**尚未提交**（`git ls-files` 不含它，跨设备克隆拿不到，需 `git add .vscode/foam.code-snippets`） |
+| `.vscode/foam.code-snippets` | 笔记模板快捷片段（`daily` / `perm` / `wl` 等 + Tab） | ✅ 已跟踪（2026-10-12 起入 Git，跨设备克隆可得） |
 | `.vscode/extensions.json` | 推荐扩展列表 | ✅ 已跟踪 |
 
 > 快捷片段跨设备可用；完整模板在 `templates/`，用 `Ctrl+Shift+P` → `Foam: Create New Note From Template` 调起。
