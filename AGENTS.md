@@ -7,9 +7,10 @@
 
 - Subject references belong in `topics/`; atomic Zettelkasten notes and Map of Content (MOC) indexes belong in `notes/`. Tools are a separate subject under `topics/tools/`; exam prep (软考 etc.) is a separate subject under `topics/exams/`; language learning (日语 etc.) is a separate subject under `topics/languages/`.
 - There are six MOC files in `notes/` (programming, AI, math, history, exams, languages), matching the README. Update the relevant existing index when adding or moving a topic note.
-- Long tutorials are split into a hub note plus chapter notes: `topics/programming/Web/javascript.md` navigates 8 chapters in `topics/programming/Web/javascript/`, and `topics/programming/Web/css.md` navigates 10 stage notes in `topics/programming/Web/css/`. Put new content in the matching chapter (or a new chapter linked from the hub), not back into the hub.
+- Long tutorials are split into a hub note plus chapter notes: `topics/programming/Web/javascript.md` navigates 8 chapters in `topics/programming/Web/javascript/`, `topics/programming/Web/css.md` navigates 10 stage notes in `topics/programming/Web/css/`, and `topics/math/inequalities.md` navigates 6 chapter notes in `topics/math/inequalities/` (the hub keeps the overview table and 口诀速记). Put new content in the matching chapter (or a new chapter linked from the hub), not back into the hub.
+- Delivering a planned long-form unit doubles as a Zettelkasten pass: extract 3–5 atomic permanent notes into `notes/` (from `templates/permanent-note.md`, English filenames, one concept each) that link back to the source unit, and list them under the unit's entry in the matching MOC.
 - Use workspace-root-relative Foam links without `.md`: `[[topics/tools/Foam]]` or `[[topics/tools/Foam|label]]`. Avoid bare filenames and `../` in wikilinks; check inbound links when renaming notes.
-- Store assets under `attachments/`, separate from notes. Existing topic images use Markdown paths such as `/attachments/images/math/inequalities/amgm-semicircle.png`; these are distinct from Foam wikilinks.
+- Store assets under `attachments/`, separate from notes. Existing topic images use Markdown paths such as `/attachments/images/math/inequalities/amgm-semicircle.png`; these are distinct from Foam wikilinks. Exception: large textbook PDFs stay local next to their notes (e.g. `topics/languages/japanese/*.pdf`, gitignored — see the note in `.gitignore`).
 - Start new structured notes from `templates/` and retain the applicable YAML metadata. Topic notes carry `title`/`tags`/`created`/`updated` frontmatter; template `{{...}}` fields and empty `[[]]` links are intentional placeholders, not broken content to repair globally.
 
 ## Templates and rendering
@@ -21,6 +22,6 @@
 
 ## Local configuration gotchas
 
-- `.gitignore` excludes `.vscode/*` except `.vscode/extensions.json`; the local `settings.json` and `foam.code-snippets` are not tracked. Do not assume edits to them will be included in a commit.
+- `.gitignore` excludes `.vscode/*` except `.vscode/extensions.json` and `.vscode/foam.code-snippets`; the local `settings.json` is not tracked. `.vscode/foam.code-snippets` is un-ignored but not yet committed — check `git ls-files` before assuming its edits will ship.
 - Workspace `.json` configuration and snippets contain comments (JSONC); strict JSON parsing will reject them.
 - The Python interpreter path in local VS Code/Claude settings is machine-specific, not a portable setup prerequisite. `.claude/` and `.zcode/` are ignored local state.

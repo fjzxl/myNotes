@@ -22,7 +22,10 @@ Markmap
 ```json
 {
     "markdown.copyFiles.destination": {
-        "*.md": "attachments/images/${relativeFileDirname}/${documentBaseName}-${fileName}"
+        "topics/math/*.md": "attachments/images/math/${documentBaseName}-${fileName}",
+        "topics/programming/**/*.md": "attachments/images/programming/${documentBaseName}-${fileName}",
+        "topics/languages/**/*.md": "attachments/images/languages/${documentBaseName}-${fileName}",
+        "*.md": "attachments/images/${documentBaseName}-${fileName}"
     },
     "[markdown]": {
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
@@ -143,7 +146,7 @@ print("Hello, World!")
 **为什么 Markdown 工具链与 Foam 强相关**：
 
 - Foam 的图谱、反向链接、wikilink 全部建立在纯 Markdown 之上
-- Markdown All in One 的 `Ctrl+Shift+V` 预览才能看到反向链接面板
+- 反向链接在 Foam 侧边栏的 **Connections 视图**查看（普通 Markdown 预览不渲染反向链接）
 - Paste Image 配置好的图片存储路径，会被 Foam 自动识别为附件节点
 
 **图片存储新路径**：`attachments/images/`（按主题分子目录）

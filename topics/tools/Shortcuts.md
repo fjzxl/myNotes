@@ -3,11 +3,10 @@ title: 工具
 tags:
   - tools
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-11
 ---
 # 工具
 - [工具](#工具)
-  - [shell](#shell)
   - [快捷键](#快捷键)
     - [Markdown All in One](#markdown-all-in-one)
     - [vscode 快捷键](#vscode-快捷键)
@@ -16,16 +15,12 @@ updated: 2026-09-10
     - [Foam（推荐）](#foam推荐)
   - [相关工具笔记](#相关工具笔记)
 
-## shell
-
 ## 快捷键
 
 ### Markdown All in One
 
 1. 生成目录
-  使用 Command Shift P > content
-  Markdown All in One: Create Table of Contents \
-  Markdown All in One: Update Table of Contents
+  `Ctrl+Shift+P` → `Markdown All in One: Create Table of Contents`（已有目录需用 `Markdown All in One: Update Table of Contents` 更新）
 
 2. 快捷键
 

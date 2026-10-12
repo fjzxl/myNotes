@@ -22,10 +22,10 @@ CREATE DATABASE mydatabase
   COLLATE utf8mb4_general_ci;
 CREATE USER username IDENTIFIED BY 'password';
 GRANT all privileges ON mydatabase.* TO 'username'@'%';
-USE mysql;
-update user set user.Host='%'where user.User='username';
 FLUSH PRIVILEGES;
 ```
+
+> 注：`CREATE USER username ...` 不写主机时默认创建的就是 `'username'@'%'`（任意主机可连），上面的 GRANT 已对 `'%'` 授权，**无需**再 `USE mysql; UPDATE user ...` 改 Host。直接改授权表是 MySQL 8 之前的旧教程做法，官方建议只用 `CREATE USER`/`GRANT`/`ALTER USER`。若用户当初是按 `'username'@'localhost'` 创建的，应 `DROP USER` 后按 `'%'` 重建，而不是 UPDATE 系统表。
 
 ## 创建表
 

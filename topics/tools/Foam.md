@@ -20,7 +20,7 @@ updated: 2026-10-01
 ## 核心特性速查
 
 - **`[[wikilink]]`** —— 双向链接，引用不存在的笔记会自动标记
-- **Backlinks** —— 在 Foam 侧边栏的 Backlinks 面板查看反向链接
+- **Backlinks** —— 在 Foam 侧边栏的 **Connections 视图**（Show Backlinks）查看反向链接
 - **Graph** —— `Ctrl+Shift+P` → `Foam: Show Graph`，在 VS Code 内查看图谱
 - **Daily Notes** —— 每日自动生成/打开
 - **F2 自动重命名** —— 重命名笔记时自动更新所有引用

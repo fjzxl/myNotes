@@ -23,7 +23,7 @@ updated: 2026-09-10
 ### 执行命令
 
 ```shell
-tar -zxvf 
+tar -zxvf jdk-21.0.7_linux-x64_bin.tar.gz
 ```
 
 ### 更改.bashrc，配置环境变量
@@ -32,8 +32,8 @@ tar -zxvf
 export JAVA_HOME_8=/home/clarence/software/java/jdk1.8.0_451
 export JAVA_HOME_21=/home/clarence/software/java/jdk-21.0.7
 export JAVA_HOME=${JAVA_HOME_21}
-# export JRE_HOME=${JAVA_HOME}/jre # 21 没有jre，不配置
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+# export JRE_HOME=${JAVA_HOME}/jre # 21 没有独立 jre，不配置 JRE_HOME
+export CLASSPATH=.:${JAVA_HOME}/lib
 export PATH=${JAVA_HOME}/bin:${PATH}
 ```
 

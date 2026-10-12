@@ -67,7 +67,7 @@ HTML 标签天生就带有默认的 `display` 值。**不需要死记硬背所�
 
 **🟡 行内块元素（inline-block）—— 既能并排，又能设宽高**
 
-> 最常见的：**`input`**、`button`、`img`、`textarea`、`select`
+> 最常见的：**`input`**、`button`、`textarea`、`select`（`img` 默认是 `inline`，见下方说明）
 
 这些元素可以像行内元素一样并排，又可以像块级元素一样设置宽高。
 
@@ -93,7 +93,7 @@ HTML 标签天生就带有默认的 `display` 值。**不需要死记硬背所�
 >
 > 1. 这个标签是用来装**一大块内容**的？→ 大概率是 `block`（div、p、h1~h6）
 > 2. 这个标签是用来修饰**文字**的？→ 大概率是 `inline`（span、strong、a）
-> 3. 这个标签是**表单控件或图片**？→ 大概率是 `inline-block`（input、button、img）
+> 3. 这个标签是**表单控件**？→ 大概率是 `inline-block`（input、button、select）；`img` 默认是 `inline`（可替换元素，但可以设置宽高）
 >
 > 遇到不确定的，用浏览器开发者工具选中元素，查看 `display` 值即可。
 

@@ -83,6 +83,7 @@ package-lock.json
 # 编辑器/IDE
 .vscode/*
 !.vscode/extensions.json
+!.vscode/foam.code-snippets
 .sublime-project
 .sublime-workspace
 .atom/

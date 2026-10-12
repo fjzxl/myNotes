@@ -4,7 +4,7 @@ tags:
   - moc
   - math
 created: 2026-09-09
-updated: 2026-10-10
+updated: 2026-10-12
 ---
 
 # MOC · Math（数学地图）
@@ -35,6 +35,7 @@ updated: 2026-10-10
 
 - [x] [[topics/math/functions-and-bounds]] —— 界与函数（基础概念）
 - [x] [[topics/math/calculus/02-03-sequence-function-limits]] —— 数列与函数极限（定义 · 性质 · 夹逼 · 单调有界 · 两个重要极限）
+  - 原子卡：[[notes/squeeze-theorem|夹逼准则]] · [[notes/monotone-bounded-convergence|单调有界定理]] · [[notes/two-important-limits|两个重要极限]]
 - [ ] 连续函数
 - [ ] 无穷小与无穷大
 
@@ -100,7 +101,8 @@ updated: 2026-10-10
 
 ### 不等式（专题）
 
-- [[topics/math/inequalities]] —— 完整不等式体系：总览 / 证明（基础·核心·高阶）/ 多视角理解 / 应用
+- [[topics/math/inequalities]] —— 不等式体系总览（依赖图 · 15 条一览表 · 口诀速记；证明 / 多视角 / 应用 / 习题分居 inequalities/ 六章）
+  - [[topics/math/inequalities/01-basics|一·基础不等式]] · [[topics/math/inequalities/02-core-tools|二·核心工具]] · [[topics/math/inequalities/03-advanced|三·高阶不等式]] · [[topics/math/inequalities/04-multiview|四·多视角理解]] · [[topics/math/inequalities/05-applications|五·应用]] · [[topics/math/inequalities/06-exercises|六·分层习题]]
 
 ## 学习方法
 
@@ -132,4 +134,6 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 - **2026-10-09** —— 新增 [[topics/math/functions-and-bounds]]：占位稿「基础概念」补全为完整笔记（确界理论、函数概念与四性质、初等函数、参数方程、极坐标、图形变换），并挂入 Ch1 清单与不等式专题导航
 - **2026-10-09** —— 「学习方法」接入 [[projects/note-writing-plan|笔记编撰计划]]（原为单向链接，补全双向导航）
 - **2026-10-10** —— 新增 [[topics/math/calculus|高等数学总览]]（W1 计划内交付：章节导航、学习路线、考纲权重）与 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]（Ch1 长文：ε-语言、左右极限、性质与四则、夹逼、单调有界、Heine 归结原则、两个重要极限）；Ch1 勾选第二项
-- **2026-10-10** —— [[topics/math/inequalities]] 新增「口诀速记」（总纲三句 · 十五条口诀表 · 均值链专记 · 选工具顺口溜）与「分层习题」13 题（A 基础 4 / B 进阶 5 / C 考研向 4，均附提示与详解），并与 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]] 互链（$e$ 的双侧估计）
+- **2026-10-10** —— [[topics/math/inequalities]] 新增「口诀速记」（总纲三句 · 十五条口诀表 · 均值链专记 · 选工具顺口溜）与「分层习题」13 题（A 基础 4 / B 进阶 5 / C 考研向 4，均附提示与详解），并与 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]] 互链（$e$ 的双侧估计）；AM-GM 半圆插图升级——补入射影定理全套标注（母 Rt△ABQ 与母子相似填充、$AP=a$/$PB=b$ 分段、两条直角边的射影公式、直角标记），正文与图逐元素对应
+- **2026-10-11** —— [[topics/math/inequalities]] 拆分为总览 + 六章（原 1657 行；`01-basics` ~ `06-exercises`）：总览保留依赖图、15 条一览表与口诀速记，证明 / 多视角 / 应用 / 习题分居 `topics/math/inequalities/`；174 个文内锚点改写为跨文件链接，章节按「第 N / 6 章」互链；当日新增的 Titu 引理附录随 Nesbitt 落在 `02-core-tools`
+- **2026-10-12** —— 「按工具 / 主题」的不等式条目下补六章直达导航（对齐 MOC - programming 的 JS/CSS 章节先例）；10-11 拆分条目补记原行数 1657；Ch1 新增「交付即提取」首批 3 张原子卡（[[notes/squeeze-theorem|夹逼准则]] / [[notes/monotone-bounded-convergence|单调有界定理]] / [[notes/two-important-limits|两个重要极限]]），落实「学习方法」里既定的 Zettelkasten 约定，后续每交付一篇计划内长文提取 3–5 张

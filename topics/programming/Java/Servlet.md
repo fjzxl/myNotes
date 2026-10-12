@@ -23,7 +23,7 @@ updated: 2026-09-10
 
     <groupId>com.clarence.servlet</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0。0</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -182,7 +182,7 @@ updated: 2026-09-10
   </dependencyManagement>
 ```
 
-说明：因为程序在运行时需要 Tomcat web 服务器，Tomcat 包含 servlet 和 jsp 的相关 jar 包，所以将 Servlet 和 JSP 依赖的 scope 设置为 provided，这样打包时就不包括。JSTL 依赖的用于 JSP 页面的 EL 表达式。
+说明：因为程序在运行时需要 Tomcat web 服务器，Tomcat 包含 servlet 和 jsp 的相关 jar 包，所以将 Servlet 和 JSP 依赖的 scope 设置为 provided，这样打包时就不包括。JSTL 依赖则用于 JSP 页面中的标签库与 EL 表达式支持。
 
 ---
 
@@ -218,7 +218,7 @@ updated: 2026-09-10
 
 ## 创建sevlet
 
-1. maven-archetype-web 模板没有创建 src/main/java 文件夹
+1. maven-archetype-webapp 模板没有创建 src/main/java 文件夹
 
 2. 在java文件夹下创建com.clarence.servlet.HelloServlet
 

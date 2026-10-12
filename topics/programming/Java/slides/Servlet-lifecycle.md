@@ -130,7 +130,7 @@ Servlet servlet = (Servlet) clazz.getDeclaredConstructor().newInstance();
 
 ## 阶段 2：`init()`
 
-> Servlet **第一次被请求时**调用，**整个生命周期只一次**
+> Servlet **默认在第一次被请求时**调用（配置了 `load-on-startup` 则随容器启动调用），**整个生命周期只一次**
 
 ```java
 @Override
@@ -270,7 +270,7 @@ A：`HttpServlet.service()` 内部根据 `req.getMethod()` 分发到对应 `doXx
 ## 配套资源
 
 - 📖 详细笔记：[[topics/programming/Java/Servlet]]
-- 📊 源码：[[topics/programming/Java/vscode_Java_dev]]
+- 🧰 环境配置：[[topics/programming/Java/vscode_Java_dev]]
 - 🧰 工具：[[topics/tools/marp-guide]]
 
 ---

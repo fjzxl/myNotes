@@ -449,16 +449,16 @@ const arr2 = new Array(3);       // [empty × 3] — 创建长度为3的空槽�
 const arr3 = Array.from('abc');  // ['a', 'b', 'c']
 const arr4 = Array.of(3);        // [3] — 与 new Array(3) 区别
 
-// 基础操作
-arr1.push(4);        // 尾部添加，返回新长度
-arr1.pop();          // 尾部删除，返回被删元素
-arr1.unshift(0);     // 头部添加，返回新长度
-arr1.shift();        // 头部删除，返回被删元素
-arr1.splice(1, 1);   // 从索引1删除1个元素
-arr1.slice(0, 2);    // 截取 [0,2)，返回新数组（不改变原数组）
-arr1.indexOf(2);     // 查找索引，找不到返回 -1
-arr1.includes(2);    // 是否包含
-arr1.join('-');      // '1-2-3'
+// 基础操作（注意：以下语句按顺序作用于同一个 arr1，前一步会改变后一步的结果）
+arr1.push(4);        // 尾部添加，返回新长度 4，arr1 = [1,2,3,4]
+arr1.pop();          // 尾部删除，返回被删元素 4，arr1 = [1,2,3]
+arr1.unshift(0);     // 头部添加，返回新长度 4，arr1 = [0,1,2,3]
+arr1.shift();        // 头部删除，返回被删元素 0，arr1 = [1,2,3]
+arr1.splice(1, 1);   // 从索引1删除1个元素，arr1 = [1,3]
+arr1.slice(0, 2);    // 截取 [0,2)，返回新数组 [1,3]（不改变原数组）
+arr1.indexOf(2);     // 查找索引，此时返回 -1（2 已被 splice 删掉）
+arr1.includes(2);    // 是否包含，此时返回 false
+arr1.join('-');      // '1-3'
 ```
 
 > `push/pop` 操作尾部速度快（O(1)），`unshift/shift` 操作头部需要整体移动元素（O(n)），大量数据时优先操作尾部。

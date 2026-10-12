@@ -56,9 +56,9 @@ Spring IoC/DI使用后可以管理项目中相关对象，让对象管理的事�
 
 在Spring中，允许Bean的自动注入。有两种方式进行配置：default-autowire和autowire,底层也是基于构造注入或者设置注入的。
 
-* 在根标签`<bean>`中配置autowire属性，此标签代表整个Spring中自动注入的策略。autowire属性取值有5个。
+* 在根标签`<beans>`中配置`default-autowire`属性，此属性代表整个 Spring 中自动注入的默认策略；单个`<bean>`标签上的`autowire`属性可覆盖全局设置。autowire 属性取值有 5 个。
 
-  default:默认值。不自动注入。
+  default：默认值，沿用根标签 `<beans>` 的 default-autowire 设置（未设置时等同于 no，不自动注入）。
 
   no：不自动注入。
 

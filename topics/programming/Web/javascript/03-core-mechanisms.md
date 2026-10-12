@@ -718,7 +718,7 @@ const user = {
   }
 };
 
-setTimeout(user.greet, 100); // 浏览器非严格模式：''（window.name 默认为空字符串）；严格模式：undefined
+setTimeout(user.greet, 100); // 浏览器非严格模式：''（window.name 默认为空字符串）；严格模式：this 为 undefined，执行 this.name 抛 TypeError
 setTimeout(() => user.greet(), 100); // 'Alice'（箭头函数保持）
 
 // 防御性写法 1：bind

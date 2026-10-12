@@ -10,7 +10,7 @@ aliases:
   - Marp Guide
   - Marp 幻灯片
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-11
 ---
 
 # Marp 使用指南：Markdown 写 PPT
@@ -43,7 +43,7 @@ updated: 2026-10-01
 - **多端输出**：一份源文件 → PDF / HTML / PPTX
 - **可版本控制**：因为是文本，可用 Git 管理
 
-一句话总结：**Marp = Markdown + Reveal.js + 极简主题系统**。
+一句话总结：**Marp = Markdown + Marpit（markdown-it 之上的幻灯片框架）+ 极简主题系统**（与 Reveal.js 是两套独立工具，见 §2 对比表）。
 
 ---
 
@@ -72,7 +72,7 @@ updated: 2026-10-01
 
 1. `Ctrl+Shift+X` → 搜 `Marp` → 安装
 2. 打开任意 `.md` 文件
-3. 点击右上角 🎁 **Marp 图标** 打开预览
+3. 点击右上角 **Marp 图标**（Marp 的「M」logo）打开预览
 4. 预览界面 **⚙️ 齿轮** → `Export Slide Deck` 导 PDF/PPTX/HTML
 
 ### 3.2 命令行工具（适合批量 / 自动化）
@@ -87,7 +87,7 @@ marp --version
 
 ### 3.3 进阶：自定义主题
 
-把 CSS 文件放在 `.vscode/` 或项目根目录，在 Frontmatter 里引用。
+主题 CSS 写好后先**注册**再引用：VS Code 扩展在设置 `markdown.marp.themes` 里填 CSS 路径（相对工作区），CLI 用 `marp --theme-set my-theme.css`。注册后 frontmatter 写 `theme: my-theme` 即可生效；临时覆盖样式用 `style: |` 内联（见 §6.2）。
 
 ---
 
@@ -195,7 +195,7 @@ $$
 marp: true                # 必填，启用 Marp
 theme: default            # 主题
 paginate: true            # 显示页码
-size: 16:9                # 比例：4:3 / 16:9 / 16:10
+size: 16:9                # 比例：4:3 / 16:9（内置主题只有这两种；其他尺寸需自定义主题声明 @size，写 16:10 会被忽略并告警）
 backgroundColor: "#fff"   # 默认背景（YAML 里 # 开头会被当作注释，颜色值务必加引号）
 color: "#333"             # 默认文字色
 header: '顶部文字'         # 顶部
@@ -284,18 +284,16 @@ section.lead h1 {
 }
 ```
 
-引用：
+引用（先注册主题，再在 frontmatter 指定）：
 
 ```yaml
 ---
 marp: true
-theme: my-theme
-themeStyle: |
-  @import url('theme.css');
+theme: my-theme   # 前提：已在 markdown.marp.themes（扩展）或 --theme-set（CLI）注册
 ---
 ```
 
-或者用 `style:` 直接写：
+> ⚠️ 没有 `themeStyle` 指令——Marpit 的全局指令只有 `theme` / `style` / `headingDivider` / `lang`，写了会被静默忽略。要内联覆盖样式，用下面的 `style: |`：
 
 ```yaml
 ---
@@ -516,8 +514,8 @@ theme: gaia
 ```powershell
 # 基础导出
 marp my-talk.md --pdf
-marp my-talk.md --html
 marp my-talk.md --pptx
+marp my-talk.md -o my-talk.html   # HTML 是默认输出格式，不带转换标志时直接输出 .html
 
 # 指定输出文件
 marp my-talk.md -o my-talk.pdf
@@ -598,36 +596,30 @@ marp: true
 
 ### 9.4 片段动画（Fragments）
 
-Marp 不原生支持动画，但可以用 Marp Core 的 `_class` + CSS 模拟：
+Marp Core **原生支持逐条出现的列表（fragmented list）**：把无序列表符号从 `-` 换成 `*` 即可，导出 HTML 后翻页时逐条淡入，无需任何 CSS。
 
-```yaml
----
-marp: true
-style: |
-  section ul li {
-    opacity: 0.3;
-  }
-  section.active ul li {
-    opacity: 1;
-  }
----
+```markdown
+- 普通列表：一次全部出现
+* fragmented 列表：逐条出现
+* 第二条
+* 第三条
 ```
 
-配合键盘翻页效果不完美但可用。
+需要自定义动画曲线时，用 Marp Core 的 `_class` 局部指令 + CSS 改写内建样式即可。注意选择器必须命中 Marp 实际生成的类名（随版本变化），`section.active` 这类伪类不会命中、写了等于没写。
 
 ### 9.5 嵌入 Mermaid 图
 
 需要 Mermaid 插件（不是 Marp 内置）：
 
-```markdown
-<mermaid>
+````markdown
+```mermaid
 graph LR
   A[用户] --> B[API]
   B --> C[数据库]
-</mermaid>
 ```
+````
 
-Marp 配合 `markdown-it-mermaid` 插件可用。
+`markdown-it-mermaid` 处理的是 ` ```mermaid ` 围栏代码块，不认 `<mermaid>` 标签（外层示例用了四个反引号，避免与内层围栏打架）。marp-cli 还需用函数式引擎（`--engine`）注入该插件；VS Code 扩展没有这个入口，装 `Mermaid Markdown Syntax Highlighting` 只负责高亮、不负责渲染，这种情况下建议直接导出 SVG / PNG 贴进幻灯片。
 
 ---
 

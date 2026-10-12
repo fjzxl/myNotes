@@ -334,7 +334,8 @@ Promise.resolve().then(() => console.log('Promise'));
 process.nextTick(() => console.log('nextTick'));
 
 // Node.js 输出：nextTick → Promise → setTimeout / setImmediate（顺序不固定）
-// 浏览器输出：Promise → setTimeout
+// 注意：这段代码只能在 Node.js 里跑——setImmediate 和 process.nextTick 在浏览器中未定义，
+// 拿到浏览器执行会直接抛 ReferenceError。
 ```
 
 > **关键区别**：`process.nextTick` 是 Node.js 的"微任务中的微任务"，会在当前操作完成后、其他微任务之前立即执行。由于它可能"饿死" Event Loop，官方建议优先使用 `queueMicrotask`。
@@ -1198,6 +1199,7 @@ retryWithBackoff(
 - **状态回调**：提供回调函数，让 UI 可以响应状态变化
 
 **核心 API 设计：**
+
 ```js
 const loader = createPaginatedLoader({
   fetchPage: (page) => fetch(`/api/items?page=${page}&size=20`).then(r => r.json()),
@@ -1205,9 +1207,12 @@ const loader = createPaginatedLoader({
   onStateChange: (state) => updateUI(state)
 });
 
-await loader.loadAll(); // 加载全部
-await loader.loadMore(); // 加载下一页
-loader.reset(); // 重置状态
+// 顶层 await 只能在模块或 async 函数中使用，这里用 IIFE 包一层
+(async () => {
+  await loader.loadAll(); // 加载全部
+  await loader.loadMore(); // 加载下一页
+  loader.reset(); // 重置状态
+})();
 ```
 
 **关键细节：**
@@ -1303,14 +1308,17 @@ const loader = createPaginatedLoader({
   }
 });
 
-// 加载下一页
-await loader.loadMore();
+// 顶层 await 需在 async 函数/模块里，这里用 IIFE 包一层
+(async () => {
+  // 加载下一页
+  await loader.loadMore();
 
-// 加载全部剩余页
-await loader.loadAll();
+  // 加载全部剩余页
+  await loader.loadAll();
 
-// 重置
-loader.reset();
+  // 重置
+  loader.reset();
+})();
 ```
 
 > **本章小结：** 我们理解了 Event Loop 的工作原理、Promise 的状态与链式调用、async/await 的语法糖本质，并实现了并发调度器、请求重试机制和分页加载器等实战代码。

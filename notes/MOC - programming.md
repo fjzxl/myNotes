@@ -4,7 +4,7 @@ tags:
   - moc
   - programming
 created: 2026-09-09
-updated: 2026-10-10
+updated: 2026-10-11
 ---
 
 # MOC · Programming（编程地图）
@@ -29,6 +29,8 @@ updated: 2026-10-10
 - [[topics/tools/Foam]] —— 知识库管理
 - [[topics/tools/marp-guide]] —— Marp 幻灯片（Markdown → PDF/PPT）
 - [[topics/tools/marp-screencast-script]] —— Marp 5 分钟录屏脚本
+- [[topics/tools/Shortcuts]] —— 顶层工具速查表（VS Code 快捷键、Markdown 工具）
+- [[topics/tools/foam-knowledge-base-guide]] —— Foam 完整使用指南（按 foam-vscode 0.46.0 核对）
 
 ## 按语言分类
 
@@ -115,3 +117,4 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 - **2026-10-01** —— 拆分超长教程：javascript（8 章）、css（10 阶段）各拆为总览导航页 + 章节笔记，原文件保留学习路线与术语表；全库主题笔记补齐 frontmatter；新增 `scripts/check_notes.py` 校验脚本
 - **2026-10-09** —— 「全景」接入 [[projects/note-writing-plan|笔记编撰计划]]（前端求职线总排程，补全双向导航）
 - **2026-10-10** —— Web 分类新增 [[topics/programming/Web/html|HTML 基础]]（补齐三件套，新增前端三件套路线）；es6 与 JS 教程第 6 章互加交叉引用明确分工；C++（[[topics/programming/cplusplus/into|C 入门]]、[[topics/programming/cplusplus/vscodec|VS Code C/C++]]）与 [[topics/programming/Android/Android_into|Android 入门]] 由空壳扩充为完整笔记
+- **2026-10-11** —— 「核心笔记」补齐工具类归属：新增 [[topics/tools/Shortcuts]] 与 [[topics/tools/foam-knowledge-base-guide]]（此前 7 篇工具笔记 5 篇有索引、2 篇遗漏）

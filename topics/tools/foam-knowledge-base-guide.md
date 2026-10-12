@@ -9,7 +9,7 @@ aliases:
   - Foam 知识库搭建
   - Foam Guide
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-11
 ---
 
 # Foam 使用指南：搭建类 Obsidian 知识库
@@ -56,7 +56,7 @@ updated: 2026-09-10
 | 文件格式 | 纯 Markdown | 纯 Markdown（兼容 Obsidian） |
 | 双向链接 | ✅ `[[wikilink]]` | ✅ `[[wikilink]]` |
 | 反向链接 | ✅ | ✅ |
-| 图谱视图 | ✅ | ✅（基于本地服务） |
+| 图谱视图 | ✅ | ✅（扩展内渲染，无需本地服务） |
 | 每日笔记 | ✅ | ✅ |
 | 标签 | ✅ | ✅ |
 | 插件生态 | 强大的社区插件 | 复用 VS Code 全部扩展 |
@@ -76,8 +76,8 @@ updated: 2026-09-10
 
 ### 3.1 安装前置条件
 
-- VS Code 1.85+
-- （可选）Node.js 18+，用于部分高级功能（如 `[[graph]]` 本地服务）
+- VS Code **1.110+**（foam-vscode 0.46.0 的 `engines.vscode` 要求 `^1.110.0`）
+- 无需单独安装 Node.js：扩展运行时自带，图谱不依赖任何本地服务或端口
 
 ### 3.2 安装 Foam 扩展
 
@@ -110,8 +110,8 @@ code .
 在 VS Code 中：
 
 1. `Ctrl+Shift+P` 打开命令面板
-2. 输入 `Foam: Show Graph` 或 `Foam: Show Welcome`
-3. 出现欢迎页即代表初始化完成
+2. 输入 `Foam: Show Graph`（首次安装后想看更新说明可用 `Foam: Show What's New`）
+3. 图谱面板出现即代表初始化完成
 
 ### 3.5 推荐配置 Git
 
@@ -150,9 +150,9 @@ git commit -m "init: foam knowledge base"
 
 ### 4.2 Backlinks（反向链接）
 
-任何笔记 A 引用了笔记 B，Foam 都会在侧边栏 **Backlinks** 面板中列出反向链接；Foam **不会**把反向链接自动写入笔记正文。
+任何笔记 A 引用了笔记 B，Foam 都会在侧边栏 **Connections 视图**的 `Show Backlinks` 中列出反向链接（0.46.0 起没有独立的「Backlinks 面板」）；Foam **不会**把反向链接自动写入笔记正文。
 
-查看方式：打开目标笔记 → 点击活动栏的 Foam 图标 → 在 **Backlinks** 面板查看引用了它的全部笔记，点击即可跳转。
+查看方式：打开目标笔记 → 点击活动栏的 Foam 图标 → 在 **Connections 视图**执行 `Show Backlinks`，查看引用了它的全部笔记，点击即可跳转。
 
 ### 4.3 Tags（标签）
 
@@ -182,7 +182,7 @@ tags:
 - 边 = 链接关系
 - 悬停高亮连接，点击节点可跳转（`Ctrl/Cmd + 点击`）
 
-**筛选**：图谱面板没有查询语法；官方的过滤方式是在设置中定义分组规则/命名视图（按 `tag`、`path` 或正则匹配）。想快速找某主题的笔记，用 `Ctrl+Shift+F` 全局搜索标签（如 `tag:math`）更直接。
+**筛选**：图谱面板没有查询语法；官方的过滤方式是在设置中定义分组规则/命名视图（按 `tag`、`path` 或正则匹配）。想快速找某主题的笔记，用 `Ctrl+Shift+P` → `Foam: Search Tag` 选标签，或直接全文搜 `#math`（VS Code 搜索框没有 `tag:` 查询语法）。
 
 ### 4.5 Daily Notes（每日笔记）
 
@@ -190,10 +190,11 @@ tags:
 
 ### 4.6 Placeholders（占位符）
 
-任何被引用但还没创建的笔记都是 placeholder。Foam 提供命令快速管理：
+任何被引用但还没创建的笔记都是 placeholder。这些引用会集中出现在侧边栏的 **Placeholders** 视图里（0.46.0 起不再是独立命令）：
 
-- `Foam: Show Orphaned Notes` — 列出所有未创建引用
-- `Foam: Create Note From Placeholder` — 批量创建
+- **Placeholders** 视图 — 列出所有未创建引用，勾选即批量创建
+- `Ctrl+Shift+P` → `Foam: Create New Note From Template` — 从模板新建
+- `Ctrl+Shift+P` → `Foam: Show Graph` — 在图谱里识别孤立笔记
 
 ---
 
@@ -207,7 +208,7 @@ ni "深度学习.md" -ItemType File
 ```
 
 **方式二**：在任意 Markdown 中输入 `[[新笔记]]`，然后：
-- `Ctrl+Shift+P` → `Foam: Create Note From Placeholder`
+- `Ctrl+Shift+P` → `Foam: Create New Note From Template`
 - 或点击提示中的 "Create"
 
 ### 5.2 链接、跳转、重命名
@@ -231,13 +232,13 @@ Foam 支持引用具体段落（需开启实验性功能）：
 ![[深度学习#^block-id]]
 ```
 
-启用方式：VS Code 设置 → 搜索 `foam.links` → 开启 `Include block references`。
+0.46.0 起 block references 默认生效，无需开关（`foam.links.*` 下只有 `directory.mode` / `sync.enable` / `hover.enable` 三项，没有 "Include block references"）。
 **注意**：此特性与 Obsidian 略有差异，复杂场景建议先验证。
 
 ### 5.5 搜索
 
 - **VS Code 原生**：`Ctrl+Shift+F` 全文检索（支持正则）
-- **Foam 增强**：`Ctrl+Shift+P` → `Foam: Search Notes`（带标签筛选的专用搜索）
+- **Foam 增强**：`Ctrl+Shift+P` → `Foam: Search Tag`（按标签筛选）；`Foam: Show Similar Notes`（语义相似笔记，需先建 embeddings 索引）
 
 ---
 
@@ -250,8 +251,10 @@ Foam 支持引用具体段落（需开启实验性功能）：
 ```jsonc
 {
   // Foam 核心
-  "foam.edit.linkReferenceDefinitions": "withoutBrackets",
-  "foam.files.attachmentExtensions": ["png", "jpg", "jpeg", "gif", "svg", "pdf"],
+  // 取值只有三个：withExtensions / withoutExtensions / off（默认 off）
+  "foam.edit.linkReferenceDefinitions": "withoutExtensions",
+  // 空格分隔的字符串，不是数组；图片有独立的处理路径，默认列表不含图片扩展名
+  "foam.files.attachmentExtensions": "pdf mp3 webm wav m4a mp4 avi mov rtf txt doc docx pages xls xlsx numbers ppt pptm pptx",
 
   // Markdown 增强
   "markdown.preview.fontSize": 14,
@@ -309,20 +312,15 @@ Foam 支持引用具体段落（需开启实验性功能）：
 
 ### 6.4 配置 Graph 过滤
 
-`.vscode/foam.graph.json`（可选）：
+`.vscode/foam.graph.json` 是 Foam 0.15 时代的旧格式，当前版本改用 `settings.json` 里的 **`foam.graph.views`**（支持 `name` / `colorBy` / `groups` / `show` / `background` 等字段）；需要按查询条件动态分组时用 Smart Folders（存在 `.foam/queries/` 下）。
 
 ```jsonc
 {
-  "groups": [
+  "foam.graph.views": [
     {
-      "label": "📚 知识库",
-      "query": "tag:knowledge OR tag:tech",
-      "color": "#4fc3f7"
-    },
-    {
-      "label": "📅 日记",
-      "query": "tag:daily",
-      "color": "#81c784"
+      "name": "📅 日记",
+      "colorBy": "tag",
+      "groups": [{ "label": "日记", "query": "tag:daily-notes" }]
     }
   ]
 }
@@ -411,13 +409,13 @@ myKnowledge/
 ### 8.2 日常记录（随时）
 
 - 看到好文章 → 丢进 `inbox/`
-- 灵光一现 → `Ctrl+Shift+P` → `Foam: New Note`（快捷键 `Ctrl+Alt+N`）
+- 灵光一现 → `Ctrl+Shift+P` → `Foam: Create New Note`（0.46.0 未给它设默认快捷键，可自己绑一个）
 - 引用已有内容 → 用 `[[]]` 创建连接
 
 ### 8.3 周末整理（30-60 分钟）
 
-1. `Foam: Show Orphaned Notes` — 找出尚未建立的引用，决定是否创建
-2. `Foam: Show Graph` — 看图谱，识别孤立笔记
+1. 侧边栏 **Placeholders** 视图 — 找出尚未建立的引用，决定是否创建
+2. 侧边栏 **Orphans** 视图 / `Foam: Show Graph` — 识别孤立笔记
 3. 把 inbox 里的临时笔记转成永久笔记
 4. 更新 MOC
 
@@ -505,11 +503,9 @@ Foam 本身不提供加密，但因为你掌控文件，可以用：
 
 ### Q6：Foam 停止维护了吗？
 
-截至 2024 年，Foam 社区版由志愿者维护，更新节奏变慢但核心功能稳定。重要更新请关注 [GitHub 仓库](https://github.com/foambubble/foam)。
+Foam 社区版仍在活跃迭代：foam-vscode **0.46.0** 于 2026-09-30 发布，近期加入了 Smart Folders、embeddings 索引（`Foam: Build Embeddings Index`）等能力。重要更新请关注 [GitHub 仓库](https://github.com/foambubble/foam)。
 
-如果需要更活跃的维护，可考虑：
-- **foam-community** 分支
-- 自行 fork 改造
+如果想要超出官方节奏的功能，可以自行 fork 改造。
 
 ### Q7：如何在 Foam 里画图？
 
@@ -532,7 +528,7 @@ Foam 本身不提供加密，但因为你掌控文件，可以用：
 
 - [Quarto](https://quarto.org/) — 科学文档发布
 - [Jekyll](https://jekyllrb.com/) + [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) 主题
-- [Astro](https://astro.build/) + [Foam 模板](https://github.com/foambubble/foam-template)
+- [Astro](https://astro.build/)（Foam 官方发布模板走 Gatsby/eleventy 路线；[foam-template](https://github.com/foambubble/foam-template) 只是知识库起步工作区，不是发布主题，别直接配对使用）
 
 ---
 
@@ -541,20 +537,20 @@ Foam 本身不提供加密，但因为你掌控文件，可以用：
 | 操作 | 快捷键 / 命令 |
 |------|---------------|
 | 打开每日笔记 | `Ctrl+Shift+P` → `Foam: Open Daily Note` |
-| 新建笔记 | `Ctrl+Shift+P` → `Foam: New Note` |
+| 新建笔记 | `Ctrl+Shift+P` → `Foam: Create New Note` |
 | 打开图谱 | `Ctrl+Shift+P` → `Foam: Show Graph` |
 | 跳转到链接 | `F12` 或 `Ctrl+Click` |
 | 重命名笔记（自动更新所有引用） | `F2` |
-| 显示孤立笔记 | `Ctrl+Shift+P` → `Foam: Show Orphaned Notes` |
-| 显示反向链接 | 切换到 Markdown 预览（`Ctrl+K V`） |
-| 复制 wikilink | `Ctrl+Shift+P` → `Foam: Copy Wikilink To Current Note` |
-| 跳到当前笔记的目录 | `Ctrl+Shift+P` → `Foam: Reveal Current Note In Explorer` |
+| 显示孤立笔记 | 侧边栏 **Orphans** 视图（或 `Foam: Show Graph` 看图） |
+| 显示反向链接 | 侧边栏 **Connections** 视图 → `Show Backlinks`（普通 Markdown 预览不渲染反向链接） |
+| 复制链接（不带方括号） | `Ctrl+Shift+P` → `Foam: Copy To Clipboard Without Brackets` |
+| 打开今日 / 指定日期笔记 | `Alt+D` / `Alt+H`（0.46.0 唯一两个默认键位） |
 
 ---
 
 ## 参考资源
 
-- **官方文档**：[foam.visualstudio.com](https://foambubble.github.io/foam/)
+- **官方文档**：[foambubble.github.io/foam](https://foambubble.github.io/foam/)
 - **GitHub 仓库**：[github.com/foambubble/foam](https://github.com/foambubble/foam)
 - **YouTube 教程**：搜索 "Foam VS Code tutorial"
 - **Reddit 社区**：r/FoamNotes
@@ -592,4 +588,4 @@ Foam 本身不提供加密，但因为你掌控文件，可以用：
 - [Foam 模板仓库](https://github.com/foambubble/foam-template)
 ---
 
-> **作者注**：本指南基于 Foam 0.20+ 撰写。Foam 处于持续演进中，部分实验性功能（Block References、AI 集成等）可能随版本变化，请以官方文档为准。
+> **作者注**：本指南已按 foam-vscode **0.46.0**（2026-09-30）的 `package.json` 逐条核对命令名与设置项。Foam 仍在演进，升级扩展后建议重新核对一次；实验性功能（Block References、AI 集成等）也可能随版本变化，请以官方文档为准。

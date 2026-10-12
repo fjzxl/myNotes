@@ -1,12 +1,17 @@
 ---
-title: "{{date}}"
+foam_template:
+  name: Daily Note
+  description: 每日笔记（Foam: Open Daily Note 自动创建到 journal/daily/YYYY-MM-DD.md）
+  filepath: "/journal/daily/${FOAM_DATE_YEAR}-${FOAM_DATE_MONTH}-${FOAM_DATE_DATE}.md"
+---
+title: "${FOAM_DATE_YEAR}-${FOAM_DATE_MONTH}-${FOAM_DATE_DATE}"
 tags:
   - daily-note
-date: {{date}}
-day-of-week: {{dayOfWeek}}
+date: "${FOAM_DATE_YEAR}-${FOAM_DATE_MONTH}-${FOAM_DATE_DATE}"
+day-of-week: ${FOAM_DATE_DAY_NAME}
 ---
 
-# {{date}} ({{dayOfWeek}})
+# ${FOAM_DATE_YEAR}-${FOAM_DATE_MONTH}-${FOAM_DATE_DATE}（${FOAM_DATE_DAY_NAME}）
 
 > 每日笔记模板。基于 [[journal/README|Journal]] 工作流。
 
@@ -53,5 +58,6 @@ day-of-week: {{dayOfWeek}}
 
 ---
 
+> `Foam: Open Daily Note` 会用本模板自动在 `journal/daily/` 创建当天笔记（路径由上方 `foam_template.filepath` 决定，`${FOAM_DATE_*}` 变量自动展开）。
+> 手动复制本文件时，把 `${FOAM_DATE_*}` 替换为当天日期即可。
 > 模板文件位置：`templates/daily-note.md`
-> 复制到 `journal/daily/{{date}}.md` 后填写。

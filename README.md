@@ -9,7 +9,7 @@
 - **`exams` 考试备考一级主题**：软考等备考大纲、真题与论文练习
 - **`languages` 语言学习一级主题**：日语等外语学习大纲与语料（兴趣驱动，考试仅作阶段自测）
 - **6 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史 / 考试备考 / 语言学习）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
-- **附件独立**：所有图片/PDF/代码片段放在 `attachments/`，与笔记体系解耦
+- **附件独立**：图片/代码片段等附件放在 `attachments/`，与笔记体系解耦（大体积教材 PDF 例外，见 `.gitignore` 说明）
 - **空目录有 stub README**：每个空目录都放了一个 `README.md` 引导说明
 - **本地优先 + Git 版本控制**：单仓库跨设备同步
 
@@ -30,7 +30,8 @@ myNotes/
 │   │   ├── Claude Code.md
 │   │   └── MoE.md
 │   ├── math/                       # 数学（考研数一）
-│   │   ├── inequalities.md         # 不等式专题
+│   │   ├── inequalities.md         # 不等式专题总览（依赖图 · 15 条一览表 · 口诀速记）
+│   │   ├── inequalities/           # 不等式章节笔记（01-basics ~ 06-exercises 六章）
 │   │   ├── functions-and-bounds.md # 界与函数（高数起点）
 │   │   ├── calculus.md             # 高等数学总览（章节导航）
 │   │   └── calculus/               # 高数章节笔记（02-03-sequence-function-limits.md 等）
@@ -38,16 +39,18 @@ myNotes/
 │   ├── exams/                      # 考试备考（软考等）
 │   │   ├── README.md
 │   │   └── ruankao/                # 软考
-│   │       └── system-architect.md # 系统架构设计师备考大纲
+│   │       ├── system-architect.md   # 系统架构设计师备考大纲
+│   │       └── essay-sample-seckill.md # 论文范文：秒杀系统
 │   ├── languages/                  # 语言学习（兴趣向，考试仅作自测）
 │   │   ├── README.md
 │   │   └── japanese/               # 日语
 │   │       ├── syllabus.md         # 日语学习大纲（标日 + JLPT 分级）
-│   │       ├── kana.md             # 五十音笔记（总表 / 发音 / 辨析）
+│   │       ├── kana.md             # 五十音笔记（总表 / 全表共通规律 / 发音 / 辨析）
 │   │       ├── kana-cards.md       # 五十音闪卡（235 张，Q::A 牌组）
 │   │       ├── kana-plan.md        # 五十音三周每日计划
-│   │       └── kana-a-row.md       # あ行逐行笔记
+│   │       └── kana-*-row.md       # 逐行笔记全 10 行（a/ka/sa/ta/na/ha/ma/ya/ra/wa，拨音 ん 并入 wa 篇）
 │   └── tools/                      # 工具笔记（与编程/AI 并列）
+│       ├── README.md               # 工具索引（入口）
 │       ├── VSCode.md
 │       ├── Foam.md
 │       ├── foam-knowledge-base-guide.md
@@ -83,7 +86,7 @@ myNotes/
 │   ├── project.md                  # 项目跟踪
 │   └── code-snippet.md             # 代码片段
 │
-├── archive/                        # 归档（当前为空）
+├── archive/                        # 归档（有 stub README，当前无归档内容）
 │
 ├── scripts/                        # 仓库工具
 │   └── check_notes.py              # 轻量校验：链接/图片/frontmatter/围栏/表格/编码
@@ -93,6 +96,7 @@ myNotes/
 │   │   ├── programming/            # Java/ + Linux/ + vscode-remote-dev/
 │   │   ├── ai/                     # 待填充（有 stub README）
 │   │   ├── history/                # 待填充（有 stub README）
+│   │   ├── languages/              # japanese/（五十音讲义挂图）
 │   │   └── math/                   # inequalities/（不等式专题插图 × 20）+ curves/（参数方程·极坐标常见曲线 × 8）
 │   ├── pdfs/                       # 待填充（有 stub README）
 │   └── code-snippets/              # 待填充（有 stub README）
@@ -103,6 +107,8 @@ myNotes/
 │   └── extensions.json             # 推荐扩展列表（含 Tip of the Day）
 │
 ├── .gitignore
+├── .gitattributes                # 锁定 UTF-8 + LF 行尾（跨设备克隆不跑偏）
+├── .zcodeignore
 └── README.md
 ```
 
@@ -116,7 +122,7 @@ myNotes/
 | 历史 | [[notes/MOC - history]] | [[topics/history/README]] | ⏳ 待填充 |
 | 考试备考 | [[notes/MOC - exams]] | [[topics/exams/README]] | 🔨 起步中（软考架构师） |
 | 语言学习 | [[notes/MOC - languages]] | [[topics/languages/README]] | 🔰 起步中（日语·兴趣向） |
-| 工具 | [[topics/tools/Shortcuts]] | `topics/tools/` | ✅ 工具速查 |
+| 工具 | [[topics/tools/Shortcuts]] | [[topics/tools/README]] | ✅ 工具速查 |
 
 ## 推荐工具
 
@@ -124,7 +130,6 @@ myNotes/
 - **Foam** —— 双向链接知识管理（见 [[topics/tools/foam-knowledge-base-guide]]）
 - **Tip of the Day** —— 启动时右下角弹快捷键提示
 - **Git** —— 版本控制 + 多设备同步
-- **Skills 速查** —— [[resources/skills]]（科研技能清单）
 
 ## ⚙️ 配置
 
@@ -202,6 +207,17 @@ myNotes/
 - `Ctrl+Shift+P` → `Foam: Create New Note From Template`，从列表选择模板
 - 模板中的 `$FOAM_TITLE`、`$FOAM_DATE_*` 等 Foam 变量会自动展开；`{{...}}` 字段需手动填写
 - 快速骨架走本地 snippets：`daily` / `cornell` / `perm` 等 + Tab
+
+#### 🗓️ Foam 每日笔记目录
+
+```json
+{
+  // "Foam: Open Daily Note" 的落盘位置（Foam 已标记弃用该设置，0.44 仍生效）
+  "foam.openDailyNote.directory": "journal/daily"
+}
+```
+
+> 新版 Foam 改由 `templates/daily-note.md` 模板的 `foam_template.filepath` 决定每日笔记路径——本仓库模板已配置同一位置，升级后行为不变。`输入 daily + Tab` 的手动骨架流程仍可用于补写过去的日期。
 
 #### 📝 Markdown 智能补全
 
@@ -332,9 +348,9 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 ```
 1. 早上开 VS Code
    ↓
-2. Ctrl+Shift+P → "Foam: Open Daily Note"  (打开/创建今日笔记)
+2. Ctrl+Shift+P → "Foam: Open Daily Note"  (自动在 journal/daily/ 创建/打开今日笔记)
    ↓
-3. 输入 daily + Tab → 展开骨架
+3. 在今日笔记里填目标与日志（daily-note 模板自动套用）
    ↓
 4. 边写边用 perm/lit/proj 插入其他笔记的骨架
    ↓
@@ -435,3 +451,34 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - 空壳笔记扩充：`ai/Claude Code.md`（Agent 编程心得）、`cplusplus/into.md`（编译四阶段 + make）、`cplusplus/vscodec.md`（VS Code C/C++ 三层配置）、`Android/Android_into.md`（平台架构 + 四大组件）；`ai/note.md` 闪念移入 `inbox/innovation-flash.md`
   - 数学：新增 `topics/math/calculus.md`（高数总览）与 `topics/math/calculus/02-03-sequence-function-limits.md`（数列与函数极限长文）；`inequalities.md` 新增「口诀速记」（总纲三句 · 十五条口诀表 · 均值链专记 · 选工具顺口溜）与「分层习题」13 题（附提示与详解）
   - 各 MOC 与 `projects/note-writing-plan.md`（附带优化任务勾选、进度更新）同步；目录树 ai / math 分支同步
+
+- **2026-10-11 全库审计修复（内容正确性 + 工具文档 + 仓库工程）**：
+  - **数学**：`functions-and-bounds.md` 判别法的符号结论写反（$(0,1)$ 内应为同号、$(1,\infty)$ 内应为异号），已修正并与同句单调性结论对齐；`inequalities.md` 全 1889 行 + 13 道分层习题逐题验算无误
+  - **日语**：`kana.md` 清音 44→**46**、わ行新音 3→**2**（を 读 o）、发音表 `つ/づ` 分行（原文把 `ぢ` 和 `つ` 排成一行）、促音出现位置补全（漏 う行前 / 拗音前 / 词首）、外来词音节补 `ヴァ/ヴィ/ヴェ/ヴォ/ツィ`
+  - **工具文档**：`foam-knowledge-base-guide.md` 按 foam-vscode **0.46.0** 的 `package.json` 逐条核对——修正非法枚举值 `withoutBrackets`→`withoutExtensions`、`attachmentExtensions` 数组→空格分隔字符串、VS Code 要求 1.85→1.110+、删除「图谱依赖本地服务 / 需装 Node.js」的自相矛盾表述、替换 6 条已不存在的命令（`Show Welcome` / `Create Note From Placeholder` / `Search Notes` / `New Note` / `Copy Wikilink To Current Note` / `Reveal Current Note In Explorer`）、反向链接改到 Connections 视图、图谱分组配置改到 `foam.graph.views`；`marp-guide.md` 片段动画改为原生 fragmented list（原文的 `section.active` 是永不命中的死代码）、Mermaid 改用围栏代码块；`marp-screencast-script.md` 修正 `math: katex` 的位置（全局指令必须在顶部 frontmatter）与「导出后自动打开 PDF」；`VSCode.md` Alt+Click 改回左键
+  - **结构一致性**：新增 `topics/tools/README.md` 工具索引并补齐 [[topics/tools/README]]；`Shortcuts` 与 `foam-guide` 收进 MOC - programming（工具笔记此前 5/7 有归属、2 篇无索引）；`kana-a-row` 收进 MOC - languages；`typescript/interface.md` 补 `updated`；README 目录树补 `essay-sample-seckill.md` / `.gitattributes` / `.zcodeignore`
+  - **仓库工程**：新增 `.gitattributes` 锁定 UTF-8 + LF（此前 Windows `core.autocrlf=true` 且无该文件，克隆后会整体转 CRLF）；`.gitignore` 放行 `.vscode/foam.code-snippets`（settings.json 含机器相关路径，仍保持本地）；`check_notes.py` 清掉两处死代码并把 `updated` 纳入 frontmatter 必检项
+
+- **2026-10-11 五十音图笔记补充**：
+  - 新增**逐行笔记全 10 行**（`kana-a-row` ~ `kana-wa-row`，新增 9 篇；拨音 `ん` 并入わ行篇，与计划 10-20 的分组一致），每篇含速览表（段 / 平假名 / 片假名 / 罗马字 / 笔画 / 字源）、发音要点、笔顺、易混辨析、例词试读与自测清单，按每日计划日推进
+  - `kana.md` 新增 **§9 全表共通规律**：行序口诀与六组记忆法（合计 46 音的推导）、辅音发音部位对照、「一拍」度量衡（拗音 1 拍 / 促音无声占 1 拍 / 长音加 1 拍）、**全表 8 个不按字母直拼的读音**（し・ち・つ・ふ・じ・ぢ・ず・づ）、平片笔顺共通规则、三个不属于行的特例（拨音 ん / 小写 ゃゅょ / 历史假名 ゐ ゑ）；原「自测与验收」顺延为 §10
+  - 逐行笔记的 46 组「假名 ↔ 片假名 ↔ 罗马字」三元组已用脚本对拍标准五十音图：**46/46 全覆盖、0 错配**；新笔记统一标注「页码待对照教材补」，未编造任何教材页码
+  - 索引同步：`kana.md` 关联区、`notes/MOC - languages`、`topics/languages/README.md`、README 目录树均收录新笔记；逐行笔记之间的「上一行 / 下一行」已双向互链
+
+- **2026-10-11 不等式专题拆分为 hub + 章节笔记**：
+  - `topics/math/inequalities.md`（2026 行）按学习阶段拆分：总览（依赖图 · 15 条一览表 · 目录）与口诀速记留在 hub，证明 / 多视角 / 应用 / 习题分居 `topics/math/inequalities/` 六章——`01-basics`（三角 · AM-GM · 排序 · 切比雪夫）、`02-core-tools`（柯西-施瓦茨含 Lagrange 恒等式附录 · 伯努利 · 琴生含凸函数判定附录 · Nesbitt 含 Titu 引理附录）、`03-advanced`（Young → Hölder → 权方和 / Minkowski）、`04-multiview`（多视角理解）、`05-applications`（七个场景 · 指对 · 三角 · 积分四件套 · 题型速查）、`06-exercises`（A/B/C 分层习题 + 答案详解）
+  - 174 个文内锚点链接按「锚点 → 所在章」映射自动改写为跨文件 wikilink（总览表内用相对 Markdown 链接，避开表格内 `\|` 转义）；章节按 javascript/css 章节惯例「第 N / 6 章 · 上一章 · 下一章」互链、章尾 ↩ 返回总览
+  - 外部引用同步：`templates/cornell-marp.md` 带锚点链接改指 `01-basics`；AGENTS.md hub 范例清单、README 目录树、MOC - math 描述与更新记录更新；`check_notes.py` 103 文件 0 error
+
+- **2026-10-12 文档巡检修正**：
+  - AGENTS.md 与 `templates/README.md` 更正 `.vscode/foam.code-snippets` 状态（已被 .gitignore 放行、暂未提交，原文误写为「被 Git 忽略」）
+  - MOC - math / MOC - programming 的 `updated` 同步为 2026-10-11；MOC - programming 补录当日「核心笔记」收录 Shortcuts 与 foam-knowledge-base-guide 的更新条目
+  - `archive/` 补 stub README，兑现「空目录有 stub README」约定
+  - AGENTS.md 附件约定补「大体积教材 PDF 留在主题目录本地保存（gitignore）」例外，呼应 `.gitignore` 注释里的引用
+
+- **2026-10-12 优化落地批次**：
+  - **软考真题矩阵补全**：2025.5 试题四（论 AI 在测试用例生成中的应用）与 2026.5 整行（向量数据库 / 高并发 / 六边形架构 / 多模态大模型测试）按考生回忆版联网核实补入，矩阵扩为机考后四场，「高频方向」新增 AI 应用一类
+  - **五十音页码补注**：9 篇逐行笔记的「页码待对照」占位按教材 PDF 逐页核实补全；发现入门单元实际至 **p.2–16**（p.17 为「基本单元 上」分隔页），kana / kana-plan / languages README 的 p.2–17 引用一并更正
+  - **daily note 流程落地**：`.vscode/settings.json` 配 `foam.openDailyNote.directory: journal/daily`；`templates/daily-note.md` 升级为 Foam 原生模板（`foam_template.filepath`，新版 Foam 的接管机制）；播种首篇 `journal/daily/2026-10-12.md`（五十音 Day 1 任务）
+  - **Zettelkasten 启动**：「交付即提取」约定写入 AGENTS.md（每篇计划内长文交付时提取 3–5 张原子卡）；MOC - math 补不等式六章直达导航，Ch1 挂首批 3 张原子卡（夹逼准则 / 单调有界定理 / 两个重要极限）；MOC - math 10-11 拆分条目补记原行数 1657
+  - **README 推荐工具**撤下 `resources/skills` 速查（3 行裸列表与「科研技能清单」宣传不符；文件保留待扩写后再上线）

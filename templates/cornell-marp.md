@@ -243,7 +243,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 2. **前向步**：$n \to 2n$（分组）
 3. **后向步**：$2^k \to 2^k - 1$（补元素）
 
-详见：[[topics/math/inequalities#均值不等式]]
+详见：[[topics/math/inequalities/01-basics#均值不等式|均值不等式]]
 
 </div>
 

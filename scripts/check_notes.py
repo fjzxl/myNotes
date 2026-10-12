@@ -114,7 +114,7 @@ def frontmatter_check(path, text):
     if not fm.strip():
         err(path, 1, 'frontmatter 为空')
         return
-    for key in ('title', 'tags', 'created'):
+    for key in ('title', 'tags', 'created', 'updated'):
         if not re.search(rf'^{key}\s*:', fm, re.M):
             warn(path, 1, f'frontmatter 缺少 {key}')
 
@@ -131,8 +131,6 @@ def wikilink_check(path, prose, all_notes, in_templates):
             file_part, _, anchor = target.partition('#')
             file_part = file_part.strip()
             if not file_part:
-                if anchor and anchor.lstrip('^') not in {h for h in []}:
-                    pass
                 continue
             if file_part not in all_notes:
                 if re.search(r'[/\\]', file_part):
@@ -166,7 +164,7 @@ def mdlink_check(path, prose, all_notes, headings_index):
                     found = cand
                     break
             if found is None:
-                (err if is_img or not anchor else err)(path, i, f'目标不存在: ({target})')
+                err(path, i, f'目标不存在: ({target})')
                 continue
             if anchor and not is_img:
                 target_text = found.read_text(encoding='utf-8', errors='replace')

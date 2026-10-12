@@ -205,9 +205,9 @@ inittab写入内容
 
 ```shell
 ::sysinit:/etc/init.d/rcS ## 启动时执行rcS
-::respawn:-bin/sh   ## 启动命令行
-::askfirst:-bin/sh  ## 
-::ctrlaltdel:bin/umount -a -r   ## unmount
+::respawn:-/bin/sh   ## 启动命令行
+::askfirst:-/bin/sh  ##
+::ctrlaltdel:/bin/umount -a -r   ## unmount
 ```
 
 ```shell
@@ -280,7 +280,7 @@ bt
 安装vscode
 安装工具 vim git tmux
 vscode安装c++插件
-python ./scripts/gen_compile_commands.py
+bear make -j4   # 4.9 内核树没有 scripts/gen_compile_commands.py（5.3 才合入），用 bear 生成 compile_commands.json；没有 bear 就手动配 includePath
 lanch.json
 
 ```json

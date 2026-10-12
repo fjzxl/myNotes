@@ -163,7 +163,7 @@ transform: scale(1.1) translate(-50%, -50%);
 | `rotateY(角度)` | `rotateY(deg)` | 沿Y轴旋转（左右翻转） | `rotateY(45deg)` |
 | `rotateZ(角度)` | `rotateZ(deg)` | 沿Z轴旋转（平面旋转） | `rotateZ(45deg)` |
 | `scale3d(sx, sy, sz)` | `scale3d(sx, sy, sz)` | 3D空间缩放 | `scale3d(1, 1, 2)` |
-| `perspective(距离)` | `perspective(px)` | 透视距离（设置在父元素）<br>值越小，透视越强烈 | `perspective(1000px)` |
+| `perspective(距离)` | `perspective(px)` | 透视距离（**transform 函数**，写在元素自身的 transform 里；设置在父元素的是 `perspective` 属性，见下方示例）<br>值越小，透视越强烈 | `transform: perspective(1000px) rotateX(45deg)` |
 
 ```css
 /* 3D 变换示例：父元素需要设置 perspective 才能看到立体效果 */
@@ -174,8 +174,10 @@ transform: scale(1.1) translate(-50%, -50%);
 
 .child {
   transform: rotateX(45deg); /* 沿X轴旋转 */
-  transform-style: preserve-3d; /* 保持3D空间（父元素设置） */
 }
+
+/* 若 .child 还有下一层 3D 子元素，需要在 .child 上加 transform-style: preserve-3d，
+   让孙元素与 .child 共享同一 3D 空间（默认会把子元素压平到 .child 的平面里） */
 ```
 
 **常用3D变换效果**：
@@ -310,7 +312,7 @@ animation: slideUp 0.5s ease-out 0.2s infinite alternate forwards;
 animation: fadeIn 0.3s ease-in-out 1 normal both;
 ```
 
-> ⚠️ **易错点**：`animation-delay` 是第二个时间值，不是第一个。如果写 `0.5s 1s`，则是延迟0.5秒，播放1秒。
+> ⚠️ **易错点**：`animation-delay` 是第二个时间值，不是第一个。如果写 `0.5s 1s`，则是播放 0.5 秒、延迟 1 秒（第一个时间值总是 duration）。
 
 **animation-direction 详细效果**：
 

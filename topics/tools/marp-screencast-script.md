@@ -6,7 +6,7 @@ tags:
   - tutorial
   - tools
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-11
 ---
 
 # 🎬 录屏脚本：5 分钟学会 Marp
@@ -124,7 +124,7 @@ title: 我的第一次 Marp
 - 可版本控制
 ```
 
-2. 点击右上角 Marp 图标（一个礼物盒 🎁）打开预览
+2. 点击右上角 Marp 图标（Marp 的「M」logo）打开预览
 
 **台词**：
 > "Marp 的语法超简单。文件开头三横线包起来的部分是 Frontmatter，告诉 Marp '这是幻灯片'。然后每两个 `---` 之间是一页。点击右上角的 Marp 图标看预览。"
@@ -167,8 +167,11 @@ def hello():
 
 3. 加数学公式（KaTeX）：
 
+`math: katex` 是**全局 frontmatter 指令**，必须写进文件顶部第一个 `---` 块里，写在中段只会渲染成一页字面文本。
+
 ```markdown
 ---
+marp: true
 math: katex
 ---
 
@@ -243,7 +246,7 @@ marp demo.md --pdf
 3. 打开生成的 `demo.pdf`
 
 **台词**：
-> "最后一步，导出 PDF。一行命令搞定。导完会自动打开 PDF 文件。如果包含本地图片，加 `--allow-local-files` 标志。"
+> "最后一步，导出 PDF。一行命令搞定。导完不会自动打开，双击生成的 PDF 查看效果。如果包含本地图片，加 `--allow-local-files` 标志。"
 
 **操作提示**：
 - 终端里用 `ls` 或 `Get-ChildItem` 显示 `demo.pdf` 已生成
@@ -342,9 +345,8 @@ marp demo.md --pdf
 
 ### 快捷键
 
-- `Ctrl+F9` 开始录制
-- `Ctrl+F9` 停止录制
-- 录完自动保存到 `~/Videos`
+- 开始/停止录制：OBS **默认不绑定**录制快捷键，需在 设置 → 热键 里自行设置（脚本演示用 `Ctrl+F9`，可自选）
+- 录完自动保存到系统的「视频」文件夹（Windows：`%USERPROFILE%\Videos`）
 
 ---
 

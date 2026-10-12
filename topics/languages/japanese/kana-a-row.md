@@ -8,7 +8,7 @@ aliases:
   - あ行
   - a行
 created: 2026-10-08
-updated: 2026-10-09
+updated: 2026-10-11
 ---
 
 # あ行 · 五个元音（あ い う え お）
@@ -91,7 +91,7 @@ updated: 2026-10-09
 
 ## 关联
 
-- 下一行：か行（10-13，笔记待建，命名 `kana-ka-row`）
+- 下一行：[[topics/languages/japanese/kana-ka-row|か行]]（10-13 周二）
 - [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
 - [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
 - [[topics/languages/japanese/kana-plan]] —— 三周每日计划

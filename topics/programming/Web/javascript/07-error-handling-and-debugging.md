@@ -810,7 +810,7 @@ document.getElementById('add-banana').addEventListener('click', () => cart.add(p
 |---|---|---|---|
 | 1 | `find` 回调 | 使用了赋值 `=` 而非比较 `===`，导致 `existing` 永远为 truthy | 改为 `item.id === product.id` |
 | 2 | `indexOf` | `indexOf` 不支持回调函数，应使用 `findIndex` | 改为 `this.items.findIndex(...)` |
-| 3 | `reduce` | `reduce` 缺少初始值 `0`，当数组为空时返回 `undefined` | 改为 `reduce(..., 0)` |
+| 3 | `reduce` | `reduce` 缺少初始值 `0`，当数组为空时**抛出 `TypeError`**（Reduce of empty array with no initial value），程序直接崩溃 | 改为 `reduce(..., 0)` |
 | 4 | `map` 结果 | `map` 返回数组，直接赋值给 `innerHTML` 会得到逗号分隔的字符串 | 改为 `.map(...).join('')` |
 | 5 | `fetch` body | `body` 必须是字符串或 FormData，不能直接传对象 | 改为 `body: JSON.stringify({...})` 并添加 `headers: { 'Content-Type': 'application/json' }` |
 
