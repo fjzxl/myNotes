@@ -17,7 +17,7 @@ tags:
 
 ## 模板
 
-参见 [[templates/daily-note]] 模板。
+参见 [daily-note](../templates/daily-note.md) 模板。
 
 ## 工具配合
 

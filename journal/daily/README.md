@@ -23,4 +23,4 @@ tags:
 
 ## 模板
 
-参考 [[templates/daily-note]]。
+参考 [daily-note](../../templates/daily-note.md)。
