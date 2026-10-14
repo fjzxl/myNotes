@@ -1,191 +1,281 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""轻量笔记校验：链接、图片、frontmatter、代码围栏、表格、编码。
+"""笔记链接 / 格式校验库（由 check.py 调用，不提供独立命令行）。
 
-用法（仓库根目录运行）：
-    python scripts/check_notes.py               # 全量检查
-    python scripts/check_notes.py path/to/note.md ...   # 只检查指定文件
+路径统一规则（本模块所有对外接口都遵守）：
+- 任何路径先经 normalize() 归一化为「仓库相对 posix 路径」（如 topics/x/y.md；仓库根为 '.'）；
+- 越出仓库根的路径直接报错（normalize 抛 ValueError，链接解析记 error），不做静默忽略；
+- 各项检查只使用归一化后的路径：豁免判断、报错定位、链接解析都以它为准。
 
-退出码：发现 error 返回 1，只有 warning 返回 0。
+对外接口：
+    normalize(path, cwd=None, root=ROOT) -> str     单个路径归一化（越界抛 ValueError）
+    expand(rel_paths, root=ROOT, skip_dirs=None) -> list[str]  展开为仓库内全部文件
+    run(rel_paths, root=ROOT) -> (errors, warnings, n_checked)  展开后检查
+    run_files(files, root=ROOT) -> (errors, warnings, n_checked)  复用已展开的列表
 
 约定（与 AGENTS.md 一致）：
-- templates/ 下的 {{...}} 与空 [[]] 是占位符，不检查 wikilink 目标；
-- 示例代码里的 [[Construct]]、[[Scopes]] 等都在围栏/行内代码内，会被跳过；
--Foam 允许引用尚未创建的笔记（placeholder），悬空 wikilink 只记 warning。
+- templates/ 下的 {{...}} 与空 [[]] 是占位符，不检查 wikilink；
+- 示例代码里的 [[Construct]] 等位于围栏 / 行内代码内，会被跳过；
+- 笔记间链接一律用 Markdown 相对路径链接：任何非模板 wikilink 都记 error；
+- 链接目标按磁盘实际大小写核对（GitHub 区分大小写，Windows 文件系统不区分）。
 """
 import os
 import re
-import sys
 from pathlib import Path
+from urllib.parse import unquote
 
-# 输出含 emoji：在 GBK 等非 UTF-8 控制台（如中文 Windows PowerShell）下强制 UTF-8，
-# 避免 UnicodeEncodeError 导致检查中断。
-for _stream in (sys.stdout, sys.stderr):
-    if hasattr(_stream, 'reconfigure'):
-        _stream.reconfigure(encoding='utf-8')
-
-SKIP_DIRS = {'.git', 'node_modules', 'attachments', 'archive', '.zcode',
-             '.claude', '.vscode', 'scripts'}
+ROOT = Path(__file__).resolve().parent.parent
+SKIP_DIRS = {'.git', 'node_modules', 'attachments', 'archive', '.zcode', '.claude',
+             '.vscode', 'scripts', 'tests', '__pycache__'}
 TEMPLATE_DIR = 'templates'
-URL_RE = re.compile(r'^(https?:|mailto:|<|#)')
-
-errors, warnings = [], []
-
-
-def err(path, line, msg):
-    errors.append(f'{path}:{line}: {msg}')
+BOM = '\ufeff'
+URL_RE = re.compile(r'^(https?:|mailto:|#)')
+LINK_RE = re.compile(r'(!?)\[([^\]]*)\]\(([^)]*)\)')
+TITLE_RE = re.compile(r'\s+(?:"[^"]*"|\'[^\']*\')\s*$')
+HEADING_RE = re.compile(r'^(#{1,6})\s+(.*?)\s*#*$')
 
 
-def warn(path, line, msg):
-    warnings.append(f'{path}:{line}: {msg}')
+class Report:
+    """收集 error / warning，代替模块级全局列表（可重入、可测试）。"""
+
+    def __init__(self):
+        self.errors = []
+        self.warnings = []
+
+    def err(self, path, line, msg):
+        self.errors.append(f'{path}:{line}: {msg}')
+
+    def warn(self, path, line, msg):
+        self.warnings.append(f'{path}:{line}: {msg}')
 
 
-def fence_open_len(line):
+# ---------------------------------------------------------------- 路径统一
+
+def normalize(path, cwd=None, root=ROOT):
+    """把用户给出的路径（相对 cwd 或绝对）统一为仓库相对 posix 路径。越界抛 ValueError。"""
+    base = Path(cwd) if cwd is not None else Path.cwd()
+    p = (base / path).resolve()
+    return p.relative_to(Path(root).resolve()).as_posix()
+
+
+def _rel_from_walk(p, root):
+    return Path(os.path.abspath(p)).relative_to(root).as_posix()
+
+
+def expand(rel_paths, root=ROOT, skip_dirs=None):
+    """展开为仓库相对路径的文件列表（目录递归，跳过 skip_dirs；显式给出的文件不跳过）。"""
+    skip = SKIP_DIRS if skip_dirs is None else set(skip_dirs)
+    root = Path(root).resolve()
+    out = set()
+    for t in rel_paths:
+        base = root / t
+        if base.is_file():
+            out.add(_rel_from_walk(base, root))
+        elif base.is_dir():
+            for r, ds, fs in os.walk(base):
+                ds[:] = [d for d in ds if d not in skip]
+                for f in fs:
+                    out.add(_rel_from_walk(Path(r, f), root))
+        else:
+            raise FileNotFoundError(t)
+    return sorted(out)
+
+
+# ---------------------------------------------------------------- 文本工具
+
+def fence_open(line):
+    """若该行是代码围栏（``` 或 ~~~，>=3 个），返回 (字符, 长度)，否则 None。"""
     s = line.lstrip()
-    n = len(s) - len(s.lstrip('`'))
-    return n if n >= 3 else 0
-
-
-def scan_lines(text):
-    """Yield (lineno, line, in_fence) with fence state tracked by fence length."""
-    stack = []
-    for i, line in enumerate(text.split('\n'), 1):
-        n = fence_open_len(line)
-        if n:
-            if not stack:
-                stack.append(n)
-                yield i, line, True
-                continue
-            if n >= stack[-1]:
-                stack.pop()
-                yield i, line, True
-                continue
-        yield i, line, bool(stack)
+    if not s or s[0] not in '`~':
+        return None
+    ch = s[0]
+    n = len(s) - len(s.lstrip(ch))
+    if n < 3:
+        return None
+    if ch == '`' and '`' in s[n:]:  # 反引号围栏的信息串中不能再出现反引号
+        return None
+    return ch, n
 
 
 def strip_inline_code(line):
-    return re.sub(r'`[^`]*`', '', line)
+    """去掉行内代码 `...`、``...``（按等长反引号对匹配），便于链接 / 表格 / wikilink 判断。"""
+    return re.sub(r'(`+)(.+?)\1', '', line)
 
 
 def github_slug(heading):
     s = heading.strip().lower()
-    out = []
-    for ch in s:
-        if ch.isalnum() or ch in ' -_':
-            out.append(ch)
-    return ''.join(out).replace(' ', '-')
+    return ''.join(ch for ch in s if ch.isalnum() or ch in ' -_').replace(' ', '-')
 
 
 def collect(text):
-    """Return (prose, headings, fences_balanced)."""
-    prose = []
-    headings = {}
-    balanced = True
-    for i, line, in_fence in scan_lines(text):
-        if in_fence:
+    """单次遍历返回 (prose, headings, fences_balanced)。
+
+    headings 为 GitHub 式锚点集合（重复标题生成 foo、foo-1、foo-2 …）。
+    """
+    prose, headings, used = [], {}, set()
+    stack = []
+    for i, line in enumerate(text.split('\n'), 1):
+        f = fence_open(line)
+        if f and stack and f[0] == stack[-1][0] and f[1] >= stack[-1][1]:
+            stack.pop()
+            continue
+        if f and not stack:
+            stack.append(f)
+            continue
+        if stack:
             continue
         prose.append((i, line))
-        m = re.match(r'^(#{1,6})\s+(.*?)\s*#*$', line)
+        m = HEADING_RE.match(line)
         if m:
-            headings.setdefault(github_slug(m.group(2)), i)
-    # fence balance: any line opening a fence that never closed leaves stack non-empty
-    stack = []
-    for line in text.split('\n'):
-        n = fence_open_len(line)
-        if n:
-            if not stack:
-                stack.append(n)
-            elif n >= stack[-1]:
-                stack.pop()
-    if stack:
-        balanced = False
-    return prose, headings, balanced
+            base = slug = github_slug(m.group(2))
+            k = 1
+            while slug in used:
+                slug = f'{base}-{k}'
+                k += 1
+            used.add(slug)
+            headings.setdefault(slug, i)
+    return prose, headings, not stack
 
 
-def frontmatter_check(path, text):
-    if not text.startswith('---'):
-        warn(path, 1, '缺少 YAML frontmatter')
+# ---------------------------------------------------------------- 链接辅助
+
+def _dir_listing(cache, d):
+    key = ('dir', str(d))
+    if key not in cache:
+        try:
+            cache[key] = set(os.listdir(d))
+        except OSError:
+            cache[key] = set()
+    return cache[key]
+
+
+def _exact_case(cache, root, rel_os_path):
+    """按磁盘实际大小写逐级核对（GitHub 大小写敏感，Windows 不敏感）。"""
+    cur = root
+    for part in rel_os_path.split(os.sep):
+        if not part or part == '.':
+            continue
+        if part not in _dir_listing(cache, cur):
+            return False
+        cur = cur / part
+    return True
+
+
+def _headings(cache, root, rel):
+    key = ('heads', rel)
+    if key not in cache:
+        try:
+            text = (root / rel).read_text(encoding='utf-8-sig', errors='replace')
+        except OSError:
+            cache[key] = {}
+        else:
+            cache[key] = collect(text)[1]
+    return cache[key]
+
+
+# ---------------------------------------------------------------- 各项检查
+
+def frontmatter_check(rep, pos, text):
+    lines = text.split('\n')
+    if not lines or lines[0].rstrip() != '---':
+        rep.warn(pos, 1, '缺少 YAML frontmatter')
         return
-    end = text.find('\n---', 3)
-    if end == -1:
-        err(path, 1, 'frontmatter 没有结束定界符 ---')
+    end = next((j for j in range(1, len(lines)) if lines[j].rstrip() == '---'), None)
+    if end is None:
+        rep.err(pos, 1, 'frontmatter 没有结束定界符 ---（须独占一行）')
         return
-    fm = text[3:end]
+    fm = '\n'.join(lines[1:end])
     if not fm.strip():
-        err(path, 1, 'frontmatter 为空')
+        rep.err(pos, 1, 'frontmatter 为空')
         return
     for key in ('title', 'tags', 'created', 'updated'):
         if not re.search(rf'^{key}\s*:', fm, re.M):
-            warn(path, 1, f'frontmatter 缺少 {key}')
+            rep.warn(pos, 1, f'frontmatter 缺少 {key}')
 
 
-def wikilink_check(path, prose, all_notes, in_templates):
+def wikilink_check(rep, pos, prose, in_templates):
+    if in_templates:
+        return
     for i, line in prose:
         for m in re.finditer(r'\[\[([^\]\[]+)\]\]', strip_inline_code(line)):
             raw = m.group(1)
-            target = raw.split('|')[0].strip()
-            if not target or target.startswith('{{'):
+            if not raw.split('|')[0].strip() or raw.startswith('{{'):
                 continue
-            if in_templates:
-                continue
-            file_part, _, anchor = target.partition('#')
-            file_part = file_part.strip()
-            if not file_part:
-                continue
-            if file_part not in all_notes:
-                if re.search(r'[/\\]', file_part):
-                    warn(path, i, f'wikilink 目标不存在: [[{raw}]]')
-                else:
-                    warn(path, i, f'悬空/裸文件名 wikilink: [[{raw}]]')
-            elif anchor:
-                slug = github_slug(anchor.lstrip('^'))
-                if slug and slug not in HEADINGS.get(file_part, {}):
-                    warn(path, i, f'wikilink 锚点不存在: [[{raw}]]')
+            rep.err(pos, i, f'wikilink（[[{raw}]]）已全库停用：Foam 各版本/各表面对 wikilink 的点击解析'
+                            f'不一致（失败时回退「创建笔记」），GitHub 等标准渲染器也不识别；'
+                            f'请改用相对路径 Markdown 链接 [文字](路径.md)')
 
 
-def mdlink_check(path, prose, all_notes, headings_index):
+def mdlink_check(rep, pos, prose, root, cache, own_headings):
     for i, line in prose:
-        clean = strip_inline_code(line)
-        for m in re.finditer(r'(!?)\[([^\]]*)\]\(([^)\s]+)\)', clean):
-            is_img, target = m.group(1) == '!', m.group(3)
-            if URL_RE.match(target):
+        for m in LINK_RE.finditer(strip_inline_code(line)):
+            is_img = m.group(1) == '!'
+            inner = m.group(3).strip()
+            if not inner:
                 continue
-            t = target
-            anchor = ''
-            if not is_img and '#' in t:
-                t, _, anchor = t.partition('#')
-            if t.startswith('/'):
-                resolved = Path('.' + t)
+            if inner.startswith('<'):
+                end = inner.find('>')
+                if end < 0:
+                    rep.err(pos, i, f'链接目标 < 未闭合: ({m.group(3)})')
+                    continue
+                target = inner[1:end]
             else:
-                resolved = Path(path).parent / t
-            found = None
-            for cand in (resolved, Path(str(resolved) + '.md')):
-                if cand.is_file():
-                    found = cand
-                    break
-            if found is None:
-                err(path, i, f'目标不存在: ({target})')
+                if inner.startswith('#'):  # 同文档锚点 (#slug)：对本文标题校验
+                    anchor = unquote(inner[1:].strip())
+                    if anchor and github_slug(anchor) not in own_headings:
+                        rep.warn(pos, i, f'锚点不存在: ({m.group(3)})')
+                    continue
+                if URL_RE.match(inner):
+                    continue
+                target = TITLE_RE.sub('', inner).strip()
+                if re.search(r'\s', target):
+                    rep.err(pos, i, f'链接目标含未编码空格（{target}），标准渲染器不识别；'
+                                    f'请用 %20 编码，或写成 <路径>')
+                    continue
+            if not target or URL_RE.match(target):
                 continue
-            if anchor and not is_img:
-                target_text = found.read_text(encoding='utf-8', errors='replace')
-                _, heads, _ = collect(target_text)
-                if github_slug(anchor) not in heads:
-                    warn(path, i, f'锚点不存在: ({target})')
+
+            path_part, anchor = target, ''
+            if not is_img and '#' in target:
+                path_part, _, anchor = target.partition('#')
+            path_part = unquote(path_part)
+            if path_part.startswith('/'):
+                resolved = root / path_part.lstrip('/')
+            else:
+                resolved = root / Path(pos).parent / path_part
+            resolved = Path(os.path.normpath(resolved))
+
+            found = next((c for c in (resolved, Path(str(resolved) + '.md')) if c.is_file()), None)
+            if found is None:
+                rep.err(pos, i, f'目标不存在: ({m.group(3)})')
+                continue
+            rel_os = os.path.relpath(str(found), str(root))
+            if rel_os == os.pardir or rel_os.startswith(os.pardir + os.sep):
+                rep.err(pos, i, f'链接指向仓库外: ({m.group(3)})')
+                continue
+            if not _exact_case(cache, root, rel_os):
+                rep.err(pos, i, f'大小写与磁盘不一致（GitHub 区分大小写）: ({m.group(3)})')
+                continue
+            rel = Path(rel_os).as_posix()
+            if anchor and not is_img and rel.endswith('.md'):
+                if github_slug(unquote(anchor)) not in _headings(cache, root, rel):
+                    rep.warn(pos, i, f'锚点不存在: ({m.group(3)})')
 
 
-def table_check(path, prose):
+def table_check(rep, pos, prose):
     block = []
+
+    def ncols(row):
+        body = strip_inline_code(row).strip().strip('|')
+        return len(re.split(r'(?<!\\)\|', body))
 
     def flush():
         if len(block) >= 2:
-            def ncols(row):
-                body = row.strip().strip('|')
-                return len(re.split(r'(?<!\\)\|', body))
             want = ncols(block[0][1])
             for j, row in block[1:]:
                 got = ncols(row)
                 if got != want:
-                    err(path, j, f'表格列数不一致（应为 {want}，实际 {got}）: {row.strip()[:60]}')
+                    rep.err(pos, j, f'表格列数不一致（应为 {want}，实际 {got}）: {row.strip()[:60]}')
         block.clear()
 
     for i, line in prose:
@@ -196,79 +286,56 @@ def table_check(path, prose):
     flush()
 
 
-def main():
-    roots = sys.argv[1:] or ['.']
-    files = []
-    for root in roots:
-        if root.endswith('.md'):
-            files.append(Path(root))
-            continue
-        for r, ds, fs in os.walk(root):
-            ds[:] = [d for d in ds if d not in SKIP_DIRS]
-            for f in fs:
-                if f.endswith('.md'):
-                    files.append(Path(r, f))
+# ---------------------------------------------------------------- 入口
 
-    # wikilink 目标索引始终基于整个知识库，避免单文件模式下误报
-    vault = []
-    for r, ds, fs in os.walk('.'):
-        ds[:] = [d for d in ds if d not in SKIP_DIRS]
-        for f in fs:
-            if f.endswith('.md'):
-                vault.append(Path(r, f))
-    all_notes = {p.as_posix()[:-3] for p in vault}
-    global HEADINGS
-    HEADINGS = {}
-    vault_text = {}
-    for p in vault:
-        pos = p.as_posix()
-        try:
-            vault_text[pos] = p.read_bytes().decode('utf-8')
-        except UnicodeDecodeError:
+def _check(files, root):
+    rep = Report()
+    cache = {}
+    checked = 0
+    for pos in files:
+        if not pos.endswith('.md'):
             continue
-    for pos, text in vault_text.items():
-        _, heads, _ = collect(text)
-        HEADINGS[pos[:-3]] = set(heads)
-
-    contents = {p.as_posix(): vault_text[p.as_posix()]
-                for p in files if p.as_posix() in vault_text}
-    for p in files:
-        pos = p.as_posix()
-        raw = p.read_bytes()
         try:
-            raw.decode('utf-8')
+            raw = (root / pos).read_bytes()
+        except OSError as e:
+            rep.err(pos, 1, f'无法读取文件: {e}')
+            continue
+        try:
+            text = raw.decode('utf-8')
         except UnicodeDecodeError as e:
-            err(pos, 1, f'不是合法 UTF-8: {e}')
+            rep.err(pos, 1, f'不是合法 UTF-8: {e}')
             continue
+        checked += 1
+        if text.startswith(BOM):
+            text = text[1:]
         if b'\r\n' in raw:
-            warn(pos, 1, '包含 CRLF 行尾')
+            rep.warn(pos, 1, '包含 CRLF 行尾')
         if raw and not raw.endswith(b'\n'):
-            warn(pos, len(raw.split(b'\n')), '缺少末尾换行')
+            rep.warn(pos, len(text.split('\n')), '缺少末尾换行')
 
-    for pos, text in contents.items():
         prose, heads, balanced = collect(text)
-        in_templates = pos.startswith(TEMPLATE_DIR + '/')
-        in_topics = pos.startswith('topics/')
-        if in_topics:
-            frontmatter_check(pos, text)
+        if pos.startswith('topics/'):
+            frontmatter_check(rep, pos, text)
         if not balanced:
-            err(pos, 1, '代码围栏不配对（有未闭合的 ``` 块）')
-        wikilink_check(pos, prose, all_notes, in_templates)
-        mdlink_check(pos, prose, all_notes, HEADINGS)
-        table_check(pos, prose)
+            rep.err(pos, 1, '代码围栏不配对（有未闭合的围栏块）')
+        wikilink_check(rep, pos, prose, pos.startswith(TEMPLATE_DIR + '/'))
+        mdlink_check(rep, pos, prose, root, cache, heads)
+        table_check(rep, pos, prose)
 
-    print(f'检查了 {len(contents)} 个 Markdown 文件')
-    if warnings:
-        print(f'\n⚠️ warnings ({len(warnings)}):')
-        for w in warnings:
-            print('  ' + w)
-    if errors:
-        print(f'\n❌ errors ({len(errors)}):')
-        for e in errors:
-            print('  ' + e)
-        sys.exit(1)
-    print('\n✅ 无 error' + ('（有 warning，见上）' if warnings else ''))
+    return rep.errors, rep.warnings, checked
+
+
+def run(rel_paths, root=ROOT):
+    """对归一化后的仓库相对路径执行链接 / 格式检查，返回 (errors, warnings, 有效 md 文件数)。"""
+    root = Path(root).resolve()
+    return _check(expand(rel_paths, root), root)
+
+
+def run_files(files, root=ROOT):
+    """同 run()，但复用已由 expand() 展开的文件列表，避免重复遍历目录。"""
+    root = Path(root).resolve()
+    return _check(list(files), root)
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit('本文件已改为校验库；请在仓库根目录运行 `python check.py`。')

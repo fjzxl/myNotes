@@ -1,0 +1,23 @@
+# 非 kebab-case 文件名例外名单（check.py 文件名检查时跳过）。
+# 每行一个仓库相对路径（posix 写法）；# 开头为注释。
+# 命名约定（MOC 索引页）或历史遗留，属既定例外；新增的非规范名仍会被提示。
+notes/MOC - ai.md
+notes/MOC - exams.md
+notes/MOC - history.md
+notes/MOC - languages.md
+notes/MOC - math.md
+notes/MOC - programming.md
+topics/ai/Claude Code.md
+topics/ai/MoE.md
+topics/programming/Android/Android_into.md
+topics/programming/Java/Servlet.md
+topics/programming/Java/slides/Servlet-lifecycle.md
+topics/programming/Java/spring/spring_intro.md
+topics/programming/Java/spring/spring_lifecycle.md
+topics/programming/Java/vscode_Java_dev.md
+topics/programming/Java/vscode_Java_remote_dev.md
+topics/programming/MySQL/ubuntu_mysql_install.md
+topics/tools/Foam.md
+topics/tools/Markdown.md
+topics/tools/Shortcuts.md
+topics/tools/VSCode.md

@@ -105,3 +105,4 @@ Source//pics/private/*
 .zcode/
 # 大体积教材 PDF 不入 git（本地保留，见 AGENTS.md 附件约定）
 topics/languages/japanese/*.pdf
+topics/ai/*.pdf
