@@ -10,8 +10,8 @@ updated: 2026-10-01
 
 > TypeScript 进阶篇：把类型注解变成**类型编程**。
 > 讲清楚类型系统本身的规则——结构化类型、型变、条件类型、`infer`、递归，以及类型体操的套路与边界。
-> 前置知识：[[topics/programming/Web/typescript/intro]]
-> 导航：[[notes/MOC - programming]] · 接口直观介绍：[[topics/programming/Web/typescript/interface]] · JavaScript 运行时基础：[[topics/programming/Web/javascript]] · 现代语法：[[topics/programming/Web/es6]]
+> 前置知识：[intro](intro.md)
+> 导航：[MOC - programming](../../../../notes/MOC%20-%20programming.md) · 接口直观介绍：[interface](interface.md) · JavaScript 运行时基础：[javascript](../javascript.md) · 现代语法：[es6](../es6.md)
 
 > **示例说明**：代码块分别展示独立类型技巧；有些别名（如 `Awaited`、`Flatten`）与标准库或其他章节重名，不能不加处理地合并到同一个源文件。
 
@@ -36,7 +36,7 @@ updated: 2026-10-01
 
 ## 1. 引言：从"标注"到"编程"
 
-[[topics/programming/Web/typescript/intro]] 里我们用类型**描述**数据；本文把类型系统当作一门**语言**来用——它有变量（泛型参数）、表达式（条件类型/映射类型）、函数（泛型别名）、递归，甚至模式匹配（`infer`）。
+[intro](intro.md) 里我们用类型**描述**数据；本文把类型系统当作一门**语言**来用——它有变量（泛型参数）、表达式（条件类型/映射类型）、函数（泛型别名）、递归，甚至模式匹配（`infer`）。
 
 ```typescript
 // 入门篇：给值贴类型标签
@@ -60,7 +60,7 @@ type User = typeof user;         // TypeScript 类型：{ name: string; age: num
 type UserKeys = keyof User;      // 类型：'name' | 'age'
 ```
 
-编译后保留 `user` 和 `console.log`，而 `User`、`UserKeys` 不会生成 JavaScript。这个差异是理解类型体操的关键：它计算的是**类型关系**，不是在程序运行时处理值。JavaScript 的 `typeof` 等运行时行为见 [[topics/programming/Web/javascript]]；对象约定与接口的关系见 [[topics/programming/Web/typescript/interface]]。
+编译后保留 `user` 和 `console.log`，而 `User`、`UserKeys` 不会生成 JavaScript。这个差异是理解类型体操的关键：它计算的是**类型关系**，不是在程序运行时处理值。JavaScript 的 `typeof` 等运行时行为见 [javascript](../javascript.md)；对象约定与接口的关系见 [interface](interface.md)。
 
 这门"类型语言"的表达能力可以模拟一般计算；但实际编译器会限制递归深度和检查工作量，所以不能把它当作无限制的运行时计算模型。工程上恰恰相反：**类型代码越简单越好**，类型体操只在"消除重复、防止手写漂移"有真实收益时才值得。本文既讲"怎么写"，也讲"何时该停"。
 
@@ -72,7 +72,7 @@ type UserKeys = keyof User;      // 类型：'name' | 'age'
 
 TS 是**结构化类型系统**（structural typing，鸭子类型的静态版）：类型的兼容性由**成员形状**决定，与"类型叫什么名字、在哪里声明"无关。Java/C# 是**名义类型系统**（nominal typing）：名字不同就不兼容，除非显式继承。
 
-它和 JavaScript 的“有这个属性就能用”很像：JS 在运行时尝试访问成员，TS 则在编译期检查所需成员是否存在、类型是否匹配。接口专题中的 [[topics/programming/Web/typescript/interface]] 有从 JS 对象调用到结构化类型的完整对照。
+它和 JavaScript 的“有这个属性就能用”很像：JS 在运行时尝试访问成员，TS 则在编译期检查所需成员是否存在、类型是否匹配。接口专题中的 [interface](interface.md) 有从 JS 对象调用到结构化类型的完整对照。
 
 ```typescript
 interface Point2D { x: number; y: number }
@@ -99,7 +99,7 @@ const d: Point2D = viaVar;                 // 经由变量中转则不受限
 | 空集 ∅ | `never` | 任何类型的子类型；没有值 |
 | 全集 | `unknown` | 所有值的类型 |
 | 并集 | `A \| B` | 联合 |
-| 交集 | `A & B` | 交叉；集合不相交时化简为 `never`（属性冲突即此情形，基础用法见 [[topics/programming/Web/typescript/intro]] 2.5） |
+| 交集 | `A & B` | 交叉；集合不相交时化简为 `never`（属性冲突即此情形，基础用法见 [intro](intro.md) 2.5） |
 | 过滤联合成员 | `Exclude<A, B>` | 移除联合中可赋给 `B` 的成员；不是任意类型集合的完整差集 |
 
 ```typescript
@@ -114,7 +114,7 @@ type IsNumber<T> = T extends number ? true : false;
 type R = IsNumber<never>;       // never（不是 false！）
 ```
 
-对对象交叉类型而言，同名必选属性若类型冲突（如 `{ id: string } & { id: number }`），通常表现为 `id: never`，而不是整个类型别名直接显示为 `never`；这一点及接口组合示例见 [[topics/programming/Web/typescript/interface]]。
+对对象交叉类型而言，同名必选属性若类型冲突（如 `{ id: string } & { id: number }`），通常表现为 `id: never`，而不是整个类型别名直接显示为 `never`；这一点及接口组合示例见 [interface](interface.md)。
 
 几个**顶层类型**的精确语义，容易混淆：
 
@@ -141,7 +141,7 @@ type R = IsNumber<never>;       // never（不是 false！）
 // never —— 空集，位于最底层，是一切类型的子类型
 ```
 
-收窄（[[topics/programming/Web/typescript/intro]] 的类型收窄一节）本质就是**沿这棵树向下移动**：`'a' | 'b'` 经 `=== 'a'` 收窄成 `'a'`。
+收窄（[intro](intro.md) 的类型收窄一节）本质就是**沿这棵树向下移动**：`'a' | 'b'` 经 `=== 'a'` 收窄成 `'a'`。
 
 ### 2.4 品牌化（Branding）：模拟名义类型
 
@@ -478,7 +478,7 @@ type C = Clone<User>;
 type Fake = { [K in 'id' | 'name']: unknown }; // 全部必选、可变
 ```
 
-内置 `Partial`/`Readonly` 正是利用同构 + 修饰符重写；`+`/`-` 用来显式增删修饰符（手写实现见 [[topics/programming/Web/typescript/intro|intro]] 第 9 节）。
+内置 `Partial`/`Readonly` 正是利用同构 + 修饰符重写；`+`/`-` 用来显式增删修饰符（手写实现见 [intro](intro.md) 第 9 节）。
 
 ### 7.2 as 重映射：过滤与改名
 

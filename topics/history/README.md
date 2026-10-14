@@ -13,7 +13,7 @@ updated: 2026-09-10
 
 ## 全局索引
 
-见 [[notes/MOC - history]] —— 顶层 MOC 索引。
+见 [MOC - history](../../notes/MOC%20-%20history.md) —— 顶层 MOC 索引。
 
 ## 当前内容
 

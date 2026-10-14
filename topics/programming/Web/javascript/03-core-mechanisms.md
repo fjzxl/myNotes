@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 三、核心运行机制
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 3 / 8 章。 上一章：[[topics/programming/Web/javascript/02-reference-types|二、引用类型详解]] · 下一章：[[topics/programming/Web/javascript/04-asynchronous-programming|四、异步编程]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 3 / 8 章。 上一章：[二、引用类型详解](02-reference-types.md) · 下一章：[四、异步编程](04-asynchronous-programming.md)
 
 
 > **本章定位：** JavaScript 的"内功心法"。执行上下文、作用域链、闭包、this 绑定、原型链与继承——这些概念比较抽象，但理解它们之后，你就能看透任何 JavaScript 代码的运行逻辑。

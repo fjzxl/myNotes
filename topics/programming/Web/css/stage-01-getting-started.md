@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第一阶段：初识 CSS —— 先让样式生效
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 1 / 10 章。 下一章：[[topics/programming/Web/css/stage-02-text-styling|第二阶段：给文字"化妆"]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 1 / 10 章。 下一章：[第二阶段：给文字"化妆"](stage-02-text-styling.md)
 
 
 > 🎯 **本节目标**：理解 CSS 的作用，能写出第一个生效的样式，掌握三种引入方式，会打开开发者工具。

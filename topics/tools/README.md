@@ -13,13 +13,13 @@ updated: 2026-10-11
 
 ## 索引
 
-- [[topics/tools/Shortcuts]] —— 顶层工具速查表（VS Code 快捷键、Markdown 工具）**← 入口**
-- [[topics/tools/VSCode]] —— VS Code 配置、常用快捷键与插件清单
-- [[topics/tools/Markdown]] —— Markdown 写作环境（Foam 强依赖的工具链）
-- [[topics/tools/Foam]] —— Foam 知识库工具索引
-- [[topics/tools/foam-knowledge-base-guide]] —— Foam 完整使用指南（按 foam-vscode 0.46.0 核对命令名与设置项）
-- [[topics/tools/marp-guide]] —— Marp 完整使用指南（Markdown → PDF / PPT / HTML）
-- [[topics/tools/marp-screencast-script]] —— Marp 5 分钟录屏脚本
+- [Shortcuts](Shortcuts.md) —— 顶层工具速查表（VS Code 快捷键、Markdown 工具）**← 入口**
+- [VSCode](VSCode.md) —— VS Code 配置、常用快捷键与插件清单
+- [Markdown](Markdown.md) —— Markdown 写作环境（Foam 强依赖的工具链）
+- [Foam](Foam.md) —— Foam 知识库工具索引
+- [foam-knowledge-base-guide](foam-knowledge-base-guide.md) —— Foam 完整使用指南（按 foam-vscode 0.46.0 核对命令名与设置项）
+- [marp-guide](marp-guide.md) —— Marp 完整使用指南（Markdown → PDF / PPT / HTML）
+- [marp-screencast-script](marp-screencast-script.md) —— Marp 5 分钟录屏脚本
 
 ## 配置位置
 
@@ -33,5 +33,5 @@ updated: 2026-10-11
 
 ## 相关
 
-- [[notes/MOC - programming]] —— 编程知识地图
-- [[README]] —— 仓库结构总览
+- [MOC - programming](../../notes/MOC%20-%20programming.md) —— 编程知识地图
+- [README](../../README.md) —— 仓库结构总览

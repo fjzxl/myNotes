@@ -13,9 +13,9 @@ updated: 2026-10-12
 
 # さ行 · 五个音（さ し す せ そ）
 
-> **逐行笔记第 3 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-14 周三**）。
+> **逐行笔记第 3 篇**（对应 [每日计划](kana-plan.md) **10-14 周三**）。
 > さ行有全表最多的「不按字母读」：**し读 shi、す读 su**。后面对照组里 `si` 不是日语音，`su` 也别读成「苏」。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]。
+> 总表与通用规则见 [五十音笔记](kana.md)。
 > 📖 **页码说明**：假名与罗马字见教材 p.2 五十音图；さ行发音（sa/se/so 辅音、し 与汉语 xi 相当、す 与 si 相近但嘴唇放松）见教材 p.4 清音讲解；笔顺对照表 A/B（p.8–9，PDF 25–26）；字源对照表 C/D（p.10，PDF 27）。
 
 ---
@@ -92,16 +92,16 @@ updated: 2026-10-12
 - [ ] 默写平、片各 5 个（对照表 A/B 检查笔顺与字形）
 - [ ] `し`/`す`、`ソ`/`ン`、`シ`/`ツ` 三组两两分清，不靠字形靠舌位
 
-四项全过 → 建卡：[[topics/languages/japanese/kana-cards|五十音闪卡]] さ行 10 张（读 / 写两向）→ 明天た行。有错：只重练错的那个，回来复测该项。
+四项全过 → 建卡：[五十音闪卡](kana-cards.md) さ行 10 张（读 / 写两向）→ 明天た行。有错：只重练错的那个，回来复测该项。
 
 ## 关联
 
-- 上一行：[[topics/languages/japanese/kana-ka-row|か行]]
-- 下一行：た行（10-15，笔记 `kana-ta-row`）
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 上一行：[か行](kana-ka-row.md)
+- 下一行：[た行](kana-ta-row.md)（10-15 周四）
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

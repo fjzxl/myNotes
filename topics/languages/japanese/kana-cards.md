@@ -14,10 +14,10 @@ updated: 2026-10-09
 
 # 五十音闪卡
 
-> **卡片格式**：一行一卡，`正面 :: 背面`。自测三步：看到正面 → 口头 / 笔头作答 → 核对背面。答错的卡在行首加 🔁 标记、下次优先过，连对两天后取消标记；某张卡 🔁 累计 3 次，把该假名登记到 [[topics/languages/japanese/kana-plan|每日计划]] §5「反复出错的假名」。
+> **卡片格式**：一行一卡，`正面 :: 背面`。自测三步：看到正面 → 口头 / 笔头作答 → 核对背面。答错的卡在行首加 🔁 标记、下次优先过，连对两天后取消标记；某张卡 🔁 累计 3 次，把该假名登记到 [每日计划](kana-plan.md) §5「反复出错的假名」。
 > **每个假名两张卡**：**读卡**（平+片 → 读音，出声读）与**写卡**（读音 → 平+片，在田字格默写、顺带回忆笔顺）。片假名专项：过读卡时遮住平假名，只认片假名（对应计划 10-21）。
 > **建卡节奏**：对照下方「建卡进度」表，每天只学当天新行，不一次全表上阵；复习只过已学部分。Foam 没有间隔复习插件，用 🔁 标记法 + 计划日历手动滚动即可；想导 Anki 时按 `::` 分列导入（正面/背面各一列）。
-> 知识依据：[[topics/languages/japanese/kana|五十音笔记]]；排程与验收：[[topics/languages/japanese/kana-plan|每日计划]]。
+> 知识依据：[五十音笔记](kana.md)；排程与验收：[每日计划](kana-plan.md)。
 
 ## 建卡进度（对应三周日历）
 
@@ -479,10 +479,10 @@ updated: 2026-10-09
 
 ## 关联
 
-- [[topics/languages/japanese/kana]] —— 五十音笔记（卡片答案的详细依据）
-- [[topics/languages/japanese/kana-plan]] —— 三周计划（建卡节奏与验收标准）
-- [[topics/languages/japanese/kana-a-row|あ行笔记]] —— 逐行发音 / 笔顺细节
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- [kana](kana.md) —— 五十音笔记（卡片答案的详细依据）
+- [kana-plan](kana-plan.md) —— 三周计划（建卡节奏与验收标准）
+- [あ行笔记](kana-a-row.md) —— 逐行发音 / 笔顺细节
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

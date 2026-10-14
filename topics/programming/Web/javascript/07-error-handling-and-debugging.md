@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 七、错误处理与调试
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 7 / 8 章。 上一章：[[topics/programming/Web/javascript/06-es6-modern-features|六、ES6+ 现代特性]] · 下一章：[[topics/programming/Web/javascript/08-engineering-and-best-practices|八、工程化与最佳实践]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 7 / 8 章。 上一章：[六、ES6+ 现代特性](06-es6-modern-features.md) · 下一章：[八、工程化与最佳实践](08-engineering-and-best-practices.md)
 
 
 > **本章定位：** 写出能运行的代码只是第一步，写出能稳定运行、出了问题能快速定位的代码才是专业开发者的标志。

@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第十阶段：CSS 架构与工程化
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 10 / 10 章。 上一章：[[topics/programming/Web/css/stage-09-modern-css|第九阶段：现代 CSS 进阶特性]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 10 / 10 章。 上一章：[第九阶段：现代 CSS 进阶特性](stage-09-modern-css.md)
 
 
 > 🎯 **本节目标**：了解命名规范、性能优化和现代 CSS 工具链。

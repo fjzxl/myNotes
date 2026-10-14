@@ -13,9 +13,9 @@ updated: 2026-10-12
 
 # な行 · 五个音（な に ぬ ね の）
 
-> **逐行笔记第 5 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-16 周五**）。
+> **逐行笔记第 5 篇**（对应 [每日计划](kana-plan.md) **10-16 周五**）。
 > な行是 5 个**鼻音开头**的音节。`ぬ` 单独用的场合少，多出现在动词里（如 縫う ぬう＝缝）。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]。
+> 总表与通用规则见 [五十音笔记](kana.md)。
 > 📖 **页码说明**：假名与罗马字见教材 p.2 五十音图；「な行和ま行辅音与汉语 n/m 基本相同」见教材 p.4 清音讲解；笔顺对照表 A/B（p.8–9，PDF 25–26）；字源对照表 C/D（p.10，PDF 27）。
 
 ---
@@ -48,7 +48,7 @@ updated: 2026-10-12
 
 **关键对照**：`な` 和 `ぬ` 罗马字只差元音，口型不同（`な` 张口、`ぬ` 圆唇）。写卡时先看元音再拼。
 
-**拨音 ん vs 行末 `な`**：行末的 `な` 是完整一拍（`はな` 花），`ん` 是**占位的拨音**（`はん` 半）。两者写法不同（`な` / `ん`），别混——拨音另见 [[topics/languages/japanese/kana-wa-row|わ行・拨音 ん]]。
+**拨音 ん vs 行末 `な`**：行末的 `な` 是完整一拍（`はな` 花），`ん` 是**占位的拨音**（`はん` 半）。两者写法不同（`な` / `ん`），别混——拨音另见 [わ行・拨音 ん](kana-wa-row.md)。
 
 ## 3. 笔顺（表 A p.8 / 表 B p.9，PDF 25–26）
 
@@ -96,17 +96,17 @@ updated: 2026-10-12
 - [ ] 默写平、片各 5 个（对照表 A/B 检查笔顺与字形）
 - [ ] 能说出 `ぬ` 和 `る` 的大环 / 小圈差别，并能分清 `な行` 与拨音 `ん`
 
-四项全过 → 建卡：[[topics/languages/japanese/kana-cards|五十音闪卡]] な行 10 张（读 / 写两向）→ 明天は行。有错：只重练错的那个，回来复测该项。
+四项全过 → 建卡：[五十音闪卡](kana-cards.md) な行 10 张（读 / 写两向）→ 明天は行。有错：只重练错的那个，回来复测该项。
 
 ## 关联
 
-- 上一行：[[topics/languages/japanese/kana-ta-row|た行]]
-- 下一行：は行（10-17，笔记 `kana-ha-row`）
-- 拨音另见：[[topics/languages/japanese/kana-wa-row|わ行・拨音 ん]]
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 上一行：[た行](kana-ta-row.md)
+- 下一行：[は行](kana-ha-row.md)（10-17 周六）
+- 拨音另见：[わ行・拨音 ん](kana-wa-row.md)
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

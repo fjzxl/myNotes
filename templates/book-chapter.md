@@ -10,7 +10,7 @@ created: {{date}}
 # 章节笔记：{{title}}
 
 > **边读边理解** —— 一章或一次阅读一页，记录问题、论证和闭卷回忆。
-> 整本书的总结用 [[templates/book-note|book-note]]；零散材料摘录用 [[templates/literature-note|literature-note]]。
+> 整本书的总结用 [book-note](book-note.md)；零散材料摘录用 [literature-note](literature-note.md)。
 
 ## 阅读范围与问题
 

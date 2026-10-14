@@ -79,9 +79,9 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 
 ## 相关 MOC
 
-- [[notes/MOC - programming]] —— 编程（计算机史可放这里）
-- [[notes/MOC - ai]] —— AI（AI 发展史可放这里）
-- [[notes/MOC - math]] —— 数学（数学史可放这里）
+- [MOC - programming](MOC%20-%20programming.md) —— 编程（计算机史可放这里）
+- [MOC - ai](MOC%20-%20ai.md) —— AI（AI 发展史可放这里）
+- [MOC - math](MOC%20-%20math.md) —— 数学（数学史可放这里）
 
 ## 更新记录
 

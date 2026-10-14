@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 一、语言基础
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 1 / 8 章。 下一章：[[topics/programming/Web/javascript/02-reference-types|二、引用类型详解]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 1 / 8 章。 下一章：[二、引用类型详解](02-reference-types.md)
 
 
 > **本章定位：** JavaScript 学习的起点。我们将从最基本的"砖块"开始：数据类型是什么、变量如何声明、运算符如何工作。不要小看这些基础——JavaScript 中几乎所有复杂的特性（闭包、原型链、异步）都建立在这些基础概念之上。

@@ -9,8 +9,8 @@ updated: 2026-10-10
 ---
 # HTML 基础
 
-> 面向对象：往前端方向入门的读者；目标是掌握**结构化标记 + 语义化**的思维方式，为 [[topics/programming/Web/css]]（样式）与 [[topics/programming/Web/javascript]]（行为）打底。
-> 定位：单篇基础笔记，覆盖日常开发所需的 HTML 核心知识，不追求全集；HTTP / 网络基础按计划另立笔记。编程导航见 [[notes/MOC - programming]]。
+> 面向对象：往前端方向入门的读者；目标是掌握**结构化标记 + 语义化**的思维方式，为 [css](css.md)（样式）与 [javascript](javascript.md)（行为）打底。
+> 定位：单篇基础笔记，覆盖日常开发所需的 HTML 核心知识，不追求全集；HTTP / 网络基础按计划另立笔记。编程导航见 [MOC - programming](../../../notes/MOC%20-%20programming.md)。
 
 ## 1. HTML 是什么
 
@@ -234,7 +234,7 @@ HTML5 语义标签替代"满屏 `<div>`"，是语义化的主战场：
 ## 10. 小结与下一步
 
 - HTML 的价值在**语义**：选标签问"它是什么"，而不是"它长什么样"。
-- 三件套分工：结构 → [[topics/programming/Web/css]]，行为 → [[topics/programming/Web/javascript]]（语言基础先行，ES6+ 见 [[topics/programming/Web/es6]]）。
+- 三件套分工：结构 → [css](css.md)，行为 → [javascript](javascript.md)（语言基础先行，ES6+ 见 [es6](es6.md)）。
 - 工程化方向的下一步是让语义化为框架服务：Vue 单文件组件的 `<template>` 里写的就是这些标签；表单一节在 Vue 里对应 `v-model`，值得先在这里把原生行为（提交、校验、name/id）吃透。
 
 ### 自测
@@ -247,7 +247,7 @@ HTML5 语义标签替代"满屏 `<div>`"，是语义化的主战场：
 
 ## 相关链接
 
-- [[topics/programming/Web/css]] —— CSS（结构与表现的衔接）
-- [[topics/programming/Web/javascript]] —— JavaScript（DOM 操作）
-- [[topics/programming/Web/es6]] —— ES6+ 专题手册
-- [[notes/MOC - programming]] —— 编程知识地图
+- [css](css.md) —— CSS（结构与表现的衔接）
+- [javascript](javascript.md) —— JavaScript（DOM 操作）
+- [es6](es6.md) —— ES6+ 专题手册
+- [MOC - programming](../../../notes/MOC%20-%20programming.md) —— 编程知识地图

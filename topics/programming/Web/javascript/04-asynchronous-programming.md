@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 四、异步编程
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 4 / 8 章。 上一章：[[topics/programming/Web/javascript/03-core-mechanisms|三、核心运行机制]] · 下一章：[[topics/programming/Web/javascript/05-dom-and-browser-api|五、DOM 操作与浏览器 API]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 4 / 8 章。 上一章：[三、核心运行机制](03-core-mechanisms.md) · 下一章：[五、DOM 操作与浏览器 API](05-dom-and-browser-api.md)
 
 
 > **本章定位：** 现实世界的程序很少是"一步做完"的：网络请求需要时间、用户操作不可预测、定时任务需要等待。本章将学习 JavaScript 如何处理这些"不等人的任务"。

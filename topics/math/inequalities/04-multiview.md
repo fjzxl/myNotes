@@ -5,10 +5,10 @@ tags:
   - inequality
   - kaoyan
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-13
 ---
 
-> 📚 本文是 [[topics/math/inequalities|不等式]] 的第 4 / 6 章（总览第五部分）。 上一章：[[topics/math/inequalities/03-advanced|四、证明：高阶不等式]] 下一章：[[topics/math/inequalities/05-applications|六、应用]]
+> 📚 本文是 [不等式](../inequalities.md) 的第 4 / 6 章（总览第五部分）。 上一章：[四、证明：高阶不等式](03-advanced.md) 下一章：[六、应用](05-applications.md)
 
 # 五、多视角理解：向量·矩阵·几何·物理
 
@@ -18,7 +18,7 @@ updated: 2026-10-11
 
 ### 多视角：三角不等式
 
-*↩ 证明：[[topics/math/inequalities/01-basics#三角不等式绝对值不等式|三角不等式（绝对值不等式）]]*
+*↩ 证明：[三角不等式（绝对值不等式）](01-basics.md#三角不等式绝对值不等式)*
 
 - **向量视角**：对内积空间，
   $$
@@ -34,7 +34,7 @@ updated: 2026-10-11
 
 ### 多视角：均值不等式（AM-GM）
 
-*↩ 证明：[[topics/math/inequalities/01-basics#均值不等式|均值不等式]]*
+*↩ 证明：[均值不等式](01-basics.md#均值不等式)*
 
 - **几何视角一（n=2：固定周长，正方形面积最大）**：$ab \le \left(\tfrac{a+b}{2}\right)^2$。
 
@@ -72,7 +72,7 @@ $$
 M_p(a,b)=\left(\frac{a^p+b^p}{2}\right)^{1/p}\quad(p\ne0,\ a,b>0),\qquad M_0(a,b):=\lim_{p\to0}M_p(a,b)=\sqrt{ab}.
 $$
 
-幂平均随 $p$ 增大而不减，$p=-1,0,1,2$ 分别对应 H、G、A、Q。**不要把它与未归一化的范数混淆**：对 $p\ge1$，$M_p(a,b)=2^{-1/p}\|(a,b)\|_p$；同一向量的 $p$-范数反而随 $p$ 增大而不增，$p=-1,0$ 也不是范数。图中比较的是“各自经过同一点的水平集与对角线的交点”，不能直接用“单位球越来越胖”证明均值链。顺带一提，HM 也能装进[[topics/math/inequalities/01-basics#均值不等式|证明篇的半圆图]]：分点到圆上直角顶点处切线的距离恰为 $\dfrac{2ab}{a+b}$，半圆图一口气装下 HM、GM、AM 三个均值。
+幂平均随 $p$ 增大而不减，$p=-1,0,1,2$ 分别对应 H、G、A、Q。**不要把它与未归一化的范数混淆**：对 $p\ge1$，$M_p(a,b)=2^{-1/p}\|(a,b)\|_p$；同一向量的 $p$-范数反而随 $p$ 增大而不增，$p=-1,0$ 也不是范数。图中比较的是“各自经过同一点的水平集与对角线的交点”，不能直接用“单位球越来越胖”证明均值链。顺带一提，HM 也能装进[证明篇的半圆图](01-basics.md#均值不等式)：分点到圆上直角顶点处切线的距离恰为 $\dfrac{2ab}{a+b}$，半圆图一口气装下 HM、GM、AM 三个均值。
 
 - **物理类比**：忽略重力等影响时，固定体积的液滴在表面张力作用下趋向球形，以减小表面积和表面能。这与“给定约束下，均衡形态取极值”的思路相似，但所用定理是等周不等式，不能直接由有限个数的 AM-GM 推出。
 
@@ -102,7 +102,7 @@ $$
 
 #### 2. 代数骨架：先对角化，再一行琴生
 
-由实对称矩阵的谱定理，$A=Q\Lambda Q^{\top}$（$Q$ 正交，$\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$）。$\det$ 与 $\operatorname{tr}$ 都是**正交不变量**：$\det(Q\Lambda Q^{\top})=\det\Lambda$，$\operatorname{tr}(Q\Lambda Q^{\top})=\operatorname{tr}\Lambda$，且 $\det\Lambda=\prod\lambda_i$、$\operatorname{tr}\Lambda=\sum\lambda_i$。所以矩阵版**逐字归约**为谱上的标量 AM-GM，而后者只需对 $\ln$（凹函数）用一次[[topics/math/inequalities/02-core-tools#琴生不等式|琴生]]：
+由实对称矩阵的谱定理，$A=Q\Lambda Q^{\top}$（$Q$ 正交，$\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$）。$\det$ 与 $\operatorname{tr}$ 都是**正交不变量**：$\det(Q\Lambda Q^{\top})=\det\Lambda$，$\operatorname{tr}(Q\Lambda Q^{\top})=\operatorname{tr}\Lambda$，且 $\det\Lambda=\prod\lambda_i$、$\operatorname{tr}\Lambda=\sum\lambda_i$。所以矩阵版**逐字归约**为谱上的标量 AM-GM，而后者只需对 $\ln$（凹函数）用一次[琴生](02-core-tools.md#琴生不等式)：
 
 $$
 \frac{1}{n}\ln\det A=\frac1n\sum_{i=1}^n\ln\lambda_i\;\le\;\ln\!\left(\frac1n\sum_{i=1}^n\lambda_i\right)=\ln\frac{\operatorname{tr} A}{n}
@@ -131,7 +131,7 @@ $$
 
 #### 4. 完整均值链的矩阵版：四个整体量排座次
 
-先补上标量世界的完整均值链（调和 $\le$ 几何 $\le$ 算术 $\le$ 平方：末步是[[topics/math/inequalities/02-core-tools#琴生不等式|琴生 $x^2$ 推论]]，首步对倒数数组 $1/a_i$ 用一次 GM $\le$ AM 再翻转；这四条均值在同一张梯形图中的几何形态见[上文几何视角二](#多视角均值不等式am-gm)）：
+先补上标量世界的完整均值链（调和 $\le$ 几何 $\le$ 算术 $\le$ 平方：末步是[琴生 $x^2$ 推论](02-core-tools.md#琴生不等式)，首步对倒数数组 $1/a_i$ 用一次 GM $\le$ AM 再翻转；这四条均值在同一张梯形图中的几何形态见[上文几何视角二](#多视角均值不等式am-gm)）：
 
 $$
 \underbrace{\frac{n}{\sum_i 1/a_i}}_{\text{调和}}\;\le\;\underbrace{\Bigl(\prod_i a_i\Bigr)^{1/n}}_{\text{几何}}\;\le\;\underbrace{\frac{\sum_i a_i}{n}}_{\text{算术}}\;\le\;\underbrace{\sqrt{\frac{\sum_i a_i^2}{n}}}_{\text{平方}}
@@ -171,7 +171,7 @@ $$
 \det A\;\le\;\prod_{i=1}^{n}a_{ii},\qquad \text{等号} \iff A \text{ 为对角矩阵}.
 $$
 
-**Gram 视角**：写 $A=B^{\top}B$（取 $B=A^{1/2}$ 即可），则 $a_{ij}=b^{(i)}\cdot b^{(j)}$（$b^{(i)}$ 为 $B$ 的第 $i$ 列），$\det A=|\det B|^{2}$ 是 $B$ 的列张成的平行多面体**体积的平方**，$\prod a_{ii}=\prod_i\|b^{(i)}\|^{2}$ 是**棱长平方之积**——"体积 $\le$ 棱长之积"正是[[topics/math/inequalities/02-core-tools#附lagrange-恒等式详解|柯西-施瓦茨 / Lagrange 恒等式]]的又一化身，等号 $\iff$ 各棱互相正交。
+**Gram 视角**：写 $A=B^{\top}B$（取 $B=A^{1/2}$ 即可），则 $a_{ij}=b^{(i)}\cdot b^{(j)}$（$b^{(i)}$ 为 $B$ 的第 $i$ 列），$\det A=|\det B|^{2}$ 是 $B$ 的列张成的平行多面体**体积的平方**，$\prod a_{ii}=\prod_i\|b^{(i)}\|^{2}$ 是**棱长平方之积**——"体积 $\le$ 棱长之积"正是[柯西-施瓦茨 / Lagrange 恒等式](02-core-tools.md#附lagrange-恒等式详解)的又一化身，等号 $\iff$ 各棱互相正交。
 
 把它与矩阵版 AM-GM 串联，特征值 AM-GM 的总差距分解为两级：
 
@@ -190,7 +190,7 @@ $$
 \det(A+B)^{1/n}\;\ge\;\det(A)^{1/n}+\det(B)^{1/n}.
 $$
 
-它是"$\det^{1/n}$ 在正定锥上凹"的体现，与凸几何的 Brunn–Minkowski 定理同源（凸体之和的体积超可加）。当 $A,B$ 碰巧同时对角化时可手算验证，且恰好落回 AM-GM：$n=2$、$A=\operatorname{diag}(a,b)$、$B=\operatorname{diag}(c,d)$ 时命题即 $\sqrt{(a+c)(b+d)}\ge\sqrt{ab}+\sqrt{cd}$，平方整理后恰为 $ad+bc\ge 2\sqrt{abcd}$——对 $ad,\,bc$ 用一次 AM-GM。注意它与[[topics/math/inequalities/03-advanced#minkowski-不等式|范数版 Minkowski]]方向相反：那边"和的范数 $\le$ 范数的和"（范数凸、次可加），这边"和的行列式 $\ge$ 行列式的和"（$\det^{1/n}$ 凹、超可加）——凸凹之别，方向翻转。
+它是"$\det^{1/n}$ 在正定锥上凹"的体现，与凸几何的 Brunn–Minkowski 定理同源（凸体之和的体积超可加）。当 $A,B$ 碰巧同时对角化时可手算验证，且恰好落回 AM-GM：$n=2$、$A=\operatorname{diag}(a,b)$、$B=\operatorname{diag}(c,d)$ 时命题即 $\sqrt{(a+c)(b+d)}\ge\sqrt{ab}+\sqrt{cd}$，平方整理后恰为 $ad+bc\ge 2\sqrt{abcd}$——对 $ad,\,bc$ 用一次 AM-GM。注意它与[范数版 Minkowski](03-advanced.md#minkowski-不等式)方向相反：那边"和的范数 $\le$ 范数的和"（范数凸、次可加），这边"和的行列式 $\ge$ 行列式的和"（$\det^{1/n}$ 凹、超可加）——凸凹之别，方向翻转。
 
 > **一句话记忆**：数的世界"积 $\le$ 和的预算"；矩阵世界"**体积（$\det$）$\le$ 迹的预算**"——AM-GM 是**谱上的预算分配原理**：各向同性（$A=\lambda I$）时体积最胖。
 >
@@ -198,7 +198,7 @@ $$
 
 ### 多视角：排序不等式
 
-*↩ 证明：[[topics/math/inequalities/01-basics#排序不等式|排序不等式]]*
+*↩ 证明：[排序不等式](01-basics.md#排序不等式)*
 
 - **面积视角**：$n=2$ 时把两个和"对齐"比较——它们共享宽 $a_1$ 的整个左列（灰色），差别只在右侧宽 $a_2-a_1$ 的竖条：同序的竖条高 $b_2$，逆序只有 $b_1$，恰好多出角块 $(a_2-a_1)(b_2-b_1)\ge0$：
 
@@ -213,7 +213,7 @@ $$
 
 ### 多视角：切比雪夫不等式
 
-*↩ 证明：[[topics/math/inequalities/01-basics#切比雪夫不等式|切比雪夫不等式]]*
+*↩ 证明：[切比雪夫不等式](01-basics.md#切比雪夫不等式)*
 
 切比雪夫不等式其实就是 **"同方向变化的两个量,它们的乘积被加权放大"**。下面从五个角度把它说透。
 
@@ -238,9 +238,21 @@ $$
 
 #### 3. 协方差非负性（代数本质）
 
-把切比雪夫改写一下:
+**先把协方差（covariance）说清楚。** 协方差不是新工具，它就是切比雪夫里「乘积的均值 $-$ 均值的乘积」：
+
 $$
-\underbrace{\overline{ab} - \bar a \bar b}_{\text{协方差}} = \frac{1}{2n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}(a_i - a_j)(b_i - b_j) \ge 0
+\operatorname{Cov}(a,b)=\overline{ab}-\bar a\,\bar b=\frac1n\sum_{i=1}^{n}(a_i-\bar a)(b_i-\bar b).
+$$
+
+- **它是怎么来的**：把每组数各自减去自己的平均，得到「偏离量」$\tilde a_i=a_i-\bar a$、$\tilde b_i=b_i-\bar b$（衡量每个数「比平均高还是低、高多少」）。协方差就是这些**偏离量之积的平均**。
+- **为什么能判「同序」**：偏离量之积 $(a_i-\bar a)(b_i-\bar b)$ 只看符号——两者**同时**高于平均或**同时**低于平均（同涨同跌）时为正，一高一低时为负。相加后**同号项压倒异号项 $\Rightarrow$ 协方差为正；反序则相反为负**。所以「协方差非负」正是「整体同序」的定量说法。
+- **小例子**：$a=(1,2,3)$（$\bar a=2$）、$b=(2,3,7)$（$\bar b=4$）。偏离量为 $(-1,0,1)$ 与 $(-2,-1,3)$，逐项积 $2,\,0,\,3$，平均得 $\operatorname{Cov}=\tfrac{5}{3}>0$（同序）；把 $b$ 反序成 $(7,3,2)$，偏离量变 $(3,-1,-2)$，积 $-3,\,0,\,-2$，$\operatorname{Cov}=-\tfrac{5}{3}<0$。
+- **两点提醒**：（1）协方差带量纲（$a$ 的单位 $\times$ $b$ 的单位），数值大小受单位影响，所以再除以两边的标准差就得到无量纲的**相关系数** $\rho$（见[向量视角](#4-向量视角)）；（2）这里用 $\tfrac1n$ 是「平均」的自然写法，与统计软件常用的 $\tfrac1{n-1}$ 无偏估计只差一个常数，判正负、比大小不受影响。
+
+于是切比雪夫可以整齐地写成：
+
+$$
+\underbrace{\overline{ab} - \bar a \bar b}_{\operatorname{Cov}(a,b)} = \frac{1}{2n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}(a_i - a_j)(b_i - b_j) \ge 0
 $$
 
 最后一行的恒等式正好就是"配对作差"那个证法的核心——**同序 $\Longleftrightarrow$ 所有差分对 $(a_i-a_j)(b_i-b_j)\ge 0$**。所以两个证法其实是同一个直觉的不同写法。
@@ -263,7 +275,7 @@ $$
 
 图中用同一组数据 $a=(1,2,3)$（中心化 $\tilde a=(-1,0,1)$，蓝）：**同序**数据 $b=(2,3,7)$ 的中心化 $(-2,-1,3)$ 与 $\tilde a$ 夹约 $19^\circ$ 的锐角，内积 $=5>0$；把 $b$ **反序**成 $(7,3,2)$，中心化向量翻到对面（约 $161^\circ$），内积 $=-5$。
 
-- **为什么同序 ⟹ 锐角**：内积是逐坐标贡献 $\tilde a_i\,\tilde b_i$ 之和，而同序数据"同涨同跌"——两组起伏大部分**同号**（[散点图视角](#1-散点图视角最直观)里第一、三象限的点占多数），正贡献压倒负贡献。精确机制就是[[topics/math/inequalities/01-basics#切比雪夫不等式|思路二（配对作差）]]：同序 $\iff (a_i-a_j)(b_i-b_j)\ge 0$ 对一切 $i,j$ 成立。
+- **为什么同序 ⟹ 锐角**：内积是逐坐标贡献 $\tilde a_i\,\tilde b_i$ 之和，而同序数据"同涨同跌"——两组起伏大部分**同号**（[散点图视角](#1-散点图视角最直观)里第一、三象限的点占多数），正贡献压倒负贡献。精确机制就是[思路二（配对作差）](01-basics.md#切比雪夫不等式)：同序 $\iff (a_i-a_j)(b_i-b_j)\ge 0$ 对一切 $i,j$ 成立。
 - **归一化后就是相关系数**：$\cos\theta=\dfrac{\tilde a\cdot\tilde b}{\lvert\tilde a\rvert\,\lvert\tilde b\rvert}=\rho$——切比雪夫说的正是"**同序数据的相关角不钝**"；回归直线的斜率方向也由 $\operatorname{sign}(\tilde a\cdot\tilde b)$ 给出。"先中心化再看夹角"是统计学里相关分析的第一步。
 - **取等条件的几何形态**：等号 $\iff$ 某组全相等 $\iff$ 对应的中心化向量是**零向量**（无起伏，夹角失去意义）；两组都有起伏的同序数据必然严格 $\tilde a\cdot\tilde b>0$。
 
@@ -286,15 +298,15 @@ $$
 E[fg]\ \ge\ E[f]\cdot E[g]
 $$
 
-在相关期望有限时，证明与正文[[topics/math/inequalities/01-basics#切比雪夫不等式|思路二（配对作差）]]逐字相同：取独立同分布的 $X,Y$，把 $\bigl(f(X)-f(Y)\bigr)\bigl(g(X)-g(Y)\bigr)\ge0$ 对 $(X,Y)$ 取期望即可。例如非相对论粒子的动能 $E=|p|^2/(2m)$ 与动量大小 $|p|$，就是同一个非负随机量的递增函数，故 $\langle E\,|p|\rangle\ge\langle E\rangle\langle|p|\rangle$。统计物理中的 Griffiths、FKG 不等式也研究正关联，但需要额外的相互作用或分布条件，不能仅用“有共同驱动”推出。
+在相关期望有限时，证明与正文[思路二（配对作差）](01-basics.md#切比雪夫不等式)逐字相同：取独立同分布的 $X,Y$，把 $\bigl(f(X)-f(Y)\bigr)\bigl(g(X)-g(Y)\bigr)\ge0$ 对 $(X,Y)$ 取期望即可。例如非相对论粒子的动能 $E=|p|^2/(2m)$ 与动量大小 $|p|$，就是同一个非负随机量的递增函数，故 $\langle E\,|p|\rangle\ge\langle E\rangle\langle|p|\rangle$。统计物理中的 Griffiths、FKG 不等式也研究正关联，但需要额外的相互作用或分布条件，不能仅用“有共同驱动”推出。
 
 > **一句话记忆**：切比雪夫说 **同序 ⟹ 协方差非负**；在随机变量语言中，是“同一随机量的两个递增函数正关联”。协方差非负本身不保证数据逐项同序。
 
 ### 多视角：柯西-施瓦茨不等式
 
-*↩ 证明：[[topics/math/inequalities/02-core-tools#柯西-施瓦茨不等式|柯西-施瓦茨不等式]]*
+*↩ 证明：[柯西-施瓦茨不等式](02-core-tools.md#柯西-施瓦茨不等式)*
 
-- **向量视角**（[[topics/math/inequalities/02-core-tools#柯西-施瓦茨不等式|正文投影图]]）：$\vec a\cdot\vec b = \|\vec a\|\|\vec b\|\cos\theta$，投影不超过模长；等号 ⟺ 共线。
+- **向量视角**（[正文投影图](02-core-tools.md#柯西-施瓦茨不等式)）：$\vec a\cdot\vec b = \|\vec a\|\|\vec b\|\cos\theta$，投影不超过模长；等号 ⟺ 共线。
 - **物理视角（力学）**：功 $W=\vec F\cdot\vec s=\|\vec F\|\|\vec s\|\cos\theta$——力做的功永远不超过"力的大小 × 位移的大小"，只有全程同向才取等。
 - **物理视角（电工学）**：交流有功功率 $P=UI\cos\varphi\le UI$（视在功率），"功率因数" $\cos\varphi$ 正是电压、电流相位夹角的余弦——实际做功被额定容量卡住。
 - **统计视角**：相关系数 $\rho=\dfrac{\mathrm{Cov}(X,Y)}{\sigma_X\sigma_Y}$ 满足 $|\rho|\le1$，正是中心化随机变量上的 C-S——协同变化程度被双方各自的不确定性之积卡住。
@@ -311,16 +323,16 @@ $$
 
 ### 多视角：伯努利不等式
 
-*↩ 证明：[[topics/math/inequalities/02-core-tools#伯努利不等式|伯努利不等式]]*
+*↩ 证明：[伯努利不等式](02-core-tools.md#伯努利不等式)*
 
-- **几何视角**：$(1+x)^r$（$r>1$）是凸曲线，$1+rx$ 是它在 $x=0$ 处的切线——**切线在凸曲线下方**，与 [[topics/math/inequalities/05-applications#指数与对数不等式|$e^x\ge1+x$]] 是同一现象的离散版。
+- **几何视角**：$(1+x)^r$（$r>1$）是凸曲线，$1+rx$ 是它在 $x=0$ 处的切线——**切线在凸曲线下方**，与 [$e^x\ge1+x$](05-applications.md#指数与对数不等式) 是同一现象的离散版。
 - **物理视角**：单利永远低估复利：$r$ 期复利 $(1+x)^r \ge$ 单利 $1+rx$。令 $r\to\infty$、$x\to 0$ 且保持 $rx$ 固定，就过渡到连续复利极限 $e^x\ge 1+x$。
 
 ### 多视角：琴生不等式
 
-*↩ 证明：[[topics/math/inequalities/02-core-tools#琴生不等式|琴生不等式]]*
+*↩ 证明：[琴生不等式](02-core-tools.md#琴生不等式)*
 
-- **几何视角**（[[topics/math/inequalities/02-core-tools#琴生不等式|正文弦图]]）：弦在曲线上方。
+- **几何视角**（[正文弦图](02-core-tools.md#琴生不等式)）：弦在曲线上方。
 - **物理视角（质心）**：凸函数的上方区域 $\mathrm{epi}(f)=\{(x,y): y\ge f(x)\}$ 是**凸集**。把 $(x_i, f(x_i))$ 看成质点，其质心（加权平均）作为凸组合仍在凸集内；质心横坐标是 $\sum\lambda_ix_i$、纵坐标是 $\sum\lambda_if(x_i)$，于是 $f\left(\sum\lambda_ix_i\right)\le\sum\lambda_if(x_i)$ 自动成立。**"质心不会跳出凸图形"就是琴生。**
 - **物理视角（转动惯量/平行轴定理）**：取 $f(x)=x^2$、权重取质量占比 $\lambda_i=m_i/M$，琴生给出 $\overline{x^2}\ge\bar x^2$（方差非负）。力学版：质量点系绕**过原点的转轴**（垂直于数轴）的转动惯量
   $$
@@ -338,7 +350,7 @@ $$
 
 ### 多视角：Nesbitt 不等式（与 Titu 引理）
 
-*↩ 证明：[[topics/math/inequalities/02-core-tools#nesbitt-不等式|Nesbitt 不等式]] · [[topics/math/inequalities/02-core-tools#附titu-引理engel-形式详解|Titu 引理详解]]*
+*↩ 证明：[Nesbitt 不等式](02-core-tools.md#nesbitt-不等式) · [Titu 引理详解](02-core-tools.md#附titu-引理engel-形式详解)*
 
 - **几何视角**：证明一的换元 $x=b+c,\ y=c+a,\ z=a+b$ 自动满足三角形不等式（$x+y>z\iff c>0$）。原来的 $a,b,c$ 是这些三角形边长的半和差，如 $a=(y+z-x)/2$；原式因此化为 $\sum_{cyc}(y+z-x)/(2x)$，再通过倒数配对使用 AM-GM。Nesbitt 对任意正数 $a,b,c$ 成立，本身不要求它们是三角形三边。
 - **直观理解（为什么最小值是 $\frac32$）**：把 $s=a+b+c$ 当总量，每项 $\frac{a}{b+c}=\frac{a}{s-a}$ 读作"自己占其余人的比例"。完全均衡（$a=b=c$）时每项恰为 $\frac12$、总和 $\frac32$；一旦不均衡，"大分子配小分母"的项被放大得比"小分子配大分母"的项缩水得更快，总和只增不减（数值试验：$a,b,c=(1,1,1)$ 时和为 $1.5$；$(2,1,1)$ 时升到 $\frac{2}{2}+\frac{1}{3}+\frac{1}{3}\approx1.67$；$(3,1,1)$ 时升到 $2.0$）。$\frac32$ 是**最均衡状态的最低消费**，越不均越"涨分"。
@@ -350,10 +362,10 @@ $$
 
 ### 多视角：Young 不等式
 
-*↩ 证明：[[topics/math/inequalities/03-advanced#young-不等式|Young 不等式]]*
+*↩ 证明：[Young 不等式](03-advanced.md#young-不等式)*
 
-- **几何视角**（[[topics/math/inequalities/03-advanced#young-不等式|正文面积图]]）：曲线 $y=t^{p-1}$ 与其反函数 $y=s^{q-1}$ 关于直线 $y=x$ **镜像对称**——这正是共轭条件 $(p-1)(q-1)=1$ 的几何内容。矩形 $ab$ 被两条镜像曲线下的面积"夹住"。
-- **向量/泛函视角**：Young 是 $L^p$–$L^q$ **对偶性**的单点版本：共轭指数 $(p,q)$ 下，乘积 $ab$ 的"预算"由两种范数分摊——$\sum_i a_ib_i \le \dfrac{\lVert a\rVert_p^p}{p}+\dfrac{\lVert b\rVert_q^q}{q}$（逐坐标用一次 Young 再求和），标准化后即下一节的 [[topics/math/inequalities/03-advanced#hölder-不等式|Hölder]]。这个"预算分摊"有非常直观的几何：
+- **几何视角**（[正文面积图](03-advanced.md#young-不等式)）：曲线 $y=t^{p-1}$ 与其反函数 $y=s^{q-1}$ 关于直线 $y=x$ **镜像对称**——这正是共轭条件 $(p-1)(q-1)=1$ 的几何内容。矩形 $ab$ 被两条镜像曲线下的面积"夹住"。
+- **向量/泛函视角**：Young 是 $L^p$–$L^q$ **对偶性**的单点版本：共轭指数 $(p,q)$ 下，乘积 $ab$ 的"预算"由两种范数分摊——$\sum_i a_ib_i \le \dfrac{\lVert a\rVert_p^p}{p}+\dfrac{\lVert b\rVert_q^q}{q}$（逐坐标用一次 Young 再求和），标准化后即下一节的 [Hölder](03-advanced.md#hölder-不等式)。这个"预算分摊"有非常直观的几何：
 
   ![Young 的对偶图景：预算曲线从内侧切于等积双曲线](/attachments/images/math/inequalities/young-dual-budget.png)
 
@@ -363,7 +375,7 @@ $$
 
 ### 多视角：Hölder 不等式
 
-*↩ 证明：[[topics/math/inequalities/03-advanced#hölder-不等式|Hölder 不等式]]*
+*↩ 证明：[Hölder 不等式](03-advanced.md#hölder-不等式)*
 
 - **向量视角**：$\vec a\cdot\vec b\le\|\vec a\|_p\|\vec b\|_q$——Hölder 之于 $p$-范数正如 C-S 之于 2-范数。$p$-范数随 $p$ 增大而减小、最终趋于最大值范数：$p$ 越大越"只看长板"（soft-max）。
 - **几何视角（$L^p$ 单位球族）**：
@@ -375,7 +387,7 @@ $$
 
 ### 多视角：权方和不等式
 
-*↩ 证明：[[topics/math/inequalities/03-advanced#权方和不等式|权方和不等式]]*
+*↩ 证明：[权方和不等式](03-advanced.md#权方和不等式)*
 
 - **物理视角**：把 Titu 推广到"非线性能耗"：固定总流量 $\sum a_i=I$，最小化 $P=\sum\frac{a_i^{p+1}}{b_i^p}$。拉格朗日乘数法给出一阶条件 $\frac{(p+1)a_i^{p}}{b_i^{p}}=\lambda$，即 $a_i\propto b_i$（仍按"电导"分流），代回得最小值
   $$
@@ -386,7 +398,7 @@ $$
 
 ### 多视角：Minkowski 不等式
 
-*↩ 证明：[[topics/math/inequalities/03-advanced#minkowski-不等式|Minkowski 不等式]]*
+*↩ 证明：[Minkowski 不等式](03-advanced.md#minkowski-不等式)*
 
 - **几何视角**：Minkowski = 一般范数的三角不等式 $\|\vec a+\vec b\|_p\le\|\vec a\|_p+\|\vec b\|_p$。几何根源：$p\ge1$ 的 $p$-范数单位球是**凸集**，且"单位球凸 ⟺ 三角不等式成立"；$p<1$ 时单位球向内凹陷，不等式随之失效——**凸性就是三角不等式的几何实体**。
 - **生活化坐标**：$p=1$ 是曼哈顿出租车距离（沿街走）、$p=2$ 是直线距离、$p\to\infty$ 是棋盘上王的走法距离（只看最大坐标差）——每种"尺子"下绕行都不划算。
@@ -395,7 +407,7 @@ $$
 
 ### 多视角：指数与对数不等式
 
-*↩ 应用：[[topics/math/inequalities/05-applications#指数与对数不等式|指数与对数不等式]]*
+*↩ 应用：[指数与对数不等式](05-applications.md#指数与对数不等式)*
 
 - **几何视角**：$e^x\ge1+x$ 是"切线在凸曲线下方"的原型；$\ln x\le x-1$ 是它的镜像（切线在凹曲线上方）。
 - **信息论视角**：由 $\ln t\le t-1$ 一行推出 **Gibbs 不等式（KL 散度非负）**——对 $t=\frac{q_i}{p_i}$ 使用并翻转：
@@ -407,7 +419,7 @@ $$
 
   左图是逐点机制：每个概率比 $t_i=q_i/p_i$ 在切线界上贡献一个非负 gap，按 $p_i$ 加权求和就是不等式本身；右图是一个具体分布对——**单项有正有负（$+0.112$ 与 $-0.086$ 抵消后仍剩 $0.025$）**，逐点切线界保证总和压不破 $0$。四点展开：
 
-  - **$D$ 的身份：用错模型的"多付码长"**。把 $-\ln q_i$ 读作"按模型 $q$ 给类别 $i$ 的码长"（概率越小码越长，最优编码约 $-\log_2 q_i$ bit），则交叉熵 $H(p,q)=\sum_i p_i(-\ln q_i)$ 是"真实分布为 $p$、却按 $q$ 编码"的平均码长，而 $D(p\|q)=H(p,q)-H(p)$ 是**多付的部分**——Gibbs 不等式即"**交叉熵 ≥ 熵**"：换用任何别的模型编码，平均只会更长，**信息不会无中生有**。它是整个信息论与最大似然理论的基石，源头就是[[topics/math/inequalities/05-applications#指数与对数不等式|应用篇]]那条最朴素的对数不等式。
+  - **$D$ 的身份：用错模型的"多付码长"**。把 $-\ln q_i$ 读作"按模型 $q$ 给类别 $i$ 的码长"（概率越小码越长，最优编码约 $-\log_2 q_i$ bit），则交叉熵 $H(p,q)=\sum_i p_i(-\ln q_i)$ 是"真实分布为 $p$、却按 $q$ 编码"的平均码长，而 $D(p\|q)=H(p,q)-H(p)$ 是**多付的部分**——Gibbs 不等式即"**交叉熵 ≥ 熵**"：换用任何别的模型编码，平均只会更长，**信息不会无中生有**。它是整个信息论与最大似然理论的基石，源头就是[应用篇](05-applications.md#指数与对数不等式)那条最朴素的对数不等式。
   - **取等条件的结构**：等号 ⟺ 每个 $t_i=\frac{q_i}{p_i}$ 都落在切点 $t=1$ ⟺ $p=q$——与本笔记所有不等式同款："**逐点取等才能整体取等**"（对照 AM-GM 的全部相等、C-S 的成比例）。
   - **同一个不等式的三张面孔**（都只是这一行推导换个取法）：
 
@@ -423,9 +435,9 @@ $$
 
 ### 多视角：三角函数不等式
 
-*↩ 应用：[[topics/math/inequalities/05-applications#三角函数不等式|三角函数不等式]]*
+*↩ 应用：[三角函数不等式](05-applications.md#三角函数不等式)*
 
-- **几何视角**：单位圆面积序（[[topics/math/inequalities/05-applications#三角函数不等式|应用篇图]]）。
+- **几何视角**：单位圆面积序（[应用篇图](05-applications.md#三角函数不等式)）。
 - **物理视角**：单摆在 $0<|\theta|<\pi$ 时，恢复力矩的**大小** $mgl|\sin\theta|$ 小于线性近似的 $mgl|\theta|$——大角度单摆"回正"更慢、周期随振幅变长（下式为小振幅展开，角度用弧度）：
   $$
   T=T_0\left(1+\frac{\theta_0^2}{16}+\cdots\right)
@@ -434,9 +446,9 @@ $$
 
 ### 多视角：积分形式
 
-*↩ 应用：[[topics/math/inequalities/05-applications#积分形式|积分形式（四件套）]]*
+*↩ 应用：[积分形式（四件套）](05-applications.md#积分形式)*
 
-- **向量视角**：积分就是连续内积——把函数看成无穷维向量，$\int fg$ 是内积、$\int f^2$ 是模方。[[topics/math/inequalities/05-applications#积分形式|应用篇积分形式一节]]的四个积分不等式与离散形式**逐字对应**：C-S（函数的投影不等式）、Jensen（连续质量分布的质心仍在凸集内）、Hölder（$L^p$–$L^q$ 对偶）、Minkowski（$L^p$ 范数的三角不等式）。记住"和式 $\to$ 积分"，两套只需记一套。
+- **向量视角**：积分就是连续内积——把函数看成无穷维向量，$\int fg$ 是内积、$\int f^2$ 是模方。[应用篇积分形式一节](05-applications.md#积分形式)的四个积分不等式与离散形式**逐字对应**：C-S（函数的投影不等式）、Jensen（连续质量分布的质心仍在凸集内）、Hölder（$L^p$–$L^q$ 对偶）、Minkowski（$L^p$ 范数的三角不等式）。记住"和式 $\to$ 积分"，两套只需记一套。
 - **几何视角（曲线下面积的比较）**：积分不等式都能画成"面积比较"。积分 C-S 中 $\int fg$ 度量两条曲线波形的**对齐程度**：完全同步（成比例）时内积最大、达到 $\sqrt{\int f^2\int g^2}$；错相（正负抵消）时内积缩小。可以把 $\int_a^b fg$ 想成"两条曲线逐点相乘再累计面积"——对齐的波形乘积恒正、贡献叠加，错开的波形有正有负、互相抵消。Young 的积分面积图（正文）同理：曲线下两块面积 $\ge$ 矩形面积。
 - **物理视角（信号处理）**：积分 C-S 是**匹配滤波**的数学骨架：
   $$
@@ -446,4 +458,4 @@ $$
 
 ---
 
-> ↩ [[topics/math/inequalities|返回总览]]
+> ↩ [返回总览](../inequalities.md)

@@ -5,20 +5,20 @@ tags:
   - inequality
   - kaoyan
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-13
 ---
 
-> 📚 本文是 [[topics/math/inequalities|不等式]] 的第 3 / 6 章（总览第四部分）。 上一章：[[topics/math/inequalities/02-core-tools|三、证明：核心工具不等式]] 下一章：[[topics/math/inequalities/04-multiview|五、多视角理解：向量·矩阵·几何·物理]]
+> 📚 本文是 [不等式](../inequalities.md) 的第 3 / 6 章（总览第四部分）。 上一章：[三、证明：核心工具不等式](02-core-tools.md) 下一章：[五、多视角理解：向量·矩阵·几何·物理](04-multiview.md)
 
 # 四、证明：高阶不等式
 
 > 🎯 **证明篇 ③ · 拔高**：这一组是 Young → Hölder → 权方和/Minkowski 的递推链，相互依赖。
 > 考研大纲对 Young/Hölder 较陌生，但竞赛中常考，建议理解为主。
-> 各不等式的积分形式集中在[[topics/math/inequalities/05-applications#积分形式|六、应用的积分形式一节]]。
+> 各不等式的积分形式集中在[六、应用的积分形式一节](05-applications.md#积分形式)。
 
 ### Young 不等式
 
-> **前驱**：[[topics/math/inequalities/02-core-tools#琴生不等式|琴生不等式]]（用 $e^x$ 的凸性）
+> **前驱**：[琴生不等式](02-core-tools.md#琴生不等式)（用 $e^x$ 的凸性）
 >
 > **定理（Young）** 设 $a,b \ge 0$，$p > 1$，$q > 1$ 且 $\dfrac{1}{p} + \dfrac{1}{q} = 1$，则
 > $$
@@ -26,13 +26,15 @@ updated: 2026-10-11
 > $$
 > 等号成立当且仅当 $a^p = b^q$。
 
-**含义**：Young 是 [[topics/math/inequalities/01-basics#均值不等式|AM-GM]] 的推广（$p=q=2$ 时即为 $\displaystyle ab \le \frac{a^2+b^2}{2}$）。
+> **三问**：固定 共轭指数 $p,q$（$\frac1p+\frac1q=1$）｜比较 乘积 $ab$ 与 两项分摊 $\frac{a^p}{p}+\frac{b^q}{q}$｜取等 $a^p=b^q$
+
+**含义**：Young 是 [AM-GM](01-basics.md#均值不等式) 的推广（$p=q=2$ 时即为 $\displaystyle ab \le \frac{a^2+b^2}{2}$）。
 
 **证明（凸函数法）**：
 
 当 $a=0$ 或 $b=0$ 时，左侧为 $0$、右侧 $\ge 0$，不等式显然成立。故不妨设 $a, b > 0$。
 
-考虑函数 $f(x) = e^x$（严格凸函数）。由 [[topics/math/inequalities/02-core-tools#琴生不等式|Jensen 不等式]]或直接用凸函数定义：
+考虑函数 $f(x) = e^x$（严格凸函数）。由 [Jensen 不等式](02-core-tools.md#琴生不等式)或直接用凸函数定义：
 $$
 ab = e^{\ln a + \ln b} = e^{\frac{1}{p}\cdot p\ln a + \frac{1}{q}\cdot q\ln b} \le \frac{1}{p}e^{p\ln a} + \frac{1}{q}e^{q\ln b} = \frac{a^p}{p} + \frac{b^q}{q}
 $$
@@ -64,7 +66,9 @@ $\blacksquare$
 > $$
 > 任一组全为 $0$ 时取等；两组都非零时，等号成立当且仅当存在常数 $\lambda>0$ 使得 $a_i^p = \lambda b_i^q$（$i=1,\ldots,n$）。
 
-**含义**：Hölder 是 [[topics/math/inequalities/02-core-tools#柯西-施瓦茨不等式|Cauchy-Schwarz]] 的推广（$p=q=2$ 时即为 Cauchy-Schwarz）。
+> **三问**：固定 共轭指数 $p,q$ 与各组范数｜比较 耦合和 $\sum a_ib_i$ 与 容量之积 $\bigl(\sum a_i^p\bigr)^{1/p}\bigl(\sum b_i^q\bigr)^{1/q}$｜取等 $a_i^p\propto b_i^q$
+
+**含义**：Hölder 是 [Cauchy-Schwarz](02-core-tools.md#柯西-施瓦茨不等式) 的推广（$p=q=2$ 时即为 Cauchy-Schwarz）。
 
 **证明（Young 不等式 + 标准化）**：
 
@@ -99,11 +103,13 @@ $\blacksquare$
 > $$
 > 等号成立当且仅当 $\dfrac{a_1}{b_1} = \dfrac{a_2}{b_2} = \cdots = \dfrac{a_n}{b_n}$。
 
+> **三问**：固定 分子和 $\sum a_i$ 与分母和 $\sum b_i$｜比较 分式和 $\sum \frac{a_i^{p+1}}{b_i^p}$ 与 合并式 $\frac{(\sum a_i)^{p+1}}{(\sum b_i)^p}$｜取等 $a_i/b_i$ 全相等
+
 **特例（$p=1$）**：
 $$
 \sum_{i=1}^n \frac{a_i^2}{b_i} \ge \frac{(a_1 + \cdots + a_n)^2}{b_1 + \cdots + b_n}
 $$
-这是竞赛中极为常用的形式（即 [[topics/math/inequalities/02-core-tools#nesbitt-不等式|Nesbitt 证明二]]用到的 Titu 引理的一般版本），可由 Cauchy-Schwarz 直接推出：
+这是竞赛中极为常用的形式（即 [Nesbitt 证明二](02-core-tools.md#nesbitt-不等式)用到的 Titu 引理的一般版本），可由 Cauchy-Schwarz 直接推出：
 $$
 \left(\sum \frac{a_i^2}{b_i}\right)\left(\sum b_i\right) \ge \left(\sum a_i\right)^2
 $$
@@ -136,7 +142,9 @@ $$
 > $$
 > **等号条件须分情况**：$p>1$ 时，两组非零向量须同向成比例（$a=\lambda b$，$\lambda>0$），或其中一组全为 $0$；$p=1$ 时，只需每个坐标 $a_ib_i\ge0$，不要求成比例。例如 $a=(1,0)$、$b=(0,1)$ 在 $p=1$ 时也取等。
 
-**含义**：这是[[topics/math/inequalities/01-basics#三角不等式绝对值不等式|三角不等式]]在 $L^p$ 范数下的推广（$p=2$ 时即欧几里得范数的三角不等式，$p=1$ 时即普通的绝对值三角不等式）。
+> **三问**：固定 两个向量与指数 $p$｜比较 $\lVert a+b\rVert_p$ 与 $\lVert a\rVert_p+\lVert b\rVert_p$｜取等 同向成比例（$p=1$ 逐项同号即可）
+
+**含义**：这是[三角不等式](01-basics.md#三角不等式绝对值不等式)在 $L^p$ 范数下的推广（$p=2$ 时即欧几里得范数的三角不等式，$p=1$ 时即普通的绝对值三角不等式）。
 
 **证明（Hölder 不等式）**：
 
@@ -166,4 +174,4 @@ $$
 
 ---
 
-> ↩ [[topics/math/inequalities|返回总览]]
+> ↩ [返回总览](../inequalities.md)

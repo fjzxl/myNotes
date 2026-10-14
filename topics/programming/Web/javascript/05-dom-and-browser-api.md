@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 五、DOM 操作与浏览器 API
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 5 / 8 章。 上一章：[[topics/programming/Web/javascript/04-asynchronous-programming|四、异步编程]] · 下一章：[[topics/programming/Web/javascript/06-es6-modern-features|六、ES6+ 现代特性]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 5 / 8 章。 上一章：[四、异步编程](04-asynchronous-programming.md) · 下一章：[六、ES6+ 现代特性](06-es6-modern-features.md)
 
 
 > **本章定位：** 从"语言本身"走向"与浏览器对话"。我们将学习如何通过 JavaScript 操控网页、响应用户交互、使用浏览器提供的各种能力。

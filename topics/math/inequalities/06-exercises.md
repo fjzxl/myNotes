@@ -5,14 +5,14 @@ tags:
   - inequality
   - kaoyan
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-12
 ---
 
-> 📚 本文是 [[topics/math/inequalities|不等式]] 的第 6 / 6 章（总览第八部分）。 上一章：[[topics/math/inequalities/05-applications|六、应用]]
+> 📚 本文是 [不等式](../inequalities.md) 的第 6 / 6 章（总览第八部分）。 上一章：[六、应用](05-applications.md)
 
 # 八、习题（分层自测）
 
-> 🎯 **使用说明**：每题限时 10 分钟，先独立完成，卡住再看题后提示，详解统一放在[答案与详解](#答案与详解)。A 组检验"会套公式"、B 组检验"会认结构"、C 组检验"会放缩会迁移"——分别对应考研的送分题、中档题与证明题。错题处理：回到[[topics/math/inequalities#七口诀速记|七、口诀速记]]复述对应口诀的结构与取等，隔天重做一次再归档到错题本。
+> 🎯 **使用说明**：每题限时 10 分钟，先独立完成，卡住再看题后提示，详解统一放在[答案与详解](#答案与详解)。A 组检验"会套公式"、B 组检验"会认结构"、C 组检验"会放缩会迁移"——分别对应考研的送分题、中档题与证明题。错题处理：回到[七、口诀速记](../inequalities.md#七口诀速记)复述对应口诀的结构与取等，隔天重做一次再归档到错题本。
 
 ### A 组（基础：直接套用）
 
@@ -123,7 +123,7 @@ $$\frac{1}{n+1}<\ln\left(1+\frac1n\right)<\frac1n$$
 
 $$\left(1+\frac1n\right)^n<e<\left(1+\frac1n\right)^{n+1}\qquad\blacksquare$$
 
-**口诀回扣**：「$\ln$ 夹在两线之间」——本题就是那条双侧切线界；顺带得到 $e$ 的双侧估计（重要极限二的上界来源，见 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]）。
+**口诀回扣**：「$\ln$ 夹在两线之间」——本题就是那条双侧切线界；顺带得到 $e$ 的双侧估计（重要极限二的上界来源，见 [数列与函数极限](../calculus/02-03-sequence-function-limits.md)）。
 
 **C2 详解**　$a^2b=\left(a^3\right)^{2/3}\left(b^3\right)^{1/3}$。由 Young（加权 AM-GM，权重 $\tfrac23+\tfrac13=1$）：
 
@@ -149,4 +149,4 @@ $$\left(\int_0^1 fg\,\mathrm dx\right)^2\ \le\ \int_0^1 f^2\,\mathrm dx\cdot\int
 
 ---
 
-> ↩ [[topics/math/inequalities|返回总览]]
+> ↩ [返回总览](../inequalities.md)

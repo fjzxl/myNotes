@@ -14,9 +14,9 @@ updated: 2026-10-12
 
 # わ行 · 两个新音（わ を）与拨音 ん
 
-> **逐行笔记第 10 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-20 周二**，与ら行同日）。
+> **逐行笔记第 10 篇**（对应 [每日计划](kana-plan.md) **10-20 周二**，与ら行同日）。
 > わ行是**收尾行**：清音表到 `わ` 就结束了，剩下的 `を` 只是个助词。拨音 `ん` 也在这一天收尾——它是**不属于任何行**的特殊音，写法、用法都和其他假名不同。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]。
+> 总表与通用规则见 [五十音笔记](kana.md)。
 > 📖 **页码说明**：假名与罗马字（わ行 い/う/え 段借用、を）见教材 p.2 五十音图（含「お和を、じ和ぢ、ず和づ 字形不同但发音相同」）；わ行发音（半辅音、わ行的 い う え を 与あ行相同）见教材 p.5；拨音 `ん` 的发音与 m/n/ng 变化见 p.5–6；笔顺对照表 A/B（p.8–9，PDF 25–26）；字源对照表 C/D（p.10，PDF 27）。
 
 ---
@@ -96,15 +96,16 @@ updated: 2026-10-12
 - [ ] 能区分 `ソ`（so）和 `ン`（n）的第二笔方向
 - [ ] 例词 10 个通读，卡壳 ≤ 2 个
 
-全过 → 清音表（46 音）**全部学完**！进浊音：[[topics/languages/japanese/kana-plan|每日计划]] 10-22 学 `が・ざ行`（含 じ/ぢ、ず/づ 辨析）。
+全过 → 清音表（46 音）**全部学完**！进浊音：[每日计划](kana-plan.md) 10-22 学 `が・ざ行`（含 じ/ぢ、ず/づ 辨析）。
 
 ## 关联
 
-- 上一行：[[topics/languages/japanese/kana-ra-row|ら行]]
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组（拨音 2 张卡）
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 上一行：[ら行](kana-ra-row.md)
+- 下一行：（本笔记为最后一行）清音收尾后转[五十音笔记](kana.md)全表复习（10-21）
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组（拨音 2 张卡）
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

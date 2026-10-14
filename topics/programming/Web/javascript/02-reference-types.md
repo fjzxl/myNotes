@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 二、引用类型详解
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 2 / 8 章。 上一章：[[topics/programming/Web/javascript/01-language-basics|一、语言基础]] · 下一章：[[topics/programming/Web/javascript/03-core-mechanisms|三、核心运行机制]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 2 / 8 章。 上一章：[一、语言基础](01-language-basics.md) · 下一章：[三、核心运行机制](03-core-mechanisms.md)
 
 
 > **本章定位：** 在掌握了基本类型后，本章将深入 JavaScript 的"容器"：对象、数组、函数。这三者是构建任何 JavaScript 程序的基石。

@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第五阶段：背景与装饰 —— 让页面更丰富
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 5 / 10 章。 上一章：[[topics/programming/Web/css/stage-04-selectors|第四阶段：选择器]] · 下一章：[[topics/programming/Web/css/stage-06-layout|第六阶段：布局系统]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 5 / 10 章。 上一章：[第四阶段：选择器](stage-04-selectors.md) · 下一章：[第六阶段：布局系统](stage-06-layout.md)
 
 
 > 🎯 **本节目标**：能设置背景色、背景图、阴影和渐变，让页面更有层次感。

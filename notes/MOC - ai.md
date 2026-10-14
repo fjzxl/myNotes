@@ -23,23 +23,23 @@ updated: 2026-10-10
 
 > 必读、最常翻
 
-- [[topics/ai/Claude Code]] —— Claude Code 使用心得（Agent 编程实战）
-- [[topics/ai/MoE]] —— Mixture of Experts 架构
+- [Claude Code](../topics/ai/Claude%20Code.md) —— Claude Code 使用心得（Agent 编程实战）
+- [MoE](../topics/ai/MoE.md) —— Mixture of Experts 架构
 
 ## 按类别
 
 ### LLM 与基础模型
 
-- [[topics/ai/MoE]] —— Mixture of Experts
+- [MoE](../topics/ai/MoE.md) —— Mixture of Experts
 
 ### Agent / Coding Agent
 
-- [[topics/ai/Claude Code]] —— Claude Code 使用笔记（Agent 编程：拆解问题、分配任务、多智能体协作）
+- [Claude Code](../topics/ai/Claude%20Code.md) —— Claude Code 使用笔记（Agent 编程：拆解问题、分配任务、多智能体协作）
 - 待补充：Agent 设计模式、Multi-agent 协作
 
 ### 行业与思考
 
-- [[inbox/innovation-flash|创新的本质（闪念）]] —— 2026-09 闪念，已按 PARA 移入 inbox 待整理；定期清点时再决定去向
+- [创新的本质（闪念）](../inbox/innovation-flash.md) —— 2026-09 闪念，已按 PARA 移入 inbox 待整理；定期清点时再决定去向
 
 ## 待补充
 
@@ -83,10 +83,10 @@ Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板
 
 ## 相关 MOC
 
-- [[notes/MOC - programming]] —— 编程（Agent 编程实践）
-- [[notes/MOC - math]] —— 数学（深度学习数学基础）
+- [MOC - programming](MOC%20-%20programming.md) —— 编程（Agent 编程实践）
+- [MOC - math](MOC%20-%20math.md) —— 数学（深度学习数学基础）
 
 ## 更新记录
 
 - **2026-09-09** —— 初始创建（重构后）
-- **2026-10-10** —— [[topics/ai/Claude Code]] 由一句话闪念扩充为完整笔记（范式转变、任务拆解、多智能体拓扑、实践清单）；闪念 [[inbox/innovation-flash|创新的本质]] 按 PARA 移入 inbox
+- **2026-10-10** —— [Claude Code](../topics/ai/Claude%20Code.md) 由一句话闪念扩充为完整笔记（范式转变、任务拆解、多智能体拓扑、实践清单）；闪念 [创新的本质](../inbox/innovation-flash.md) 按 PARA 移入 inbox

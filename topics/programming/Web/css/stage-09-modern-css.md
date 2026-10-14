@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第九阶段：现代 CSS 进阶特性
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 9 / 10 章。 上一章：[[topics/programming/Web/css/stage-08-animation|第八阶段：动画与交互]] · 下一章：[[topics/programming/Web/css/stage-10-architecture|第十阶段：CSS 架构与工程化]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 9 / 10 章。 上一章：[第八阶段：动画与交互](stage-08-animation.md) · 下一章：[第十阶段：CSS 架构与工程化](stage-10-architecture.md)
 
 
 > 🎯 **本节目标**：掌握 CSS 变量、常用函数和现代属性。

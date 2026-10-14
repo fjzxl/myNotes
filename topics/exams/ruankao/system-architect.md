@@ -15,7 +15,7 @@ updated: 2026-10-12
 
 > **定位**：软考高级「系统架构设计师」的备考总纲——考试事实、三科大纲、备考节奏都在这一页；其中**论文写作是重点模块（第 5 节，篇幅最大）**。
 > **事实核于 2026-10-02**（联网核实），批次与时长最终以准考证为准。
-> 导航：[[notes/MOC - exams]] ｜ 编程基础语料：[[notes/MOC - programming]] ｜ 三线总计划：[[projects/note-writing-plan]]
+> 导航：[MOC - exams](../../../notes/MOC%20-%20exams.md) ｜ 编程基础语料：[MOC - programming](../../../notes/MOC%20-%20programming.md) ｜ 三线总计划：[note-writing-plan](../../../projects/note-writing-plan.md)
 
 ---
 
@@ -136,7 +136,7 @@ updated: 2026-10-12
 
 **建议准备 2 份素材卡**：一份高并发交易 / 互联网类（适配秒杀、负载均衡、缓存、Serverless），一份企业信息化 / 数据平台类（适配数据集成、多模型数据库、云原生）。细节必须自洽：时间线、团队规模、技术版本对得上。
 
-> 范文与字段映射示例：[[topics/exams/ruankao/essay-sample-seckill]] —— 以 2025.11「论秒杀场景」真题为例，逐段标注素材卡八个字段写进了哪一段。
+> 范文与字段映射示例：[essay-sample-seckill](essay-sample-seckill.md) —— 以 2025.11「论秒杀场景」真题为例，逐段标注素材卡八个字段写进了哪一段。
 
 ### 5.3 万能结构模板（含 120 分钟时间分配）
 
@@ -191,7 +191,7 @@ updated: 2026-10-12
 - 全程**用键盘全文打字练习**（不是手写、不是只列提纲）：基础期第 1 篇不限时精写，强化期起每篇 120 分钟限时。
 - 打字速度目标 ≥ 40 字 / 分钟：2500 字约需 65–75 分钟纯打字，剩余时间只够审题和列提纲——所以骨架必须练到脱手。
 - 长线累计 12–16 篇，覆盖「5 个方向 × 素材卡 2 个项目」：强化期每两周 1 篇打基础，冲刺期每周 1 篇保持手感；同一方向至少写 2 篇，第 2 篇明显提速就是熟练信号。
-- 每篇练习用 [[templates/practice-log]] 记录问题与复测结论。
+- 每篇练习用 [practice-log](../../../templates/practice-log.md) 记录问题与复测结论。
 
 ### 5.7 自评 Checklist 与常见失分
 
@@ -213,8 +213,8 @@ updated: 2026-10-12
 
 - **官方**：[中国计算机技术职业资格网](https://www.ruankao.org.cn)（报名 / 成绩 / 年度考试计划）；官方教程《系统架构设计师教程（第 2 版）》（清华大学出版社）
 - **真题与解析**：[2026 下半年批次通告（希赛网）](https://www.educity.cn/rk/5541426.html)、[2024.11 三科真题解析（博客园）](https://www.cnblogs.com/yangykaifa/p/19328433)、[2025.5 回忆版真题（博客园）](https://www.cnblogs.com/BitX/p/19045006)、[2025.11 案例与论文解析视频（Bilibili）](https://www.bilibili.com/video/BV1uTCtBeExG)
-- **本库语料**：分层与 IoC 概念见 [[topics/programming/Java/spring/spring_intro]]、Bean 生命周期见 [[topics/programming/Java/spring/spring_lifecycle]]，可作为论文技术名词的准确表达参考；更多编程笔记从 [[notes/MOC - programming]] 进入
-- **练习记录**：[[templates/practice-log]]（单次练习）、[[templates/skill-learning]]（整场考试的验收标准）
+- **本库语料**：分层与 IoC 概念见 [spring_intro](../../programming/Java/spring/spring_intro.md)、Bean 生命周期见 [spring_lifecycle](../../programming/Java/spring/spring_lifecycle.md)，可作为论文技术名词的准确表达参考；更多编程笔记从 [MOC - programming](../../../notes/MOC%20-%20programming.md) 进入
+- **练习记录**：[practice-log](../../../templates/practice-log.md)（单次练习）、[skill-learning](../../../templates/skill-learning.md)（整场考试的验收标准）
 
 ---
 

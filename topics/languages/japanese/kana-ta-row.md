@@ -13,9 +13,9 @@ updated: 2026-10-12
 
 # た行 · 五个音（た ち つ て と）
 
-> **逐行笔记第 4 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-15 周四**）。
+> **逐行笔记第 4 篇**（对应 [每日计划](kana-plan.md) **10-15 周四**）。
 > た行同样有两个不按字母读的音：**ち读 chi、つ读 tsu**。`つ` 还是**促音 っ 的同形不同长**那一对的关键。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]。
+> 总表与通用规则见 [五十音笔记](kana.md)。
 > 📖 **页码说明**：假名与罗马字见教材 p.2 五十音图；た行发音（t/d 词头词中之别、ち 与 qi/ji 相当、つ 与 ci/zi 相当）见教材 p.4 清音讲解，`つ` 与促音 `っ` 的对比见 p.6 促音节；笔顺对照表 A/B（p.8–9，PDF 25–26）；字源对照表 C/D（p.10，PDF 27）。
 
 ---
@@ -95,16 +95,16 @@ updated: 2026-10-12
 - [ ] 默写平、片各 5 个（对照表 A/B 检查笔顺与字形）
 - [ ] 能口头区分 `つ`（tsu）与 `っ`（促音），并各找一个词举例
 
-四项全过 → 建卡：[[topics/languages/japanese/kana-cards|五十音闪卡]] た行 10 张（读 / 写两向）→ 明天な行。有错：只重练错的那个，回来复测该项。
+四项全过 → 建卡：[五十音闪卡](kana-cards.md) た行 10 张（读 / 写两向）→ 明天な行。有错：只重练错的那个，回来复测该项。
 
 ## 关联
 
-- 上一行：[[topics/languages/japanese/kana-sa-row|さ行]]
-- 下一行：な行（10-16，笔记 `kana-na-row`）
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 上一行：[さ行](kana-sa-row.md)
+- 下一行：[な行](kana-na-row.md)（10-16 周五）
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

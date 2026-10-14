@@ -48,14 +48,14 @@ updated: 2026-10-11
 
 ### Foam（推荐）
 
-- [[topics/tools/foam-knowledge-base-guide]] — 完整使用指南
-- 入口页：[[topics/tools/Foam]]
+- [foam-knowledge-base-guide](foam-knowledge-base-guide.md) — 完整使用指南
+- 入口页：[Foam](Foam.md)
 - 一句话：VS Code 插件，Roam 式双向链接知识库
 - 适用：本仓库所有 Markdown 笔记可作为 Foam 知识库使用
 
 ## 相关工具笔记
 
-- [[topics/tools/VSCode]] — VS Code 配置与快捷键完整指南
-- [[topics/tools/Markdown]] — Markdown 写作环境配置
-- [[topics/tools/Foam]] — 知识库管理工具索引
-- [[topics/tools/marp-guide]] — Marp 幻灯片（Markdown → PDF/PPT）
+- [VSCode](VSCode.md) — VS Code 配置与快捷键完整指南
+- [Markdown](Markdown.md) — Markdown 写作环境配置
+- [Foam](Foam.md) — 知识库管理工具索引
+- [marp-guide](marp-guide.md) — Marp 幻灯片（Markdown → PDF/PPT）

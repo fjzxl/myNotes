@@ -96,6 +96,6 @@ int main(void) {     /* 程序入口，返回 int 作为进程退出码 */
 
 ## 相关链接
 
-- [[topics/programming/cplusplus/vscodec]] —— 用 VS Code 写 C/C++：环境配置、构建与调试
-- [[topics/programming/Linux/linux-kernel-4.9-build]] —— 大型 C 项目的构建实例（内核编译）
-- [[notes/MOC - programming]] —— 编程知识地图
+- [vscodec](vscodec.md) —— 用 VS Code 写 C/C++：环境配置、构建与调试
+- [linux-kernel-4.9-build](../Linux/linux-kernel-4.9-build.md) —— 大型 C 项目的构建实例（内核编译）
+- [MOC - programming](../../../notes/MOC%20-%20programming.md) —— 编程知识地图

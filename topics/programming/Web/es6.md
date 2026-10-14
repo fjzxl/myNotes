@@ -9,8 +9,8 @@ updated: 2026-10-10
 # ES6 教程
 
 > 面向对象：已有 JavaScript 基础，希望系统掌握 ES6+ 核心特性的开发者。
-> **与教程章节的分工**：本文是 **ES6+ 专题手册**，按特性逐一深挖（动机、原理、边界、演进）；若你在走 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 学习路线，第 6 章 [[topics/programming/Web/javascript/06-es6-modern-features|六、ES6+ 现代特性]] 是**章节导读 + 现代化重构实战**，两者内容有意重叠：先用教程章建立全貌并练手，再回到本文按需深挖。
-> 后续学习：[[topics/programming/Web/typescript/intro]]（静态类型与工程实践）→ [[topics/programming/Web/typescript/interface]]（理解接口契约）→ [[topics/programming/Web/typescript/type-system]]（类型系统进阶）；编程导航见 [[notes/MOC - programming]]。
+> **与教程章节的分工**：本文是 **ES6+ 专题手册**，按特性逐一深挖（动机、原理、边界、演进）；若你在走 [JavaScript 核心知识体系](javascript.md) 学习路线，第 6 章 [六、ES6+ 现代特性](javascript/06-es6-modern-features.md) 是**章节导读 + 现代化重构实战**，两者内容有意重叠：先用教程章建立全貌并练手，再回到本文按需深挖。
+> 后续学习：[intro](typescript/intro.md)（静态类型与工程实践）→ [interface](typescript/interface.md)（理解接口契约）→ [type-system](typescript/type-system.md)（类型系统进阶）；编程导航见 [MOC - programming](../../../notes/MOC%20-%20programming.md)。
 
 ## 1. 引言
 

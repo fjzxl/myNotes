@@ -9,9 +9,9 @@ updated: 2026-10-01
 # TypeScript 入门教程
 
 > 面向对象：已有 JavaScript（ES6+）基础，希望系统掌握 TypeScript 核心类型系统的开发者。
-> 前置知识：[[topics/programming/Web/es6]]、[[topics/programming/Web/javascript]]
-> 进阶篇：[[topics/programming/Web/typescript/type-system]] —— 结构化类型、型变、条件类型、infer、类型体操
-> 导航：[[notes/MOC - programming]] · 推荐顺序：JavaScript → ES6+ → 本文 → [[topics/programming/Web/typescript/interface]]（接口专题）→ [[topics/programming/Web/typescript/type-system]]
+> 前置知识：[es6](../es6.md)、[javascript](../javascript.md)
+> 进阶篇：[type-system](type-system.md) —— 结构化类型、型变、条件类型、infer、类型体操
+> 导航：[MOC - programming](../../../../notes/MOC%20-%20programming.md) · 推荐顺序：JavaScript → ES6+ → 本文 → [interface](interface.md)（接口专题）→ [type-system](type-system.md)
 
 > **示例说明**：各代码块是独立的小例子，不是可直接拼接成一个 `.ts` 文件的完整程序；不同小节可能重复使用 `User`、`Shape` 等名称。
 
@@ -70,7 +70,7 @@ double(3);                 // OK
 double(Number('3'));       // OK：显式转换仍由 JavaScript 在运行时执行
 ```
 
-因此，TS 类型既不会替 JavaScript 做隐式转换，也不会自动校验运行时值；它让调用约定在代码运行前可见。想看对象形状如何写成接口，见 [[topics/programming/Web/typescript/interface]]。
+因此，TS 类型既不会替 JavaScript 做隐式转换，也不会自动校验运行时值；它让调用约定在代码运行前可见。想看对象形状如何写成接口，见 [interface](interface.md)。
 
 ### 1.2 为什么用 TypeScript
 
@@ -275,9 +275,9 @@ interface INum { value: number }
 // interface IBad extends IStr, INum {} // 编译错误：属性 'value' 类型不兼容
 ```
 
-3. **对联合满足分配律**：`(A | B) & C = (A & C) | (B & C)`——交集"穿过"联合的每一支。类似的逐成员处理思想在条件类型中成为分发律（见 [8.3](#83-条件类型与-infer)）；集合论视角详见 [[topics/programming/Web/typescript/type-system]] 第 2、4 节。
+3. **对联合满足分配律**：`(A | B) & C = (A & C) | (B & C)`——交集"穿过"联合的每一支。类似的逐成员处理思想在条件类型中成为分发律（见 [8.3](#83-条件类型与-infer)）；集合论视角详见 [type-system](type-system.md) 第 2、4 节。
 
-将多个接口形状合并为交叉类型，或将接口组成可辨识联合的示例见 [[topics/programming/Web/typescript/interface]]。
+将多个接口形状合并为交叉类型，或将接口组成可辨识联合的示例见 [interface](interface.md)。
 
 ### 2.6 类型别名 `type`
 
@@ -568,7 +568,7 @@ shapes.forEach(s => console.log(s.describe()));
 
 ## 6. 接口
 
-> 本章介绍接口语法；如果想先理解“为什么 JavaScript 开发需要接口”，请读 [[topics/programming/Web/typescript/interface]]。
+> 本章介绍接口语法；如果想先理解“为什么 JavaScript 开发需要接口”，请读 [interface](interface.md)。
 
 ### 6.1 描述对象形状
 
@@ -800,7 +800,7 @@ class UserRepo implements Repository<{ id: number }, number> {
 
 联合类型使用前必须**收窄**（narrowing）为具体分支，TS 通过控制流分析自动完成。
 
-收窄使用的 `typeof`、`in`、`instanceof`、`===` 都是普通 JavaScript 检查。运行时判断负责分支选择；TS 根据同一段检查推断分支内的类型，因此类型安全不需要额外的运行时代码。相关运行时语法见 [[topics/programming/Web/javascript]]。
+收窄使用的 `typeof`、`in`、`instanceof`、`===` 都是普通 JavaScript 检查。运行时判断负责分支选择；TS 根据同一段检查推断分支内的类型，因此类型安全不需要额外的运行时代码。相关运行时语法见 [javascript](../javascript.md)。
 
 ```typescript
 type Fish = { swim: () => void };
@@ -1134,9 +1134,9 @@ tsc --init --allowJs --checkJs --noEmit
 
 ## 11. 总结
 
-学习路径回顾：先从 [[topics/programming/Web/javascript]] 熟悉运行时语言，再用 [[topics/programming/Web/es6]] 补齐现代 JavaScript 语法，然后学习本文的静态类型与工程实践；需要理解类型推导规则时继续阅读 [[topics/programming/Web/typescript/type-system]]。
+学习路径回顾：先从 [javascript](../javascript.md) 熟悉运行时语言，再用 [es6](../es6.md) 补齐现代 JavaScript 语法，然后学习本文的静态类型与工程实践；需要理解类型推导规则时继续阅读 [type-system](type-system.md)。
 
-**学习优先级建议**（对标 [[topics/programming/Web/es6]] 的分级方式）：
+**学习优先级建议**（对标 [es6](../es6.md) 的分级方式）：
 
 | 优先级 | 内容 |
 |--------|------|

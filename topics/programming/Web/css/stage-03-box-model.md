@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第三阶段：盒模型与显示模式 —— 理解元素的空间占用
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 3 / 10 章。 上一章：[[topics/programming/Web/css/stage-02-text-styling|第二阶段：给文字"化妆"]] · 下一章：[[topics/programming/Web/css/stage-04-selectors|第四阶段：选择器]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 3 / 10 章。 上一章：[第二阶段：给文字"化妆"](stage-02-text-styling.md) · 下一章：[第四阶段：选择器](stage-04-selectors.md)
 
 
 > 🎯 **本节目标**：理解显示模式与盒模型的关系，掌握两种盒模型的区别，会使用 `border-box`，理解 block/inline/inline-block 的差异，掌握 padding、border、margin 的用法。

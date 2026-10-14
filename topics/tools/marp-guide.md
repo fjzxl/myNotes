@@ -10,7 +10,7 @@ aliases:
   - Marp Guide
   - Marp 幻灯片
 created: 2026-09-10
-updated: 2026-10-11
+updated: 2026-10-12
 ---
 
 # Marp 使用指南：Markdown 写 PPT
@@ -428,7 +428,7 @@ $$|3x + 1 - 7| = 3|x - 2| < 3 \cdot \frac{\epsilon}{3} = \epsilon$$
 
 ### 示例 3：康奈尔笔记版
 
-如果用 [[templates/cornell-note]] 模板的思路做康奈尔版式：`<!-- _class: ... -->` 是"给当前页设置类"，同一页连续设置多个只会保留最后一个，**不能**用来切分区块；正确做法是定义一个 grid 类，再用两个 `div` 分出线索/笔记两栏：
+如果用 [cornell-note](../../templates/cornell-note.md) 模板的思路做康奈尔版式：`<!-- _class: ... -->` 是"给当前页设置类"，同一页连续设置多个只会保留最后一个，**不能**用来切分区块；正确做法是定义一个 grid 类，再用两个 `div` 分出线索/笔记两栏：
 
 ```markdown
 ---
@@ -684,7 +684,7 @@ marp my-talk.md --pptx
 
 ⚠️ 复杂布局/字体可能丢失。**导 PDF 更稳**。
 
-### Q7：怎么和 [[topics/tools/Foam]] 配合？
+### Q7：怎么和 [Foam](Foam.md) 配合？
 
 Marp 文档**可以**放 Foam 知识库：
 - 放在 `topics/.../slides/` 子目录
@@ -693,7 +693,7 @@ Marp 文档**可以**放 Foam 知识库：
 
 ### Q8：康奈尔笔记能转 Marp 幻灯片吗？
 
-可以！[[templates/cornell-note]] 模板本身是 HTML/Markdown，Marp 用 `style: |` 配 CSS Grid 模拟两栏即可。详见 [[#示例 3：康奈尔笔记版]]。
+可以！[cornell-note](../../templates/cornell-note.md) 模板本身是 HTML/Markdown，Marp 用 `style: |` 配 CSS Grid 模拟两栏即可。详见 [示例 3：康奈尔笔记版](#示例-3康奈尔笔记版)。
 
 ---
 
@@ -709,11 +709,11 @@ Marp 文档**可以**放 Foam 知识库：
 
 ## 相关笔记
 
-- [[topics/tools/Markdown]] —— Markdown 基础
-- [[topics/tools/Foam]] —— 知识库管理
-- [[topics/tools/VSCode]] —— VS Code 配置
-- [[templates/cornell-note]] —— 康奈尔笔记（可转 Marp）
-- [[templates/cornell-marp]] —— **康奈尔 × Marp 混合模板**
-- [[topics/tools/marp-screencast-script]] —— 5 分钟录屏脚本
-- [[topics/programming/Java/slides/Servlet-lifecycle]] —— 实战示例（Servlet 生命周期）
-- [[topics/tools/Shortcuts]] —— 工具速查
+- [Markdown](Markdown.md) —— Markdown 基础
+- [Foam](Foam.md) —— 知识库管理
+- [VSCode](VSCode.md) —— VS Code 配置
+- [cornell-note](../../templates/cornell-note.md) —— 康奈尔笔记（可转 Marp）
+- [cornell-marp](../../templates/cornell-marp.md) —— **康奈尔 × Marp 混合模板**
+- [marp-screencast-script](marp-screencast-script.md) —— 5 分钟录屏脚本
+- [Servlet-lifecycle](../programming/Java/slides/Servlet-lifecycle.md) —— 实战示例（Servlet 生命周期）
+- [Shortcuts](Shortcuts.md) —— 工具速查

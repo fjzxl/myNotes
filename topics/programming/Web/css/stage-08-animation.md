@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第八阶段：动画与交互 —— 让页面动起来
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 8 / 10 章。 上一章：[[topics/programming/Web/css/stage-07-responsive-design|第七阶段：响应式设计]] · 下一章：[[topics/programming/Web/css/stage-09-modern-css|第九阶段：现代 CSS 进阶特性]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 8 / 10 章。 上一章：[第七阶段：响应式设计](stage-07-responsive-design.md) · 下一章：[第九阶段：现代 CSS 进阶特性](stage-09-modern-css.md)
 
 
 > 🎯 **本节目标**：掌握过渡、变换和动画，能写出常见交互效果。

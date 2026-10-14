@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 八、工程化与最佳实践
 
-> 📚 本文是 [[topics/programming/Web/javascript|JavaScript 核心知识体系]] 的第 8 / 8 章。 上一章：[[topics/programming/Web/javascript/07-error-handling-and-debugging|七、错误处理与调试]]
+> 📚 本文是 [JavaScript 核心知识体系](../javascript.md) 的第 8 / 8 章。 上一章：[七、错误处理与调试](07-error-handling-and-debugging.md)
 
 
 > **本章定位：** 当代码从"个人脚本"成长为"团队协作项目"时，规范、设计模式和性能优化就变得至关重要。本章将带你从"会写代码"走向"会写工程代码"。

@@ -102,16 +102,16 @@ updated: 2026-10-01
 
 全文按学习阶段拆分为 10 篇独立笔记，建议按顺序阅读：
 
-1. [[topics/programming/Web/css/stage-01-getting-started|第一阶段：初识 CSS —— 先让样式生效]]
-2. [[topics/programming/Web/css/stage-02-text-styling|第二阶段：给文字"化妆" —— 最直观的改变]]
-3. [[topics/programming/Web/css/stage-03-box-model|第三阶段：盒模型与显示模式 —— 理解元素的空间占用]]
-4. [[topics/programming/Web/css/stage-04-selectors|第四阶段：选择器 —— 精准选中要修改的元素]]
-5. [[topics/programming/Web/css/stage-05-backgrounds|第五阶段：背景与装饰 —— 让页面更丰富]]
-6. [[topics/programming/Web/css/stage-06-layout|第六阶段：布局系统 —— 让元素各就各位]]
-7. [[topics/programming/Web/css/stage-07-responsive-design|第七阶段：响应式设计 —— 适配不同屏幕]]
-8. [[topics/programming/Web/css/stage-08-animation|第八阶段：动画与交互 —— 让页面动起来]]
-9. [[topics/programming/Web/css/stage-09-modern-css|第九阶段：现代 CSS 进阶特性]]
-10. [[topics/programming/Web/css/stage-10-architecture|第十阶段：CSS 架构与工程化]]
+1. [第一阶段：初识 CSS —— 先让样式生效](css/stage-01-getting-started.md)
+2. [第二阶段：给文字"化妆" —— 最直观的改变](css/stage-02-text-styling.md)
+3. [第三阶段：盒模型与显示模式 —— 理解元素的空间占用](css/stage-03-box-model.md)
+4. [第四阶段：选择器 —— 精准选中要修改的元素](css/stage-04-selectors.md)
+5. [第五阶段：背景与装饰 —— 让页面更丰富](css/stage-05-backgrounds.md)
+6. [第六阶段：布局系统 —— 让元素各就各位](css/stage-06-layout.md)
+7. [第七阶段：响应式设计 —— 适配不同屏幕](css/stage-07-responsive-design.md)
+8. [第八阶段：动画与交互 —— 让页面动起来](css/stage-08-animation.md)
+9. [第九阶段：现代 CSS 进阶特性](css/stage-09-modern-css.md)
+10. [第十阶段：CSS 架构与工程化](css/stage-10-architecture.md)
 
 ---
 

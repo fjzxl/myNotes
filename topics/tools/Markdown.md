@@ -140,8 +140,8 @@ print("Hello, World!")
 
 本目录的所有 Markdown 笔记可以直接作为 **Foam 知识库** 使用：
 
-- 完整文档：[[topics/tools/foam-knowledge-base-guide]]
-- 索引入口：[[topics/tools/Foam]]
+- 完整文档：[foam-knowledge-base-guide](foam-knowledge-base-guide.md)
+- 索引入口：[Foam](Foam.md)
 
 **为什么 Markdown 工具链与 Foam 强相关**：
 
@@ -153,7 +153,7 @@ print("Hello, World!")
 
 ## 相关链接
 
-- [[topics/tools/VSCode]] —— VS Code 配置与基础
-- [[topics/tools/Shortcuts]] —— 顶层工具速查表
-- [[topics/tools/Foam]] —— 知识库管理工具索引
+- [VSCode](VSCode.md) —— VS Code 配置与基础
+- [Shortcuts](Shortcuts.md) —— 顶层工具速查表
+- [Foam](Foam.md) —— 知识库管理工具索引
 - https://zuizhinan.com/markdown/

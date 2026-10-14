@@ -14,7 +14,7 @@ title: 康奈尔笔记 · Marp 版
 
 把笔记做成可演示的幻灯片，保留两栏版式
 
-📚 配套：[[templates/cornell-note]]、[[topics/tools/marp-guide]]
+📚 配套：[cornell-note](cornell-note.md)、[marp-guide](../topics/tools/marp-guide.md)
 
 ---
 
@@ -243,7 +243,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 2. **前向步**：$n \to 2n$（分组）
 3. **后向步**：$2^k \to 2^k - 1$（补元素）
 
-详见：[[topics/math/inequalities/01-basics#均值不等式|均值不等式]]
+详见：[均值不等式](../topics/math/inequalities/01-basics.md#均值不等式)
 
 </div>
 
@@ -336,6 +336,6 @@ marp am-gm-cornell.md --pptx
 
 ## 📚 相关资源
 
-- [[templates/cornell-note]] —— 标准康奈尔笔记模板（HTML + CSS 版）
-- [[topics/tools/marp-guide]] —— Marp 完整使用指南
-- [[topics/programming/Java/slides/Servlet-lifecycle]] —— Marp 幻灯片实战示例
+- [cornell-note](cornell-note.md) —— 标准康奈尔笔记模板（HTML + CSS 版）
+- [marp-guide](../topics/tools/marp-guide.md) —— Marp 完整使用指南
+- [Servlet-lifecycle](../topics/programming/Java/slides/Servlet-lifecycle.md) —— Marp 幻灯片实战示例

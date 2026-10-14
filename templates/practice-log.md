@@ -10,7 +10,7 @@ duration_minutes:
 # 练习记录：{{title}}
 
 > **一次练习，一个改进点** —— 记录尝试、反馈、纠错和复测，可用于编程、数学、写作或其他技能。
-> 长期目标与进度汇总在 [[templates/skill-learning|skill-learning]]。
+> 长期目标与进度汇总在 [skill-learning](skill-learning.md)。
 
 ## 开始前
 

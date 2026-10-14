@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第六阶段：布局系统 —— 让元素各就各位
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 6 / 10 章。 上一章：[[topics/programming/Web/css/stage-05-backgrounds|第五阶段：背景与装饰]] · 下一章：[[topics/programming/Web/css/stage-07-responsive-design|第七阶段：响应式设计]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 6 / 10 章。 上一章：[第五阶段：背景与装饰](stage-05-backgrounds.md) · 下一章：[第七阶段：响应式设计](stage-07-responsive-design.md)
 
 
 > 🎯 **本节目标**：理解文档流、定位、Flexbox 和 Grid，能选择合适的布局方式。

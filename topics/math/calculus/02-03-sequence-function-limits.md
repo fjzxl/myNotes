@@ -13,7 +13,7 @@ updated: 2026-10-10
 # 数列与函数极限
 
 > **考纲定位（数一）**：理解极限的概念；理解左极限与右极限的概念及极限存在与左右极限的关系；掌握极限的性质与四则运算法则；掌握极限存在的两个准则（夹逼、单调有界），并会利用它们求极限；掌握用两个重要极限求极限的方法。定义类问题在选择题中直接考"说法辨析"，准则与重要极限是计算题的底层工具。
-> 前置：[[topics/math/functions-and-bounds|界与函数]]（确界、邻域、函数记号）；后续：无穷小比较与连续（`04-05`）、极限计算综合（`06`）。导航：[[topics/math/calculus|高等数学总览]]。
+> 前置：[界与函数](../functions-and-bounds.md)（确界、邻域、函数记号）；后续：无穷小比较与连续（`04-05`）、极限计算综合（`06`）。导航：[高等数学总览](../calculus.md)。
 
 ## 一、为什么需要极限
 
@@ -164,7 +164,7 @@ $0<\dfrac{n!}{n^n}=\dfrac1n\cdot\dfrac2n\cdots\dfrac nn\le\dfrac1n\to 0$（其�
 
 **内容**：单调递增且有上界的数列必收敛（递减有下界同理）。
 
-**理论根基**：上确界存在定理（[[topics/math/functions-and-bounds|界与函数]]）——递增有上界，极限就是那个上界的上确界。这是实数系完备性的直接体现（有理数系中单调有界数列可以没有极限，如 $\sqrt2$ 的不足近似值列）。
+**理论根基**：上确界存在定理（[界与函数](../functions-and-bounds.md)）——递增有上界，极限就是那个上界的上确界。这是实数系完备性的直接体现（有理数系中单调有界数列可以没有极限，如 $\sqrt2$ 的不足近似值列）。
 
 **适用信号**：递推数列 $a_{n+1}=f(a_n)$。标准三步：
 
@@ -217,7 +217,7 @@ $x\to 0^+$ 时 $\cos x\to1$，夹逼得右极限为 1；$\dfrac{\sin x}{x}$ 是�
 
 ### 5.2 第二重要极限：$\lim\limits_{n\to\infty}\left(1+\dfrac1n\right)^n=e$
 
-**单调性的证明思路（均值不等式，核对）**：取 $n$ 个 $\left(1+\dfrac1n\right)$ 与 1 个 $1$，由 [[topics/math/inequalities|均值不等式]]（AM-GM）：
+**单调性的证明思路（均值不等式，核对）**：取 $n$ 个 $\left(1+\dfrac1n\right)$ 与 1 个 $1$，由 [均值不等式](../inequalities.md)（AM-GM）：
 
 $$\sqrt[n+1]{\left(1+\tfrac1n\right)^n\cdot 1}\ \le\ \frac{n\left(1+\tfrac1n\right)+1}{n+1}=\frac{n+2}{n+1}=1+\frac1{n+1}$$
 
@@ -267,8 +267,8 @@ $$\left(1+\tfrac1n\right)^n=\sum_{k=0}^n\frac1{k!}\cdot\frac{n(n-1)\cdots(n-k+1)
 
 ## 八、与其他笔记的联系
 
-- [[topics/math/functions-and-bounds]] —— 前置：确界存在定理是单调有界准则的根；邻域与函数记号在这里定义。
-- [[topics/math/inequalities]] —— 放缩工具：AM-GM 证 $e$ 的单调性；夹逼的界全靠不等式。
+- [functions-and-bounds](../functions-and-bounds.md) —— 前置：确界存在定理是单调有界准则的根；邻域与函数记号在这里定义。
+- [inequalities](../inequalities.md) —— 放缩工具：AM-GM 证 $e$ 的单调性；夹逼的界全靠不等式。
 - 后续 `04-05-infinitesimal-continuity`：无穷小比较、等价替换（把本文两个重要极限工具化）、连续与间断。
 - 后续 `06-limit-techniques`：极限计算题型总攻略（洛必达、泰勒、变限积分等在 Ch2/Ch3 学完后回填）。
 - 导数（`07`）与定积分（`18`）的定义直接引用本文的极限语言。

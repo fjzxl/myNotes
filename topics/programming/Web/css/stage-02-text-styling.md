@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第二阶段：给文字"化妆" —— 最直观的改变
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 2 / 10 章。 上一章：[[topics/programming/Web/css/stage-01-getting-started|第一阶段：初识 CSS]] · 下一章：[[topics/programming/Web/css/stage-03-box-model|第三阶段：盒模型与显示模式]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 2 / 10 章。 上一章：[第一阶段：初识 CSS](stage-01-getting-started.md) · 下一章：[第三阶段：盒模型与显示模式](stage-03-box-model.md)
 
 
 > 🎯 **本节目标**：能修改文字的颜色、大小、字体、对齐方式，实现文字溢出省略效果。

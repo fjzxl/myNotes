@@ -13,7 +13,7 @@ rating:
 # 读书笔记：《{{title}}》
 
 > **读书笔记** —— 读完一本书后的完整沉淀：总结、逐章笔记、金句与行动。
-> 阅读中的快速摘录用 [[templates/literature-note|literature-note]]；本模板面向整本书的收尾整理。
+> 阅读中的快速摘录用 [literature-note](literature-note.md)；本模板面向整本书的收尾整理。
 > 模板位置：`templates/book-note.md`
 
 ## 书籍信息

@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第七阶段：响应式设计 —— 适配不同屏幕
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 7 / 10 章。 上一章：[[topics/programming/Web/css/stage-06-layout|第六阶段：布局系统]] · 下一章：[[topics/programming/Web/css/stage-08-animation|第八阶段：动画与交互]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 7 / 10 章。 上一章：[第六阶段：布局系统](stage-06-layout.md) · 下一章：[第八阶段：动画与交互](stage-08-animation.md)
 
 
 > 🎯 **本节目标**：理解响应式设计概念，掌握媒体查询和常用断点，能写出移动优先的样式。

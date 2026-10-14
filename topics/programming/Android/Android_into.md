@@ -110,6 +110,6 @@ build.gradle / settings.gradle      # 项目级构建配置
 
 ## 相关链接
 
-- [[topics/programming/Java/spring/spring_intro]] —— Java 服务端生态对照
-- [[topics/programming/Web/javascript]] —— 声明式 UI 思想在 Compose 中的对应
-- [[notes/MOC - programming]] —— 编程知识地图
+- [spring_intro](../Java/spring/spring_intro.md) —— Java 服务端生态对照
+- [javascript](../Web/javascript.md) —— 声明式 UI 思想在 Compose 中的对应
+- [MOC - programming](../../../notes/MOC%20-%20programming.md) —— 编程知识地图

@@ -10,11 +10,11 @@ updated: 2026-10-12
 # 🗣️ Languages · 语言学习
 
 > 外语学习主题：学习大纲、分级语法词汇笔记、语料与练习记录。
-> 兴趣驱动、分级推进；考试（如 JLPT）只作阶段自测标尺，正式备考归 `topics/exams/`（见 [[topics/exams/README]]）。
+> 兴趣驱动、分级推进；考试（如 JLPT）只作阶段自测标尺，正式备考归 `topics/exams/`（见 [README](../exams/README.md)）。
 
 ## 全局索引
 
-见 [[notes/MOC - languages]] —— 顶层 MOC 索引。
+见 [MOC - languages](../../notes/MOC%20-%20languages.md) —— 顶层 MOC 索引。
 
 ## 目录结构
 
@@ -28,5 +28,5 @@ updated: 2026-10-12
 ## 约定
 
 - 每门语言一个子目录（如 `japanese/`），目录名用英文
-- 学习总纲配合 [[templates/skill-learning]]，每次练习/自测用 [[templates/practice-log]] 记录并复测
-- 语法、词汇、台词语料等展开笔记放本语言子目录，从 [[notes/MOC - languages]] 收录
+- 学习总纲配合 [skill-learning](../../templates/skill-learning.md)，每次练习/自测用 [practice-log](../../templates/practice-log.md) 记录并复测
+- 语法、词汇、台词语料等展开笔记放本语言子目录，从 [MOC - languages](../../notes/MOC%20-%20languages.md) 收录

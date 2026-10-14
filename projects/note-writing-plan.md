@@ -14,14 +14,14 @@ deadline: 2027-07-04
 
 # 📝 笔记编撰计划 · 高等数学 + 前端 + 软考架构师（2026-10 ~ 2027-07）
 
-> **39 周（2026-10-05 ~ 2027-07-04）三线推进**：数学（高数总览 + 45 个专题 + 2 份真题复盘）、前端（21 篇，求职动作后置到 6 月）、软考系统架构设计师（**2027-05 下旬考试**，大纲详见 [[topics/exams/ruankao/system-architect]]）。每周总量维持约 16 小时、按阶段在三线间重新分配：软考冲刺期（2027-03 ～ 05）软考升至约 7h、数学降速转短稿、前端仅隔周轻量；考后 6 月数学恢复主攻并启动线代，前端完成求职项目。考研路线延伸至预计的 2027-12 考期。
-> 相关索引：[[notes/MOC - math]] · [[notes/MOC - programming]] · [[notes/MOC - exams]]
+> **39 周（2026-10-05 ~ 2027-07-04）三线推进**：数学（高数总览 + 45 个专题 + 2 份真题复盘）、前端（21 篇，求职动作后置到 6 月）、软考系统架构设计师（**2027-05 下旬考试**，大纲详见 [system-architect](../topics/exams/ruankao/system-architect.md)）。每周总量维持约 16 小时、按阶段在三线间重新分配：软考冲刺期（2027-03 ～ 05）软考升至约 7h、数学降速转短稿、前端仅隔周轻量；考后 6 月数学恢复主攻并启动线代，前端完成求职项目。考研路线延伸至预计的 2027-12 考期。
+> 相关索引：[MOC - math](../notes/MOC%20-%20math.md) · [MOC - programming](../notes/MOC%20-%20programming.md) · [MOC - exams](../notes/MOC%20-%20exams.md)
 
 ## 项目目标
 
-- **高等数学**：按考研数一大纲完成 8 大章首轮学习，形成 `topics/math/calculus.md` 总览 + 45 个专题笔记 + 2 份限时真题复盘，衔接已有的 [[topics/math/inequalities]]。Ch1–Ch4 保持长文标准；2027-03 起的新单元按短稿推进（见「节奏与写作约定」）。首轮覆盖不等于考研数学全部完成；2027 年 6 月中起继续线代、概率与综合复习。
-- **前端求职**：在现有 HTML/CSS/JS/TS 基础上（[[topics/programming/Web/javascript]]、[[topics/programming/Web/css]]、TypeScript 系列）以 **Vue 3 + TypeScript 为主线**——TS 从已有基础系列走向框架集成实战（新增 `vue-integration`），React 做求职所需的对照入门，工程化围绕一个可部署的 Vue 项目展开。**求职动作（项目 MVP、作品讲解、模拟面试）后置到 2027-06**，为软考冲刺让路；学习线不停，React 对照与工程化笔记按余力取舍。
-- **软考架构师**：三科一次通过（目标 **2027-05 下旬**考试）。执行细节以 [[topics/exams/ruankao/system-architect]] 为单一事实源——基础期过教程、攒两份项目素材卡，强化期 4 套综合真题与案例五大题型，冲刺期每周 1 篇限时论文（累计 12–16 篇）；本计划只负责把里程碑嵌入每周节奏。
+- **高等数学**：按考研数一大纲完成 8 大章首轮学习，形成 `topics/math/calculus.md` 总览 + 45 个专题笔记 + 2 份限时真题复盘，衔接已有的 [inequalities](../topics/math/inequalities.md)。Ch1–Ch4 保持长文标准；2027-03 起的新单元按短稿推进（见「节奏与写作约定」）。首轮覆盖不等于考研数学全部完成；2027 年 6 月中起继续线代、概率与综合复习。
+- **前端求职**：在现有 HTML/CSS/JS/TS 基础上（[javascript](../topics/programming/Web/javascript.md)、[css](../topics/programming/Web/css.md)、TypeScript 系列）以 **Vue 3 + TypeScript 为主线**——TS 从已有基础系列走向框架集成实战（新增 `vue-integration`），React 做求职所需的对照入门，工程化围绕一个可部署的 Vue 项目展开。**求职动作（项目 MVP、作品讲解、模拟面试）后置到 2027-06**，为软考冲刺让路；学习线不停，React 对照与工程化笔记按余力取舍。
+- **软考架构师**：三科一次通过（目标 **2027-05 下旬**考试）。执行细节以 [system-architect](../topics/exams/ruankao/system-architect.md) 为单一事实源——基础期过教程、攒两份项目素材卡，强化期 4 套综合真题与案例五大题型，冲刺期每周 1 篇限时论文（累计 12–16 篇）；本计划只负责把里程碑嵌入每周节奏。
 
 ## 范围
 
@@ -30,7 +30,7 @@ deadline: 2027-07-04
 - 2026-10 至 2027-07：高等数学 8 章首轮笔记与练习（3 月起短稿化）；Vue 3 主线、TypeScript 框架集成实战、React 对照入门、工程化（隔周轻量、可顺延）；6 月集中完成 Vue 求职项目与面试材料
 - 软考三科：基础期教程精读与两份项目素材卡；强化期 4 套综合真题与案例五大题型；冲刺期每周 1 篇限时论文；2027-03 中下旬完成报名
 - 2027-06 中至预计考期：线性代数、概率论与数理统计首轮学习；三科综合复习、分章节真题与限时套卷
-- 每写完一章同步更新对应 MOC 并跑 `python scripts/check_notes.py`
+- 每写完一章同步更新对应 MOC 并跑 `python check.py`
 
 ### ❌ Out of scope（留给下一阶段）
 
@@ -48,9 +48,9 @@ deadline: 2027-07-04
 - **笔记体量**：取消固定行数目标。按问题复杂度决定长度：目录/索引只保留导航，普通专题以“理解所需的最少解释 + 已核对例题 + 易错点”为准；证明与应用繁多的主题再展开。行数不作为完成标准。
 - **数学章节统一结构**：考纲定位（以当年大纲为准）→ 概念与定义 → 定理及证明思路 → 典型例题（至少自行演算核对）→ 易错点与做题套路 → 前后章节/不等式专题互链；另留闭卷回忆与错题复测时间。短稿保留同一骨架，压缩证明与应用篇幅。
 - **前端章节统一结构**：与 `css.md` / `javascript.md` 章节相同——导航头（上一章/下一章 wikilink）→ 目标 → 正文（代码示例可运行）→ 小结与自测。
-- **软考论文练习**：每篇用 [[templates/practice-log]] 记录限时表现与改进点；素材卡、骨架与真题矩阵见 [[topics/exams/ruankao/system-architect]]，不在本计划重复维护。
+- **软考论文练习**：每篇用 [practice-log](../templates/practice-log.md) 记录限时表现与改进点；素材卡、骨架与真题矩阵见 [system-architect](../topics/exams/ruankao/system-architect.md)，不在本计划重复维护。
 - **文件命名**：英文 kebab-case；数学放 `topics/math/calculus/`，前端放 `topics/programming/Web/vue|react|engineering/`（TS 笔记沿用已有 `topics/programming/Web/typescript/`，不加数字前缀）。
-- **互链与收尾**：新笔记加入对应 MOC；数学章节在 [[notes/MOC - math]] 的章节清单勾选；每周末跑校验脚本。
+- **互链与收尾**：新笔记加入对应 MOC；数学章节在 [MOC - math](../notes/MOC%20-%20math.md) 的章节清单勾选；每周末跑校验脚本。
 - **插图**（如需要）放 `attachments/images/math/calculus/` 或 `attachments/images/programming/<topic>/`。
 
 ## 路线一：高等数学（总览 1 + 专题笔记 45 + 真题复盘 2）
@@ -118,10 +118,10 @@ deadline: 2027-07-04
 ### 第三部分 · 专题与真题启动（考后 W35–W38，做题为主）
 
 - `45-mvt-proof-special` 中值定理证明题专题
-- `46-integral-inequality` 积分不等式与积分综合题（衔接 [[topics/math/inequalities]]）
+- `46-integral-inequality` 积分不等式与积分综合题（衔接 [inequalities](../topics/math/inequalities.md)）
 - `47-series-summation` 级数求和与敛散综合
 - `48-synthetic-problems` 多元微积分综合（或按错题情况改为机动）
-- 真题复盘 ①②（从 2010–2013 年卷中选两套，用 [[templates/practice-log|练习记录模板]] 记录限时表现与错题复测）
+- 真题复盘 ①②（从 2010–2013 年卷中选两套，用 [练习记录模板](../templates/practice-log.md) 记录限时表现与错题复测）
 
 ## 路线二：前端求职能力（21 篇笔记 + 项目里程碑）
 
@@ -148,9 +148,9 @@ deadline: 2027-07-04
 
 已有基础系列不重写，动笔 Vue 前回看查漏即可；真正的缺口是"框架中的 TS"，新增一篇实战收口：
 
-- [[topics/programming/Web/typescript/intro]] —— 入门与工程实践（已有）
-- [[topics/programming/Web/typescript/interface]] —— 接口契约（已有）
-- [[topics/programming/Web/typescript/type-system]] —— 类型系统进阶（已有）
+- [intro](../topics/programming/Web/typescript/intro.md) —— 入门与工程实践（已有）
+- [interface](../topics/programming/Web/typescript/interface.md) —— 接口契约（已有）
+- [type-system](../topics/programming/Web/typescript/type-system.md) —— 类型系统进阶（已有）
 - `topics/programming/Web/typescript/vue-integration` —— TS × Vue 3 实战（新增，W20）：`defineProps`/`defineEmits` 泛型参数、泛型组件、SFC 类型推导与 vue-tsc、tsconfig 实用项、常用工具类型（Partial/Pick/Omit/Record 等）在组件与组合式函数中的运用；产出物直接作为 6 月起 Vue 项目冲刺的 TS 编码规范
 
 ### 工程化与构建（7 篇，W21 起隔周推进；冲刺期可整体顺延至 7 月，不视为落后）
@@ -172,7 +172,7 @@ deadline: 2027-07-04
 
 ## 路线三：软考系统架构设计师（里程碑嵌入总表）
 
-> 三科大纲、论文模块（素材卡 / 六段模板 / 真题矩阵 / 自评清单）以 [[topics/exams/ruankao/system-architect]] 为单一事实源，此处只列阶段对齐与硬节点。
+> 三科大纲、论文模块（素材卡 / 六段模板 / 真题矩阵 / 自评清单）以 [system-architect](../topics/exams/ruankao/system-architect.md) 为单一事实源，此处只列阶段对齐与硬节点。
 
 - **阶段对齐**：基础期 = W1–W13（教程精读 + 两份素材卡 + 第 1 篇论文精写）；强化期 = W14–W22（4 套综合真题 + 案例五大题型 + 论文 3 篇限时）；冲刺期 = W23–W34（报名、每周 1 篇限时论文、综合刷题保持、考前总复盘）。与数学、前端共用每周预算（见「节奏与写作约定」）。
 - **硬节点**：素材卡 ×2 与第 1 篇精写 ≤ W13；综合真题 4 套与案例五大题型 ≤ W22；**报名 W23–W25（2027-03 中下旬，窗口约一周，错过再等半年）**；论文累计 12–16 篇；考试 W34 前后（预计 5 月下旬，以准考证为准）。
@@ -229,11 +229,11 @@ deadline: 2027-07-04
 
 ## 与知识库的衔接
 
-- 每篇完成后：加入对应 MOC（[[notes/MOC - math]] 章节清单打勾 / [[notes/MOC - programming]] Web 分类加链）；软考笔记归 [[notes/MOC - exams]]
-- 提交前跑 `python scripts/check_notes.py`，保持 0 error
+- 每篇完成后：加入对应 MOC（[MOC - math](../notes/MOC%20-%20math.md) 章节清单打勾 / [MOC - programming](../notes/MOC%20-%20programming.md) Web 分类加链）；软考笔记归 [MOC - exams](../notes/MOC%20-%20exams.md)
+- 提交前跑 `python check.py`，保持 0 error
 - 数学公式用 KaTeX 语法，写完用 Markdown Preview Enhanced 检查渲染
 - TypeScript 示例延续 TS 系列的做法：`tsc --strict` 实测通过后再入笔记
-- 不等式相关内容优先链接 [[topics/math/inequalities]] 而非重复书写
+- 不等式相关内容优先链接 [inequalities](../topics/math/inequalities.md) 而非重复书写
 
 ## 考研全年衔接路线（2027-06 至预计考期）
 
@@ -272,4 +272,4 @@ deadline: 2027-07-04
 - 2026-10-01 —— 根据时间预算（前 4 周 6h/周、之后约 16h/周）收敛前端范围为 Vue 主线 + React 对照；增加作品集里程碑、笔记合并和 4 月后线代/概率/总复习路线。
 - 2026-10-01 —— 前端线补充 TypeScript：新增 `typescript/vue-integration`（W16），已有 TS 三篇定为 Vue 动笔前查漏（W2）；Webpack 深挖并入 `02-bundlers`（W19），React 生态对照笔记同步标注 TS 类型写法。前端总篇数保持 21 不变。
 - 2026-10-02 —— **加入软考（系统架构设计师，2027-05 考期），计划延长为 39 周（至 2027-07-04）**：每周总量维持约 16h、按阶段三线分配（冲刺期软考 7h / 数学 4.5h / 前端 1.5h）；W23 起数学新单元转短稿；线代推迟到 6 月中启动、概率压缩至 8 月；求职项目与面试动作后置到 6 月；新增路线三与 39 周总表软考列（论文 ①–⑭）。
-- 2026-10-10 —— **附带优化任务 4 项全部落地**（es6 交叉引用、4 篇空壳笔记扩充、闪念移入 inbox、HTML 基础笔记 `topics/programming/Web/html.md`）；数学线提前交付 W1 的 [[topics/math/calculus|总览页]] 与 W3 单元 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]（长文初稿，待做题复核）；相应 MOC 均已更新。
+- 2026-10-10 —— **附带优化任务 4 项全部落地**（es6 交叉引用、4 篇空壳笔记扩充、闪念移入 inbox、HTML 基础笔记 `topics/programming/Web/html.md`）；数学线提前交付 W1 的 [总览页](../topics/math/calculus.md) 与 W3 单元 [数列与函数极限](../topics/math/calculus/02-03-sequence-function-limits.md)（长文初稿，待做题复核）；相应 MOC 均已更新。

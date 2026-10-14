@@ -8,7 +8,7 @@ updated: 2026-10-10
 ---
 # VS Code C/C++ 环境配置
 
-> 目标：在 VS Code 里获得 C/C++ 的**编辑（跳转/补全）+ 一键构建 + 断点调试**三件套。前提：先装好工具链（`gcc`/`g++`，Windows 用 MinGW-w64 或 MSYS2，或直接在 WSL/远程 Linux 里开发），并用 `gcc --version` 验证可用。构建原理见 [[topics/programming/cplusplus/into|C 入门]]。
+> 目标：在 VS Code 里获得 C/C++ 的**编辑（跳转/补全）+ 一键构建 + 断点调试**三件套。前提：先装好工具链（`gcc`/`g++`，Windows 用 MinGW-w64 或 MSYS2，或直接在 WSL/远程 Linux 里开发），并用 `gcc --version` 验证可用。构建原理见 [C 入门](into.md)。
 
 ## 1. 扩展选择
 
@@ -117,6 +117,6 @@ includePath 加自建头文件目录后，`#include "myheader.h"` 不再标红�
 
 ## 相关链接
 
-- [[topics/programming/cplusplus/into]] —— 编译四阶段与 gcc/make（本篇的前置）
-- [[topics/tools/VSCode]] —— VS Code 基础与插件清单
-- [[notes/MOC - programming]] —— 编程知识地图
+- [into](into.md) —— 编译四阶段与 gcc/make（本篇的前置）
+- [VSCode](../../tools/VSCode.md) —— VS Code 基础与插件清单
+- [MOC - programming](../../../notes/MOC%20-%20programming.md) —— 编程知识地图

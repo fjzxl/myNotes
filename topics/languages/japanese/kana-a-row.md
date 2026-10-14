@@ -13,9 +13,9 @@ updated: 2026-10-11
 
 # あ行 · 五个元音（あ い う え お）
 
-> **逐行笔记第 1 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-12 周一**）。
+> **逐行笔记第 1 篇**（对应 [每日计划](kana-plan.md) **10-12 周一**）。
 > あ行是全表地基：其余九行都是「辅音 + 这 5 个元音」，元音发准了，后面每一行才不会歪。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]；发音依据教材 p.3 元音节。
+> 总表与通用规则见 [五十音笔记](kana.md)；发音依据教材 p.3 元音节。
 
 ---
 
@@ -84,21 +84,21 @@ updated: 2026-10-11
 
 - [x] 遮住速览表罗马字：平假名、片假名各 5 个乱序认读全对
 - [x] 听写 5 个假名（词典 APP 发音或同伴报罗马字）
-- [ ] 默写平、片各 5 个（对照表 A/B 检查笔顺与字形）
-- [ ] 例词 9 个通读，卡壳 ≤ 1 个
+- [x] 默写平、片各 5 个（对照表 A/B 检查笔顺与字形）
+- [x] 例词 9 个通读，卡壳 ≤ 1 个
 
-四项全过 → 建卡：[[topics/languages/japanese/kana-cards|五十音闪卡]] あ行 10 张（读 / 写两向）＋特殊卡 3 张 → 明天か行。有错：只重练错的那个，回来复测该项。
+四项全过 → 建卡：[五十音闪卡](kana-cards.md) あ行 10 张（读 / 写两向）＋特殊卡 3 张 → 明天か行。有错：只重练错的那个，回来复测该项。
 
 ## 关联
 
-- 下一行：[[topics/languages/japanese/kana-ka-row|か行]]（10-13 周二）
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 下一行：[か行](kana-ka-row.md)（10-13 周二）
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 
 - **2026-10-08** 初始创建：依据教材 p.2–3（五十音图、元音口形）、p.8–10（表 A/B 笔顺、表 C/D 字源）整理；例词 9 个限本行假名；对应计划 10-12 周一。
 - **2026-10-08** 对照教材页图复核（PDF 21、25–28）：え 的发音删去教材没有的「开口度」比较；エ/オ 第三笔描述按表 B 修正（オ 短撇从竖笔上侧向左下）；ア/マ 预习笔顺修正（マ 横折为第一笔）。其余（两条通用铁律、五个元音口形、笔画数、字源、元音连读、あ/お 不在印刷体差异清单）逐条核对无误。
-- **2026-10-09** §6 自测的建卡指向 [[topics/languages/japanese/kana-cards|五十音闪卡]]（あ行 10 张 + 特殊卡 3 张）。
+- **2026-10-09** §6 自测的建卡指向 [五十音闪卡](kana-cards.md)（あ行 10 张 + 特殊卡 3 张）。

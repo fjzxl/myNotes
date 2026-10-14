@@ -14,7 +14,7 @@ updated: 2026-10-02
 
 ## 全局索引
 
-见 [[notes/MOC - exams]] —— 顶层 MOC 索引。
+见 [MOC - exams](../../notes/MOC%20-%20exams.md) —— 顶层 MOC 索引。
 
 ## 目录结构
 
@@ -25,4 +25,4 @@ updated: 2026-10-02
 ## 约定
 
 - 每场考试一个子目录（如 `ruankao/`），目录名用英文或惯用拼音
-- 备考总计划配合 [[templates/skill-learning]]，每次真题/论文练习用 [[templates/practice-log]] 记录并复测
+- 备考总计划配合 [skill-learning](../../templates/skill-learning.md)，每次真题/论文练习用 [practice-log](../../templates/practice-log.md) 记录并复测

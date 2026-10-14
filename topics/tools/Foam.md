@@ -3,7 +3,7 @@ title: Foam
 tags:
   - tools
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-12
 ---
 # Foam
 
@@ -11,7 +11,7 @@ updated: 2026-10-01
 
 ## 完整文档
 
-主文档见 [[topics/tools/foam-knowledge-base-guide]] —— 包含安装、配置、目录结构、工作流、与 Obsidian 对比、FAQ。
+主文档见 [foam-knowledge-base-guide](foam-knowledge-base-guide.md) —— 包含安装、配置、目录结构、工作流、与 Obsidian 对比、FAQ。
 
 ## 一句话总结
 
@@ -27,11 +27,11 @@ updated: 2026-10-01
 
 ## 相关链接
 
-- [[topics/tools/Shortcuts]] —— 顶层工具速查表
-- [[topics/tools/Markdown]] —— Markdown 写作环境配置（Foam 强依赖的 Markdown 工具链）
-- [[topics/tools/VSCode]] —— VS Code 基础与插件清单
-- [[README]] —— 仓库结构总览
-- [[notes/MOC - programming]] — 编程知识地图（看知识库全貌）
+- [Shortcuts](Shortcuts.md) —— 顶层工具速查表
+- [Markdown](Markdown.md) —— Markdown 写作环境配置（Foam 强依赖的 Markdown 工具链）
+- [VSCode](VSCode.md) —— VS Code 基础与插件清单
+- [README](../../README.md) —— 仓库结构总览
+- [MOC - programming](../../notes/MOC%20-%20programming.md) — 编程知识地图（看知识库全貌）
 
 ## 与本仓库的集成
 
@@ -48,4 +48,4 @@ updated: 2026-10-01
 - Paste Image
 - Code Spell Checker
 
-详见 [[topics/tools/foam-knowledge-base-guide#9-搭配扩展推荐]]。
+详见 [9. 搭配扩展推荐](foam-knowledge-base-guide.md#9-搭配扩展推荐)。

@@ -11,8 +11,8 @@ updated: 2026-10-11
 # TypeScript 接口：从 JavaScript 对象约定到类型契约
 
 > 本文用 JavaScript 与 TypeScript 的对照，解释接口是什么、为什么有用，以及它**不能**替代什么。
-> 前置知识：[[topics/programming/Web/javascript]]、[[topics/programming/Web/es6]]
-> TS 入门：[[topics/programming/Web/typescript/intro]] · 类型系统进阶：[[topics/programming/Web/typescript/type-system]] · 导航：[[notes/MOC - programming]]
+> 前置知识：[javascript](../javascript.md)、[es6](../es6.md)
+> TS 入门：[intro](intro.md) · 类型系统进阶：[type-system](type-system.md) · 导航：[MOC - programming](../../../../notes/MOC%20-%20programming.md)
 
 > **示例说明**：每个代码块聚焦一个概念，适合单独阅读；不同代码块可能重复使用类型名。
 
@@ -222,7 +222,7 @@ function describePayment(payment: Payment): string {
 }
 ```
 
-`kind` 是**可辨识字段**：它让 TypeScript 和读代码的人都能看出当前是哪一种形状。未收窄前，只能安全访问所有分支共有的成员；进入某个 `kind` 分支后，才可访问该分支独有的属性。普通 JavaScript 也能在运行时检查 `payment.kind` 并分支处理，TS 额外在编译期检查每个分支访问的字段是否存在。更多可辨识联合见 [[topics/programming/Web/typescript/intro]] 的联合类型章节。
+`kind` 是**可辨识字段**：它让 TypeScript 和读代码的人都能看出当前是哪一种形状。未收窄前，只能安全访问所有分支共有的成员；进入某个 `kind` 分支后，才可访问该分支独有的属性。普通 JavaScript 也能在运行时检查 `payment.kind` 并分支处理，TS 额外在编译期检查每个分支访问的字段是否存在。更多可辨识联合见 [intro](intro.md) 的联合类型章节。
 
 接口和类型别名都能描述对象形状，常见区别如下：
 
@@ -245,7 +245,7 @@ interface AppConfig {
 const config: AppConfig = { host: 'localhost', port: 3000 };
 ```
 
-更多语法细节、索引签名和选型说明见 [[topics/programming/Web/typescript/intro]] 的接口章节；联合与交叉的类型集合视角见 [[topics/programming/Web/typescript/type-system]]。实际项目中，保持团队风格一致通常比争论 `interface` 或 `type` 更重要。
+更多语法细节、索引签名和选型说明见 [intro](intro.md) 的接口章节；联合与交叉的类型集合视角见 [type-system](type-system.md)。实际项目中，保持团队风格一致通常比争论 `interface` 或 `type` 更重要。
 
 ## 8. 接口不等于运行时校验
 
@@ -261,7 +261,7 @@ const response: unknown = await fetch('/api/user').then(r => r.json());
 // 不能仅靠 `response as ApiUser` 确认数据正确；断言不会执行检查。
 ```
 
-HTTP 响应、表单输入、`localStorage` 内容等外部数据应先做**运行时校验**，校验成功后再当作 `ApiUser` 使用；可使用 schema 校验库（如 Zod），或编写明确的类型守卫。相关基础见 [[topics/programming/Web/typescript/intro]] 的类型收窄与断言章节。
+HTTP 响应、表单输入、`localStorage` 内容等外部数据应先做**运行时校验**，校验成功后再当作 `ApiUser` 使用；可使用 schema 校验库（如 Zod），或编写明确的类型守卫。相关基础见 [intro](intro.md) 的类型收窄与断言章节。
 
 ## 9. 何时值得使用接口
 
@@ -277,4 +277,4 @@ HTTP 响应、表单输入、`localStorage` 内容等外部数据应先做**运�
 
 JavaScript 的对象使用方式灵活，约定常散落在调用代码和文档里；TypeScript 接口把这些约定集中成可复用、可检查的类型契约。它提升的是开发期的沟通、补全与错误发现能力，**不会替代 JavaScript 对象，也不会替代运行时数据校验**。
 
-继续阅读：[[topics/programming/Web/typescript/intro]] → [[topics/programming/Web/typescript/type-system]]。
+继续阅读：[intro](intro.md) → [type-system](type-system.md)。

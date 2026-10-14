@@ -8,7 +8,7 @@
 - **`tools` 提升为一级主题**（与编程/AI 并列）
 - **`exams` 考试备考一级主题**：软考等备考大纲、真题与论文练习
 - **`languages` 语言学习一级主题**：日语等外语学习大纲与语料（兴趣驱动，考试仅作阶段自测）
-- **6 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史 / 考试备考 / 语言学习）；工具主题以 [[topics/tools/Shortcuts]] 为速查入口
+- **6 个 MOC（Map of Content）** 索引页放在 `notes/`（编程 / AI / 数学 / 历史 / 考试备考 / 语言学习）；工具主题以 [Shortcuts](topics/tools/Shortcuts.md) 为速查入口
 - **附件独立**：图片/代码片段等附件放在 `attachments/`，与笔记体系解耦（大体积教材 PDF 例外，见 `.gitignore` 说明）
 - **空目录有 stub README**：每个空目录都放了一个 `README.md` 引导说明
 - **本地优先 + Git 版本控制**：单仓库跨设备同步
@@ -88,8 +88,12 @@ myNotes/
 │
 ├── archive/                        # 归档（有 stub README，当前无归档内容）
 │
+├── check.py                        # 仓库唯一检查入口：文件名规范 + 链接/格式
+├── .checkallow                     # 文件名 kebab-case 例外名单（check.py 读取）
 ├── scripts/                        # 仓库工具
-│   └── check_notes.py              # 轻量校验：链接/图片/frontmatter/围栏/表格/编码
+│   └── check_notes.py              # 链接/格式校验库（由 check.py 调用）
+├── tests/
+│   └── test_check.py               # 回归测试：python -m unittest discover -s tests
 │
 ├── attachments/                    # 附件独立王国
 │   ├── images/
@@ -116,18 +120,18 @@ myNotes/
 
 | 主题 | MOC 索引 | 主题 README | 状态 |
 |------|---------|------------|------|
-| 编程 | [[notes/MOC - programming]] | `topics/programming/` | ✅ 有内容 |
-| AI | [[notes/MOC - ai]] | `topics/ai/` | ✅ 有内容 |
-| 数学 | [[notes/MOC - math]] | `topics/math/` | 🔨 起步中（考研数一） |
-| 历史 | [[notes/MOC - history]] | [[topics/history/README]] | ⏳ 待填充 |
-| 考试备考 | [[notes/MOC - exams]] | [[topics/exams/README]] | 🔨 起步中（软考架构师） |
-| 语言学习 | [[notes/MOC - languages]] | [[topics/languages/README]] | 🔰 起步中（日语·兴趣向） |
-| 工具 | [[topics/tools/Shortcuts]] | [[topics/tools/README]] | ✅ 工具速查 |
+| 编程 | [MOC - programming](notes/MOC%20-%20programming.md) | `topics/programming/` | ✅ 有内容 |
+| AI | [MOC - ai](notes/MOC%20-%20ai.md) | `topics/ai/` | ✅ 有内容 |
+| 数学 | [MOC - math](notes/MOC%20-%20math.md) | `topics/math/` | 🔨 起步中（考研数一） |
+| 历史 | [MOC - history](notes/MOC%20-%20history.md) | [README](topics/history/README.md) | ⏳ 待填充 |
+| 考试备考 | [MOC - exams](notes/MOC%20-%20exams.md) | [README](topics/exams/README.md) | 🔨 起步中（软考架构师） |
+| 语言学习 | [MOC - languages](notes/MOC%20-%20languages.md) | [README](topics/languages/README.md) | 🔰 起步中（日语·兴趣向） |
+| 工具 | [Shortcuts](topics/tools/Shortcuts.md) | [README](topics/tools/README.md) | ✅ 工具速查 |
 
 ## 推荐工具
 
 - **VS Code** —— 主力编辑器
-- **Foam** —— 双向链接知识管理（见 [[topics/tools/foam-knowledge-base-guide]]）
+- **Foam** —— 双向链接知识管理（见 [foam-knowledge-base-guide](topics/tools/foam-knowledge-base-guide.md)）
 - **Tip of the Day** —— 启动时右下角弹快捷键提示
 - **Git** —— 版本控制 + 多设备同步
 
@@ -297,7 +301,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 
 ### 📊 Marp 完整使用指南
 
-详见 [[topics/tools/marp-guide]] —— 包含 4 个实战示例（算法讲解 / 考研数学 / 康奈尔笔记 / 带背景图）、Frontmatter 详解、主题自定义、批量导出等。
+详见 [marp-guide](topics/tools/marp-guide.md) —— 包含 4 个实战示例（算法讲解 / 考研数学 / 康奈尔笔记 / 带背景图）、Frontmatter 详解、主题自定义、批量导出等。
 
 ### `.vscode/foam.code-snippets` 快捷片段
 
@@ -339,9 +343,9 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 | `code-snippet.md` | 重用代码 |
 | `README.md` | 模板目录说明 |
 
-详见 [[templates/README]]。
+详见 [README](templates/README.md)。
 
-读书可用 [[templates/book-chapter|章节笔记]] 记录每次阅读，再汇总到 [[templates/book-note|整本书笔记]]；技能学习可用 [[templates/skill-learning|学习计划]] 定目标，配合 [[templates/practice-log|练习记录]] 持续练习、纠错和复测。
+读书可用 [章节笔记](templates/book-chapter.md) 记录每次阅读，再汇总到 [整本书笔记](templates/book-note.md)；技能学习可用 [学习计划](templates/skill-learning.md) 定目标，配合 [练习记录](templates/practice-log.md) 持续练习、纠错和复测。
 
 ### 完整工作流
 
@@ -444,7 +448,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 - **2026-10-09 数学起点笔记 + 五十音闪卡 + 链接巡检**：
   - 新增 `topics/math/functions-and-bounds.md`（界与函数：确界理论 · 函数四性质 · 初等函数 · 参数方程 · 极坐标 · 图形变换），挂入 MOC - math 与不等式专题导航
   - 新增 `topics/languages/japanese/kana-cards.md`（五十音闪卡 235 张，`Q :: A` 行内牌组，建卡进度对齐三周计划），kana / kana-plan / kana-a-row / MOC - languages 全链路互链
-  - 链接巡检：`resources/skills.md` 接入「推荐工具」；MOC - math / MOC - programming 回链 [[projects/note-writing-plan|笔记编撰计划]]（原为单向）；目录树 math / languages 分支与实际文件同步
+  - 链接巡检：`resources/skills.md` 接入「推荐工具」；MOC - math / MOC - programming 回链 [笔记编撰计划](projects/note-writing-plan.md)（原为单向）；目录树 math / languages 分支与实际文件同步
 
 - **2026-10-10 内容补全批次（附带优化任务落地 + 数学推进）**：
   - 新增 `topics/programming/Web/html.md`（HTML 基础：结构、语义化、表单、无障碍），补齐前端三件套入口；es6.md 与 JS 教程第 6 章互加交叉引用明确分工
@@ -456,7 +460,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - **数学**：`functions-and-bounds.md` 判别法的符号结论写反（$(0,1)$ 内应为同号、$(1,\infty)$ 内应为异号），已修正并与同句单调性结论对齐；`inequalities.md` 全 1889 行 + 13 道分层习题逐题验算无误
   - **日语**：`kana.md` 清音 44→**46**、わ行新音 3→**2**（を 读 o）、发音表 `つ/づ` 分行（原文把 `ぢ` 和 `つ` 排成一行）、促音出现位置补全（漏 う行前 / 拗音前 / 词首）、外来词音节补 `ヴァ/ヴィ/ヴェ/ヴォ/ツィ`
   - **工具文档**：`foam-knowledge-base-guide.md` 按 foam-vscode **0.46.0** 的 `package.json` 逐条核对——修正非法枚举值 `withoutBrackets`→`withoutExtensions`、`attachmentExtensions` 数组→空格分隔字符串、VS Code 要求 1.85→1.110+、删除「图谱依赖本地服务 / 需装 Node.js」的自相矛盾表述、替换 6 条已不存在的命令（`Show Welcome` / `Create Note From Placeholder` / `Search Notes` / `New Note` / `Copy Wikilink To Current Note` / `Reveal Current Note In Explorer`）、反向链接改到 Connections 视图、图谱分组配置改到 `foam.graph.views`；`marp-guide.md` 片段动画改为原生 fragmented list（原文的 `section.active` 是永不命中的死代码）、Mermaid 改用围栏代码块；`marp-screencast-script.md` 修正 `math: katex` 的位置（全局指令必须在顶部 frontmatter）与「导出后自动打开 PDF」；`VSCode.md` Alt+Click 改回左键
-  - **结构一致性**：新增 `topics/tools/README.md` 工具索引并补齐 [[topics/tools/README]]；`Shortcuts` 与 `foam-guide` 收进 MOC - programming（工具笔记此前 5/7 有归属、2 篇无索引）；`kana-a-row` 收进 MOC - languages；`typescript/interface.md` 补 `updated`；README 目录树补 `essay-sample-seckill.md` / `.gitattributes` / `.zcodeignore`
+  - **结构一致性**：新增 `topics/tools/README.md` 工具索引并补齐 [README](topics/tools/README.md)；`Shortcuts` 与 `foam-guide` 收进 MOC - programming（工具笔记此前 5/7 有归属、2 篇无索引）；`kana-a-row` 收进 MOC - languages；`typescript/interface.md` 补 `updated`；README 目录树补 `essay-sample-seckill.md` / `.gitattributes` / `.zcodeignore`
   - **仓库工程**：新增 `.gitattributes` 锁定 UTF-8 + LF（此前 Windows `core.autocrlf=true` 且无该文件，克隆后会整体转 CRLF）；`.gitignore` 放行 `.vscode/foam.code-snippets`（settings.json 含机器相关路径，仍保持本地）；`check_notes.py` 清掉两处死代码并把 `updated` 纳入 frontmatter 必检项
 
 - **2026-10-11 五十音图笔记补充**：
@@ -482,3 +486,61 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - **daily note 流程落地**：`.vscode/settings.json` 配 `foam.openDailyNote.directory: journal/daily`；`templates/daily-note.md` 升级为 Foam 原生模板（`foam_template.filepath`，新版 Foam 的接管机制）；播种首篇 `journal/daily/2026-10-12.md`（五十音 Day 1 任务）
   - **Zettelkasten 启动**：「交付即提取」约定写入 AGENTS.md（每篇计划内长文交付时提取 3–5 张原子卡）；MOC - math 补不等式六章直达导航，Ch1 挂首批 3 张原子卡（夹逼准则 / 单调有界定理 / 两个重要极限）；MOC - math 10-11 拆分条目补记原行数 1657
   - **README 推荐工具**撤下 `resources/skills` 速查（3 行裸列表与「科研技能清单」宣传不符；文件保留待扩写后再上线）
+
+- **2026-10-12 锚点链接修复（Foam 跳转失效）**：
+  - 症状：点击 hub 里的「实际场景」等锚点链接，Foam 提示**创建笔记**而非跳转。根因：拆分不等式专题时生成的 174 个 `[[路径#锚点]]` 式 wikilink——`#` 锚点 wikilink 的 Foam 解析跨版本不可靠（本地 VS Code 0.44.6 / VSCodium 0.46.0 均受影响；官方文档认可该语法但要求锚点为标题原文，而库内锚点为 GitHub slug）
+  - 修复：全库 **114 处**锚点 wikilink 批量转为官方认可的 Markdown 锚点链接 `[文字](相对路径.md#锚点)`（不等式 hub + 六章 111 处、Foam.md、marp-guide.md 同文锚点、cornell-marp.md 手动 1 处）；锚点 slug 不变，VS Code 预览 / Foam / GitHub 三端原生跳转
+  - 防再发：`check_notes.py` 新增规则——散文区出现 `[[..#..]]` 记 **error**；AGENTS.md 链接规范补「锚点一律用 Markdown 链接」条目；foam-knowledge-base-guide §4.1 补该坑说明
+
+- **2026-10-13 journal 十月回填**：
+  - 依据 git 提交历史与更新日志补记 `journal/daily/2026-10-01` ~ `2026-10-11` 与 `2026-10-13`（每日一篇，均标注「回填」，含提交时间、当日主线与相关笔记互链；日记间前后日成链）
+  - `journal/daily/2026-10-12.md` 空白记录填充（全天主线回填 + 晚间三笔提交与深夜锚点修复批次）
+  - 新建 `journal/weekly/2026-W40.md` 首篇周复盘（计划 W1 三线产出对照 + 反思 + W41 展望），兑现 journal README 的周日复盘节奏
+
+- **2026-10-13 wikilink 全库停用（五十音笔记链接点击失效）**：
+  - 症状：`journal/daily/2026-10-12.md` 里的五十音笔记 wikilink（`[[topics/languages/japanese/kana|五十音笔记]]` 等）点击不跳转；会话开始时 git status 出现的 `journal/daily/topics/` 未跟踪目录即为 Foam 把未解析链接按「当前笔记目录 + 目标路径」创建笔记的产物
+  - 修复：全库 **760 处** wikilink 批量转为相对路径 Markdown 链接 `[文字](相对路径.md)`（107 个文件；空格 `%20` 编码；表格内转换顺带消除了 `\|` 转义问题）；`templates/` 占位与 foam-guide「概念关联」4 条占位（转纯文本）除外
+  - 防再发：`check_notes.py` 规则升级——任何非模板 `[[...]]` wikilink 记 **error**；AGENTS.md 链接规范改为「笔记间链接一律 Markdown 相对链接」；`templates/daily-note.md` 与 `.vscode/foam.code-snippets` 的 `[[]]` 骨架同步替换
+
+- **2026-10-13 journal 调整（删旧排新）**：
+  - 删除 10-12 之前的回填日记（`journal/daily/2026-10-01` ~ `2026-10-11`）与 `journal/weekly/2026-W40.md` 周复盘；journal 现存 `2026-10-12` 起的实况与预排日记
+  - 预排 `journal/daily/2026-10-14` ~ `2026-10-31` 共 18 篇：按五十音三周计划逐日排程（Day 3 ~ Day 20，さ行 → 拗音 → 周复习 → 综合自测 → 10-31 验收），目标清单、相关笔记链接（Markdown 相对链接）与前后日导航齐备；10-12 / 10-13 的失效前后日链接已同步修正
+
+- **2026-10-13 根目录检查入口 `check.py`**：
+  - 新增仓库根目录 `python check.py`（可带路径参数只查指定文件）：先跑**文件名规范**（仅 warning，不影响退出码——空格 / 大写 / 下划线 / 非 ASCII 的 kebab-case 风格提示、`journal/daily/` 日期命名、`.md` 扩展名大小写），再复用 `scripts/check_notes.py` 跑**链接与格式**（error 影响退出码）
+  - 链接规则单一事实源仍在 `scripts/check_notes.py`，`check.py` 通过 import 复用，不另维护一份
+- **2026-10-13 检查器加固：路径统一 + 回归测试**：
+  - **路径统一归一化**：所有参数先经 `check_notes.normalize()` 归为仓库相对 posix 路径（相对 cwd 或绝对皆可），豁免判断、报错定位、链接解析只用归一化路径；越界 / 不存在 / 显式传入非 `.md` / 未匹配到任何 `.md` 均以退出码 2 报错（不再出现“0 文件却显示通过”）
+  - **文件名例外名单外置**：`.checkallow`（每行一个仓库相对路径）取代 `check.py` 里的硬编码集合，存量 `MOC - *.md`、`Claude Code.md` 等 20 项在此维护，全库检查 0 文件名 warning；非 ASCII / 空格对**所有**文件（含 PDF、附件）提示
+  - **链接检查修复**：`<路径>` 目标此前被 `URL_RE` 的 `^<` 整体跳过（死代码），现纳入校验；链接目标按磁盘实际大小写核对（Windows 不区分大小写，GitHub 区分，避免本地通过而线上 404）；逃逸仓库的目标改报“指向仓库外”
+  - **健壮性 / 性能**：UTF-8 BOM 自动剥离（不再误报缺 frontmatter）；重复标题生成 GitHub 式锚点 `foo`/`foo-1`；行内代码按等长反引号对剥离（支持 `` `` `` 与 `|`）、代码围栏支持 `~~~` 且字符须配对；`collect()` 单次遍历、`run_files()` 复用已展开列表、锚点与目录列表按需缓存
+  - **回归测试**：`tests/test_check.py`（标准库 `unittest`，24 项）覆盖路径归一化、`<路径>` 校验、大小写核对、BOM、围栏、行内代码表格、U+FEFF、非 ASCII 文件名等；`python -m unittest discover -s tests` 全绿
+
+- **2026-10-13 check.py 四项加固**：
+  - 无参数运行改为**检查全库**（与运行目录无关；此前从仓库外运行误报「路径位于仓库之外」，从子目录运行只查子树）
+  - `.checkallow` 坏条目（越出仓库 / 路径不存在）跳过并提示，不再崩溃
+  - 检查自动跳过 `git check-ignore` 命中的本地文件（`-z` 传参避免 CJK / 空格路径被引号转义；git 不可用时退化为不过滤）——三本本地教材 PDF 的命名警告随之消失
+  - 同文档锚点 `(#slug)` 纳入校验（对本文标题核对，缺失记 warning）；全库 136 处既有同文档锚点全部通过
+
+- **2026-10-13 不等式专题：用户改版核查 + 初学者优化**：
+  - 核查用户当日修改（hub 入门路径/符号表/编号对照、各章「三问」导读、切比雪夫配对作差法证明、协方差扩写）：配对作差恒等式与协方差三种表述经 `fractions.Fraction` 精确算术 200 组随机对拍通过，协方差例子（5/3 与 -5/3）复核无误，全部「三问」陈述与取等条件核对正确，链接 0 error
+  - `05-applications.md`：新增篇首「本篇路线」（五节导航）与「七个场景速览」表（场景 → 生活问题 → 工具，含文内锚点）；对数不等式推论补推导提示（上/下界各自来源、严格版由等号条件得到）
+  - hub：删除与「章节导航」重复的「目录」块（其链接已由总览表「详见」列覆盖），「章节导航」补第七部分（口诀）条目，页眉「章节导航见文末」过时说法改为链接指向实际位置
+
+- **2026-10-13 日语每日过关卡上线**：
+  - 按用户选择（内嵌日记 / 弹性打卡 / 通用卡）设计「🎌 日语过关卡」区块：复习打卡（≥5 分钟保底）+ 自测四项错项登记 + 三级判定（✅ 错 ≤1 / 🔶 保底 / ❌ 错 ≥2 次日复测），错项累计 ≥3 次回流 kana-plan 登记——非五十音阶段同样适用
+  - 批量插入 10-12 ~ 10-31 全部 20 篇冲刺日记（Goals 与 Log 之间）；`templates/daily-note.md` 与 `.vscode/foam.code-snippets` 的 `daily` 骨架同步携带，另加独立 `jp` + Tab 快速插入片段；kana-plan §5 补记录规则
+
+- **2026-10-13 五十音逐行笔记「下一行」导航修复**：
+  - 根因：十篇逐行笔记按 あ→わ 顺序创建，写作时「下一行」的目标笔记尚未存在，故只写成纯文本（笔记名放反引号），「上一行」当时已成文、是真链接；10-13 的 wikilink 批量转换只处理既有链接，这些纯文本保持原样，表现为「不能点击」
+  - 修复：ka~ya 八篇的「下一行」统一转为 Markdown 链接（含学习日期与星期）；补上缺失的 ra→わ行 链接；末行 わ行 增加指向五十音笔记全表复习（10-21）的出口，十行导航链完整闭环
+
+- **2026-10-13 过关卡自测链接列 + k8s 案例沉淀 + 当日日志补全**：
+  - 「日语过关卡」升级三列（项目 / **自测内容·链接** / 今日结果）：20 篇冲刺日记逐日预填当日自测材料锚点（新学行日 → 行笔记 §1 速览 / §3 笔顺 / §5 例词 / §6 自测；周复习 → 总笔记全表；浊音拗音日 → §3；自测验收日 → §10 与计划 §4），锚点由 `check_notes.github_slug` 从真实标题计算并全量校验；模板与 `daily`/`jp` snippet 同步三列通用版
+  - 新增 [calico-iptables-stale-rules](topics/programming/Linux/calico-iptables-stale-rules.md)（当日云主机重启后网络不通的排查与修复：现象 / 根因 / 排查命令 / `iptables -F` 与只删 `cali-` 链的替代方案 / 预防），MOC - programming 基础设施与工具两区收录
+  - 2026-10-13 日志按用户口述补全（上午打通云主机至算力资源网络、下午 calico 修复链接主题笔记、晚上不等式核查优化）并整理 P&S 区块
+  - 补充修订（同日晚）：按用户口述修正事实——重启范围为 ta-node2/ta-node3 两台、现象为 calico pods 报错 + ta-node2 CoreDNS 启动失败、`kubectl logs` 报 `:10250 no route to host`（apiserver→kubelet 入向被拦）；笔记重写为「集群背景 / 现象时间线 / 五步排查思路 / 根因 / 修复与替代 / 预防」，新增「模式识别」要点（`Error from server: Get "https://<node>:10250/..."` 即节点网络层问题）；实际修复为多台 `iptables -F` + 重启 calico（最小修复未做对照，已在笔记中注明）
+  - 同日再补：按用户复盘问题（更快定位 / 更好修复 / 如何避免）重写三节——排查思路改为「错误语义判读表（no route to host / refused / timeout 分层）→ `-o wide` 节点映射 → `curl -k https://node:10250/healthz` 响应语义表 → iptables 计数器法 + firewalld 必查 → crictl 绕过 apiserver 取日志」；修复改为四级推荐顺序（排除 firewalld → 重启故障节点 calico-node 让 Felix 重写 → 定向删 cali- 链 → iptables -F 兜底）；预防补 firewalld 禁用、drain 标准流程、重启后体检清单、blackbox 探测
+  - 同日三补：按用户实测路径完善——「本例实际路径（复盘）」记录 ping 通 / telnet·curl 10250 超时 / kubectl logs 报错的真实时间线与每步证明（ping 通 + TCP 超时 = 端口级选择性拦截；REJECT 与 DROP 并存 = 规则半成品，多次探测需记时间点）；「更优路径」把三连升级为三对照矩阵（健康节点 / 其他端口 22 / 本机）+ nc 超时探测 + tcpdump 双端同抓；新增「同类 k8s 网络问题通用排查框架」（四层定位 + 四类链路病根速查表）
+
+- **2026-10-13 过关卡可勾选修复**：表格单元格里放不了可点击复选框（☐ 是普通字符），把「复习打卡」移出表格改为 `- [ ]` 任务项（VS Code 预览可直接点击勾选并写回源文件）、「今日判定」改为填空式（✅／🔶／❌ 填一个）；20 篇日记同步（10-12 用户已自行转换、10-13 保留已填的用时 5 分钟并预勾选），模板与 `daily`/`jp` snippet 同步

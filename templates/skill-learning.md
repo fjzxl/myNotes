@@ -10,7 +10,7 @@ status: planning # planning / active / paused / done
 # 技能学习：{{title}}
 
 > **从目标到可验证的能力** —— 一项技能一份学习计划，以能独立完成的任务衡量进步。
-> 每次练习用 [[templates/practice-log|practice-log]]；有明确交付物的项目可配合 [[templates/project|project]]。
+> 每次练习用 [practice-log](practice-log.md)；有明确交付物的项目可配合 [project](project.md)。
 
 ## 目标与起点
 
@@ -49,7 +49,7 @@ status: planning # planning / active / paused / done
 
 ## 练习记录
 
-> 用 [[templates/practice-log|practice-log]] 建记录后链接到这里。
+> 用 [practice-log](practice-log.md) 建记录后链接到这里。
 
 | 日期 | 练习笔记 | 最大卡点 | 下一步 |
 |------|----------|----------|--------|

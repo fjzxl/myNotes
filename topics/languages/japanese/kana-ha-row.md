@@ -13,9 +13,9 @@ updated: 2026-10-12
 
 # は行 · 五个音（は ひ ふ へ ほ）
 
-> **逐行笔记第 6 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-17 周六**）。
+> **逐行笔记第 6 篇**（对应 [每日计划](kana-plan.md) **10-17 周六**）。
 > は行是**唯一同时派生浊音行和半浊音行**的一行：浊音 `ば行`、半浊音 `ぱ行` 都从它派生。而且 `ふ`、`へ` 的日语发音和罗马字差别最大。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]。
+> 总表与通用规则见 [五十音笔记](kana.md)。
 > 📖 **页码说明**：假名与罗马字见教材 p.2 五十音图；は行辅音（呼气弱于汉语 h、日语无 f 音）见教材 p.4，`ふ`/`ひ` 的摩擦方式与浊音・半浊音见 p.5；助词 `へ` 读 e 见 p.7；笔顺对照表 A/B（p.8–9，PDF 25–26）；字源对照表 C/D（p.10，PDF 27）。
 
 ---
@@ -102,16 +102,16 @@ updated: 2026-10-12
 - [ ] 能正确发出不咬唇的 `ふ`（可对镜子看：嘴唇没有碰牙齿）
 - [ ] 知道 `ば行`/`ぱ行` 都来自本行
 
-四项全过 → 建卡：[[topics/languages/japanese/kana-cards|五十音闪卡]] は行 10 张（读 / 写两向）→ 周一进ま行。有错：只重练错的那个，回来复测该项。
+四项全过 → 建卡：[五十音闪卡](kana-cards.md) は行 10 张（读 / 写两向）→ 周一进ま行。有错：只重练错的那个，回来复测该项。
 
 ## 关联
 
-- 上一行：[[topics/languages/japanese/kana-na-row|な行]]
-- 下一行：ま行（10-19，笔记 `kana-ma-row`）
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 上一行：[な行](kana-na-row.md)
+- 下一行：[ま行](kana-ma-row.md)（10-19 周一）
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

@@ -5,10 +5,10 @@ tags:
   - inequality
   - kaoyan
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-13
 ---
 
-> 📚 本文是 [[topics/math/inequalities|不等式]] 的第 2 / 6 章（总览第三部分）。 上一章：[[topics/math/inequalities/01-basics|二、证明：基础不等式]] 下一章：[[topics/math/inequalities/03-advanced|四、证明：高阶不等式]]
+> 📚 本文是 [不等式](../inequalities.md) 的第 2 / 6 章（总览第三部分）。 上一章：[二、证明：基础不等式](01-basics.md) 下一章：[四、证明：高阶不等式](03-advanced.md)
 
 # 三、证明：核心工具不等式
 
@@ -21,6 +21,8 @@ updated: 2026-10-11
 > \left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right)\left(\sum_{i=1}^n b_i^2\right)
 > $$
 > 等号成立当且仅当 $a_i = \lambda b_i$（对某个常数 $\lambda$，所有 $i$）或 $b_i$ 全为 $0$。
+
+> **三问**：固定 两个向量的模长 $\lvert\vec a\rvert,\lvert\vec b\rvert$｜比较 内积的绝对值 $\lvert\vec a\cdot\vec b\rvert$ 与 模长之积｜取等 $\vec a\propto\vec b$（共线）
 
 **含义**：两个向量的点积的平方不超过它们模长平方的乘积，即 $|\vec{a} \cdot \vec{b}|^2 \le |\vec{a}|^2 |\vec{b}|^2$。
 
@@ -166,7 +168,7 @@ $$
 \det \begin{pmatrix} A A^{\top} & A B^{\top} \\ B A^{\top} & B B^{\top} \end{pmatrix} = \sum_{i<j}(a_i b_j - a_j b_i)^{2}
 $$
 
-左边是 Gram 矩阵的行列式;右边是"外积 $A \wedge B$ 的模方"。这正是 Grassmann 外代数的种子——所以这个恒等式**不只是 Cauchy-Schwarz 的工具,它是现代多重线性代数的开端**。（把 Gram 行列式画成"平行四边形面积的平方"的几何图,见[[topics/math/inequalities/04-multiview#多视角柯西-施瓦茨不等式|多视角·柯西-施瓦茨]]。）
+左边是 Gram 矩阵的行列式;右边是"外积 $A \wedge B$ 的模方"。这正是 Grassmann 外代数的种子——所以这个恒等式**不只是 Cauchy-Schwarz 的工具,它是现代多重线性代数的开端**。（把 Gram 行列式画成"平行四边形面积的平方"的几何图,见[多视角·柯西-施瓦茨](04-multiview.md#多视角柯西-施瓦茨不等式)。）
 
 **用矩阵「看出」乘积结果——Cauchy–Binet 读法**。把 $\vec a,\vec b$ 竖着并成 $n\times 2$ 矩阵 $M=\begin{pmatrix}\vec a & \vec b\end{pmatrix}$（按列放）。左边的乘积与内积**先合成一个行列式**：
 
@@ -186,7 +188,7 @@ $$
 
 **数值验证（$n=3$）**：$\vec a=(1,2,3)$，$\vec b=(3,2,1)$。$\det G=14\cdot14-10^2=96$；三个子式 $\begin{vmatrix}1&3\\2&2\end{vmatrix}=-4$、$\begin{vmatrix}2&2\\3&1\end{vmatrix}=-4$、$\begin{vmatrix}1&3\\3&1\end{vmatrix}=-8$，平方和 $16+16+64=96$ ✓。
 
-（同一机制放大到 $n$ 个向量，就是 [[topics/math/inequalities/04-multiview#5-升级只有矩阵世界才有的两条行列式不等式|Hadamard 行列式不等式的 Gram 视角]]："体积 $\le$ 棱长之积"。）
+（同一机制放大到 $n$ 个向量，就是 [Hadamard 行列式不等式的 Gram 视角](04-multiview.md#5-升级只有矩阵世界才有的两条行列式不等式)："体积 $\le$ 棱长之积"。）
 
 #### 历史小注(为什么叫 Lagrange 恒等式)
 
@@ -205,6 +207,8 @@ $$
 > (1+x)^r \ge 1 + rx
 > $$
 > 等号成立当且仅当 $r=1$ 或 $x=0$。
+
+> **三问**：固定 底 $1+x$（$x>-1$）｜比较 $(1+x)^r$ 与 一次切线 $1+rx$｜取等 $x=0$（或 $r=1$）
 
 **含义**：**单利 $\le$ 复利**。把 $1+rx$ 读作"利率 $x$ 存 $r$ 期的单利"，$(1+x)^r$ 读作"逐期滚动的复利"，不等式断言复利永不输给单利。几何上，$y = 1+rx$ 恰是曲线 $y=(1+x)^r$ 在 $x=0$ 处的切线，所以这条不等式的本质是**曲线与切线的上下位置关系**。
 
@@ -268,6 +272,8 @@ $$
 > 等号成立条件：若 $f$ 严格凸，则当且仅当 $x_1 = x_2 = \cdots = x_n$；若 $f$ 仅凸，等号当且仅当它在 $[\min x_i,\max x_i]$ 上是仿射函数（形如 $kx+b$）。例如 $f(x)=|x|$，$\lambda_1=\lambda_2=1/2$，$x_1=1,x_2=3$ 时，两边都为 $2$；若改成 $x_1=-1,x_2=1$，则是 $0<1$，不取等。
 >
 > 若 $f$ 是凹函数，则不等号反向：$f\left(\sum \lambda_i x_i\right) \ge \sum \lambda_i f(x_i)$。
+
+> **三问**：固定 凸函数 $f$ 与权重 $\lambda_i$（$\sum\lambda_i=1$）｜比较 $f(\sum\lambda_ix_i)$ 与 $\sum\lambda_if(x_i)$｜取等 各点相等（严格凸）
 
 **含义**：凸函数在加权平均点处的值不超过函数值的加权平均。直观图景就是"**弦在曲线上方**"：
 
@@ -358,7 +364,7 @@ $$
 
 ### Nesbitt 不等式
 
-> **前驱**：[柯西-施瓦茨](#柯西-施瓦茨不等式)、[[topics/math/inequalities/01-basics#均值不等式|AM-GM]]
+> **前驱**：[柯西-施瓦茨](#柯西-施瓦茨不等式)、[AM-GM](01-basics.md#均值不等式)
 >
 > **定理（Nesbitt）** 对任意正实数 $a,b,c$，
 > $$
@@ -366,9 +372,11 @@ $$
 > $$
 > 等号成立当且仅当 $a=b=c$。
 
+> **三问**：固定 正数 $a,b,c$（轮换对称）｜比较 分式和 $\sum \frac{a}{b+c}$ 与 $\frac32$｜取等 $a=b=c$
+
 **证明一（对称换元）**：
 
-令 $x = b+c$，$y = c+a$，$z = a+b$，则 $a = \frac{y+z-x}{2}$，$b = \frac{z+x-y}{2}$，$c = \frac{x+y-z}{2}$。显然 $x,y,z > 0$（正数之和）；且 $x+y-z=2c>0$（轮换同理），即[[topics/math/inequalities/01-basics#三角不等式绝对值不等式|三角形不等式]]成立，故 $x,y,z$ 可构成三角形三边。
+令 $x = b+c$，$y = c+a$，$z = a+b$，则 $a = \frac{y+z-x}{2}$，$b = \frac{z+x-y}{2}$，$c = \frac{x+y-z}{2}$。显然 $x,y,z > 0$（正数之和）；且 $x+y-z=2c>0$（轮换同理），即[三角形不等式](01-basics.md#三角不等式绝对值不等式)成立，故 $x,y,z$ 可构成三角形三边。
 
 原式变为：
 $$
@@ -433,7 +441,7 @@ $$
 
 ② 在且仅在 $a=b=c$ 时取等（三个平方同时为零），与 ① 的取等条件**恰好相同**——整条链在 $a=b=c$ 处同时取等，$\tfrac32$ 是取得到的最小值。$\blacksquare$
 
-（Titu 引理的名称来历、缺口恒等式与使用要点见下方[附：Titu 引理详解](#附titu-引理engel-形式详解)；它也是高阶篇[[topics/math/inequalities/03-advanced#权方和不等式|权方和不等式]]在 $p=1$ 的特例。）
+（Titu 引理的名称来历、缺口恒等式与使用要点见下方[附：Titu 引理详解](#附titu-引理engel-形式详解)；它也是高阶篇[权方和不等式](03-advanced.md#权方和不等式)在 $p=1$ 的特例。）
 
 ---
 
@@ -472,19 +480,19 @@ $$
 
 平方后分母恰为 $y_iy_j$。$n=2$ 手验：左边通分合并，分子 $(x_1y_2-x_2y_1)^{2}$、分母 $y_1y_2(y_1+y_2)$，与公式一致。$\blacksquare$
 
-**同一缺口、两种读法**：记 $r_i=\dfrac{x_i}{y_i}$、$\bar r=\dfrac{\sum x_i}{\sum y_i}$。逐项改写 $\dfrac{(x_iy_j-x_jy_i)^{2}}{y_iy_j}=y_iy_j\,(r_i-r_j)^{2}$，缺口变为 $\dfrac{1}{\sum y_i}\sum_{i<j}y_iy_j(r_i-r_j)^{2}$；再用「成对差之和 $=$ 总权重 $\times$ 加权方差」（与[[topics/math/inequalities/01-basics#切比雪夫不等式|切比雪夫思路二]]所用恒等式同族），它恰等于
+**同一缺口、两种读法**：记 $r_i=\dfrac{x_i}{y_i}$、$\bar r=\dfrac{\sum x_i}{\sum y_i}$。逐项改写 $\dfrac{(x_iy_j-x_jy_i)^{2}}{y_iy_j}=y_iy_j\,(r_i-r_j)^{2}$，缺口变为 $\dfrac{1}{\sum y_i}\sum_{i<j}y_iy_j(r_i-r_j)^{2}$；再用「成对差之和 $=$ 总权重 $\times$ 加权方差」（与[切比雪夫思路二](01-basics.md#切比雪夫不等式)所用恒等式同族），它恰等于
 
 $$
 \sum_{i=1}^{n}y_i\bigl(r_i-\bar r\bigr)^{2}\;\ge\;0 .
 $$
 
-前者按**成对差**累计（Lagrange 风格），后者按**对加权均值的偏差**累计（方差 / [[topics/math/inequalities/04-multiview#多视角琴生不等式|平行轴定理]]风格）——后者正是[[topics/math/inequalities/05-applications#场景四资源分配中的均衡是平均分还是按能力分|场景四（资源分配）]]用过的差值恒等式。于是 Titu 的缺口有了名字：**归一化负载 $r_i$ 的加权离散度**——$r_i$ 越参差，"分开除"比"合并除"贵得越多；取等即负载完全均衡。
+前者按**成对差**累计（Lagrange 风格），后者按**对加权均值的偏差**累计（方差 / [平行轴定理](04-multiview.md#多视角琴生不等式)风格）——后者正是[场景四（资源分配）](05-applications.md#场景四资源分配中的均衡是平均分还是按能力分)用过的差值恒等式。于是 Titu 的缺口有了名字：**归一化负载 $r_i$ 的加权离散度**——$r_i$ 越参差，"分开除"比"合并除"贵得越多；取等即负载完全均衡。
 
 **两个特例、一条谱系**：
 
 - **分子全一 → AM-HM**：取 $x_i=1$ 得 $\sum\frac{1}{y_i}\ge\frac{n^{2}}{\sum y_i}$，翻转即 $\dfrac{n}{\sum 1/y_i}\le\dfrac{\sum y_i}{n}$——均值链第一环「调和 $\le$ 算术」正是 Titu 的特例。
-- **升幂 → 权方和**：$\sum\frac{a_i^{p+1}}{b_i^{p}}\ge\frac{(\sum a_i)^{p+1}}{(\sum b_i)^{p}}$ 即[[topics/math/inequalities/03-advanced#权方和不等式|权方和不等式]]，Titu 是 $p=1$（习题 [[topics/math/inequalities/06-exercises#b-组进阶结构识别与构造|B2]]、[[topics/math/inequalities/06-exercises#b-组进阶结构识别与构造|B3]] 分别练这两层）。
-- **换成积分 → 分式型积分估计**：对 $g>0$，$\displaystyle\int_a^b\frac{f^{2}}{g}\,\mathrm dx\;\ge\;\frac{\bigl(\int_a^b f\,\mathrm dx\bigr)^{2}}{\int_a^b g\,\mathrm dx}$，即[[topics/math/inequalities/05-applications#柯西-施瓦茨积分形式|积分 C-S]]的 Engel 换装。
+- **升幂 → 权方和**：$\sum\frac{a_i^{p+1}}{b_i^{p}}\ge\frac{(\sum a_i)^{p+1}}{(\sum b_i)^{p}}$ 即[权方和不等式](03-advanced.md#权方和不等式)，Titu 是 $p=1$（习题 [B2](06-exercises.md#b-组进阶结构识别与构造)、[B3](06-exercises.md#b-组进阶结构识别与构造) 分别练这两层）。
+- **换成积分 → 分式型积分估计**：对 $g>0$，$\displaystyle\int_a^b\frac{f^{2}}{g}\,\mathrm dx\;\ge\;\frac{\bigl(\int_a^b f\,\mathrm dx\bigr)^{2}}{\int_a^b g\,\mathrm dx}$，即[积分 C-S](05-applications.md#柯西-施瓦茨积分形式)的 Engel 换装。
 
 一句话谱系：**AM-HM —分子全一→ Titu —升幂→ 权方和 —一般化→ Hölder**（推导链方向相反：Hölder ⇒ 权方和 ⇒ Titu ⇒ AM-HM）；而 Titu 与 C-S 一行互推——站在链上任何一层，都能望见柯西。
 
@@ -519,10 +527,10 @@ AM-GM 并没有用错，只是两次放缩的取等点错位，界被放松；Ti
 
 - **分母全负 → 方向反转**：取 $y=(-1,-1)$、$x=(1,2)$：左边 $=-5$、右边 $=-\tfrac92$，"≥"不成立。一般做法：令 $z_i=-y_i>0$ 套 Titu 再翻回，得同款公式但方向为 $\le$；取等条件（比值全等）不变。
 - **分母混合符号 → 无一般结论**：$y=(1,1,-1)$（$\sum y_i=1$）时，$x=(1,1,0)$：左边 $2$、右边 $4$，"≥"失效；$x=(1,-1,0)$：左边 $2$、右边 $0$，"≥"成立——方向随 $x$ 而变。$y=(1,-1)$ 更使右边分母为零、直接无意义。此时应改用其它工具。
-- **分母和无定值 → 只有下界、没有最小值**：引理给出的是表达式形式的界；若题设没有 $a+b=1$ 这类定值把它落成数字，或定值与取等条件不相容，得到的都只是下界——与习题 [[topics/math/inequalities/06-exercises#答案与详解|A1]]「取等点不可达」是同一教训的两副面孔。
+- **分母和无定值 → 只有下界、没有最小值**：引理给出的是表达式形式的界；若题设没有 $a+b=1$ 这类定值把它落成数字，或定值与取等条件不相容，得到的都只是下界——与习题 [A1](06-exercises.md#答案与详解)「取等点不可达」是同一教训的两副面孔。
 
-> **一句话记忆**：口诀 #11「分开除贵，合并除省」的 $p=1$ 版——分子逐项平方、分母逐项为正，右端一次合并除；取等 $=$ 分子按分母比例分配。识别信号：**分式和求下界**。物理直觉（并联电路按电导分流、总功耗最小）见[[topics/math/inequalities/04-multiview#多视角nesbitt-不等式与-titu-引理|多视角：Nesbitt 与 Titu]]。
+> **一句话记忆**：口诀 #11「分开除贵，合并除省」的 $p=1$ 版——分子逐项平方、分母逐项为正，右端一次合并除；取等 $=$ 分子按分母比例分配。识别信号：**分式和求下界**。物理直觉（并联电路按电导分流、总功耗最小）见[多视角：Nesbitt 与 Titu](04-multiview.md#多视角nesbitt-不等式与-titu-引理)。
 
 ---
 
-> ↩ [[topics/math/inequalities|返回总览]]
+> ↩ [返回总览](../inequalities.md)

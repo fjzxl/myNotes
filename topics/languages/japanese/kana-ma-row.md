@@ -13,9 +13,9 @@ updated: 2026-10-12
 
 # ま行 · 五个音（ま み む め も）
 
-> **逐行笔记第 7 篇**（对应 [[topics/languages/japanese/kana-plan|每日计划]] **10-19 周一**，与や行同日）。
+> **逐行笔记第 7 篇**（对应 [每日计划](kana-plan.md) **10-19 周一**，与や行同日）。
 > ま行是**中国人最容易读错的一行**：`ま/ば` 的鼻音差别、`び/み` 的混淆，都是中国人教材专门点名的难点。
-> 总表与通用规则见 [[topics/languages/japanese/kana|五十音笔记]]。
+> 总表与通用规则见 [五十音笔记](kana.md)。
 > 📖 **页码说明**：假名与罗马字见教材 p.2 五十音图；「な行和ま行辅音与汉语 n/m 基本相同」见教材 p.4；ま/ば・み/び 的辨析是教材「Ⅳ 需要注意的发音」第 1 节（p.15–16）；笔顺对照表 A/B（p.8–9，PDF 25–26）；字源对照表 C/D（p.10，PDF 27）。鼻梁摸震法为通用练习技巧，非教材原文。
 
 ---
@@ -97,16 +97,16 @@ updated: 2026-10-12
 - [ ] 默写平、片各 5 个（对照表 A/B 检查笔顺与字形）
 - [ ] 能分清 `ま`（闭唇鼻音）和将来的 `ば`（浊音），并知道 `び`≠`み`
 
-四项全过 → 建卡：[[topics/languages/japanese/kana-cards|五十音闪卡]] ま行 10 张（读 / 写两向）→ 当天继续や行。有错：只重练错的那个，回来复测该项。
+四项全过 → 建卡：[五十音闪卡](kana-cards.md) ま行 10 张（读 / 写两向）→ 当天继续や行。有错：只重练错的那个，回来复测该项。
 
 ## 关联
 
-- 上一行：[[topics/languages/japanese/kana-ha-row|は行]]
-- 同日下一行：や行（10-19，笔记 `kana-ya-row`）
-- [[topics/languages/japanese/kana]] —— 五十音总笔记（总表 / 通用规则）
-- [[topics/languages/japanese/kana-cards]] —— 闪卡牌组
-- [[topics/languages/japanese/kana-plan]] —— 三周每日计划
-- [[topics/languages/japanese/syllabus]] ｜ [[notes/MOC - languages]]
+- 上一行：[は行](kana-ha-row.md)
+- 同日下一行：[や行](kana-ya-row.md)（10-19 周一）
+- [kana](kana.md) —— 五十音总笔记（总表 / 通用规则）
+- [kana-cards](kana-cards.md) —— 闪卡牌组
+- [kana-plan](kana-plan.md) —— 三周每日计划
+- [syllabus](syllabus.md) ｜ [MOC - languages](../../../notes/MOC%20-%20languages.md)
 
 ## 更新记录
 

@@ -9,7 +9,7 @@ created: 2026-10-12
 
 # 夹逼准则（Squeeze Theorem）
 
-> **Zettelkasten 永久笔记** —— 一个概念，一个笔记。提取自 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]。
+> **Zettelkasten 永久笔记** —— 一个概念，一个笔记。提取自 [数列与函数极限](../topics/math/calculus/02-03-sequence-function-limits.md)。
 
 ## 一句话定义
 
@@ -33,16 +33,16 @@ created: 2026-10-12
 
 ## 与其他概念的关系
 
-- 上游（前驱）：[[notes/monotone-bounded-convergence|单调有界定理]]、极限的 $\varepsilon$-$N$ 定义（放缩后仍要回归定义验证）
+- 上游（前驱）：[单调有界定理](monotone-bounded-convergence.md)、极限的 $\varepsilon$-$N$ 定义（放缩后仍要回归定义验证）
 - 下游（应用）：两个重要极限之一的 $\lim\limits_{x\to 0}\frac{\sin x}{x}=1$ 就是靠夹逼（$\cos x \le \frac{\sin x}{x} \le 1$）证明的；定积分定义（黎曼和）的放缩估计也用它
 - 对比：单调有界定理管"递推数列收敛性"，夹逼管"具体极限值"；前者保证存在，后者直接算出
 
 ## 引用来源
 
-- 来源：[[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]（本库高数 Ch1 长文）
+- 来源：[数列与函数极限](../topics/math/calculus/02-03-sequence-function-limits.md)（本库高数 Ch1 长文）
 - 教材：《高等数学》（同济版）第一章 极限存在准则
 
 ## 相关永久笔记
 
-- [[notes/monotone-bounded-convergence|单调有界定理]]
-- [[notes/two-important-limits|两个重要极限]]
+- [单调有界定理](monotone-bounded-convergence.md)
+- [两个重要极限](two-important-limits.md)

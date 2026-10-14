@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # JavaScript 核心知识体系
 
-> TypeScript 在 JavaScript 语法上增加静态类型；建议先掌握本文和 [[topics/programming/Web/es6]]，再学习 [[topics/programming/Web/typescript/intro]]、[[topics/programming/Web/typescript/interface]] 与 [[topics/programming/Web/typescript/type-system]]。完整编程导航见 [[notes/MOC - programming]]。
+> TypeScript 在 JavaScript 语法上增加静态类型；建议先掌握本文和 [es6](es6.md)，再学习 [intro](typescript/intro.md)、[interface](typescript/interface.md) 与 [type-system](typescript/type-system.md)。完整编程导航见 [MOC - programming](../../../notes/MOC%20-%20programming.md)。
 
 ---
 
@@ -189,14 +189,14 @@ updated: 2026-10-01
 
 全文按章节拆分为 8 篇独立笔记，建议按顺序阅读：
 
-1. [[topics/programming/Web/javascript/01-language-basics|一、语言基础]]
-2. [[topics/programming/Web/javascript/02-reference-types|二、引用类型详解]]
-3. [[topics/programming/Web/javascript/03-core-mechanisms|三、核心运行机制]]
-4. [[topics/programming/Web/javascript/04-asynchronous-programming|四、异步编程]]
-5. [[topics/programming/Web/javascript/05-dom-and-browser-api|五、DOM 操作与浏览器 API]]
-6. [[topics/programming/Web/javascript/06-es6-modern-features|六、ES6+ 现代特性]]
-7. [[topics/programming/Web/javascript/07-error-handling-and-debugging|七、错误处理与调试]]
-8. [[topics/programming/Web/javascript/08-engineering-and-best-practices|八、工程化与最佳实践]]
+1. [一、语言基础](javascript/01-language-basics.md)
+2. [二、引用类型详解](javascript/02-reference-types.md)
+3. [三、核心运行机制](javascript/03-core-mechanisms.md)
+4. [四、异步编程](javascript/04-asynchronous-programming.md)
+5. [五、DOM 操作与浏览器 API](javascript/05-dom-and-browser-api.md)
+6. [六、ES6+ 现代特性](javascript/06-es6-modern-features.md)
+7. [七、错误处理与调试](javascript/07-error-handling-and-debugging.md)
+8. [八、工程化与最佳实践](javascript/08-engineering-and-best-practices.md)
 
 ---
 

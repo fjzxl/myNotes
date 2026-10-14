@@ -9,7 +9,7 @@ created: 2026-10-12
 
 # 单调有界定理（Monotone Convergence Theorem）
 
-> **Zettelkasten 永久笔记** —— 一个概念，一个笔记。提取自 [[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]。
+> **Zettelkasten 永久笔记** —— 一个概念，一个笔记。提取自 [数列与函数极限](../topics/math/calculus/02-03-sequence-function-limits.md)。
 
 ## 一句话定义
 
@@ -31,16 +31,16 @@ created: 2026-10-12
 
 ## 与其他概念的关系
 
-- 上游（前驱）：确界原理（实数完备性）、[[topics/math/functions-and-bounds|界与函数]] 中的上确界概念
-- 下游（应用）：与 [[notes/squeeze-theorem|夹逼准则]] 并列为本章两大极限存在准则；幂级数收敛域讨论中部分和数列的收敛判断也用它
+- 上游（前驱）：确界原理（实数完备性）、[界与函数](../topics/math/functions-and-bounds.md) 中的上确界概念
+- 下游（应用）：与 [夹逼准则](squeeze-theorem.md) 并列为本章两大极限存在准则；幂级数收敛域讨论中部分和数列的收敛判断也用它
 - 对比：夹逼准则直接"算出"极限值，本定理只保证"存在"，求值需另对递推式取极限
 
 ## 引用来源
 
-- 来源：[[topics/math/calculus/02-03-sequence-function-limits|数列与函数极限]]（本库高数 Ch1 长文）
+- 来源：[数列与函数极限](../topics/math/calculus/02-03-sequence-function-limits.md)（本库高数 Ch1 长文）
 - 教材：《高等数学》（同济版）第一章 极限存在准则
 
 ## 相关永久笔记
 
-- [[notes/squeeze-theorem|夹逼准则]]
-- [[notes/two-important-limits|两个重要极限]]
+- [夹逼准则](squeeze-theorem.md)
+- [两个重要极限](two-important-limits.md)

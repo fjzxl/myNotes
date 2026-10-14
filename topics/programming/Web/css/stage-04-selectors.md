@@ -9,7 +9,7 @@ updated: 2026-10-01
 
 # 第四阶段：选择器 —— 精准选中要修改的元素
 
-> 📚 本文是 [[topics/programming/Web/css|CSS 入门指南]] 的第 4 / 10 章。 上一章：[[topics/programming/Web/css/stage-03-box-model|第三阶段：盒模型与显示模式]] · 下一章：[[topics/programming/Web/css/stage-05-backgrounds|第五阶段：背景与装饰]]
+> 📚 本文是 [CSS 入门指南](../css.md) 的第 4 / 10 章。 上一章：[第三阶段：盒模型与显示模式](stage-03-box-model.md) · 下一章：[第五阶段：背景与装饰](stage-05-backgrounds.md)
 
 
 > 🎯 **本节目标**：掌握基础选择器、复合选择器、伪类和伪元素，理解优先级计算规则。

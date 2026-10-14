@@ -67,6 +67,6 @@ updated: 2026-10-10
 
 ## 相关链接
 
-- [[topics/ai/MoE]] —— 模型侧的"分配任务"：混合专家架构
-- [[notes/MOC - ai]] —— AI 知识地图
-- [[notes/MOC - programming]] —— 编程实践地图
+- [MoE](MoE.md) —— 模型侧的"分配任务"：混合专家架构
+- [MOC - ai](../../notes/MOC%20-%20ai.md) —— AI 知识地图
+- [MOC - programming](../../notes/MOC%20-%20programming.md) —— 编程实践地图

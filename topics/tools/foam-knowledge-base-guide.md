@@ -147,6 +147,8 @@ git commit -m "init: foam knowledge base"
 - 链接的笔记**不必事先存在**——Foam 会自动识别并标记为"未创建"
 - 未创建的链接在 Foam 称为 **placeholder / orphan candidate**
 - 点击 `[[未创建的笔记]]`，Foam 会提示创建
+- **指向章节的 `[[笔记#章节]]` 是官方文档认可的语法**（章节名须与目标标题原文一致，且各版本 Foam 对它的解析并不稳定——解析失败时同样落入"未创建"，点击会变成创建笔记）。因此**本仓库约定：锚点一律用 Markdown 链接** `[显示文字](相对路径.md#锚点)`（GitHub 式 slug，VS Code 预览与 Foam 均原生支持，`scripts/check_notes.py` 会把 `[[..#..]]` 记为 error）
+- **本仓库更进一步（2026-10-13 起）：笔记间链接一律用相对路径 Markdown 链接 `[文字](路径.md)`，全部 `[[...]]` wikilink 停用**（仅 `templates/` 里的占位 `[[]]` 保留）。原因：普通路径式 wikilink（如 `[[topics/xx/笔记]]`）在 Foam 各版本与各表面（编辑器跳转、预览渲染、未解析时的"创建笔记"回退）之间行为不一致——实测中从深层笔记点击会把文件创建到当前笔记目录下；且 GitHub 等标准渲染器根本不把 wikilink 渲染成链接。`check_notes.py` 已把任何非模板 wikilink 记为 error
 
 ### 4.2 Backlinks（反向链接）
 
@@ -564,22 +566,22 @@ Foam 社区版仍在活跃迭代：foam-vscode **0.46.0** 于 2026-09-30 发布�
 
 ### 本仓库相关
 
-- [[topics/tools/Shortcuts]] — 顶层工具速查表（VS Code 快捷键、Markdown 工具）
-- [[topics/tools/Foam]] — Foam 工具索引（本文档的入口页）
-- [[topics/tools/Markdown]] — Markdown 写作环境配置（Foam 强依赖的 Markdown 工具链）
-- [[topics/tools/VSCode]] — VS Code 基础与插件清单
-- [[README]] — 仓库结构总览
-- [[notes/MOC - programming]] — 编程知识地图（MOC 索引页）
-- [[notes/MOC - ai]] — AI 知识地图
-- [[notes/MOC - math]] — 数学知识地图
-- [[notes/MOC - history]] — 历史知识地图
+- [Shortcuts](Shortcuts.md) — 顶层工具速查表（VS Code 快捷键、Markdown 工具）
+- [Foam](Foam.md) — Foam 工具索引（本文档的入口页）
+- [Markdown](Markdown.md) — Markdown 写作环境配置（Foam 强依赖的 Markdown 工具链）
+- [VSCode](VSCode.md) — VS Code 基础与插件清单
+- [README](../../README.md) — 仓库结构总览
+- [MOC - programming](../../notes/MOC%20-%20programming.md) — 编程知识地图（MOC 索引页）
+- [MOC - ai](../../notes/MOC%20-%20ai.md) — AI 知识地图
+- [MOC - math](../../notes/MOC%20-%20math.md) — 数学知识地图
+- [MOC - history](../../notes/MOC%20-%20history.md) — 历史知识地图
 
 ### 概念关联（占位笔记，可后续创建）
 
-- [[双向链接]]
-- [[Zettelkasten]]
-- [[知识图谱]]
-- [[PARA 方法]]
+- 双向链接
+- Zettelkasten
+- 知识图谱
+- PARA 方法
 
 ### 外部资源
 
