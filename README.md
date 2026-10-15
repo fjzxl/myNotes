@@ -28,7 +28,8 @@ myNotes/
 │   │   ├── Java/  cplusplus/  Web/  Android/  Linux/  MySQL/
 │   ├── ai/                         # AI
 │   │   ├── Claude Code.md
-│   │   └── MoE.md
+│   │   ├── MoE.md
+│   │   └── ml-booklist.md          # 机器学习书单与 16 周计划
 │   ├── math/                       # 数学（考研数一）
 │   │   ├── inequalities.md         # 不等式专题总览（依赖图 · 15 条一览表 · 口诀速记）
 │   │   ├── inequalities/           # 不等式章节笔记（01-basics ~ 06-exercises 六章）
@@ -310,6 +311,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 | 输入 | 用途 | 对应完整模板 |
 |------|------|--------------|
 | `daily` + Tab | 每日笔记骨架 | `templates/daily-note.md` |
+| `jp` + Tab | 日语过关卡（可单独插入） | — |
 | `cornell` + Tab | **康奈尔笔记骨架（3 区：线索/笔记/总结）** | `templates/cornell-note.md` |
 | `perm` + Tab | Zettelkasten 永久笔记骨架 | `templates/permanent-note.md` |
 | `lit` + Tab | 文献笔记骨架 | `templates/literature-note.md` |
@@ -320,7 +322,7 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 | `moc` + Tab | MOC 索引页骨架 | `templates/moc.md` |
 | `proj` + Tab | 项目笔记骨架 | `templates/project.md` |
 | `code` + Tab | 代码片段骨架 | `templates/code-snippet.md` |
-| `wl` + Tab | `[[target\|display]]` 快速插入 | — |
+| `wl` + Tab | `[显示文字](相对路径.md)` 快速插入笔记链接 | — |
 | `fm` + Tab | YAML Frontmatter 头部 | — |
 
 > **快捷片段**（VS Code 原生）只给骨架；**完整模板**（Foam）含详细字段。
@@ -352,13 +354,13 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
 ```
 1. 早上开 VS Code
    ↓
-2. Ctrl+Shift+P → "Foam: Open Daily Note"  (自动在 journal/daily/ 创建/打开今日笔记)
+2. Ctrl+Shift+P → "Foam: Open Today's Note"  (自动在 journal/daily/ 创建/打开今日笔记；默认快捷键 Alt+D)
    ↓
 3. 在今日笔记里填目标与日志（daily-note 模板自动套用）
    ↓
 4. 边写边用 perm/lit/proj 插入其他笔记的骨架
    ↓
-5. 用 wl + Tab 快速插入 [[wikilink]]
+5. 用 wl + Tab 快速插入笔记间的 Markdown 相对链接
    ↓
 6. 写完保存，Foam 自动建立反向链接
    ↓
@@ -544,3 +546,5 @@ VS Code 里：装了 `marp-team.marp-vscode` 扩展后，**Marp 面板**（上�
   - 同日三补：按用户实测路径完善——「本例实际路径（复盘）」记录 ping 通 / telnet·curl 10250 超时 / kubectl logs 报错的真实时间线与每步证明（ping 通 + TCP 超时 = 端口级选择性拦截；REJECT 与 DROP 并存 = 规则半成品，多次探测需记时间点）；「更优路径」把三连升级为三对照矩阵（健康节点 / 其他端口 22 / 本机）+ nc 超时探测 + tcpdump 双端同抓；新增「同类 k8s 网络问题通用排查框架」（四层定位 + 四类链路病根速查表）
 
 - **2026-10-13 过关卡可勾选修复**：表格单元格里放不了可点击复选框（☐ 是普通字符），把「复习打卡」移出表格改为 `- [ ]` 任务项（VS Code 预览可直接点击勾选并写回源文件）、「今日判定」改为填空式（✅／🔶／❌ 填一个）；20 篇日记同步（10-12 用户已自行转换、10-13 保留已填的用时 5 分钟并预勾选），模板与 `daily`/`jp` snippet 同步
+
+- **2026-10-15 全库内容审查与修复**：157 个 Markdown 文件在机械检查 0 error 的基础上逐篇精读（数学推导 python 实算、JS 例子 node 实测、技术事实对照官方源码/文档、日语对照教材与外部权威），修复确凿错误 61 处、存疑项 18 处（S11/S12 按用户要求保留）。要点：数学（04-multiview p-范数单调方向、squeeze 上界 n=1 失真）；日语（促音条件统一 か・さ・た・ぱ 行、长音例对与字源 さ=左、へ=蛇/ほんせん 删除更正、マ 笔顺、を 起笔说法删除、「7 个音」du→ぢ/づ 口径、MOC 同步）；编程（Servlet doGet/doPost 默认 405、Spring Web 模块 4 个与 portlet 5.0 移除、getBean id、Aware 阶段注脚、calico 先 -F 再 -X、gen_compile_commands.py 5.0、bear --、apt show、CSS circle() 基准与 transform 顺序、space-evenly 图示、颜色 148、lety→lett、let/const TDZ 口径、对象键 Symbol、BigInt/Symbol 章节、箭头函数提升格、16.7ms/50ms、SuppressedError 注）；AI/工具（Pile 链接描述、书单剑桥 6 本、Durrett 书名、Tong Zhang 单位、VS Code 终端设置 1.57/Exec 后缀、Jupyter 单元格调试、Foam: Open Today's Note 命令名（journal/README、daily-note 模板与工作流同步）、Marp highlight.js→Shiki、frontmatter 键序）；计划（短稿边界统一为 Ch1–Ch3+21–23、工程化 W21–W22 连续起步、报名窗口按 2026 上半年 3-23～31 对齐 W25 下半周～W26 初）；日记（10-12/14/15 打卡状态对齐）；模板/库元（cornell-marp 导出命令与分页符示例、daily-note frontmatter 合并进 foam_template 同块、attachments 图片改 Markdown 语法、archive 移动规则、foam-query 表述、README 目录树补 ml-booklist）；各文件 `updated` 与更新记录同步。

@@ -209,7 +209,7 @@ span {
 ```css
 .nav {
   display: flex; /* 改用 Flex 布局，彻底避免间隙问题 */
-  gap: 0; /* 间距由你精确控制，初始值 normal 在 Flex/Grid 中通常表现为 0 */
+  gap: 0; /* 无需处理间隙：flex 容器本来就不产生空白间隙，gap 初始值 normal 在 flex/grid 中就解析为 0 */
 }
 .nav-item {
   /* 不需要 display: inline-block 了 */
@@ -869,3 +869,13 @@ CSS 的设计者认为，外边距是用来控制**元素之间**的间距的。
 1. 创建一个 `div`，设置宽高 200px，背景色浅灰，内边距 20px，边框 2px 蓝色实线，外边距 20px。分别用 `content-box` 和 `border-box` 观察总尺寸差异。
 2. 创建两个上下排列的 `div`，分别设置 `margin-bottom: 30px` 和 `margin-top: 50px`，用开发者工具验证实际间距。
 3. 创建一个 `span`，尝试设置宽高，观察是否生效。然后改为 `display: inline-block`，再次观察。
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [Flex 与 Grid 详解](stage-06-layout.md) —— 本章只是 Flex 入门，完整的弹性布局与网格在第 6 阶段
+- [定位与 BFC](stage-06-layout.md) —— 本章的浮动塌陷、clearfix 在定位一章有系统方案
+- [自定义属性](stage-09-modern-css.md) —— 盒模型相关尺寸用 CSS 变量表达，见现代 CSS 一章

@@ -1,5 +1,5 @@
 ---
-title: note
+title: 创新：协同进化
 tags:
   - ai
 created: 2026-09-10

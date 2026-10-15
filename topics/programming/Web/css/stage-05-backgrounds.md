@@ -42,7 +42,7 @@ background-color: #f5f5f5;
 background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
 ```
 
-> 💡 **半透明背景技巧**：用 `rgba(255,255,255,0.9)` 做毛玻璃感遮罩，比纯色更高级。
+> 💡 **半透明背景技巧**：用 `rgba(255,255,255,0.9)` 做半透明遮罩，比纯色更高级。注意这只是**半透明**，真正的磨砂玻璃还要靠 `backdrop-filter: blur()`（见第八阶段）才能做出背景模糊的效果。
 
 ### 5.2 背景图片
 
@@ -301,3 +301,12 @@ background: repeating-linear-gradient(
 | 卡片阴影 | `box-shadow` + `:hover` | 使用 `transition` 让阴影变化更平滑 |
 | 全屏背景图 | `background-size: cover` | 配合 `background-position: center` 实现不变形居中 |
 | 渐变按钮 | `linear-gradient(135deg, #667eea, #764ba2)` | 135° 对角线渐变，悬停时添加 glow 效果 |
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [transform 与合成层](stage-08-animation.md) —— 阴影与透明度配合 transform 才有 GPU 合成效果
+- [多背景与响应式](stage-07-responsive-design.md) —— 背景图在断点切换时的取舍

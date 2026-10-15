@@ -24,6 +24,8 @@ updated: 2026-09-09
 
 （暂无）
 
+> 主题目录说明见 [topics/history/README](../topics/history/README.md)（分类建议与学习方法）——历史内容还没开始写，先从那里看打算怎么组织。
+
 ## 按朝代 / 时期
 
 ### 中国古代史

@@ -9,7 +9,7 @@ aliases:
   - Linux Kernel 4.9 Build
   - 内核编译
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-15
 ---
 
 # Linux 4.9 内核编译
@@ -211,7 +211,8 @@ inittab写入内容
 ```
 
 ```shell
-chmod 755 etc/inittab
+# inittab 是配置文件，只需可读，不需要可执行（上一节的 rcS 才需要 chmod 755）
+chmod 644 etc/inittab
 cd dev 
 sudo mknod console c 5 1 
 sudo mknod null c 1 3
@@ -226,7 +227,7 @@ sudo mknod tty1 c 4 1
 卸载镜像文件
 打成gzip包
 
-在busybos的根目录，即_install上一级
+在 busybox 的根目录，即 `_install` 上一级
 
 ```bash
 #!/bin/bash
@@ -271,8 +272,9 @@ gdb vmlinux
 target remote:1234
 b start_kernel
 c
-focus
-bt
+bt                        # 打印当前调用栈
+# 想看所有线程的栈用：thread apply all bt
+# ⚠️ focus 是 TUI 命令，纯控制台 / MI 模式调试内核用不上（现代 gdb 中合法，会自动切入 TUI）
 ```
 
 ## vscode gdb
@@ -280,7 +282,7 @@ bt
 安装vscode
 安装工具 vim git tmux
 vscode安装c++插件
-bear make -j4   # 4.9 内核树没有 scripts/gen_compile_commands.py（5.3 才合入），用 bear 生成 compile_commands.json；没有 bear 就手动配 includePath
+bear -- make -j4   # 4.9 内核树没有 scripts/gen_compile_commands.py（5.0 才合入），用 bear 生成 compile_commands.json（bear 3.x 起构建命令必须跟在 -- 之后）；没有 bear 就手动配 includePath
 lanch.json
 
 ```json
@@ -309,3 +311,14 @@ lanch.json
     ]
 }
 ```
+
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../../notes/MOC%20-%20programming.md)
+- [C 入门：从源码到可执行文件（本篇是它的完整实例）](../cplusplus/into.md)
+- [VS Code C/C++ 环境配置（gdb / 调试）](../cplusplus/vscodec.md)
+- [Calico iptables 实战（同一 Linux 运维线）](calico-iptables-stale-rules.md)

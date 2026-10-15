@@ -3,7 +3,7 @@ title: vscode
 tags:
   - tools
 created: 2026-09-10
-updated: 2026-10-11
+updated: 2026-10-15
 ---
 # vscode
 
@@ -42,17 +42,12 @@ visual studio code的所有内容几乎都可以被设置。
 **语言特定的设定** \
 ctrl+shift+p打开命令面板输入Preferences:Configure Language Specific Settings
 
-**只能通过用户设置进行定义** \
-git.path
-terminal.integrated.shell.linux
-terminal.integrated.shellArgs.linux
-terminal.integrated.shell.osx
-terminal.integrated.shellArgs.osx
-terminal.integrated.shell.windows
-terminal.integrated.shellArgs.windows
-terminal.external.linuxExec
-terminal.external.osxExec
-terminal.external.windowsExec
+**终端相关设置（已改版，按当前写法）** \
+`terminal.integrated.shell.*` / `shellArgs.*` 已弃用（v1.57 引入 profiles 机制时被取代），当前写法是**配置文件 + 默认配置档**： \
+`terminal.integrated.profiles.windows`（本仓库 `.vscode/settings.json` 用的就是它） \
+`terminal.integrated.profiles.linux` / `.osx` \
+`terminal.integrated.defaultProfile.windows`（指定默认用哪个 profile） \
+`terminal.external.windowsExec` / `.linuxExec` / `.osxExec`（外部终端设置，沿用至今，注意**带 `Exec` 后缀**）
 
 ## 快捷键
 
@@ -241,7 +236,7 @@ args：要传递给program的参数。
 env：环境变量。
 cwd：调试器的工作目录。默认值是${workspaceFolder}
 port：要附加到的进程的端口。
-stopOnEntry：是否在程序人口进行断点。
+stopOnEntry：是否在程序入口进行断点。
 console：指定程序输出的位置
 
 - internalConsole：Visual Studio Code的调试控制台。
@@ -252,4 +247,19 @@ console：指定程序输出的位置
 通过compound属性可以配置多目标调试
 
 调试jupyter notebook
-调试jupyter notebook，首先把jupyter notebook文件导出为python。然后调试python文件。
+VS Code + Jupyter 扩展可直接在 .ipynb 单元格内打断点调试（Run by Line 或完整调试器单步，需 ipykernel 6+）；导出为 .py 再调试仅作为备选。
+
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../notes/MOC%20-%20programming.md)
+- [Foam（本库双链方案就建立在这个编辑器上）](Foam.md)
+- [foam-knowledge-base-guide](foam-knowledge-base-guide.md)
+- [Markdown 写作环境](Markdown.md)
+- [Shortcuts 快捷键速查](Shortcuts.md)
+- [marp-guide（Marp 是 VS Code 扩展，导出路径见 §3.1）](marp-guide.md)
+- [VS Code C/C++ 环境配置](../programming/cplusplus/vscodec.md)
+- [VS Code Java 本地环境](../programming/Java/vscode_Java_dev.md)

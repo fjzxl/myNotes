@@ -83,7 +83,10 @@ function strictFn() {
 
 ```bash
 # 初始化 ESLint
-npm init @eslint/config
+# ⚠️ 本节两处配置都是 ESLint 8 的 .eslintrc 格式，对应下面 devDependencies 锁的 eslint ^8.57.0。
+#    ESLint 9 起默认改用 flat config（eslint.config.js），`npm init @eslint/config` 生成的
+#    就是 flat config，与本节示例不兼容——两者不能混用。要上 ESLint 9，需把下面两处配置
+#    改写为 eslint.config.js（defineConfig + languageOptions.globals）并把依赖升到 ^9。
 
 # 常用预设：
 # - eslint:recommended（基础推荐规则）
@@ -158,7 +161,7 @@ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 ```
 
 **关键细节：**
-- `eslint --fix` 能自动修复大量格式问题（如引号、分号、缩进）
+- `eslint --fix` 只修复**规则可自动修复**的那些（如 `eqeqeq`、`prefer-const`）；引号 / 分号 / 缩进这类格式问题在本组合里已被 `eslint-config-prettier` 关闭了规则，交给 `prettier --write` 处理
 - 推荐在 IDE 中安装 ESLint 和 Prettier 插件，保存时自动格式化
 - 团队项目应在 Git 钩子（husky + lint-staged）中强制提交前检查，防止不规范代码进入仓库
 
@@ -489,11 +492,18 @@ function setup() {
   const hugeData = new Array(1000000).fill('x');
   const btn = document.getElementById('btn');
   btn.addEventListener('click', () => {
-    console.log('clicked');
-    // 这个回调持有对 hugeData 的引用，即使 hugeData 从未在回调中使用
+    console.log('clicked', hugeData.length); // ← 真正引用了 hugeData，它被闭包捕获
   });
 }
-// ✅ 修复：如果不需要，不要让闭包捕获大对象
+// ⚠️ 反例澄清：若回调里【不】引用 hugeData，现代引擎（V8 的 Context Allocation）
+//    只把实际被引用的变量放进闭包上下文，不构成泄漏——与第 3 章「原型链与闭包」口径一致。
+// ✅ 修复：不需要就别引用；确实要用时，只捕获一个小的派生值
+function setupFixed() {
+  const hugeData = new Array(1000000).fill('x');
+  const size = hugeData.length; // 大数组随 setup 返回后即可回收，闭包只持有这个数字
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', () => console.log('clicked', size));
+}
 
 // 3. 移除 DOM 元素但保留引用
 const elements = [];
@@ -543,7 +553,8 @@ function bind() {
 | **LCP** | Largest Contentful Paint | 最大内容渲染时间 | ≤ 2.5s |
 | **CLS** | Cumulative Layout Shift | 累积布局偏移 | ≤ 0.1 |
 | **TBT** | Total Blocking Time | 总阻塞时间 | ≤ 200ms |
-| **FID** | First Input Delay | 首次输入延迟 | ≤ 100ms |
+| **FID** | First Input Delay | 首次输入延迟（**已于 2024-03 被 INP 取代**，仅作历史参考） | ≤ 100ms |
+| **INP** | Interaction to Next Paint | 交互到下一次绘制的延迟，现行第 4 项核心指标 | ≤ 200ms |
 
 **Performance API（代码中测量）：**
 ```js
@@ -559,7 +570,9 @@ const observer = new PerformanceObserver((list) => {
     console.log('LCP:', entry.startTime, entry.element);
   }
 });
-observer.observe({ entryTypes: ['largest-contentful-paint'] });
+observer.observe({ type: 'largest-contentful-paint', buffered: true });
+// ↑ 必须写 type + buffered：entryTypes 数组形式已废弃；
+//   buffered: true 会补发「注册观察之前」已经产生的 LCP 候选，否则首个候选常被漏掉
 
 // 标记关键时间点
 performance.mark('app-start');
@@ -713,8 +726,8 @@ npm install --save-dev husky lint-staged
 npx husky init
 ```
 
+在 `package.json` 中添加：
 ```json
-// package.json 中添加
 {
   "lint-staged": {
     "*.js": ["eslint --fix", "prettier --write"]
@@ -723,8 +736,10 @@ npx husky init
 ```
 
 ```bash
-# .husky/pre-commit
+# npx husky init 已经生成了 .husky/pre-commit，直接覆写即可；
+# husky v9 起钩子脚本还需要可执行权限，否则不会触发
 echo 'npx lint-staged' > .husky/pre-commit
+chmod +x .husky/pre-commit
 ```
 
 ---
@@ -1045,3 +1060,13 @@ storeWithLogger.dispatch({ type: 'INCREMENT' });
 - Reducer 中禁止：修改传入参数、执行有副作用的操作（如 API 请求、路由跳转）、调用非纯函数（如 Date.now()、Math.random()）
 - 实际项目中，异步操作（如 API 请求）应使用 Thunk 中间件或 Redux-Saga 处理
 - 本实现省略了 combineReducers，实际 Redux 支持将多个 reducer 合并管理不同 state 分支
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [CSS 架构与 CSS-in-JS](../css/stage-10-architecture.md) —— 第 6 章提到的 styled-components，在 CSS 架构一章有完整对比
+- [构建产物与源码映射](../typescript/intro.md) —— 本章的 Vite 构建与类型检查链路，见 TypeScript 入门
+- [代理模式（Proxy）](06-es6-modern-features.md) —— 本章讲的代理模式底座就是 ES6 的 Proxy

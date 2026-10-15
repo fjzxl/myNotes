@@ -4,7 +4,7 @@ tags:
   - moc
   - languages
 created: 2026-10-08
-updated: 2026-10-11
+updated: 2026-10-15
 ---
 
 # MOC · Languages（语言学习地图）
@@ -48,6 +48,23 @@ updated: 2026-10-11
 - [ら行（ra ri ru re ro · 闪音）](../topics/languages/japanese/kana-ra-row.md)
 - [わ行（wa を）与拨音 ん](../topics/languages/japanese/kana-wa-row.md)
 
+## 原子卡（Zettelkasten · 2026-10-15 建立骨架，正文待填）
+
+逐行笔记解决"这一行怎么读"，原子卡解决"**跨行的规则**"——它们不属于任何一行，要用时从任意一行跳过来。
+
+| 原子卡 | 覆盖的规则 | 相关的逐行笔记 |
+|--------|-----------|--------------|
+| [清音 46 音的构成与记忆](sei-on-table.md) | 行序口诀、分组记忆、辅音部位 | — |
+| [浊音与半浊音体系](dakusei-handaku.md) | が/ざ/だ/ば 行与 ぱ 行的派生规则 | [か](../topics/languages/japanese/kana-ka-row.md) [さ](../topics/languages/japanese/kana-sa-row.md) [た](../topics/languages/japanese/kana-ta-row.md) [は](../topics/languages/japanese/kana-ha-row.md) |
+| [「一拍」：全表的度量衡](one-beat.md) ★ | 拗音 1 拍 / 促音无声占 1 拍 / 长音加 1 拍 | — |
+| [拗音](youon.md) | 拗音拼读、浊拗音 | [や](../topics/languages/japanese/kana-ya-row.md) [か](../topics/languages/japanese/kana-ka-row.md) [な](../topics/languages/japanese/kana-na-row.md) |
+| [促音（っ）的出现条件](sokuon.md) | か・さ・た・ぱ 行及其拗音前 | [か](../topics/languages/japanese/kana-ka-row.md) [た](../topics/languages/japanese/kana-ta-row.md) [は](../topics/languages/japanese/kana-ha-row.md) |
+| [拨音（ん）与音变](hatsuon.md) | 独占一拍 + 到位音变 | [わ](../topics/languages/japanese/kana-wa-row.md) [ま](../topics/languages/japanese/kana-ma-row.md) [な](../topics/languages/japanese/kana-na-row.md) |
+| [长音的构成与辨义](chouon.md) | 同词干长短对立、两拍 | [あ](../topics/languages/japanese/kana-a-row.md) [か](../topics/languages/japanese/kana-ka-row.md) [さ](../topics/languages/japanese/kana-sa-row.md) |
+| [罗马字与发音不一致的 7 个音](romaji-non-literal.md) | shi / chi / tsu / fu / ji（じ・ぢ）/ zu（づ） | [さ](../topics/languages/japanese/kana-sa-row.md) [た](../topics/languages/japanese/kana-ta-row.md) [は](../topics/languages/japanese/kana-ha-row.md) |
+
+> ★ 「一拍」是这组卡里的枢纽：促音、拨音、长音、拗音四种「拍数 ≠ 假名数」的规则全由它统辖（前三种各多占一拍，拗音两字合一拍）。
+
 ## 方法论
 
 - [skill-learning](../templates/skill-learning.md) —— 一门语言一份学习计划与验收标准
@@ -68,5 +85,6 @@ updated: 2026-10-11
 
 - **2026-10-08** —— 初始创建：新增「语言学习」一级主题，收录日语学习大纲（兴趣向 · 标日 + JLPT 分级，每天约 20 分钟）
 - **2026-10-08** —— 收录五十音笔记与三周每日计划（2026-10-12 ～ 10-31 冲刺）
+- **2026-10-15** —— 全库审查修订：促音出现条件统一为 か・さ・た・ぱ 行（含拗音）；「罗马字不一致的 7 个音」更正为 shi / chi / tsu / fu / ji（じ・ぢ）/ zu（づ）（原「zu / du」中 du 不是任何假名的黑本式罗马字、且漏 ぢ=ji）；「一拍」枢纽描述更正（拗音两字合一拍，非「多一拍」）。
 - **2026-10-09** —— 新增 [五十音闪卡](../topics/languages/japanese/kana-cards.md)：Q::A 牌组 235 张（清音 / 浊音 / 拗音读 / 写两向 + 辨析规则卡），建卡进度对齐三周计划
-- **2026-10-11** —— 收录 [あ行逐行笔记](../topics/languages/japanese/kana-a-row.md)（此前只被反向链接、未进本 MOC）；**补齐全 10 行逐行笔记**（か・さ・た・な・は・ま・や・ら・わ，拨音 `ん` 并入わ行篇）；[五十音笔记](../topics/languages/japanese/kana.md)新增 §9 全表共通规律（分组记忆 / 辅音部位 / 一拍度量衡 / 8 个不按字母直拼的读音）；同日修正 kana.md 与 kana-plan.md：清音 44→**46**、わ行新音 3→**2**（を 读 o）、发音表 `つ/づ` 分行、促音出现位置补全（う行前 / 拗音前 / 词首）、外来词音节补 `ヴァ/ヴィ/ヴェ/ヴォ/ツィ`
+- **2026-10-11** —— 收录 [あ行逐行笔记](../topics/languages/japanese/kana-a-row.md)（此前只被反向链接、未进本 MOC）；**补齐全 10 行逐行笔记**（か・さ・た・な・は・ま・や・ら・わ，拨音 `ん` 并入わ行篇）；[五十音笔记](../topics/languages/japanese/kana.md)新增 §9 全表共通规律（分组记忆 / 辅音部位 / 一拍度量衡 / 8 个不按字母直拼的读音）；同日修正 kana.md 与 kana-plan.md：清音 44→**46**、わ行新音 3→**2**（を 读 o）、发音表 `つ/づ` 分行、促音出现位置补全（う行前 / 拗音前 / 词首——注：同日 kana.md 复查勘误已撤销「う行前 / 词首」，最终口径为 か・さ・た・ぱ 行前，含拗音）、外来词音节补 `ヴァ/ヴィ/ヴェ/ヴォ/ツィ`

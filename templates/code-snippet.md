@@ -34,5 +34,5 @@ created: {{date}}
 
 ## 引用
 
-- 项目 1：[[projects/xxx]]
-- 笔记：[[永久笔记]]
+- 项目 1：`[项目笔记](../projects/xxx.md)`
+- 笔记：`[永久笔记标题](../notes/xxx.md)`

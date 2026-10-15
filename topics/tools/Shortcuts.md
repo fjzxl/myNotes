@@ -55,6 +55,7 @@ updated: 2026-10-11
 
 ## 相关工具笔记
 
+- [README](README.md) — 工具索引（本篇是它的入口页）
 - [VSCode](VSCode.md) — VS Code 配置与快捷键完整指南
 - [Markdown](Markdown.md) — Markdown 写作环境配置
 - [Foam](Foam.md) — 知识库管理工具索引

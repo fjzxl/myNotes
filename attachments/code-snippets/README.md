@@ -29,10 +29,10 @@ code-snippets/
 
 - 📌 优先记录"用了一次还会用第二次"的代码
 - 🏷 用 Frontmatter 标 `tags: [language, purpose]`
-- 📚 Foam wikilink：`[[attachments/code-snippets/xxx]]` 在笔记里直接引用
+- 📚 引用：在笔记里用**相对路径 Markdown 链接**，如 `[片段说明](../attachments/code-snippets/xxx.md)`（`..` 层数按笔记所在位置调整）。wikilink 已于 2026-10-13 全库停用
 
 ## 引用示例
 
 ```markdown
-见 [[attachments/code-snippets/cpp/thread-pool]] 实现的线程池。
+线程池实现见 [code-snippets/cpp/thread-pool.md](../attachments/code-snippets/cpp/thread-pool.md)。
 ```

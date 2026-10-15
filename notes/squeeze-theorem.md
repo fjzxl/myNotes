@@ -29,7 +29,7 @@ created: 2026-10-12
 ## 例子
 
 - 经典求和放缩：$\lim\limits_{n\to\infty}\left(\dfrac{n}{n^2+1}+\dfrac{n}{n^2+2}+\cdots+\dfrac{n}{n^2+n}\right)=1$——分母各异算不了，放缩统一成 $\dfrac{n^2}{n^2+n}\le S\le \dfrac{n^2}{n^2+1}$，两端同趋于 $1$。
-- $\lim\limits_{n\to\infty}\left(1+2^n+3^n\right)^{\frac1n} = 3$：由 $3 \le (\cdots)^{1/n} \le 3\cdot n^{1/n}$，而 $n^{1/n}\to 1$。
+- $\lim\limits_{n\to\infty}\left(1+2^n+3^n\right)^{\frac1n} = 3$：由 $1+2^n+3^n\le 3\cdot 3^n$ 得 $3 \le (\cdots)^{1/n} \le 3\cdot 3^{1/n}$，而 $3^{1/n}\to 1$（$n=1$ 时也成立）。
 
 ## 与其他概念的关系
 

@@ -531,6 +531,17 @@ AM-GM 并没有用错，只是两次放缩的取等点错位，界被放松；Ti
 
 > **一句话记忆**：口诀 #11「分开除贵，合并除省」的 $p=1$ 版——分子逐项平方、分母逐项为正，右端一次合并除；取等 $=$ 分子按分母比例分配。识别信号：**分式和求下界**。物理直觉（并联电路按电导分流、总功耗最小）见[多视角：Nesbitt 与 Titu](04-multiview.md#多视角nesbitt-不等式与-titu-引理)。
 
+## 本章原子卡（Zettelkasten）
+
+本篇交付时提取的原子笔记，一概念一卡。卡内正文待填，但**结构与互链已建立**——从卡可以跳回本节，从本节可以跳进卡。
+
+- [柯西-施瓦茨不等式（Cauchy-Schwarz）](../../../notes/cauchy-schwarz-inequality.md)
+- [伯努利不等式（Bernoulli Inequality）](../../../notes/bernoulli-inequality.md)
+- [琴生不等式（Jensen Inequality）](../../../notes/jensen-inequality.md)
+- [Nesbitt 不等式](../../../notes/nesbitt-inequality.md)
+
+> 柯西-施瓦茨是本库枢纽卡之一：它向下连到 Young / Hölder / 积分形式，向上连到三角不等式的几何解读。
+
 ---
 
 > ↩ [返回总览](../inequalities.md)

@@ -11,7 +11,7 @@ aliases:
   - no route to host 10250
   - kubectl logs no route to host
 created: 2026-10-13
-updated: 2026-10-14
+updated: 2026-10-15
 ---
 
 # Calico 残留 iptables 规则导致云主机重启后 no route to host
@@ -132,8 +132,11 @@ kubectl -n kube-system delete pod --field-selector spec.nodeName=ta-node2 -l k8s
 ```bash
 iptables-save > /root/iptables.bak
 iptables -S | grep -E '^-A .+ -j cali-' | sed 's/^-A /-D /' | while read -r r; do iptables $r; done
+iptables -S | awk '/^(:|-N) cali-/ {print $2}' | sort -u | xargs -r -n1 iptables -F
 iptables -S | awk '/^(:|-N) cali-/ {print $2}' | sort -u | xargs -r -n1 iptables -X
 ```
+
+> `-X` 只能删除**空**链，所以必须先 `-F` 清空链内规则再删链（上面第二行）。nat / mangle 表同理：给三条命令各加 `-t nat` / `-t mangle` 再跑一遍。
 
 **④ 兜底：`iptables -F`**——仅限「纯 k8s 节点、确认无其他 iptables 依赖」：
 
@@ -176,3 +179,12 @@ iptables -F
 
 - [MOC - programming](../../../notes/MOC%20-%20programming.md) · Linux 专题
 - 案例日志：[2026-10-13](../../../journal/daily/2026-10-13.md)
+
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MoE（负载均衡辅助损失 ↔ 这里的分布式限流，同一个别让某部分过载的思路）](../../ai/MoE.md)
+- [Linux 4.9 内核编译（同一条 Linux 运维线）](linux-kernel-4.9-build.md)

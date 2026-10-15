@@ -36,7 +36,7 @@ Copy-Item templates\daily-note.md journal\daily\2026-09-09.md
 
 建议：读书 / 技能的主题知识放 `topics/` 对应主题，限期学习计划放 `projects/`，练习流水放 `journal/`，提炼后的原子概念放 `notes/`。新主题笔记记得加入相关 MOC。
 
-三个新模板均为纯 Markdown，无特殊渲染依赖。空 `[[]]` 是待填写的关联笔记；实际链接使用工作区根相对路径。快捷片段是简版，存于 `.vscode/foam.code-snippets`（已被 .gitignore 放行，是否已提交以 `git ls-files` 为准）；克隆后若没有该文件，直接用 `templates/` 的完整模板即可。
+这些新模板均为纯 Markdown，无特殊渲染依赖。空 `[[]]` 是待填写的关联笔记；实际链接使用工作区根相对路径。快捷片段是简版，存于 `.vscode/foam.code-snippets`（已被 .gitignore 放行，是否已提交以 `git ls-files` 为准）；克隆后若没有该文件，直接用 `templates/` 的完整模板即可。
 
 ## 模板索引
 
@@ -67,7 +67,7 @@ Copy-Item templates\daily-note.md journal\daily\2026-09-09.md
 |------|------|----------|
 | daily-note | 每天 | daily-note |
 | **cornell-note** | **康奈尔笔记（3 区：线索/笔记/总结）** | **cornell-note, topic** |
-| **cornell-marp** | **康奈尔 × Marp 混合（笔记转幻灯片）** | **marp, cornell-note** |
+| **cornell-marp** | **康奈尔 × Marp 混合（笔记转幻灯片）** | **—（无 tags；frontmatter 为 Marp 指令）** |
 | permanent-note | 概念原子笔记 | permanent-note, topic |
 | literature-note | 读书笔记 | literature-note, topic |
 | **book-note** | **读书笔记（整本书：总结/逐章/金句/行动）** | **book-note, topic** |

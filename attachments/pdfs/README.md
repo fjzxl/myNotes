@@ -11,21 +11,23 @@ tags:
 
 ## 组织方式
 
-按主题分：
+本目录目前为空。按仓库约定（见 `AGENTS.md` 附件约定）分两类处理：
+
+- **大体积教材 / 手册 PDF**：就地放在主题笔记旁并 gitignore（如 `topics/languages/japanese/*.pdf`、`topics/ai/*.pdf`）
+- **小型通用 PDF**：放本目录，按主题分子目录：
 
 ```
 pdfs/
 ├── programming/
 ├── ai/
 ├── math/
-├── history/
 └── general/
 ```
 
 ## 引用
 
 ```markdown
-详见 [[attachments/pdfs/programming/effective-cpp.pdf]]
+详见 [effective-cpp.pdf](../attachments/pdfs/programming/effective-cpp.pdf)
 ```
 
 或在 Markdown 里嵌入：

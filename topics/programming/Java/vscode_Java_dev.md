@@ -1,19 +1,19 @@
 ---
-title: 本地Java devlepment
+title: 本地Java development
 tags:
   - programming
   - java
 created: 2026-09-10
 updated: 2026-09-10
 ---
-# 本地Java devlepment
+# 本地Java development
 
-- [本地Java devlepment](#本地java-devlepment)
+- [本地Java development](#本地java-development)
   - [download Java and set up environment](#download-java-and-set-up-environment)
     - [执行命令](#执行命令)
     - [更改.bashrc，配置环境变量](#更改bashrc配置环境变量)
     - [执行命令，查看是否安装成功](#执行命令查看是否安装成功)
-  - [donwload maven and setup environment](#donwload-maven-and-setup-environment)
+  - [download maven and setup environment](#download-maven-and-setup-environment)
     - [更改.bashrc，配置环境变量](#更改bashrc配置环境变量-1)
     - [修改maven的conf下settings.xml设置](#修改maven的conf下settingsxml设置)
   - [vscode setup](#vscode-setup)
@@ -43,7 +43,7 @@ export PATH=${JAVA_HOME}/bin:${PATH}
 java -version
 ```
 
-## donwload maven and setup environment
+## download maven and setup environment
 
 ### 更改.bashrc，配置环境变量
 
@@ -98,7 +98,18 @@ ctrl+shift+p settings
     "maven.settingsFile": "/home/clarence/software/maven/apache-maven-3.9.11/conf/settings.xml",
     "java.configuration.maven.userSettings": "/home/clarence/software/maven/apache-maven-3.9.11/conf/settings.xml",
     "java.maven.downloadSources": true,
-    "maven.terminal.useJavaHome": true,
     "java.configuration.maven.globalSettings": "/home/clarence/software/maven/apache-maven-3.9.11/conf/settings.xml",
 }
 ```
+
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../../notes/MOC%20-%20programming.md)
+- [远程开发版（本篇的远程对应篇）](vscode_Java_remote_dev.md)
+- [VSCode 基础与插件清单](../../tools/VSCode.md)
+- [Spring 入门（用本篇环境跑的第一个示例）](spring/spring_intro.md)
+- [Servlet（用本篇环境跑的第一个 Web 示例）](Servlet.md)

@@ -256,7 +256,7 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 - **核心**：算术平均 ≥ 几何平均
 - **关键点**：等号当且仅当所有数相等
 - **应用**：最值证明、不等式链的起点
-- **配套笔记**：[[topics/math/inequalities]]
+- **配套笔记**：[均值不等式](../topics/math/inequalities/01-basics.md)
 
 ````
 
@@ -265,14 +265,14 @@ $$\frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}$$
 ## 🚀 导出
 
 ```bash
-# 导 PDF
-marp am-gm-cornell.md --pdf
+# 导 PDF（模板用了原生 <div> 两栏，需 --html 启用）
+marp am-gm-cornell.md --pdf --html
 
-# 导 HTML（保留交互）
+# 导 HTML（不指定 -o 时默认输出同名 .html；--html 的含义是"启用原生 HTML 标签"，不是"导出 HTML"）
 marp am-gm-cornell.md --html
 
-# 导 PPTX
-marp am-gm-cornell.md --pptx
+# 导 PPTX（同样需要 --html）
+marp am-gm-cornell.md --pptx --html
 ```
 
 ---
@@ -313,8 +313,11 @@ marp am-gm-cornell.md --pptx
 ### 4. 加分页符（章节间）
 
 ```markdown
+# Ⅰ. 引入
 
-# 下一章
+---
+
+# Ⅱ. 主体
 ```
 
 ---

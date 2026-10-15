@@ -9,7 +9,7 @@ aliases:
   - Foam 知识库搭建
   - Foam Guide
 created: 2026-09-10
-updated: 2026-10-11
+updated: 2026-10-15
 ---
 
 # Foam 使用指南：搭建类 Obsidian 知识库
@@ -188,7 +188,7 @@ tags:
 
 ### 4.5 Daily Notes（每日笔记）
 
-`Ctrl+Shift+P` → `Foam: Open Daily Note`，自动打开/创建今天的日记。默认路径与命名可在 `settings.json` 配置（见 6.2）。
+`Ctrl+Shift+P` → `Foam: Open Today's Note`（默认快捷键 `Alt+D`），自动打开/创建今天的日记。默认路径与命名可在 `settings.json` 配置（见 6.2）。
 
 ### 4.6 Placeholders（占位符）
 
@@ -405,7 +405,7 @@ myKnowledge/
 ### 8.1 早晨（5 分钟）
 
 1. 打开 VS Code
-2. `Ctrl+Shift+P` → `Foam: Open Daily Note` 打开今日笔记
+2. `Ctrl+Shift+P` → `Foam: Open Today's Note`（或 `Alt+D`）打开今日笔记
 3. 写下今天的目标
 
 ### 8.2 日常记录（随时）
@@ -562,7 +562,7 @@ Foam 社区版仍在活跃迭代：foam-vscode **0.46.0** 于 2026-09-30 发布�
 
 ## 相关链接
 
-> 在 Foam / Obsidian 中可点击跳转，标准 Markdown 渲染器会显示为纯文本。
+> 以下均为**相对路径 Markdown 链接**：VS Code 预览、Foam 与 GitHub 三端都可点击跳转。
 
 ### 本仓库相关
 

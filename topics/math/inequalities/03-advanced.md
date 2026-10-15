@@ -172,6 +172,15 @@ $$
 
 若 $S=0$ 不等式显然成立；若 $S>0$，两边除以 $S^{1/q} = S^{1-1/p}$，得 $S^{1/p}$ 不超过右边括号内的和，即证。$\blacksquare$
 
+## 本章原子卡（Zettelkasten）
+
+本篇交付时提取的原子笔记，一概念一卡。卡内正文待填，但**结构与互链已建立**——从卡可以跳回本节，从本节可以跳进卡。
+
+- [Young 不等式](../../../notes/young-inequality.md)
+- [Hölder 不等式](../../../notes/holder-inequality.md)
+- [权方和不等式](../../../notes/weighted-power-sum-inequality.md)
+- [Minkowski 不等式](../../../notes/minkowski-inequality.md)
+
 ---
 
 > ↩ [返回总览](../inequalities.md)

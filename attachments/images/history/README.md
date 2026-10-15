@@ -23,8 +23,8 @@ history/
 
 ## 引用
 
-在 `topics/history/*.md` 中：
+在 `topics/history/*.md` 中用标准 Markdown 图片语法（绝对路径以 `/attachments/` 开头）：
 
 ```markdown
-见 [[attachments/images/history/maps/qin-dynasty.png]]
+![秦朝疆域图](/attachments/images/history/maps/qin-dynasty.png)
 ```

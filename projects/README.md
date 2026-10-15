@@ -23,6 +23,8 @@ projects/
 │   └── artifacts/          # 产出物（截图等二进制资源按仓库约定放 attachments/）
 ```
 
+> 单文件计划也可直接平铺在 `projects/` 根目录（如当前的 `note-writing-plan.md`）；上面的结构树适用于多文件项目。
+
 ## 何时归档
 
 - ✅ 项目交付 → 移到 `archive/projects/project-name/`
@@ -30,4 +32,4 @@ projects/
 
 ## 当前项目
 
-- [笔记编撰计划 · 高等数学 + 前端（2026-10 ~ 2027-04）](note-writing-plan.md) —— 26 周 / 约 69 篇笔记：高数首轮 + 数一全年衔接；Vue 求职主线 + React 对照 + 作品集
+- [笔记编撰计划 · 高等数学 + 前端 + 软考架构师（2026-10 ~ 2027-07）](note-writing-plan.md) —— 39 周 / 约 69 篇笔记：高数首轮 + 数一全年衔接；Vue 求职主线 + React 对照 + 作品集；软考系统架构设计师（2027-05 下旬考试）

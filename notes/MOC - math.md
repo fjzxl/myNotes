@@ -104,6 +104,30 @@ updated: 2026-10-12
 - [inequalities](../topics/math/inequalities.md) —— 不等式体系总览（依赖图 · 15 条一览表 · 口诀速记；证明 / 多视角 / 应用 / 习题分居 inequalities/ 六章）
   - [一·基础不等式](../topics/math/inequalities/01-basics.md) · [二·核心工具](../topics/math/inequalities/02-core-tools.md) · [三·高阶不等式](../topics/math/inequalities/03-advanced.md) · [四·多视角理解](../topics/math/inequalities/04-multiview.md) · [五·应用](../topics/math/inequalities/05-applications.md) · [六·分层习题](../topics/math/inequalities/06-exercises.md)
 
+#### 不等式原子卡（Zettelkasten · 2026-10-15 建立骨架，正文待填）
+
+一个概念一张卡，卡与卡之间双向互链。枢纽卡：琴生 → 均值 / 伯努利 / Hölder；柯西-施瓦茨 → Young / Hölder / 积分形式。
+
+| # | 原子卡 | 上游 | 下游 |
+|---|--------|------|------|
+| 1 | [三角不等式](triangle-inequality.md) | — | Minkowski |
+| 2 | [均值不等式 AM-GM](arithmetic-geometric-mean.md) | 琴生 | Hölder |
+| 3 | [排序不等式](rearrangement-inequality.md) | — | 切比雪夫 |
+| 4 | [切比雪夫不等式](chebyshev-sum-inequality.md) | 排序 | — |
+| 5 | [柯西-施瓦茨](cauchy-schwarz-inequality.md) ★ | 三角 | Hölder / Young / 积分形式 |
+| 6 | [伯努利不等式](bernoulli-inequality.md) | 琴生 | 指对 |
+| 7 | [琴生不等式](jensen-inequality.md) ★ | — | 均值 / 伯努利 / Hölder / 指对 |
+| 8 | [Nesbitt 不等式](nesbitt-inequality.md) | 柯西 | 权方和 |
+| 9 | [Young 不等式](young-inequality.md) | 琴生 | Hölder |
+| 10 | [Hölder 不等式](holder-inequality.md) ★ | 柯西 / Young | 权方和 / 积分形式 |
+| 11 | [权方和不等式](weighted-power-sum-inequality.md) | Hölder / Nesbitt | — |
+| 12 | [Minkowski 不等式](minkowski-inequality.md) | 三角 | 积分形式 |
+| 13 | [指数与对数不等式](exponential-logarithmic-inequality.md) | 琴生 | — |
+| 14 | [三角函数不等式](trigonometric-inequality.md) | — | — |
+| 15 | [积分形式（四件套）](integral-form-inequalities.md) | 柯西 / 琴生 / Hölder / Minkowski | — |
+
+> 跨簇连接：指对与三角函数两张卡直通 Ch1 的 [夹逼准则](squeeze-theorem.md) / [两个重要极限](two-important-limits.md)——不等式与极限两簇之间目前只有这两条通路，待填正文时可以继续加。
+
 ## 学习方法
 
 - 三线总计划与写作排程：[笔记编撰计划](../projects/note-writing-plan.md)（高数线）

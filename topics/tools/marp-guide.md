@@ -10,7 +10,7 @@ aliases:
   - Marp Guide
   - Marp 幻灯片
 created: 2026-09-10
-updated: 2026-10-12
+updated: 2026-10-15
 ---
 
 # Marp 使用指南：Markdown 写 PPT
@@ -121,7 +121,7 @@ author: MiniMax151938
 ---
 ```
 
-> ⚠️ **必须** 在文件**最顶部**用三横线包起来，且**第一行**就是 `marp: true`。
+> ⚠️ **必须** 在文件**最顶部**用三横线包起来，其中包含 `marp: true`（YAML 键的先后顺序不影响解析）。
 
 ### 4.3 常用 Markdown 语法
 
@@ -293,7 +293,8 @@ theme: my-theme   # 前提：已在 markdown.marp.themes（扩展）或 --theme-
 ---
 ```
 
-> ⚠️ 没有 `themeStyle` 指令——Marpit 的全局指令只有 `theme` / `style` / `headingDivider` / `lang`，写了会被静默忽略。要内联覆盖样式，用下面的 `style: |`：
+> ⚠️ 没有 `themeStyle` 指令，写了会被静默忽略。要内联覆盖样式，用下面的 `style: |`：
+> （Marpit 全局指令以 §5.1 的清单为准：`marp` / `theme` / `style` / `headingDivider` / `lang` / `paginate` / `size` / `title` / `header` / `footer`；加下划线前缀的如 `_class` / `_backgroundColor` / `_paginate` 是单页局部指令。）
 
 ```yaml
 ---
@@ -666,7 +667,7 @@ math: katex
 
 ### Q5：代码不高亮？
 
-Marp 默认用 Prism.js 高亮。语言标记要写对：
+Marp 用 highlight.js 高亮（marp-core v5.0.0 起默认引擎已改为 Shiki）。语言标记要写对：
 
 ````markdown
 ```python

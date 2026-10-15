@@ -7,7 +7,7 @@ updated: 2026-10-12
 ---
 # Foam
 
-> VS Code 上的 Roam 式个人知识管理扩展。**所有内容都是纯 Markdown 文件**，靠 `[[wikilink]]` 建立双向连接。
+> VS Code 上的 Roam 式个人知识管理扩展。**所有内容都是纯 Markdown 文件**，靠笔记间的链接建立双向连接。
 
 ## 完整文档
 
@@ -19,7 +19,7 @@ updated: 2026-10-12
 
 ## 核心特性速查
 
-- **`[[wikilink]]`** —— 双向链接，引用不存在的笔记会自动标记
+- **双向链接** —— Foam 的核心能力；本仓库统一用**相对路径 Markdown 链接**（`[[wikilink]]` 已于 2026-10-13 全库停用，理由见 [Foam 使用指南](foam-knowledge-base-guide.md) §4.1）
 - **Backlinks** —— 在 Foam 侧边栏的 **Connections 视图**（Show Backlinks）查看反向链接
 - **Graph** —— `Ctrl+Shift+P` → `Foam: Show Graph`，在 VS Code 内查看图谱
 - **Daily Notes** —— 每日自动生成/打开

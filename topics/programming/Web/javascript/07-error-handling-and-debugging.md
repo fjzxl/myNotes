@@ -4,7 +4,7 @@ tags:
   - programming
   - javascript
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-15
 ---
 
 # 七、错误处理与调试
@@ -40,7 +40,7 @@ if (true {
 
 // ❌ 关键字拼写错误
 const x = 1;
-lety = 2;  // Uncaught SyntaxError: Unexpected identifier
+lett x = 2;  // Uncaught SyntaxError: Unexpected identifier 'x'（lett 不是关键字，被当成普通标识符）
 ```
 
 **运行时错误示例：**
@@ -77,7 +77,7 @@ console.log(sum(10)); // 10，期望 55
 
 #### 内置错误类型（Error / TypeError / RangeError 等）
 
-JavaScript 内置了 7 种标准错误构造函数，全部继承自 `Error`：
+JavaScript 内置了 8 个标准错误构造函数（`Error` 基类 + 7 个子类；ES2025 起规范中另有第 9 个 `SuppressedError`），子类全部继承自 `Error`：
 
 ```js
 // 错误原型链
@@ -92,6 +92,7 @@ JavaScript 内置了 7 种标准错误构造函数，全部继承自 `Error`：
 | `ReferenceError` | 引用不存在的变量 | `console.log(x)`（x 未声明） |
 | `SyntaxError` | 代码语法解析失败 | `JSON.parse('{bad}')` |
 | `URIError` | URI 编码/解码失败 | `decodeURI('%')` |
+| `EvalError` | 早期用于区分 eval / arguments 的错误，现已很少直接触发 | 遗留代码里 `new EvalError(...)` |
 | `AggregateError` | 多个错误聚合（Promise.any  reject 时） | `Promise.any([p1, p2])` 全部失败时 |
 
 **自定义错误类型（继承 Error）：**
@@ -487,8 +488,20 @@ function chunkedCalculation(chunkSize = 10000) {
   }
 
   processChunk();
-  return arr;
+  // ⚠️ 此刻只跑完了第一个 chunk（chunkSize 条），其余还在 requestIdleCallback 队列里，
+  //    所以下面返回的 arr 是不完整的——直接 return 会让人误以为「优化后结果变少了」。
+  //    正确写法是返回 Promise，全部处理完再 resolve。
+  return new Promise((resolve) => {
+    function step() {
+      const end = Math.min(i + chunkSize, 1000000);
+      for (; i < end; i++) arr.push(Math.sqrt(i));
+      if (i < 1000000) requestIdleCallback(step);
+      else resolve(arr);
+    }
+    step();
+  });
 }
+// 用法：chunkedCalculation().then(arr => console.log(arr.length)); // 1000000
 ```
 
 **Performance 面板分析步骤：**
@@ -606,11 +619,21 @@ class ErrorBoundary {
       padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       font-family: sans-serif; z-index: 9999; max-width: 400px;
     `;
-    toast.innerHTML = `
-      <strong>⚠️ 出错了</strong><br>
-      <small>${error.message}</small><br>
-      <button id="dismiss-error" style="margin-top:8px;padding:4px 12px;border:none;border-radius:4px;cursor:pointer;">关闭</button>
-    `;
+    // ⚠️ error.message 常含服务端返回文本 / 用户输入，未转义直接进 innerHTML 就是注入点。
+    //    动态文本一律走 textContent（参见第 5 章「textContent 防 XSS」）。
+    const msg = document.createElement('small');
+    msg.textContent = error.message;
+
+    const btn = document.createElement('button');
+    btn.id = 'dismiss-error';
+    btn.textContent = '关闭';
+    btn.style.cssText = 'margin-top:8px;padding:4px 12px;border:none;border-radius:4px;cursor:pointer;';
+
+    toast.appendChild(document.createElement('strong')).textContent = '⚠️ 出错了';
+    toast.appendChild(document.createElement('br'));
+    toast.appendChild(msg);
+    toast.appendChild(document.createElement('br'));
+    toast.appendChild(btn);
     document.body.appendChild(toast);
 
     document.getElementById('dismiss-error').addEventListener('click', () => {
@@ -723,7 +746,8 @@ function updateLayoutOptimized() {
   measurements.forEach(({ index, width, height, box }) => {
     const newWidth = width + 10;
     const newHeight = height + 10;
-    // ⚠️ cssText 会覆盖元素所有内联样式，如有其他样式请逐个设置
+    // 这里逐个设置 style.width / style.height，是安全的；
+    // 若改用 box.style.cssText = `...` 会覆盖元素上所有内联样式
     box.style.width = `${newWidth}px`;
     box.style.height = `${newHeight}px`;
     box.textContent = `Box ${index}: ${newWidth}x${newHeight}`;
@@ -739,7 +763,7 @@ requestAnimationFrame(loop);
 ```
 
 **优化效果验证：**
-重新录制 Performance，对比优化前后：
+重新录制 Performance，对比优化前后（下列为示例数值，实际以你自己的录制结果为准）：
 - 优化前：Layout 占比 > 60%，帧率 < 20fps
 - 优化后：Layout 占比 < 10%，帧率稳定在 60fps
 
@@ -823,3 +847,12 @@ document.getElementById('add-banana').addEventListener('click', () => cart.add(p
 > **本章小结：** 我们学习了 JavaScript 的错误类型、try/catch/finally 异常处理、全局错误捕获与上报机制，以及浏览器 DevTools 的调试技巧和性能分析方法。
 >
 > **下一章预告：** 最后一章将带我们进入工程化领域——代码规范、设计模式、内存管理与性能优化，以及如何从零搭建一个规范的前端项目。
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [DOM 批量读写](05-dom-and-browser-api.md) —— 本章的性能优化示例全部基于 DOM 操作
+- [日志与可观测性](08-engineering-and-best-practices.md) —— 调试产出的日志规范与线上监控在第 8 章统一

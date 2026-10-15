@@ -14,7 +14,7 @@ updated: 2026-10-13
 # 不等式
 
 > 本专题按 **「简述 → 证明 → 多视角 → 应用」** 四段组织：先在总览中一览全部不等式，再按依赖顺序逐个详细证明，然后换镜头理解直觉，最后落到应用场景；末尾以**口诀速记**收拢记忆，并以**分层习题**检验掌握（[习题章](inequalities/06-exercises.md)）。
-> 建议完成[基础概念（界与函数）](functions-and-bounds.md)和高数第2章（导数与微分）后开始学习。
+> 建议完成[基础概念（界与函数）](functions-and-bounds.md)和高数**第二章**（导数与微分）后开始学习。
 > 导航：[MOC - math](../../notes/MOC%20-%20math.md) · 配套模板：[cornell-note](../../templates/cornell-note.md)、[book-chapter](../../templates/book-chapter.md) · [章节导航](#章节导航)在总览表之后
 
 > 🚪 **入门阅读路径（第一次读建议走这条）**
@@ -138,12 +138,12 @@ flowchart LR
 
 均值链（二变量版）从大到小：
 
-$$\underbrace{\sqrt{\frac{a^2+b^2}{2}}}_{\text{平方 }Q} \;\ge\; \underbrace{\frac{a+b}{2}}_{\text{算术 }A} \;\ge\; \underbrace{\sqrt{ab}}_{\text{几何 }G} \;\ge\; \underbrace{\frac{2}{\frac1a+\frac1b}}_{\text{调和 }H}$$
+$$\underbrace{\sqrt{\frac{a^2+b^2}{2}}}_{\text{平方 }Q} \;\ge\; \underbrace{\frac{a+b}{2}}_{\text{算术 }A} \;\ge\; \underbrace{\sqrt{ab}}_{\text{几何 }G} \;\ge\; \underbrace{\frac{2}{\frac1a+\frac1b}}_{\text{调和 }H}\qquad (a,b>0)$$
 
 - **背法**：「**方算几调，越高越大**」——从左到右依次是平方、算术、几何、调和平均，位置越高值越大（$a=b$ 时四者相等）。
 - **哪个场景用哪个**（对应[应用场景](inequalities/05-applications.md#从实际问题理解不等式)）：波动/标准差场景用**方**（RMS）；日常"平均"是**算**；增长率、利率场景用**几**（几何平均）；速度、并联电阻场景用**调**（调和平均）。
 - **「和定积最大，积定和最小」微型例**：$x+y=10 \Rightarrow xy\le 25$（$x=y=5$）；$xy=16 \Rightarrow x+y\ge 8$（$x=y=4$）。两者都只在**均衡点**取等——这正是"总量固定，均衡最优"的口诀来源。
-- **常用变形**（看到就应认出）：$\dfrac xa+\dfrac ax\ge 2$；$ab\le\left(\dfrac{a+b}2\right)^2$；$a^2+b^2\ge 2ab$。
+- **常用变形**（看到就应认出）：$\dfrac xa+\dfrac ax\ge 2$（$x$ 与 $a$ 同号且均非零）；$ab\le\left(\dfrac{a+b}2\right)^2$（对一切实数成立）；$a^2+b^2\ge 2ab$（对一切实数成立）。
 
 ### 选工具顺口溜
 

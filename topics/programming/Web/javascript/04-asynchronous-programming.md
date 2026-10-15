@@ -4,7 +4,7 @@ tags:
   - programming
   - javascript
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-15
 ---
 
 # 四、异步编程
@@ -141,7 +141,7 @@ Event Loop 中的"任务"分为两类，它们的**执行优先级不同**：
 
 | 类型 | 典型来源 | 特点 |
 |------|----------|------|
-| **宏任务（Macrotask）** | `setTimeout`/`setInterval`、I/O、UI 渲染、`script` 标签整体执行 | 每个循环只执行一个 |
+| **宏任务（Macrotask）** | `setTimeout`/`setInterval`、I/O、`script` 标签整体执行 | 每个循环只执行一个 |
 | **微任务（Microtask）** | `Promise.then/catch/finally`、`queueMicrotask`、`MutationObserver` | 当前任务结束后立即全部清空 |
 | **渲染回调** | `requestAnimationFrame` | 在渲染阶段执行，位于微任务清空之后 |
 
@@ -302,7 +302,7 @@ console.log('6');
 | **微任务清空后** | 浏览器有机会进行渲染 |
 | **宏任务之间** | 浏览器可以响应用户输入、更新界面 |
 
-> ⚠️ **重要推论**：如果同步代码或微任务执行时间太长（超过 50ms），浏览器就来不及渲染，用户会感觉到**页面卡顿**。这就是"长任务（Long Task）"问题的根源。
+> ⚠️ **重要推论**：如果同步代码或微任务执行时间太长（超过一帧约 16.7ms 就可能掉帧），用户就会感觉到**页面卡顿**；超过 50ms 的任务会被浏览器记为"长任务（Long Task）"。
 
 ```js
 // ❌ 错误：阻塞主线程 3 秒，页面完全卡死
@@ -373,12 +373,14 @@ function processChunk(items, chunkSize = 100) {
   doChunk();
 }
 
-// ✅ 现代方式：使用 scheduler.yield()（Chrome 115+）
+// ✅ 现代方式：使用 scheduler.yield()（Chrome 129+ / Firefox 142+，Safari 暂不支持）
 async function modernProcess(items) {
   for (const item of items) {
     processItem(item);
     // 每处理完一个就主动让出主线程
-    if (scheduler?.yield) await scheduler.yield();
+    // ⚠️ 必须走 globalThis：scheduler 在 Firefox / Safari / Node 里是「未声明标识符」，
+    //    直接写 scheduler?.yield 会在判断本身抛 ReferenceError，else 分支永远走不到
+    if (globalThis.scheduler?.yield) await globalThis.scheduler.yield();
     else await new Promise(r => setTimeout(r, 0));
   }
 }
@@ -1324,3 +1326,13 @@ const loader = createPaginatedLoader({
 > **本章小结：** 我们理解了 Event Loop 的工作原理、Promise 的状态与链式调用、async/await 的语法糖本质，并实现了并发调度器、请求重试机制和分页加载器等实战代码。
 >
 > **下一章预告：** 在掌握了异步编程后，让我们把代码从"纸面"带到"浏览器"——学习 DOM 操作、事件系统、浏览器 API 以及前端性能优化。
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [DOM 事件与 requestAnimationFrame](05-dom-and-browser-api.md) —— 事件循环里的「渲染阶段」在 DOM 一章有对应的 API
+- [异步错误处理](07-error-handling-and-debugging.md) —— 本章 Promise 的 reject 路径，在第 7 章有系统处理方式
+- [异步相关的工程规范](08-engineering-and-best-practices.md) —— 并发控制的工程约定（重试、限流、取消）见第 8 章

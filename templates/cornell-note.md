@@ -4,7 +4,8 @@ tags:
   - cornell-note
   - {{topic}}
 source: "{{source}}"
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # 康奈尔笔记：{{topic}}
@@ -15,7 +16,7 @@ date: {{date}}
 >
 > **📌 渲染要求**：本文档使用 **HTML + 内联 CSS** 实现真正的两栏版式。
 > 推荐用 **Markdown Preview Enhanced** 预览（VS Code 已推荐），效果最佳。
-> 导出 PDF 用 **Marp** 插件（见 `README.md` 配置说明）。
+> 导出 PDF 用 **Markdown Preview Enhanced → Chrome (Puppeteer)**（见文末「导出选项」）。本模板的两栏版式是内联 Grid，**只有 MPE 能保留**；Marp 走 markdown-it 渲染，不保证还原版式，仅适合转成幻灯片时使用。
 
 ## 元信息
 
@@ -127,13 +128,13 @@ date: {{date}}
 
 - [ ] 整理线索栏（用关键词代替冗长句子）
 - [ ] 写下总结
-- [ ] 提出 3 个问题写在反向链接里
+- [ ] 提出 3 个问题写在笔记末尾（Foam 的 Backlinks 是**只读展示**，没有"往反链里写入"的语法）
 
 ### 1 周内
 
 - [ ] 复习一遍笔记
 - [ ] 补充新理解
-- [ ] 用 `[[wikilink]]` 链接到相关永久笔记
+- [ ] 用相对路径 Markdown 链接指向相关永久笔记（如 `[笔记标题](../notes/xxx.md)`；wikilink 已于 2026-10-13 全库停用）
 
 ### 1 月内
 
@@ -142,9 +143,9 @@ date: {{date}}
 
 ## 相关笔记
 
-- 永久笔记：[[]]
-- 文献笔记：[[]]
-- 项目笔记：[[]]
+- 永久笔记：`[笔记标题](../notes/xxx.md)`
+- 文献笔记：`[笔记标题](../notes/xxx.md)`
+- 项目笔记：`[笔记标题](../projects/xxx.md)`
 
 ---
 
@@ -155,7 +156,7 @@ date: {{date}}
 > 4. **3 次复盘节奏**：24h → 1w → 1m，配合 Zettelkasten 转化为永久笔记
 > 5. **避免抄书**：用自己的话重述，理解 > 复制
 >
-> 💡 **导出选项**：
+> 💡 **导出选项**（本模板的内联 Grid 版式只有 MPE 能保留）：
 > - **PDF**：`Ctrl+Shift+P` → `Markdown Preview Enhanced: Open Preview` → 右上角 `⋯` → `Chrome (Puppeteer) PDF`
 > - **HTML**：MPE 预览 → 右上角 `⋯` → `HTML`
-> - **幻灯片**：Marp 插件（见 README）
+> - **幻灯片**：改用 [cornell-marp](cornell-marp.md)（Marp 专用模板，走 markdown-it 渲染，不保留本模板的两栏版式）

@@ -4,7 +4,7 @@ tags:
   - programming
   - css
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-15
 ---
 
 # 第八阶段：动画与交互 —— 让页面动起来
@@ -150,8 +150,8 @@ transform: scaleX(2); /* 只宽度放大2倍 */
 transform: rotateZ(90deg); /* 只沿Z轴旋转（同rotate） */
 
 /* 组合变换 */
-/* ⚠️ transform 从右向左运算：先 translate（基于原始尺寸居中），再 scale */
-transform: scale(1.1) translate(-50%, -50%);
+/* ⚠️ translate 写在左侧，其位移才不被 scale 放大；若 scale 在左，-50% 会被放大成 -55%，居中即失效 */
+transform: translate(-50%, -50%) scale(1.1);
 ```
 
 #### 3D 变换函数详解
@@ -421,7 +421,7 @@ animation: fadeIn 0.3s ease-in-out 1 normal both;
 **1. `transition: all 0.3s ease` 中的 `all` 表示？**
 
 - A. 所有元素
-- B. 所有属性都会过渡
+- B. 所有可过渡属性
 - C. 所有颜色
 - D. 没有特殊含义
 
@@ -456,7 +456,7 @@ animation: fadeIn 0.3s ease-in-out 1 normal both;
 <details>
 <summary>点击查看答案</summary>
 
-1. **B**（all 表示所有属性都会参与过渡）
+1. **B**（`all` 表示所有**可过渡**属性都会参与过渡；`display`、`position` 这类不可动画的属性不受影响）
 2. **B**（absolute + top/left 50% + translate(-50%, -50%) 是经典居中方案）
 3. **B**（`from` = `0%`，`to` = `100%`）
 4. **C**（animation-iteration-count 控制循环次数）
@@ -622,3 +622,12 @@ animation: fadeIn 0.3s ease-in-out 1 normal both;
 ```
 
 </details>
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [will-change 与 contain](stage-09-modern-css.md) —— 动画性能的现代解法见现代 CSS 一章
+- [JavaScript 侧的性能优化](../javascript/07-error-handling-and-debugging.md) —— CSS 动画与 JS 批量操作优化的取舍是同一个问题

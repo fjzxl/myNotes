@@ -2,8 +2,9 @@
 title: MoE（混合专家模型）完全入门指南
 tags:
   - ai
+  - llm
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-15
 ---
 # MoE（混合专家模型）完全入门指南
 
@@ -12,6 +13,11 @@ updated: 2026-10-01
 > **学习目标**：读完本文后，你能用通俗语言解释 MoE 是什么、为什么需要它、它是如何工作的，并能看懂相关论文和模型的架构图。
 >
 > **导航**：[MOC - ai](../../notes/MOC%20-%20ai.md) —— AI 知识地图
+>
+> **理论出处**：本文是**科普层**。要往下挖，两条路——
+> - 工程侧：本地 [《AI Engineering》](ai-engineering-guidebook.pdf) p.44「Transformer vs. Mixture of Experts in LLMs」给出选型对比
+> - 理论侧：[机器学习书单](ml-booklist.md) 里的 ④《The Principles of Deep Learning Theory》——它的"深度网络在初始化时的有效理论"正是 MoE 稀疏激活要绕开的表达性问题（专家坍塌、非高斯性累积）
+> - 数学侧：书单里的 ②MML 第 4 章矩阵分解、第 6 章概率——MoE 的负载均衡损失里那些期望与概率不是直觉能补的
 
 ---
 
@@ -731,7 +737,7 @@ graph LR
 
 - [Hugging Face: Mixture of Experts Explained](https://huggingface.co/blog/moe) —— 最直观的 MoE 图解教程
 - [Google AI Blog: Switch Transformer](https://ai.googleblog.com/2021/02/switch-transformers-trillion-parameter.html) —— Google 官方解读
-- [The Pile: MoE Training](https://pile.eleuther.ai/) —— 大规模 MoE 训练实践
+- [The Pile](https://pile.eleuther.ai/) —— GPT-3 级模型训练用的大规模开源文本数据集（约 825 GiB）
 
 ### 开源框架
 
@@ -749,3 +755,13 @@ graph LR
 > MoE 是**"用空间换效率"**的典范——通过增加总参数量（空间），让每个输入只使用一小部分参数（效率），从而在有限的计算预算下获得更强的模型能力。理解门控、稀疏激活和负载均衡，就掌握了 MoE 的精髓。
 >
 > 如果你只能记住三个关键词，请记住：**门控（Gating）、稀疏激活（Sparse Activation）、负载均衡（Load Balancing）**。
+
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - ai](../../notes/MOC%20-%20ai.md)
+- [Claude Code · Agent 编程心得](Claude%20Code.md)
+- [Calico 残留 iptables 规则（负载均衡辅助损失 ↔ 分布式流量治理）](../programming/Linux/calico-iptables-stale-rules.md)

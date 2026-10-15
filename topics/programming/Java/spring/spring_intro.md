@@ -4,7 +4,7 @@ tags:
   - programming
   - java
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-15
 ---
 # spring
 
@@ -15,11 +15,11 @@ updated: 2026-09-10
 1. 核心容器
     核心容器：Spring-beans 和 Spring-core 模块是 Spring 框架的核心模块，包含控制反转（Inversion of Control, IoC）和依赖注入（Dependency Injection, DI）,核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 BeanFactory，工厂模式的实现。BeanFactory 使用控制反转（IOC） 思想将应用程序的配置和依赖性规范与实际的应用程序代码分开。
 2. Spring-AOP
-    Spring-AOP是Spring的另一个核心模块, 在Spring中，他是以JVM的动态代理技术为基础，然后设计出了一系列的Aop横切实现，比如前置通知、返回通知、异常通知等。通过其配置管理特性，Spring AOP 模块直接将面向切面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 AOP。
+    Spring-AOP是Spring的另一个核心模块, 在Spring中，它以 JDK 动态代理与 CGLIB 字节码增强两种代理技术为基础，然后设计出了一系列的Aop横切实现，比如前置通知、返回通知、异常通知等。通过其配置管理特性，Spring AOP 模块直接将面向切面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 AOP。
 3. Spring Data Access(数据访问)
     由Spring-jdbc、Spring-tx、Spring-orm、Spring-jms和Spring-oxm 5个模块组成 。
 4. Web 模块
-    由Spring-web、Spring-webmvc、Spring-websocket和Spring-webmvc-portlet 4个模块组成，Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作。（这部分就是学习SpringMVC，这里可以看出，Springmvc是包含于spring的框架。）
+    （以下模块清单按 **Spring 5.x / 6.x** 描述。）由Spring-web、Spring-webmvc、Spring-websocket和Spring-webflux 4个模块组成；`Spring-webmvc-portlet`（Portlet MVC）是 Spring 3.x/4.x 时代的模块，**Spring 5.0 起已移除**，此处仅作历史沿革保留。Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作。（这部分就是学习SpringMVC，这里可以看出，Springmvc是包含于spring的框架。）
 5. 报文发送
     Spring-messaging是Spring4新加入的一个模块，主要职责是为Spring 框架集成一些基础的报文传送应用。
 6. 单元测试
@@ -95,7 +95,9 @@ Spring IoC/DI使用后可以管理项目中相关对象，让对象管理的事�
 
 Spring容器管理的bean也存在生命周期的概念，在Spring中，Bean的生命周期包括Bean的定义、初始化、使用和销毁4个阶段。
 
-1. Bean 的初始化
+1. Bean 的定义
+    读取配置或扫描类，把配置解析为 BeanDefinition 并注册到容器；此时**还没有创建实例**。
+2. Bean 的初始化
     默认在IOC容器加载时，实例化对象。初始化有两种方式：
    1. 在配置文档中通过指定 init-method 属性来完成。
 
@@ -136,9 +138,19 @@ Spring容器管理的bean也存在生命周期的概念，在Spring中，Bean的
     ```java
     // 得到Spring的上下文环境
     BeanFactory factory = new ClassPathXmlApplicationContext("spring.xml");
-    Person p = (Person) factory.getBean("Person");
+    Person p = (Person) factory.getBean("p");
     ```
 
 3. Bean 的销毁
     配置destroy-method，通过 AbstractApplicationContext 对象，调用其close方法实现bean的销毁过程
 
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../../../notes/MOC%20-%20programming.md)
+- [Spring Bean 生命周期（IoC 容器的运行细节）](spring_lifecycle.md)
+- [Servlet（Java 服务端另一条主线）](../Servlet.md)
+- [VS Code Java 环境](../vscode_Java_dev.md)

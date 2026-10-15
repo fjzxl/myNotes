@@ -170,3 +170,12 @@ updated: 2026-10-01
 3. **C**（is-/has- 前缀表示状态）
 
 </details>
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [CSS-in-JS 与标签模板](../javascript/06-es6-modern-features.md) —— styled-components 底下的标签模板语法在 JS 一章
+- [工程化与构建](../javascript/08-engineering-and-best-practices.md) —— CSS 架构要落到 PostCSS、构建与代码规范上

@@ -4,7 +4,7 @@ tags:
   - programming
   - javascript
 created: 2026-09-10
-updated: 2026-10-01
+updated: 2026-10-15
 ---
 
 # JavaScript 核心知识体系
@@ -179,7 +179,7 @@ updated: 2026-10-01
 | 闭包是怎么形成的？ | 词法作用域、执行上下文 | 第3章 3.1 → 3.2（闭包部分）|
 | `class` 和原型有什么关系？ | 原型链、`__proto__`、构造函数 | 第2章 2.1 → 第3章 3.3 |
 | Promise 为什么能链式调用？ | 事件循环、微任务队列 | 第4章 4.1 → 4.3 |
-| `async/await` 怎么实现的？ | Promise、生成器（Generator） | 第4章 4.3 → 4.4 |
+| `async/await` 怎么实现的？ | Promise、生成器（Generator） | 第4章 4.3 → 4.4 → 4.5 |
 | 事件委托为什么能提升性能？ | DOM 事件流（捕获/冒泡） | 第5章 5.2 |
 | `for...of` 能遍历什么？ | 可迭代协议、`Symbol.iterator` | 第6章 6.2 |
 
@@ -208,7 +208,7 @@ updated: 2026-10-01
 |---------|---------|------------|------|
 | Arrow Function | 箭头函数 | 第1章 | `() => {}` 语法 |
 | Asynchronous Programming | 异步编程 | 第4章 | 非阻塞的任务执行方式 |
-| BigInt | 大整数 | 第2章 | 处理超出 `Number.MAX_SAFE_INTEGER` 的整数 |
+| BigInt | 大整数 | 第1章 | 处理超出 `Number.MAX_SAFE_INTEGER` 的整数 |
 | Callback | 回调函数 | 第4章 | 作为参数传递的函数 |
 | Callback Hell | 回调地狱 | 第4章 | 多层嵌套回调导致的代码难以维护 |
 | Class | 类 | 第2章 | ES6 引入的面向对象语法糖 |
@@ -244,14 +244,14 @@ updated: 2026-10-01
 | Promise | Promise | 第4章 | 异步操作的状态管理对象 |
 | Prototype Chain | 原型链 | 第2章/第3章 | 对象间通过 `__proto__` 链接的继承关系 |
 | Prototype | 原型 | 第2章 | 构造函数上的 `prototype` 属性 |
-| Proxy | 代理 | 第3章/第8章 | 拦截对象基本操作的中间层 |
+| Proxy | 代理 | 第8章（代理模式）；13 种陷阱完整讲解见专题手册 [es6](es6.md) | 拦截对象基本操作的中间层 |
 | Reflow | 重排 | 第5章 | DOM 变化导致布局重新计算 |
 | Repaint | 重绘 | 第5章 | 样式变化导致像素重新渲染 |
 | Rest Parameters | 剩余参数 | 第2章/第6章 | `...args` 收集多余参数 |
 | Scope Chain | 作用域链 | 第3章 | 多个作用域按层级连接成的查找路径 |
 | Spread Operator | 展开运算符 | 第2章/第6章 | `...arr` 展开数组或对象 |
 | Strict Mode | 严格模式 | 第1章/第8章 | 更严格的语法和运行时检查 |
-| Symbol | Symbol | 第2章 | ES6 引入的唯一标识符类型 |
+| Symbol | Symbol | 第1章 | ES6 引入的唯一标识符类型 |
 | Template Literal | 模板字符串 | 第6章 | 反引号包裹、支持 `${}` 插值的字符串 |
 | Throttle | 节流 | 第5章 | 限制函数执行频率 |
 | Tree Shaking | 树摇优化 | 第6章 | 打包时移除未使用的代码 |

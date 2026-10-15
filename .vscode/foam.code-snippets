@@ -4,6 +4,7 @@
   // ====================================================================
   // 使用方法：在 .md 文件中输入 prefix 然后按 Tab
   //   - `daily` + Tab → 每日笔记骨架
+  //   - `jp` + Tab → 日语过关卡（可单独插入）
   //   - `perm` + Tab → 永久笔记骨架
   //   - `lit` + Tab → 文献笔记骨架
   //   - `book` + Tab → 读书笔记骨架
@@ -13,6 +14,9 @@
   //   - `moc` + Tab → MOC 索引页骨架
   //   - `proj` + Tab → 项目笔记骨架
   //   - `code` + Tab → 代码片段骨架
+  //   - `cornell` + Tab → 康奈尔笔记骨架
+  //   - `wl` + Tab → 笔记间 Markdown 相对链接
+  //   - `fm` + Tab → YAML Frontmatter 头部
   //
   // 完整模板（含 Frontmatter 详细字段）请用：
   //   Ctrl+Shift+P → "Foam: Create New Note From Template"
@@ -317,10 +321,10 @@
     "description": "代码片段骨架（完整模板见 templates/code-snippet.md）"
   },
 
-  "🔗 wikilink (quick)": {
+  "🔗 note-link (quick)": {
     "prefix": "wl",
-    "body": "[[${1:target}|${2:display}]]",
-    "description": "快速插入 wikilink（带可选显示文本）"
+    "body": "[${1:display}](${2:relative/path.md})",
+    "description": "快速插入笔记间 Markdown 相对链接（wikilink 已于 2026-10-13 全库停用）"
   },
 
   "📒 cornell (Cornell Notes)": {

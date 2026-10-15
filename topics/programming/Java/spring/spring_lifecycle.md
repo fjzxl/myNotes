@@ -4,13 +4,15 @@ tags:
   - programming
   - java
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-15
 ---
 # spring bean 生命周期
 
 ## 生命周期
 
 Bean 的生命周期 = 实例化 → 属性填充 → Aware 回调 → BeanPostProcessor 前置处理 → 初始化 → BeanPostProcessor 后置处理（AOP 在这里完成） → 就绪使用 → 销毁
+
+> 注：只有前 3 个 Aware（BeanNameAware / BeanClassLoaderAware / BeanFactoryAware）在 BPP 前置处理之前由容器直接回调；后 6 个（Environment … ApplicationContext）实际就是在 BPP **前置处理阶段**由 `ApplicationContextAwareProcessor` 回调的——上表与下图把 9 个 Aware 归为同一阶段是简化画法，相对顺序不变。
 
 ```mermaid
 flowchart TD
@@ -96,7 +98,7 @@ flowchart TD
 
 ### 初始化
 
-spring beean 初始化时调用方式：
+spring bean 初始化时调用方式：
 (1) 添加了 @PostConstruct 的方法
 (2) 实现了 InitializingBean 的 afterPropertiesSet 方法
 (3) 在 \<bean/> 中配置的 init-method 或者 @Bean 中配置 initMethod
@@ -113,3 +115,12 @@ spring beean 初始化时调用方式：
 事件机制基于观察者设计模式（发布 - 订阅模式） 实现的轻量级组件间解耦通信机制，核心作用是让容器内的组件无需直接依赖，通过「发布事件、订阅事件」的方式完成消息传递，尤其适合处理业务解耦场景（比如订单创建后，库存扣减、日志记录、消息推送等逻辑独立订阅事件）。
 ApplicationContext 提供了一套事件机制，在容器发生变动时可以通过ApplicationEvent子类通知到ApplicationListener接口的实现类，做处理。
 
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../../../notes/MOC%20-%20programming.md)
+- [Spring 入门](spring_intro.md)
+- [Servlet 生命周期（容器如何管理对象的一生，可与 Bean 生命周期对照读）](../Servlet.md)

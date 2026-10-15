@@ -647,7 +647,8 @@ link.addEventListener('click', (e) => {
 | 鼠标 | `mousedown` / `mouseup` / `mousemove` | 按下 / 松开 / 移动 |
 | 鼠标 | `mouseenter` / `mouseleave` | 进入 / 离开（不冒泡） |
 | 鼠标 | `mouseover` / `mouseout` | 进入 / 离开（会冒泡） |
-| 键盘 | `keydown` / `keyup` / `keypress` | 按下 / 松开 / 按下字符键 |
+| 键盘 | `keydown` / `keyup` | 按下 / 松开（判断回车用 `keydown` + `e.key === 'Enter'`） |
+| 键盘（已废弃） | ~~`keypress`~~ | MDN 已标记 Deprecated，新代码不要用 |
 | 表单 | `input` / `change` / `submit` | 输入 / 值改变 / 提交 |
 | 触摸 | `touchstart` / `touchmove` / `touchend` | 移动端触摸事件 |
 | 滚动 | `scroll` | 元素或页面滚动 |
@@ -1120,8 +1121,11 @@ list.style.display = 'none';
 list.style.display = '';
 
 // ✅ 方案 B：使用 CSS contain（让浏览器知道这部分独立渲染）
+// ⚠️ 用 content 而不是 strict：strict 含 size containment，语义是「当作没有内容来布局」。
+//    #todoList 是普通流里高度 auto 的元素，套上 strict 后高度会塌成 0，待办列表整块消失。
+//    size / strict 只适合离屏内容测量这类场景。
 // 💡 CSS contain 在 Safari 15 之前支持有限，生产环境建议配合 @supports 检测
-list.style.contain = 'strict'; // 该元素的布局/样式/绘制与其他元素隔离
+list.style.contain = 'content'; // 布局 / 样式 / 绘制与其他元素隔离（不含 size）
 ```
 
 **4. 缓存查询结果**
@@ -1427,7 +1431,7 @@ if (nextLink) {
     });
 
     addBtn.addEventListener('click', addTodo);
-    todoInput.addEventListener('keypress', (e) => {
+    todoInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') addTodo();
     });
 
@@ -1622,7 +1626,7 @@ if (nextLink) {
       if (city) fetchWeather(city);
     });
 
-    cityInput.addEventListener('keypress', (e) => {
+    cityInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') searchBtn.click();
     });
   </script>
@@ -1748,3 +1752,13 @@ document.dispatchEvent(new CustomEvent('app:login', {
 > **本章小结：** 我们学习了 DOM 核心（节点操作、属性修改、样式控制）、事件系统（捕获/目标/冒泡、事件委托、自定义事件）、浏览器 API（定时器、localStorage、Fetch、文件操作）以及前端性能优化技巧（减少重排重绘、防抖节流、懒加载预加载）。
 >
 > **下一章预告：** 在掌握了 DOM 操作和浏览器 API 后，让我们回到语法层面，学习现代 JavaScript（ES6+）带来的语法革新——解构赋值、模板字符串、生成器函数、模块化等让代码更简洁优雅的特性。
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [this 与事件回调](03-core-mechanisms.md) —— addEventListener 回调里的 this 指向规则出自第 3 章
+- [重排重绘性能优化](07-error-handling-and-debugging.md) —— 本章提到的布局抖动问题，第 7 章有批量读写 + rAF 的完整优化方案
+- [PerformanceObserver 观测](08-engineering-and-best-practices.md) —— 本章埋的观测点，在第 8 章被用作 Core Web Vitals 的采集手段

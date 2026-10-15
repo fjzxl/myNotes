@@ -162,7 +162,7 @@ def hello():
 
 # 图片
 
-![width:500px](attachments/images/programming/Java/Servlet/Servlet-lifecircle.png)
+![width:500px](/attachments/images/programming/Java/Servlet/Servlet-lifecircle.png)
 ```
 
 3. 加数学公式（KaTeX）：
@@ -263,9 +263,9 @@ marp demo.md --pdf
 
 **字幕**：
 ```
-📚 完整指南：[[topics/tools/marp-guide]]
-🎯 Servlet 实战：[[topics/programming/Java/slides/Servlet-lifecycle]]
-📐 Cornell × Marp：[[templates/cornell-marp]]
+📚 完整指南：marp-guide
+🎯 Servlet 实战：Servlet-lifecycle
+📐 Cornell × Marp：cornell-marp
 ```
 
 **结束动画**：

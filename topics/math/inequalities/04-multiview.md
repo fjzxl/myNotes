@@ -5,7 +5,7 @@ tags:
   - inequality
   - kaoyan
 created: 2026-10-11
-updated: 2026-10-13
+updated: 2026-10-15
 ---
 
 > 📚 本文是 [不等式](../inequalities.md) 的第 4 / 6 章（总览第五部分）。 上一章：[四、证明：高阶不等式](03-advanced.md) 下一章：[六、应用](05-applications.md)
@@ -377,7 +377,7 @@ $$
 
 *↩ 证明：[Hölder 不等式](03-advanced.md#hölder-不等式)*
 
-- **向量视角**：$\vec a\cdot\vec b\le\|\vec a\|_p\|\vec b\|_q$——Hölder 之于 $p$-范数正如 C-S 之于 2-范数。$p$-范数随 $p$ 增大而减小、最终趋于最大值范数：$p$ 越大越"只看长板"（soft-max）。
+- **向量视角**：$\vec a\cdot\vec b\le\|\vec a\|_p\|\vec b\|_q$——Hölder 之于 $p$-范数正如 C-S 之于 2-范数。$p$-范数随 $p$ 增大而不增、最终趋于最大值范数（sup 范数 / hard-max / 峰值载荷）：$p$ 越大越"只看长板"。
 - **几何视角（$L^p$ 单位球族）**：
 
   ![$L^p$ 单位球：p 越大球越胖，p=1 与 p=∞ 互为对偶](/attachments/images/math/inequalities/lp-unit-balls.png)

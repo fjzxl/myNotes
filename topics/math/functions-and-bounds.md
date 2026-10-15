@@ -245,7 +245,7 @@ $$
 
 互补恒等式：$\arcsin x+\arccos x=\dfrac{\pi}{2}$（$x\in[-1,1]$）；$\arctan x+\operatorname{arccot} x=\dfrac{\pi}{2}$（一切实数）。
 
-**注意** $\arcsin(\sin x)$ 不一定等于 $x$：$x$ 超出主值区间时要先化进去，如 $\arcsin\left(\sin\dfrac{2\pi}{3}\right)=\arcsin\dfrac{\sqrt3}{2}=\dfrac{\pi}{3}$。极限里的重要事实（第二章）：$x\to+\infty$ 时 $\arctan x\to\dfrac{\pi}{2}$，$x\to-\infty$ 时 $\arctan x\to-\dfrac{\pi}{2}$——左右极限不同导致 $\infty$ 处极限不存在。
+**注意** $\arcsin(\sin x)$ 不一定等于 $x$：$x$ 超出主值区间时要先化进去，如 $\arcsin\left(\sin\dfrac{2\pi}{3}\right)=\arcsin\dfrac{\sqrt3}{2}=\dfrac{\pi}{3}$。极限里的重要事实（第一章）：$x\to+\infty$ 时 $\arctan x\to\dfrac{\pi}{2}$，$x\to-\infty$ 时 $\arctan x\to-\dfrac{\pi}{2}$——左右极限不同导致 $\infty$ 处极限不存在。
 
 **初等函数的定义**：由**常数**和**五类基本初等函数**经过**有限次**四则运算与**有限次**复合得到，且**能用一个式子表示**的函数。例：$y=\sqrt{1+\ln^2x}$、$y=e^{-x^2}\sin x$、$y=\dfrac{\arctan x}{1+x^2}$。
 
@@ -253,7 +253,7 @@ $$
 
 - 写不成"一个式子"的：符号函数 $\operatorname{sgn}x$、取整函数 $[x]$（不超过 $x$ 的最大整数）、狄利克雷函数。
 - 但**分段 ≠ 非初等**：$\lvert x\rvert=\sqrt{x^2}$ 是初等函数！判断标准是"能否用一个式子表出"，不是"有没有分段的外形"。
-- 涉及**无限次**运算的：$1+x+x^2+\cdots$（无穷级数，第六章）定义的函数一般不是初等函数。
+- 涉及**无限次**运算的：$1+x+x^2+\cdots$（无穷级数，第八章）定义的函数一般不是初等函数。
 
 知识结构：
 

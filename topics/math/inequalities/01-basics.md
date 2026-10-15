@@ -209,7 +209,7 @@ $\blacksquare$
 
 核心观察：$a,b$ 同序 $\Longleftrightarrow$ 对任意 $i,j$ 都有 $(a_i - a_j)(b_i - b_j) \ge 0$。
 
-**这一步的几何直观**：把数据画成散点图（每个下标一个点 $(a_i,b_i)$），两差同号 $\iff$ 任意两点的连线斜率 $\dfrac{b_i-b_j}{a_i-a_j}$ 非负 $\iff$ 点云整体呈「左下 $\to$ 右上」的正相关走向——这就是「同序」的图像。又因 $S = 2n^2\operatorname{Cov}(a,b)$，其中 $\operatorname{Cov}(a,b)=\dfrac1n\sum_i(a_i-\bar a)(b_i-\bar b)=\overline{ab}-\bar a\bar b$ 是两组数据的**样本协方差**，衡量它们「同涨同跌」的程度（同序为正、反序为负；初学者可先把它读作「平均的同向偏离之积」，详见[多视角 §3](04-multiview.md#3-协方差非负性代数本质)），本证法证的正是「**同序 $\Rightarrow$ 协方差非负**」。展开见[多视角：切比雪夫](04-multiview.md#多视角切比雪夫不等式)的[散点图视角](04-multiview.md#1-散点图视角最直观)与[向量视角](04-multiview.md#4-向量视角)（中心化后夹角不钝）。
+**这一步的几何直观**：把数据画成散点图（每个下标一个点 $(a_i,b_i)$），两差同号意味着每对点的连线**斜率非负（或两点同横坐标、即竖直连线）**，点云整体呈「左下 $\to$ 右上」的正相关走向——这就是「同序」的图像。（斜率在 $a_i=a_j$ 时无定义，而此时乘积恰为 $0$、取等，所以不能写成严格的"斜率非负 $\iff$ 乘积非负"。）又因 $S = 2n^2\operatorname{Cov}(a,b)$，其中 $\operatorname{Cov}(a,b)=\dfrac1n\sum_i(a_i-\bar a)(b_i-\bar b)=\overline{ab}-\bar a\bar b$ 是两组数据的**样本协方差**，衡量它们「同涨同跌」的程度（同序为正、反序为负；初学者可先把它读作「平均的同向偏离之积」，详见[多视角 §3](04-multiview.md#3-协方差非负性代数本质)），本证法证的正是「**同序 $\Rightarrow$ 协方差非负**」。展开见[多视角：切比雪夫](04-multiview.md#多视角切比雪夫不等式)的[散点图视角](04-multiview.md#1-散点图视角最直观)与[向量视角](04-multiview.md#4-向量视角)（中心化后夹角不钝）。
 
 把所有这样的"协方差"对求和：
 $$
@@ -274,6 +274,15 @@ $\blacksquare$
 |:---:|:---|:---|:---|
 | 证明一 | 配对作差 $(a_i-a_j)(b_i-b_j)\ge 0$ | 无（仅用同序定义） | **零基础首选**：自包含、直接引出协方差、几何直观 |
 | 证明二 | 循环移位 + 排序不等式求和 | 排序不等式 | 已经证过排序不等式时最快 |
+
+## 本章原子卡（Zettelkasten）
+
+本篇交付时提取的原子笔记，一概念一卡。卡内正文待填，但**结构与互链已建立**——从卡可以跳回本节，从本节可以跳进卡。
+
+- [三角不等式（Triangle Inequality）](../../../notes/triangle-inequality.md)
+- [均值不等式（AM-GM）](../../../notes/arithmetic-geometric-mean.md)
+- [排序不等式（Rearrangement Inequality）](../../../notes/rearrangement-inequality.md)
+- [切比雪夫不等式（Chebyshev Sum Inequality）](../../../notes/chebyshev-sum-inequality.md)
 
 ---
 

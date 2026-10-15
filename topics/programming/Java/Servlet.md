@@ -4,7 +4,7 @@ tags:
   - programming
   - java
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-15
 ---
 # Servlet
 
@@ -12,7 +12,7 @@ updated: 2026-09-10
 
 ### 父项目
 
-先创建一个no-Archtype的maven项目，删除src和lib文件夹，修改pom.xml，作为父module，主要修改packaging为pom
+先创建一个no-Archetype的maven项目，删除src和lib文件夹，修改pom.xml，作为父module，主要修改packaging为pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -36,7 +36,7 @@ updated: 2026-09-10
 
 ### 子项目
 
-创建一个maven-archetype-webapp项目，路径选则父目录下。
+创建一个maven-archetype-webapp项目，路径选择父目录下。
 
 最后两个pom，父pom
 
@@ -216,7 +216,7 @@ updated: 2026-09-10
   </dependencies>
 ```
 
-## 创建sevlet
+## 创建servlet
 
 1. maven-archetype-webapp 模板没有创建 src/main/java 文件夹
 
@@ -253,12 +253,12 @@ updated: 2026-09-10
 
 ## Servlet的生命周期
 
-Servlet没有 main()方法，不能独立运行，它的运行完全由 Servlet 引擎来控制和调度。 所谓生命周期，指的是 servlet 容器何时创建 servlet 实例、何时调用其方法进行请求的处理、 何时并销毁其实例的整个过程。
+Servlet没有 main()方法，不能独立运行，它的运行完全由 Servlet 引擎来控制和调度。 所谓生命周期，指的是 servlet 容器何时创建 servlet 实例、何时调用其方法进行请求的处理、何时销毁其实例的整个过程。
 
 - **实例和初始化时机**
   当请求到达容器时，容器查找该 servlet 对象是否存在，如果不存在，则会创建实例（通过反射）并进行初始化。
 - **就绪/调用/服务阶段**
-  有请求到达容器，容器调用 servlet 对象的 service()方法,处理请求的方法在整个生命周期中可以被多次调用； HttpServlet 的 service()方法，会依据请求方式来调用 doGet()或者 doPost()方法。但是， 这两个 do 方法默认情况下，会抛出异常，需要子类去 override。
+  有请求到达容器，容器调用 servlet 对象的 service()方法,处理请求的方法在整个生命周期中可以被多次调用； HttpServlet 的 service()方法，会依据请求方式来调用 doGet()或者 doPost()方法。但是，这两个 do 方法默认情况下，会返回 **405 Method Not Allowed**（HTTP/1.0 及更早为 400）错误响应，需要子类去 override 才有实际处理。
 - **销毁时机**
   当容器关闭时（应用程序停止时），会将程序中的 Servlet 实例进行销毁。
 
@@ -271,7 +271,7 @@ Servlet 的生命周期：
   2. Servlet 容器接收 Web Client 的请求。
   3. 根据反射构建Servlet对象（第一次请求会构建，之后不会重复创建对象，直到服务器关闭才会被销毁）
   4. 构建HttpServletRequest 实现类对象、HttpServletResponse 实现类对象 ，处理请求和响应
-  5. Servlet 容器调Servlet对象的service方法，把HttpServletRequest 实现类对象与 HttpServletResponse 实现类对象作为service的参数，供给方法内部使用。
+  5. Servlet 容器调用 Servlet 对象的 service 方法，把 HttpServletRequest 实现类对象与 HttpServletResponse 实现类对象作为 service 的参数，供给方法内部使用。
      1. Servlet 对象调用 HttpServletRequest 实现类对象的有关方法，获取 Http 请求信息
      2. Servlet 对象调用 HttpServletResponse实现类对象的有关方法，生成响应数据
      3. Servlet 容器把 Servlet对象的响应结果传给 Web Client
@@ -320,6 +320,8 @@ HttpServletRequest可以作为一个域对象（request域对象）使用，通�
 public class ServletRequest03 extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // ⚠️ 必须先定编码，再读参数——顺序反了中文必乱码
+        req.setCharacterEncoding("UTF-8");
         // 获取前台传过来的数据：
         String uname = req.getParameter("uname");
         System.out.println("前台传到sr03-Servlet中的uname的数值为：" + uname);
@@ -367,6 +369,11 @@ resp.setCharacterEncoding("UTF-8");
 // 设置浏览器的编码格式：
 resp.setContentType("text/html;charset=UTF-8");
 ```
+
+> ⚠️ **调用时机才是中文乱码的头号原因**——上面三行写对位置才有效：
+> - `req.setCharacterEncoding()` 必须在第一次 `req.getParameter()` / `req.getReader()` **之前**调用；容器只解析一次请求体，之后再设不生效。
+> - `resp.setContentType()` 必须在第一次 `resp.getWriter()` / `resp.getOutputStream()` **之前**调用；流一旦获取，响应的字符集就定死了。
+> - `setCharacterEncoding("UTF-8")` + `setContentType("text/html")` 等价于直接写 `setContentType("text/html;charset=UTF-8")`，二者选其一即可，重复设置易让人误以为要都写。
 
 ### 请求转发与重定向的区别
 
@@ -426,3 +433,14 @@ resp.setContentType("text/html;charset=UTF-8");
   重定向：不会造成表单重复提交
   转发：会造成表单重复提交
 
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../../notes/MOC%20-%20programming.md)
+- [Servlet 生命周期（Marp 幻灯片 · 与本篇生命周期章节配对）](slides/Servlet-lifecycle.md)
+- [Spring 入门（同一 Java 服务端生态）](spring/spring_intro.md)
+- [VS Code Java 环境（跑通本篇示例的环境前提）](vscode_Java_dev.md)
+- [MySQL 安装（后端栈配套）](../MySQL/ubuntu_mysql_install.md)

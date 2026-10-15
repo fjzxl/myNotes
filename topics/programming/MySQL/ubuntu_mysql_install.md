@@ -4,12 +4,12 @@ tags:
   - programming
   - mysql
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-15
 ---
 # 安装mysql
 
 ```shell
-sudo apt info -a mysql-server-8.0
+sudo apt show -a mysql-server-8.0
 sudo apt install mysql-server-8.0
 sudo mysql
 ```
@@ -44,3 +44,12 @@ CREATE TABLE IF NOT EXISTS table_name (
 INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
 ```
+
+---
+
+## 相关笔记
+
+本篇在图谱里的邻居——从这里可以走到相关主题，也能被别人走回来。
+
+- [MOC - programming](../../../notes/MOC%20-%20programming.md)
+- [Servlet（本库另一个后端栈组件，JDBC 那一层通常接在这里）](../Java/Servlet.md)

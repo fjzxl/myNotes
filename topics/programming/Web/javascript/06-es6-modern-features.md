@@ -148,7 +148,8 @@ const list = `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
 ```js
 function highlight(strings, ...values) {
   return strings.reduce((result, str, i) => {
-    // ⚠️ 用三元判断会漏掉 0/false/'' 等合法 falsy 值
+    // ✅ 按下标判断才能正确处理 0 / false / '' 这类合法 falsy 值：
+    //    若写成 values[i] ? `[${values[i]}]` : ''，值恰好为 0 时会被误判成「没传值」
     const val = i < values.length ? `[${values[i]}]` : '';
     return result + str + val;
   }, '');
@@ -163,7 +164,7 @@ highlight`Name: ${name}, Age: ${age}`;
 **应用场景：**
 - **styled-components / CSS-in-JS**：`css\`color: ${props.color}\``
 - **i18n 国际化**：`i18n\`Hello ${name}\``
-- **SQL 查询防注入**：自动转义参数
+- **SQL 参数化**：生成 `$1` 占位符 + 参数数组交给驱动（**不是**「自动转义即可防注入」——数值 / 标识符上下文与转义绕过都可能出问题，详见 [ES6 教程](../es6.md) 标签模板一节）
 
 **关键细节：**
 - `strings` 是模板中纯字符串部分的数组，其长度始终比 `values` 多 1
@@ -1241,3 +1242,13 @@ console.log(avg.next(30).value); // 20
 > **本章小结：** 我们学习了 ES6+ 的语法增强、迭代协议、模块化机制以及后续版本的新特性，并通过实战练习将 ES5 代码重构为现代化的 ES6+ 风格。
 >
 > **下一章预告：** 学会了让代码在浏览器中运行，接下来要思考的是：代码出错了怎么办？下一章将学习 JavaScript 的错误类型、异常处理机制以及如何使用 DevTools 高效调试。
+
+---
+
+## 概念互链
+
+本章的**上一章 / 下一章**只是阅读顺序；这里是**概念上的邻居**——从任一条都能跳到相关概念，遇到「这个和刚才那个是什么关系」时走这里。
+
+- [标签模板与 CSS-in-JS](../css/stage-10-architecture.md) —— 本章的 styled-components 场景，在 CSS 架构一章有取舍讨论
+- [Proxy 与 Vue 响应式](08-engineering-and-best-practices.md) —— Proxy 陷阱的实战价值，体现在第 8 章讲的 Vue 3 响应式实现上
+- [完整的 13 种 Proxy 陷阱](../es6.md) —— 本专题手册有更完整的 Proxy + Reflect 陷阱清单

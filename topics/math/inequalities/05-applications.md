@@ -422,6 +422,17 @@ $$
 | 定积分估计、积分不等式证明 | 积分形式四件套 | 记住"和式 $\to$ 积分" |
 | 范数 / 内积 / 投影估计 | 柯西-施瓦茨、Hölder、Minkowski | $L^p$ 家族 |
 
+## 本章原子卡（Zettelkasten）
+
+本篇交付时提取的原子笔记，一概念一卡。卡内正文待填，但**结构与互链已建立**——从卡可以跳回本节，从本节可以跳进卡。
+
+- [指数与对数不等式](../../../notes/exponential-logarithmic-inequality.md)
+- [三角函数不等式](../../../notes/trigonometric-inequality.md)
+- [积分形式（四件套）](../../../notes/integral-form-inequalities.md)
+
+> 本篇三张卡是**跨簇出口**：指对与三角函数向下连到 Ch1 的 [夹逼准则](../../../notes/squeeze-theorem.md) 与 [两个重要极限](../../../notes/two-important-limits.md)，
+> 把「不等式」与「极限」两簇接在一起——这是目前全库仅有的两条跨簇通路。
+
 ---
 
 > ↩ [返回总览](../inequalities.md)

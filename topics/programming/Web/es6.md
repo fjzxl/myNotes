@@ -4,7 +4,7 @@ tags:
   - programming
   - web
 created: 2026-09-10
-updated: 2026-10-10
+updated: 2026-10-15
 ---
 # ES6 教程
 
@@ -47,7 +47,7 @@ ES6 在设计时充分考虑了静态分析的需求。ES 模块的静态导入/
 | 面向对象 | Class 语法、`extends`、`super`、静态方法 | 原型继承语法晦涩、不符合直觉 | ES2022 增加私有字段 `#` |
 | 模块化 | `import`/`export`、默认导出、命名空间导出 | 缺乏官方模块标准、AMD/CommonJS 碎片化 | ES2020 动态导入、`import.meta` |
 | 异步编程 | Promise、`then`/`catch`、静态方法 | 回调地狱、错误处理困难 | ES2017 `async/await`、ES2024 `Promise.withResolvers` |
-| 数据结构 | `Map`、`Set`、`WeakMap`、`WeakSet` | 对象键只能是字符串、缺乏集合抽象 | 无重大变化 |
+| 数据结构 | `Map`、`Set`、`WeakMap`、`WeakSet` | 对象键只能是字符串/Symbol、无法用对象等值作键、缺乏集合抽象 | 无重大变化 |
 | 新类型 | `Symbol`、Well-Known Symbols、全局注册表 | 属性名冲突、无法定义不可枚举的内部属性 | 持续增加新的 Well-Known Symbols |
 | 迭代协议 | `for...of`、可迭代协议、迭代器协议 | `for...in` 遍历属性而非值、自定义迭代困难 | ES2018 异步迭代器 + `for await...of` 语法 |
 | 生成器 | `function*`、`yield`、双向通信 | 无法暂停/恢复函数执行、无限序列表达困难 | ES2018 异步生成器 |
@@ -95,7 +95,7 @@ ES6 在设计时充分考虑了静态分析的需求。ES 模块的静态导入/
 console.log(a); // undefined（不会报错）
 var a = 1;
 
-// let：不存在变量提升
+// let：声明被提升但不初始化（TDZ），声明前访问报错
 console.log(b); // ReferenceError: Cannot access 'b' before initialization
 let b = 2;
 
@@ -863,7 +863,9 @@ if (condition) {
 }
 
 // 同时支持 await 在顶层（Top-level await，ES2022）
-// const data = await import('./data.json', { assert: { type: 'json' } });
+// ⚠️ Import Attributes（ES2025）已把 assert 正式改名为 with：
+// const data = await import('./data.json', { with: { type: 'json' } });
+//    旧写法 { assert: { type: 'json' } } 是历史写法，新代码别再写。
 ```
 
 ### 9.4 `import.meta`（ES2020）
@@ -1541,6 +1543,9 @@ const proxy = new Proxy(target, {
   
   // 判断属性是否存在
   has(target, prop) {
+    // ⚠️ prop 可能是 Symbol（如 Symbol.iterator in proxy），Symbol.prototype 没有
+    //    startsWith，直接调会抛 TypeError——必须先过滤类型
+    if (typeof prop === 'symbol') return Reflect.has(target, prop);
     return prop in target && !prop.startsWith('_');
   },
   
@@ -1810,7 +1815,7 @@ ES2024           Object.groupBy / Map.groupBy、Promise.withResolvers、正则 v
 | 特性 | `var` | `let` | `const` |
 |------|-------|-------|---------|
 | 作用域 | 函数作用域 | 块级作用域 | 块级作用域 |
-| 提升 | ✅ 提升，初始化为 `undefined` | ❌ TDZ（暂时性死区） | ❌ TDZ |
+| 提升 | ✅ 提升，初始化为 `undefined` | ⚠️ 提升但不初始化，处于 TDZ | ⚠️ 提升但不初始化，处于 TDZ |
 | 重复声明 | ✅ 允许 | ❌ 不允许 | ❌ 不允许 |
 | 重新赋值 | ✅ 允许 | ✅ 允许 | ❌ 不允许（绑定不可变） |
 | 声明时初始化 | 不需要 | 不需要 | **必须** |

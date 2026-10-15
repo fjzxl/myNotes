@@ -50,10 +50,11 @@ MiniMax151938 · 2026-09-10
 
 1. 什么是 Servlet
 2. Servlet 容器
-3. **生命周期四阶段**
+3. **生命周期五阶段**
    - 加载与实例化
    - `init()`
-   - `service()` → `doGet/doPost`
+   - `service()`
+   - `doGet` / `doPost`（由 `service()` 分派）
    - `destroy()`
 4. 关键方法总结
 

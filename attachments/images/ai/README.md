@@ -22,8 +22,8 @@ ai/
 
 ## 引用
 
-在 `topics/ai/*.md` 中：
+在 `topics/ai/*.md` 中用标准 Markdown 图片语法（绝对路径以 `/attachments/` 开头）：
 
 ```markdown
-见 [[attachments/images/ai/model-architecture/transformer.png]]
+![Transformer 架构](/attachments/images/ai/model-architecture/transformer.png)
 ```
