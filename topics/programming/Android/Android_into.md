@@ -2,9 +2,7 @@
 title: Android 入门
 tags:
   - programming
-  - android
-created: 2026-09-10
-updated: 2026-10-10
+  - programming/android
 ---
 # Android 入门
 

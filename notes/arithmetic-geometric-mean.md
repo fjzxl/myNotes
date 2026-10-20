@@ -3,9 +3,8 @@ title: 均值不等式（AM-GM）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 均值不等式（AM-GM）

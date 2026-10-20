@@ -1,15 +1,10 @@
 ---
 title: Foam 使用指南
 tags:
-  - knowledge-management
-  - vscode
-  - markdown
+  - tools/knowledge-management
+  - tools/vscode
+  - tools/markdown
   - tools
-aliases:
-  - Foam 知识库搭建
-  - Foam Guide
-created: 2026-09-10
-updated: 2026-10-15
 ---
 
 # Foam 使用指南：搭建类 Obsidian 知识库
@@ -176,6 +171,27 @@ tags:
 正文 #ai 内容 #机器学习
 ```
 
+> ✅ **标签支持层级**：用斜杠命名——`programming/javascript` 会让 Tag Explorer 以树形展示（`javascript` 挂在 `programming` 节点下）。已知限制：深层嵌套在面板中可能只展开一级（[foam#1134](https://github.com/foambubble/foam/issues/1134)），因此本库默认 2 级、最多 3 级（硬上限 5 级）。
+
+**本库标签层级表**（2026-10-20 定稿；新增子标签先在此登记。二、三级列省略一级前缀）：
+
+| 一级（学科伞形） | 二级 | 三级 |
+|------|------|------|
+| `programming` | `web` · `java` · `linux` · `qemu` · `cpp` · `mysql` · `android` · `kubernetes` · `network` | `web/javascript` · `web/css` · `web/html` · `web/typescript`；`linux/kernel` |
+| `ai` | `machine-learning` · `llm` · `agent` · `ai-engineering` · `infra` · `mcp` · `book` · `booklist` · `reading-plan` · `career` · `fde` · `coding` · `hands-on` · `learning-path` · `moc-candidate` | —（`machine-learning` 下预留 `deep-learning`、`reinforcement-learning`） |
+| `math` | `calculus` · `inequality` | — |
+| `exams` | `ruankao` | `ruankao/system-architect` · `ruankao/essay` |
+| `languages` | `japanese` | `japanese/kana` |
+| `tools` | `marp` · `markdown` · `vscode` · `knowledge-management` | `marp/screencast` |
+| `history` | `人物` / `事件`（预留，历史线未展开） | — |
+
+**四条规则**：
+
+1. **双保险书写**：frontmatter 同时带伞形与嵌套全名（如 `programming` + `programming/web/javascript`）——Tag Explorer 树中二者合并显示，而 `Foam: Search Tag` 是精确匹配，保留伞形才能按学科一键命中；
+2. **层级纪律**：默认 2 级、最多 3 级（硬上限 5 级），新层级先查表登记；
+3. **用途标签不进层级**：`kaoyan`（考研）、`permanent-note`、`moc`、`daily-note`、`journal`、`workflow`、`project`、`plan`、`review`、`flashcards`、`archive`、`inbox`、`readme`、`attachments` 家族与模板名标签保持扁平；
+4. **资产目录**：`attachments/` 的主题 README 用 `[attachments, images, 学科伞形]` 标注资产归属（如 `attachments/images/math/README` 带 `math`），不算学科笔记。
+
 ### 4.4 Graph（图谱）
 
 `Ctrl+Shift+P` → `Foam: Show Graph`，会在 VS Code 内部的面板中可视化所有笔记及其连接（无需浏览器，也不依赖本地服务）：
@@ -322,7 +338,7 @@ Foam 支持引用具体段落（需开启实验性功能）：
     {
       "name": "📅 日记",
       "colorBy": "tag",
-      "groups": [{ "label": "日记", "query": "tag:daily-notes" }]
+      "groups": [{ "label": "日记", "query": "tag:daily-note" }]
     }
   ]
 }

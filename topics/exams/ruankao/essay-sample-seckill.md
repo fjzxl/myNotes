@@ -2,12 +2,8 @@
 title: 软考论文范文 · 论秒杀场景及其技术解决方案
 tags:
   - exams
-  - ruankao
-  - essay
-aliases:
-  - 秒杀论文范文
-created: 2026-10-02
-updated: 2026-10-15
+  - exams/ruankao
+  - exams/ruankao/essay
 ---
 
 # 软考论文范文 · 论秒杀场景及其技术解决方案

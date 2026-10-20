@@ -3,9 +3,8 @@ title: 权方和不等式
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 权方和不等式

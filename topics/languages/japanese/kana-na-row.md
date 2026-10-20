@@ -2,13 +2,8 @@
 title: 五十音 · な行（na ni nu ne no）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - な行
-  - na行
-created: 2026-10-11
-updated: 2026-10-12
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # な行 · 五个音（な に ぬ ね の）

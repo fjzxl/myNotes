@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第五阶段：背景与装饰 —— 让页面更丰富"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/css
 ---
 
 # 第五阶段：背景与装饰 —— 让页面更丰富

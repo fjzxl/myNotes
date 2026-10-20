@@ -2,13 +2,8 @@
 title: 五十音 · あ行（元音 a i u e o）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - あ行
-  - a行
-created: 2026-10-08
-updated: 2026-10-11
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # あ行 · 五个元音（あ い う え お）

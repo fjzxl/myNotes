@@ -1,10 +1,10 @@
 ---
-title: History MOC (local)
+title: 历史学习（History）
 tags:
   - history
-  - moc
+  - readme
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-20
 ---
 
 # 🏛️ History · 历史

@@ -2,13 +2,8 @@
 title: 五十音 · は行（ha hi fu he ho）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - は行
-  - ha行
-created: 2026-10-11
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # は行 · 五个音（は ひ ふ へ ほ）

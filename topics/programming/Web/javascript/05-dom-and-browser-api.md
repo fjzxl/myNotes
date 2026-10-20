@@ -2,9 +2,7 @@
 title: "JavaScript 核心知识体系 · 五、DOM 操作与浏览器 API"
 tags:
   - programming
-  - javascript
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/javascript
 ---
 
 # 五、DOM 操作与浏览器 API

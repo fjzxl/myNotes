@@ -3,9 +3,8 @@ title: 长音的构成与辨义
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 长音的构成与辨义

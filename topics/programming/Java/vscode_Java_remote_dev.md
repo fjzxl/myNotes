@@ -2,9 +2,7 @@
 title: 远程Java development
 tags:
   - programming
-  - java
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/java
 ---
 # 远程Java development
 

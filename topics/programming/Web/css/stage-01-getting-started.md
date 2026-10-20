@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第一阶段：初识 CSS —— 先让样式生效"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/css
 ---
 
 # 第一阶段：初识 CSS —— 先让样式生效

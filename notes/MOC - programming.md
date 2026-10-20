@@ -102,9 +102,10 @@ updated: 2026-10-11
 
 Foam 没有图谱查询语法。按标签筛选用左侧 **Tag Explorer** 面板，或 `Ctrl+Shift+P` → `Foam: Search Tag`；连接与孤立情况在 `Foam: Show Graph` 面板查看。
 
-- `programming` —— 所有编程笔记
-- `java` —— Java 专题
-- `linux` —— Linux 专题
+- `programming` —— 所有编程笔记（学科伞形，Tag Explorer 树的根）
+- `programming/web/javascript` / `programming/web/css` / `programming/web/typescript` —— 前端三件套
+- `programming/java` —— Java 专题
+- `programming/linux`（含 `programming/linux/kernel`）—— Linux 专题
 
 ## 相关 MOC
 

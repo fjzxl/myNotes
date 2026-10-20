@@ -3,9 +3,8 @@ title: 拨音（ん）与音变
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 拨音（ん）与音变

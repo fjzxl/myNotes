@@ -2,13 +2,8 @@
 title: 五十音 · ら行（ra ri ru re ro）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - ら行
-  - ra行
-created: 2026-10-11
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # ら行 · 五个音（ら り る れ ろ）

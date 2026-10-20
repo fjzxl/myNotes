@@ -2,10 +2,8 @@
 title: 不等式 · 三、证明：核心工具不等式
 tags:
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-11
-updated: 2026-10-13
 ---
 
 > 📚 本文是 [不等式](../inequalities.md) 的第 2 / 6 章（总览第三部分）。 上一章：[二、证明：基础不等式](01-basics.md) 下一章：[四、证明：高阶不等式](03-advanced.md)

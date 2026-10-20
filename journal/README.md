@@ -2,7 +2,7 @@
 title: Journal
 tags:
   - journal
-  - daily-notes
+  - daily-note
 ---
 
 # 📔 Journal · 笔记日志

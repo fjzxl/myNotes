@@ -3,9 +3,8 @@ title: 切比雪夫不等式（Chebyshev Sum Inequality）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 切比雪夫不等式（Chebyshev Sum Inequality）

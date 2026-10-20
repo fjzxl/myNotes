@@ -9,6 +9,7 @@ tags:
 # 🖼️ Math Images · 数学主题相关图片
 
 > 存放在数学学习/研究中引用的图片：几何直观图、图解证明、函数图像等。
+> 服务对象：[不等式专题](../../../topics/math/inequalities.md)（inequalities/ 插图）与[界与函数](../../../topics/math/calculus/functions-and-bounds.md)（curves/ 曲线图）；总索引见 [MOC - math](../../../notes/MOC%20-%20math.md)。
 
 ## 当前结构
 

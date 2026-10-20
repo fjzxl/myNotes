@@ -2,9 +2,7 @@
 title: VS Code C/C++ 环境配置
 tags:
   - programming
-  - cpp
-created: 2026-09-10
-updated: 2026-10-10
+  - programming/cpp
 ---
 # VS Code C/C++ 环境配置
 

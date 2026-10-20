@@ -3,9 +3,8 @@ title: 罗马字与发音不一致的 7 个音
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 罗马字与发音不一致的 7 个音

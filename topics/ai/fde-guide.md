@@ -2,17 +2,15 @@
 title: 前线部署工程师 FDE（范冰）· 开源书索引
 tags:
   - ai
-  - career
-  - fde
-  - book
-created: 2026-10-15
-updated: 2026-10-15
+  - ai/career
+  - ai/fde
+  - ai/book
 ---
 
 # 前线部署工程师（FDE）：人工智能时代的客户价值交付秘籍
 
-> 开源免费书，**本地 PDF**：[fde-1.0.24.pdf](fde-1.0.24.pdf)（v1.0.24 合并版）
-> 仓库：<https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer>（5.1k star / 601 fork）
+> 开源免费书，**本地 PDF**：[fde-1.0.24.pdf](fde-1.0.24.pdf)（v1.0.24 合并版，3.0 MB，2026-10-16 下载）
+> 仓库：<https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer>（5.1k star / 602 fork，2026-10-16 核验）
 > 官网（手机端体验更好）：<https://fde4.ai>
 > 作者：范冰（网名 XDash），《增长黑客》作者
 
@@ -90,13 +88,31 @@ GitHub 仓库的 `license` 字段**为空**（没有 LICENSE 文件），但作�
 
 ---
 
+## 六、生态与延伸资源（2026-10-16 核验）
+
+范冰的书是中文世界的系统框架，英文世界同期长出了一圈互补资源。四个仓库当日实测活跃（星标 / 许可 / 更新时间均为 2026-10-16 核验值）：
+
+| 仓库 | 是什么 | 在本库怎么用 |
+|---|---|---|
+| [Awesome-FDE-Roadmap](https://github.com/pierpaolo28/Awesome-FDE-Roadmap)（1.4k★，MIT，2026-09 活跃） | 英文世界的 FDE 硬技能路线图：三段主课程（数据工程 → 云架构 → 咨询思维）+ AI 实战手册（多智能体编排、LLM 评测、企业 RAG 蓝图）+ 空气隔离 / 边缘部署 + 面试黑皮书与可直接复制的模板库 | 技能对照清单——范冰书给方法论，这份给硬技能清单；求职面试前翻 Interview Blackbook |
+| [FDEOps](https://github.com/suboss87/FDEOps)（966★，MIT，2026-10 活跃） | 把 FDE 方法论做成 AI coding agent 的技能包：`npx skills add suboss87/fdeops`，含 discover / scope / options / build / verify 等任务技能与跨会话的「客户记忆」 | 与本库 [Claude Code](Claude%20Code.md) 心得、[Agent 实操线](agent-practice-plan.md) 直接同构——「任务书 + 验收 + 协调」的工具化参考实现，实操线阶段 C 可试装对照 |
+| [awesome-fde-resources](https://github.com/global-fde/awesome-fde-resources)（302★，CC-BY-4.0） | 双语精选清单：入门 19 / 实践 15 / 案例 8 / 工具 17，附中文资源区 | 横向入口——找工具与案例先查它；其收录的 ai-engineering-field-guide（基于 146 份 FDE 岗位 JD 的技能分析）对求职线直接有用 |
+| [fde-reader《FDE入门到精通》](https://github.com/feigaobox10/fde-reader)（138★，CC BY-NC-SA 4.0） | 从 AI Engineer World's Fair 2026 FDE 议程八场演讲改写的双语电子书（84 页 PDF + 在线 HTML），含实践手册与 54 项术语表；作者声明为非官方独立改写，数据以原演讲为准 | **本地 PDF：[fde-reader-zh-cn.pdf](fde-reader-zh-cn.pdf)**——范冰书的「英文现场版」；第 7 课「把客户现场变成最高保真的评测集」正好接 [Agent 实操线](agent-practice-plan.md) 阶段 D 的评估集练习 |
+
+分工一句话：**范冰书建框架 → fde-reader 看英文世界的现场案例 → Roadmap 补硬技能清单 → FDEOps 给工具化参照 → awesome 清单做横向索引。** 五者也互相咬合（awesome 清单已同时收录 xdash 的书与 Roadmap）。
+
+---
+
 ## 相关笔记
 
 - [MOC - ai](../../notes/MOC%20-%20ai.md) —— AI 知识地图
 - [深入理解 AI Agent](understanding-ai-agent.md) —— 技术侧：Agent 系统怎么造
-- [机器学习书单与 16 周学习计划](ml-booklist.md) —— 理论书单
+- [机器学习书单与完整阅读计划](ml-booklist.md) —— 理论书单
 - [笔记编撰计划](../../projects/note-writing-plan.md) —— 含前端求职线
 
 ## 更新记录
+
+- **2026-10-16** 下载本地 PDF（v1.0.24，3,097,733 字节，与仓库 main 分支源文件同大小），补上此前缺失的 `fde-1.0.24.pdf` 链接目标；核验 star/fork（5.1k / 602）、VERSION（1.0.24，仍为最新）与 README 授权声明（笔记引文与原文逐字一致）。
+- **2026-10-16** 新增第六节「生态与延伸资源」：核验并收录 Awesome-FDE-Roadmap / FDEOps / awesome-fde-resources / fde-reader 四个仓库（星标、许可、活跃度当日核验），下载 fde-reader 中文版 PDF（84 页，5.5 MB）为 `fde-reader-zh-cn.pdf`；标注各自与 Claude Code / Agent 实操线 / 求职线的对接用法。
 
 - **2026-10-15** 初始创建：收录 v1.0.24，记录作者授权状态与章节结构，仅存 PDF 与索引、不收录正文（无 LICENSE + 作者授权仅限个人阅读与非商业分享）。

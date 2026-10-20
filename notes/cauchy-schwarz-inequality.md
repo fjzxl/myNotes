@@ -3,9 +3,8 @@ title: 柯西-施瓦茨不等式（Cauchy-Schwarz）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 柯西-施瓦茨不等式（Cauchy-Schwarz）

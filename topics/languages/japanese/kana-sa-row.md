@@ -2,13 +2,8 @@
 title: 五十音 · さ行（sa shi su se so）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - さ行
-  - sa行
-created: 2026-10-11
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # さ行 · 五个音（さ し す せ そ）

@@ -2,19 +2,14 @@
 title: 不等式
 tags:
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-aliases:
-  - Inequalities
-  - 不等式专题
-created: 2026-09-10
-updated: 2026-10-13
 ---
 
 # 不等式
 
 > 本专题按 **「简述 → 证明 → 多视角 → 应用」** 四段组织：先在总览中一览全部不等式，再按依赖顺序逐个详细证明，然后换镜头理解直觉，最后落到应用场景；末尾以**口诀速记**收拢记忆，并以**分层习题**检验掌握（[习题章](inequalities/06-exercises.md)）。
-> 建议完成[基础概念（界与函数）](functions-and-bounds.md)和高数**第二章**（导数与微分）后开始学习。
+> 建议完成[基础概念（界与函数）](calculus/functions-and-bounds.md)和高数**第二章**（导数与微分）后开始学习。
 > 导航：[MOC - math](../../notes/MOC%20-%20math.md) · 配套模板：[cornell-note](../../templates/cornell-note.md)、[book-chapter](../../templates/book-chapter.md) · [章节导航](#章节导航)在总览表之后
 
 > 🚪 **入门阅读路径（第一次读建议走这条）**

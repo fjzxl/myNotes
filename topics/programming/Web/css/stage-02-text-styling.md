@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第二阶段：给文字"化妆" —— 最直观的改变"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web/css
 ---
 
 # 第二阶段：给文字"化妆" —— 最直观的改变

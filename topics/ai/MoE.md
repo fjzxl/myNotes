@@ -2,9 +2,7 @@
 title: MoE（混合专家模型）完全入门指南
 tags:
   - ai
-  - llm
-created: 2026-09-10
-updated: 2026-10-15
+  - ai/llm
 ---
 # MoE（混合专家模型）完全入门指南
 
@@ -15,7 +13,7 @@ updated: 2026-10-15
 > **导航**：[MOC - ai](../../notes/MOC%20-%20ai.md) —— AI 知识地图
 >
 > **理论出处**：本文是**科普层**。要往下挖，两条路——
-> - 工程侧：本地 [《AI Engineering》](ai-engineering-guidebook.pdf) p.44「Transformer vs. Mixture of Experts in LLMs」给出选型对比
+> - 工程侧：[《AI Engineering》导读](ai-engineering.md) —— 本地 PDF p.44「Transformer vs. Mixture of Experts in LLMs」给出选型对比
 > - 理论侧：[机器学习书单](ml-booklist.md) 里的 ④《The Principles of Deep Learning Theory》——它的"深度网络在初始化时的有效理论"正是 MoE 稀疏激活要绕开的表达性问题（专家坍塌、非高斯性累积）
 > - 数学侧：书单里的 ②MML 第 4 章矩阵分解、第 6 章概率——MoE 的负载均衡损失里那些期望与概率不是直觉能补的
 

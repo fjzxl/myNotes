@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第三阶段：盒模型与显示模式 —— 理解元素的空间占用"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/css
 ---
 
 # 第三阶段：盒模型与显示模式 —— 理解元素的空间占用

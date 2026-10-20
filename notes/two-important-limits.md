@@ -43,3 +43,4 @@ $$\lim_{x\to 0}\frac{\sin x}{x}=1 \qquad\qquad \lim_{x\to\infty}\left(1+\frac1x\
 
 - [夹逼准则](squeeze-theorem.md)
 - [单调有界定理](monotone-bounded-convergence.md)
+- [幂指式极限](power-form-limit.md)（$1^\infty$ 快算法的工程化封装）

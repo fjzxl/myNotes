@@ -2,14 +2,8 @@
 title: 五十音（Kana）· 标日入门单元
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - 五十音图
-  - 平假名
-  - 片假名
-created: 2026-10-08
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 五十音（Kana）· 标日入门单元

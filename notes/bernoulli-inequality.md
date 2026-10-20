@@ -3,9 +3,8 @@ title: 伯努利不等式（Bernoulli Inequality）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 伯努利不等式（Bernoulli Inequality）

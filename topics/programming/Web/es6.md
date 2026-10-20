@@ -2,9 +2,8 @@
 title: ES6 教程
 tags:
   - programming
-  - web
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web
+  - programming/web/javascript
 ---
 # ES6 教程
 

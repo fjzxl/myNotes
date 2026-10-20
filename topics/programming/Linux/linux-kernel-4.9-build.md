@@ -2,14 +2,9 @@
 title: Linux 4.9 内核编译
 tags:
   - programming
-  - linux
-  - kernel
-  - qemu
-aliases:
-  - Linux Kernel 4.9 Build
-  - 内核编译
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/linux
+  - programming/linux/kernel
+  - programming/qemu
 ---
 
 # Linux 4.9 内核编译

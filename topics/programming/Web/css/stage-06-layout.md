@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第六阶段：布局系统 —— 让元素各就各位"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web/css
 ---
 
 # 第六阶段：布局系统 —— 让元素各就各位

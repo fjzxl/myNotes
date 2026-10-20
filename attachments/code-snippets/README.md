@@ -8,6 +8,7 @@ tags:
 # 💾 Code Snippets · 代码片段
 
 > **重用代码**的归档位置。从仓库里的 `README.md` 历史描述："Code_Snippet —— 使用过的代码，重要且会重复使用。有必要记录起来。"
+> 配套模板：[code-snippet](../../templates/code-snippet.md)。
 
 ## 组织方式
 

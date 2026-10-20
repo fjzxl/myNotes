@@ -2,13 +2,8 @@
 title: 系统架构设计师备考大纲（软考高级）
 tags:
   - exams
-  - ruankao
-  - system-architect
-aliases:
-  - 软考架构师备考
-  - 系统架构设计师
-created: 2026-10-02
-updated: 2026-10-12
+  - exams/ruankao
+  - exams/ruankao/system-architect
 ---
 
 # 系统架构设计师备考大纲（软考高级）

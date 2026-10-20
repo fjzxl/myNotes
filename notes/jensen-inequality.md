@@ -3,9 +3,8 @@ title: 琴生不等式（Jensen Inequality）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 琴生不等式（Jensen Inequality）

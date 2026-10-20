@@ -2,10 +2,8 @@
 title: 不等式 · 四、证明：高阶不等式
 tags:
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-11
-updated: 2026-10-13
 ---
 
 > 📚 本文是 [不等式](../inequalities.md) 的第 3 / 6 章（总览第四部分）。 上一章：[三、证明：核心工具不等式](02-core-tools.md) 下一章：[五、多视角理解：向量·矩阵·几何·物理](04-multiview.md)

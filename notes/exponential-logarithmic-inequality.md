@@ -3,9 +3,8 @@ title: 指数与对数不等式
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 指数与对数不等式

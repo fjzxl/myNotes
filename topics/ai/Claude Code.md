@@ -2,10 +2,8 @@
 title: Claude Code
 tags:
   - ai
-  - agent
-  - coding
-created: 2026-09-10
-updated: 2026-10-10
+  - ai/agent
+  - ai/coding
 ---
 # Claude Code 使用心得（Agent 编程实战）
 
@@ -73,6 +71,7 @@ updated: 2026-10-10
 
 ## 相关链接
 
+- [Agent 实操线](agent-practice-plan.md) —— 把本文四种拓扑逐一用上的练习计划（109 实验五阶段）
 - [MoE](MoE.md) —— 模型侧的"分配任务"：混合专家架构
 - [MOC - ai](../../notes/MOC%20-%20ai.md) —— AI 知识地图
 - [MOC - programming](../../notes/MOC%20-%20programming.md) —— 编程实践地图

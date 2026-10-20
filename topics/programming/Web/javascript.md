@@ -2,9 +2,7 @@
 title: JavaScript 核心知识体系
 tags:
   - programming
-  - javascript
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web/javascript
 ---
 
 # JavaScript 核心知识体系

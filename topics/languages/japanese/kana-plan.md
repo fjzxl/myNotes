@@ -2,13 +2,8 @@
 title: 五十音每日计划（2026-10-12 起 · 三周）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - 五十音计划
-  - 五十音日历
-created: 2026-10-08
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 五十音每日计划（2026-10-12 起 · 三周）

@@ -1,12 +1,9 @@
 ---
 title: Marp 录屏脚本
 tags:
-  - marp
-  - screencast
-  - tutorial
+  - tools/marp
+  - tools/marp/screencast
   - tools
-created: 2026-09-10
-updated: 2026-10-11
 ---
 
 # 🎬 录屏脚本：5 分钟学会 Marp

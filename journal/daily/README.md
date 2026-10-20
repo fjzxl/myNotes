@@ -1,7 +1,7 @@
 ---
 title: Daily Notes
 tags:
-  - daily-notes
+  - daily-note
   - workflow
 ---
 

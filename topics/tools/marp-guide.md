@@ -1,16 +1,9 @@
 ---
 title: Marp 使用指南
 tags:
-  - marp
-  - slides
-  - presentation
-  - markdown
+  - tools/marp
+  - tools/markdown
   - tools
-aliases:
-  - Marp Guide
-  - Marp 幻灯片
-created: 2026-09-10
-updated: 2026-10-15
 ---
 
 # Marp 使用指南：Markdown 写 PPT

@@ -2,13 +2,8 @@
 title: 五十音 · か行（ka ki ku ke ko）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - か行
-  - ka行
-created: 2026-10-11
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # か行 · 五个音（か き く け こ）

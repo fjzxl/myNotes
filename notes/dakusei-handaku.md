@@ -3,9 +3,8 @@ title: 浊音与半浊音体系
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 浊音与半浊音体系

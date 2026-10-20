@@ -2,12 +2,7 @@
 title: 日语学习大纲（兴趣向 · 标日 + JLPT 分级）
 tags:
   - languages
-  - japanese
-aliases:
-  - 日语学习大纲
-  - 日语
-created: 2026-10-08
-updated: 2026-10-08
+  - languages/japanese
 ---
 
 # 日语学习大纲（兴趣向 · 标日 + JLPT 分级）

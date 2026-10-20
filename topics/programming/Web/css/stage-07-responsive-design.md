@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第七阶段：响应式设计 —— 适配不同屏幕"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/css
 ---
 
 # 第七阶段：响应式设计 —— 适配不同屏幕

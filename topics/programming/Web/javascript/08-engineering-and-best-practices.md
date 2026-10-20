@@ -2,9 +2,7 @@
 title: "JavaScript 核心知识体系 · 八、工程化与最佳实践"
 tags:
   - programming
-  - javascript
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/javascript
 ---
 
 # 八、工程化与最佳实践

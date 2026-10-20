@@ -2,13 +2,8 @@
 title: 五十音 · ま行（ma mi mu me mo）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - ま行
-  - ma行
-created: 2026-10-11
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # ま行 · 五个音（ま み む め も）

@@ -3,9 +3,8 @@ title: 三角不等式（Triangle Inequality）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 三角不等式（Triangle Inequality）

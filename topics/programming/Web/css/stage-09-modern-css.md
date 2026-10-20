@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第九阶段：现代 CSS 进阶特性"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web/css
 ---
 
 # 第九阶段：现代 CSS 进阶特性

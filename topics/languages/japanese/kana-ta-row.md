@@ -2,13 +2,8 @@
 title: 五十音 · た行（ta chi tsu te to）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - た行
-  - ta行
-created: 2026-10-11
-updated: 2026-10-12
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # た行 · 五个音（た ち つ て と）

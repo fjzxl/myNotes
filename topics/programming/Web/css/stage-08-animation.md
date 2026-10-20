@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第八阶段：动画与交互 —— 让页面动起来"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web/css
 ---
 
 # 第八阶段：动画与交互 —— 让页面动起来

@@ -2,9 +2,7 @@
 title: "JavaScript 核心知识体系 · 一、语言基础"
 tags:
   - programming
-  - javascript
-created: 2026-09-10
-updated: 2026-10-15
+  - programming/web/javascript
 ---
 
 # 一、语言基础

@@ -2,12 +2,10 @@
 title: 深入理解 AI Agent（李博杰）· 开源书索引
 tags:
   - ai
-  - agent
-  - mcp
-  - book
-  - reading-plan
-created: 2026-10-15
-updated: 2026-10-15
+  - ai/agent
+  - ai/mcp
+  - ai/book
+  - ai/reading-plan
 ---
 
 # 深入理解 AI Agent：设计原理与工程实践
@@ -49,7 +47,7 @@ updated: 2026-10-15
 
 配套 **109 个实验**（含本地项目与外部复现轨道），支持 Python 3.11–3.13，用 `uv` 管理环境。第 6、7、8、10 章另有 22 个外部仓库**未内置**（出于体积与版权），需按附录说明自行克隆。
 
-另有姊妹篇《深入理解 AI Infra》：<https://github.com/bojieli/ai-infra-book>
+另有姊妹篇《深入理解 AI Infra：量化分析与系统设计》：[understanding-ai-infra](understanding-ai-infra.md)（**本地 PDF**：[understanding-ai-infra-zh-cn.pdf](understanding-ai-infra-zh-cn.pdf)，536 页）
 
 ---
 
@@ -78,15 +76,17 @@ updated: 2026-10-15
 
 **配套代码不必逐行读**——全部由 coding agent 生成，作者自己也不逐行看。关键是把架构、核心组件和设计原则想清楚。
 
-**落地项目建议**（作者给出）：第 1–5 章足以做出一个可用的 coding agent；第 7、9 章帮它建评估集并从失败案例持续改进；第 8 章介入模型本身；第 6、10 章加语音、Computer Use 与多 Agent 协作。
+**落地项目建议**（作者给出）：第 1–5 章足以做出一个可用的 coding agent；第 7、9 章帮它建评估集并从失败案例持续改进；第 8 章介入模型本身；第 6、10 章加语音、Computer Use 与多 Agent 协作。按这条路径排好的分阶段实操计划见 [Agent 实操线](agent-practice-plan.md)。
 
 ---
 
 ## 相关笔记
 
 - [MOC - ai](../../notes/MOC%20-%20ai.md) —— AI 知识地图
+- [Agent 实操线](agent-practice-plan.md) —— 本书的 109 实验五阶段执行计划
 - [Claude Code](Claude%20Code.md) —— Agent 编程心得
-- [机器学习书单与 16 周学习计划](ml-booklist.md) —— 理论书单与阅读路径
+- [机器学习书单与完整阅读计划](ml-booklist.md) —— 理论书单与阅读路径
+- [AI Engineering 导读](ai-engineering.md) —— 工程层：那条线每周同步读的书
 - [MoE](MoE.md) —— 混合专家模型
 - [前线部署工程师（FDE）· 索引](fde-guide.md) —— 同属 AI 线，但讲的是岗位与职业路径
 

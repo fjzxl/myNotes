@@ -2,10 +2,8 @@
 title: 不等式 · 五、多视角理解：向量·矩阵·几何·物理
 tags:
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-11
-updated: 2026-10-15
 ---
 
 > 📚 本文是 [不等式](../inequalities.md) 的第 4 / 6 章（总览第五部分）。 上一章：[四、证明：高阶不等式](03-advanced.md) 下一章：[六、应用](05-applications.md)

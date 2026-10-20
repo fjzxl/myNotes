@@ -2,14 +2,8 @@
 title: 五十音 · わ行（wa を）与拨音 ん
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - わ行
-  - wa行
-  - を
-created: 2026-10-11
-updated: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # わ行 · 两个新音（わ を）与拨音 ん

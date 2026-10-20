@@ -31,7 +31,7 @@ created: 2026-10-12
 
 ## 与其他概念的关系
 
-- 上游（前驱）：确界原理（实数完备性）、[界与函数](../topics/math/functions-and-bounds.md) 中的上确界概念
+- 上游（前驱）：确界原理（实数完备性）、[界与函数](../topics/math/calculus/functions-and-bounds.md) 中的上确界概念
 - 下游（应用）：与 [夹逼准则](squeeze-theorem.md) 并列为本章两大极限存在准则；幂级数收敛域讨论中部分和数列的收敛判断也用它
 - 对比：夹逼准则直接"算出"极限值，本定理只保证"存在"，求值需另对递推式取极限
 
@@ -44,3 +44,5 @@ created: 2026-10-12
 
 - [夹逼准则](squeeze-theorem.md)
 - [两个重要极限](two-important-limits.md)
+- [闭区间套定理](nested-interval-theorem.md)
+- [数列与子列极限](subsequence-limits.md)（峰值点法抽单调子列、振荡递推拆奇偶子列）

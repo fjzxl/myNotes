@@ -2,9 +2,7 @@
 title: C 入门：从源码到可执行文件
 tags:
   - programming
-  - cpp
-created: 2026-09-10
-updated: 2026-10-10
+  - programming/cpp
 ---
 # C 入门：从源码到可执行文件
 

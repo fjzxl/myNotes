@@ -2,9 +2,7 @@
 title: CSS 入门指南
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/css
 ---
 
 # CSS 入门指南

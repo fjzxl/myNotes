@@ -3,9 +3,8 @@ title: 积分形式（四件套）
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # 积分形式（四件套）

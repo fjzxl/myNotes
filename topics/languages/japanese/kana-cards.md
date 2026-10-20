@@ -2,14 +2,9 @@
 title: 五十音闪卡
 tags:
   - languages
-  - japanese
-  - kana
+  - languages/japanese
+  - languages/japanese/kana
   - flashcards
-aliases:
-  - 五十音牌组
-  - Kana Cards
-created: 2026-10-09
-updated: 2026-10-15
 ---
 
 # 五十音闪卡

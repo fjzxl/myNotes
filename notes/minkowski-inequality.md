@@ -3,9 +3,8 @@ title: Minkowski 不等式
 tags:
   - permanent-note
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-15
 ---
 
 # Minkowski 不等式

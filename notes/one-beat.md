@@ -3,9 +3,8 @@ title: 「一拍」：全表的度量衡
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 「一拍」：全表的度量衡

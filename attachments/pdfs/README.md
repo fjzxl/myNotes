@@ -7,7 +7,7 @@ tags:
 
 # 📄 PDFs · PDF 文件
 
-> 重要 PDF 文档的存放位置（电子书、论文、报告等）。
+> 重要 PDF 文档的存放位置（电子书、论文、报告等）。附件总约定见仓库 [README](../../README.md)（目录结构）与 [AGENTS](../../AGENTS.md)（大体积 PDF 的 gitignore 规则）。
 
 ## 组织方式
 

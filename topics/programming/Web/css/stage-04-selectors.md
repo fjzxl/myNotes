@@ -2,9 +2,7 @@
 title: "CSS 入门指南 · 第四阶段：选择器 —— 精准选中要修改的元素"
 tags:
   - programming
-  - css
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/css
 ---
 
 # 第四阶段：选择器 —— 精准选中要修改的元素

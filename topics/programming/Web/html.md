@@ -2,10 +2,8 @@
 title: HTML 基础
 tags:
   - programming
-  - web
-  - html
-created: 2026-10-10
-updated: 2026-10-10
+  - programming/web
+  - programming/web/html
 ---
 # HTML 基础
 

@@ -2,16 +2,9 @@
 title: Calico 残留 iptables 规则导致云主机重启后 no route to host
 tags:
   - programming
-  - linux
-  - kubernetes
-  - network
-aliases:
-  - calico iptables 残留
-  - k8s 重启后网络不通
-  - no route to host 10250
-  - kubectl logs no route to host
-created: 2026-10-13
-updated: 2026-10-15
+  - programming/linux
+  - programming/kubernetes
+  - programming/network
 ---
 
 # Calico 残留 iptables 规则导致云主机重启后 no route to host

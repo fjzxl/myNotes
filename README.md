@@ -29,13 +29,12 @@ myNotes/
 │   ├── ai/                         # AI
 │   │   ├── Claude Code.md
 │   │   ├── MoE.md
-│   │   └── ml-booklist.md          # 机器学习书单与 16 周计划
+│   │   └── ml-booklist.md          # 机器学习书单与完整阅读计划
 │   ├── math/                       # 数学（考研数一）
 │   │   ├── inequalities.md         # 不等式专题总览（依赖图 · 15 条一览表 · 口诀速记）
 │   │   ├── inequalities/           # 不等式章节笔记（01-basics ~ 06-exercises 六章）
-│   │   ├── functions-and-bounds.md # 界与函数（高数起点）
 │   │   ├── calculus.md             # 高等数学总览（章节导航）
-│   │   └── calculus/               # 高数章节笔记（02-03-sequence-function-limits.md 等）
+│   │   └── calculus/               # 高数章节笔记（functions-and-bounds.md、02-03-sequence-function-limits.md 等）
 │   ├── history/                    # 历史（待填充，有 stub README）
 │   ├── exams/                      # 考试备考（软考等）
 │   │   ├── README.md
@@ -69,8 +68,6 @@ myNotes/
 │   └── MOC - languages.md
 │
 ├── projects/                       # 当前项目（有 stub README）
-├── resources/                      # 引用资料、skills 速查
-│   └── skills.md
 │
 ├── templates/                      # 笔记模板（12 个）
 │   ├── README.md

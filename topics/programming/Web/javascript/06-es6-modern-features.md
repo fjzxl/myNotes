@@ -2,9 +2,7 @@
 title: "JavaScript 核心知识体系 · 六、ES6+ 现代特性"
 tags:
   - programming
-  - javascript
-created: 2026-09-10
-updated: 2026-10-10
+  - programming/web/javascript
 ---
 
 # 六、ES6+ 现代特性

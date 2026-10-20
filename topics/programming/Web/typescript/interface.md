@@ -2,10 +2,7 @@
 title: TypeScript 接口：从 JavaScript 对象约定到类型契约
 tags:
   - programming
-  - typescript
-  - interface
-created: 2026-09-30
-updated: 2026-10-11
+  - programming/web/typescript
 ---
 
 # TypeScript 接口：从 JavaScript 对象约定到类型契约

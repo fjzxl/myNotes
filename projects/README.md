@@ -1,7 +1,7 @@
 ---
 title: Projects
 tags:
-  - projects
+  - project
 ---
 
 # 🚧 Projects · 当前项目

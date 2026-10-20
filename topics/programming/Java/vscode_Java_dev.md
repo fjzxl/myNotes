@@ -2,9 +2,7 @@
 title: 本地Java development
 tags:
   - programming
-  - java
-created: 2026-09-10
-updated: 2026-09-10
+  - programming/java
 ---
 # 本地Java development
 

@@ -3,9 +3,8 @@ title: 促音（っ）的出现条件
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 促音（っ）的出现条件

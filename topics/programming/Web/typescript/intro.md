@@ -2,9 +2,7 @@
 title: TypeScript 入门教程
 tags:
   - programming
-  - typescript
-created: 2026-09-10
-updated: 2026-10-01
+  - programming/web/typescript
 ---
 # TypeScript 入门教程
 

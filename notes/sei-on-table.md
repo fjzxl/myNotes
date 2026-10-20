@@ -3,9 +3,8 @@ title: 清音 46 音的构成与记忆
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 清音 46 音的构成与记忆

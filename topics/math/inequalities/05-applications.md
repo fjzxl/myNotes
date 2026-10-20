@@ -2,10 +2,8 @@
 title: 不等式 · 六、应用
 tags:
   - math
-  - inequality
+  - math/inequality
   - kaoyan
-created: 2026-10-11
-updated: 2026-10-13
 ---
 
 > 📚 本文是 [不等式](../inequalities.md) 的第 5 / 6 章（总览第六部分）。 上一章：[五、多视角理解：向量·矩阵·几何·物理](04-multiview.md) 下一章：[八、习题（分层自测）](06-exercises.md)

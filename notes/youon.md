@@ -3,9 +3,8 @@ title: 拗音（拗音的拼读规则）
 tags:
   - permanent-note
   - languages
-  - japanese
-  - kana
-created: 2026-10-15
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # 拗音（拗音的拼读规则）

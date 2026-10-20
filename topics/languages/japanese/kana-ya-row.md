@@ -2,13 +2,8 @@
 title: 五十音 · や行（ya yu yo）
 tags:
   - languages
-  - japanese
-  - kana
-aliases:
-  - や行
-  - ya行
-created: 2026-10-11
-updated: 2026-10-12
+  - languages/japanese
+  - languages/japanese/kana
 ---
 
 # や行 · 三个新音（や ゆ よ）

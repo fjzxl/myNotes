@@ -46,3 +46,5 @@ created: 2026-10-12
 
 - [单调有界定理](monotone-bounded-convergence.md)
 - [两个重要极限](two-important-limits.md)
+- [数列与子列极限](subsequence-limits.md)（致密性定理的二分证明用它收尾）
+- [n 项和极限](n-sum-limits.md)（夹逼是和式极限三法之一）
